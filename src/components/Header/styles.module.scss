@@ -1,0 +1,32 @@
+.image {
+  height: 4rem;
+  width: 4rem;
+}
+
+.brandName {
+  color: var(--color-primary);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.brandWrapper {
+  align-items: center;
+  display: flex;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.linkWrapper {
+  a {
+    color: var(--color-primary);
+    margin-left: 24px;
+    text-decoration: none;
+  }
+}
