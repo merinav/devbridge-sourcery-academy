@@ -1,17 +1,39 @@
-/* Import variables */
-@import 'variables';
+// https://sass-guidelin.es/#the-7-1-pattern
 
-/* Vendor styles // Contains third party libs CSS */
-@import 'vendor/index';
-
-/* Utilities styles */
+/**
+ * 1. Utilities styles
+ * (The utilities/ folder might also be called abstracts/ 
+ * according to Sass Guidelines)
+ */
 @import 'utilities/index';
 
-/* Base styles */
+/**
+ * 2. Vendors styles
+ * (Vendor styles // Contains third party libs CSS)
+ */
+@import 'vendor/index';
+
+/**
+ * 3. Base styles
+ */
 @import 'base/index';
 
-/* Layout */
+/**
+ * 4. Layout styles
+ */
 @import 'layout/index';
 
-/* Print stylesheet */
-@import 'vendor/print';
+/**
+ * 5. Components styles
+ */
+@import 'components/index';
+
+/**
+ * 6. Pages styles
+ */
+@import 'pages/index';
+
+/**
+ * 7. Themes styles
+ * (Omit these styles)
+ */
