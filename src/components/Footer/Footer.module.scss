@@ -1,0 +1,91 @@
+.footerWrapper {
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  height: 96px;
+  justify-content: space-between;
+  padding: 0 40px;
+  position: relative;
+  width: 100vw;
+}
+
+.iconsBox {
+  display: flex;
+  flex: none;
+  flex-grow: 0;
+  height: 40px;
+  justify-content: space-between;
+  order: 0;
+  width: 152px;
+}
+
+.iconBoxFacebook {
+  display: flex;
+  height: 40px;
+  order: 0;
+  width: 40px;
+}
+
+.iconEclipseFacebook {
+  align-items: center;
+  background: #ecebfb;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  width: 40px;
+}
+
+.iconBoxTwitter {
+  display: flex;
+  height: 40px;
+  order: 1;
+  width: 40px;
+}
+
+.iconEclipseTwitter {
+  align-items: center;
+  background: #ecebfb;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  width: 40px;
+}
+
+.iconBoxInstagram {
+  display: flex;
+  height: 40px;
+  order: 2;
+  width: 40px;
+}
+
+.iconEclipseInstagram {
+  align-items: center;
+  background: #ecebfb;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  width: 40px;
+}
+
+.textBox {
+  flex: none;
+  flex-grow: 0;
+  height: 16px;
+  order: 1;
+}
+
+.text {
+  color: #3d3691;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+a {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
