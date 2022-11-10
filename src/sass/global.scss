@@ -1,39 +1,15 @@
 // https://sass-guidelin.es/#the-7-1-pattern
 
-/**
- * 1. Utilities styles
- * (The utilities/ folder might also be called abstracts/ 
- * according to Sass Guidelines)
- */
+/* 1. Utilities styles */
+/* (The utilities/ folder might also be called abstracts/ according to Sass Guidelines) */
 @import 'utilities/index';
 
-/**
- * 2. Vendors styles
- * (Vendor styles // Contains third party libs CSS)
- */
+/* 2. Vendors styles */
+/* (Vendor styles // Contains third party libs CSS) */
 @import 'vendor/index';
 
-/**
- * 3. Base styles
- */
+/* 3. Base styles */
 @import 'base/index';
 
-/**
- * 4. Layout styles
- */
+/* 4. Layout styles */
 @import 'layout/index';
-
-/**
- * 5. Components styles
- */
-@import 'components/index';
-
-/**
- * 6. Pages styles
- */
-@import 'pages/index';
-
-/**
- * 7. Themes styles
- * (Omit these styles)
- */
