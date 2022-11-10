@@ -4,40 +4,38 @@
 }
 
 .brandName {
-  //color: var(--color-primary);
   color: #3d3691;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: bold;
-  margin-bottom: 0;
-  margin-left: 2rem;
-  margin-top: 0;
+  margin: 0 0 0 2rem;
 }
 
 .brandWrapper {
   align-items: center;
   display: flex;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .header {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin-left: 40px;
-  margin-right: 40px;
-  margin-top: 28px;
+  padding: 2.8rem 4rem 0;
 }
 
-.linkWrapper {
+.nav {
   a {
-    //color: var(--color-primary);
     color: #3d3691;
-    margin-left: 24px;
+    margin-left: 2.4rem;
     text-decoration: none;
   }
 }
 
 .icon {
   height: 8px;
-  margin-left: 7px;
+  margin-left: 0.7rem;
   width: 13.71px;
 }
