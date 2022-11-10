@@ -1,9 +1,133 @@
 :root {
-  --color-primary: #ff3454;
-  --color-secondary: #404cfa;
+  /* Colors */
+  // --color-primary: #ff3454;
+  // --color-secondary: #404cfa;
+
+  --color-primary: hsl(245, 46%, 39%);
+  --color-text-primary: hsl(247, 13%, 27%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-shadow: hsl(270, 11%, 96%);
+
+  /* Buttons */
+  --color-button-font: --color-white;
+
+  --color-button-primary: hsl(244, 97%, 65%);
+  --color-button-hover: hsl(244, 66%, 55%);
+  --color-button-active: hsl(243, 97%, 72%);
+  --color-button-focus: --color-button-active;
+  --color-button-focus-tab: hsl(29, 93%, 63%);
+  --color-button-focus-border: --color-button-hover;
+
+  --color-button-dev-primary: hsl(218, 84%, 62%);
+  --color-button-dev-hover: hsl(218, 57%, 52%);
+  --color-button-dev-active: hsl(218, 84%, 70%);
+  --color-button-dev-focus: --color-button-dev-active;
+  --color-button-dev-focus-tab: --color-button-focus-tab;
+  --color-button-dev-focus-border: --color-button-dev-hover;
+
+  --color-button-qa-primary: hsl(171, 100%, 30%);
+  --color-button-qa-hover: hsl(171, 70%, 40%);
+  --color-button-qa-active: hsl(171, 100%, 24%);
+  --color-button-qa-focus: --color-button-qa-active;
+  --color-button-qa-focus-tab: --color-button-focus-tab;
+  --color-button-qa-focus-border: --color-button-qa-hover;
+
+  --color-button-fe-primary: hsl(344, 85%, 52%);
+  --color-button-fe-hover: hsl(344, 86%, 62%);
+  --color-button-fe-active: hsl(344, 79%, 42%);
+  --color-button-fe-focus: --color-button-fe-active;
+  --color-button-fe-focus-tab: --color-button-focus-tab;
+  --color-button-fe-focus-border: --color-button-fe-hover;
+
+  --border-radius-button: 3rem; /* 48px / 16 = 3 */
+
+  /* Typography */
   --font-size-base: 1.6rem;
   --font-family: system-ui;
   --line-height-base: 1.5;
+  // font-family: 'Raleway', sans-serif;
+  // https://fonts.google.com/specimen/Raleway
+
+  // font-family: 'Montserrat', sans-serif;
+  // https://fonts.google.com/specimen/Montserrat
+
+  /* Button Typography */
+  --font-size-button: 1.125rem; /* 18px / 16 = 1,125 */
+  --font-weight-button: 700;
+
+  /* Header Typography */
+  --font-size-logo-header: 1.125rem; /* 18px / 16 = 1,125 */
+  --font-weight-logo-header: 700;
+  --font-size-nav-header: --font-size-logo-header;
+  --font-weight-nav-header: 400;
+
+  /* Footer Typography */
+  --font-family-footer: 'Raleway', sans-serif;
+  --font-size-footer: 0.875rem; /* 14px / 16 = 0,875 */
+  --font-weight-footer: 400;
+
+  /* Promo Typography */
+  --font-family-promo-title: 'Montserrat', sans-serif;
+  --font-size-promo-title: 3rem; /* 48px / 16 = 3 */
+  --font-weight-promo-title: 700;
+  --color-promo-title: --color-primary;
+
+  --font-family-promo-description: 'Raleway', sans-serif;
+  --font-size-promo-description: 1.125rem; /* 18px / 16 = 1,125 */
+  --font-weight-promo-description: 400;
+  --color-promo-description: --color-text-primary;
+
+  /* Academies Typography */
+  --font-family-academies-title: 'Montserrat', sans-serif;
+  --font-size-academies-title: 3rem; /* 48px / 16 = 3 */
+  --font-weight-academies-title: 700;
+  --color-academies-title: --color-primary;
+
+  --font-family-academies-description: 'Raleway', sans-serif;
+  --font-size-academies-description: 1.125rem; /* 18px / 16 = 1,125 */
+  --font-weight-academies-description: 400;
+  --color-academies-description: --color-text-primary;
+
+  /* Sourcery for Developers Typography */
+  /* Sourcery for Testers Typography */
+  /* Sourcery for Front-End Typography */
+  /* Sourcery for Kids Typography */
+  --font-family-academy-title: 'Montserrat', sans-serif;
+  --font-size-academy-title: 2rem; /* 32px / 16 = 2 */
+  --font-weight-academy-title: 700;
+  --color-academy-title: --color-primary;
+
+  --font-family-academy-description: 'Raleway', sans-serif;
+  --font-size-academy-description: 1.125rem; /* 18px / 16 = 1,125 */
+  --font-weight-academy-description: 400;
+  --color-academy-description: --color-text-primary;
+
+  /* Testimonials Typography */
+  --font-family-testimonials-title: 'Montserrat', sans-serif;
+  --font-size-testimonials-title: 3rem; /* 48px / 16 = 3 */
+  --font-weight-testimonials-title: 700;
+  --color-testimonials-title: --color-primary;
+
+  --font-family-testimonials-quotation-mark: 'Montserrat', sans-serif;
+  --font-size-testimonials-quotation-mark: 2.375rem; /* 38px / 16 = 2,375 */
+  --font-weight-testimonials-quotation-mark: 700;
+  --color-testimonials-quotation-mark: --color-primary;
+
+  --font-family-testimonials-user: 'Raleway', sans-serif;
+  --font-size-testimonials-user: 1.25rem; /* 20px / 16 = 1,25 */
+  --font-weight-testimonials-user: 700;
+  --color-testimonials-user: --color-primary;
+
+  --font-family-testimonials-user-graduate: 'Raleway', sans-serif;
+  --font-size-testimonials-user-graduate: 0.875rem; /* 14px / 16 = 0,875 */
+  --font-weight-testimonials-user-graduate: 700;
+  --color-testimonials-user-graduate: --color-primary;
+
+  /* Media Typography */
+  --font-family-media-title: 'Montserrat', sans-serif;
+  --font-size-media-title: 3rem; /* 48px / 16 = 3 */
+  --font-weight-media-title: 700;
+  --color-media-title: --color-primary;
 
   /* Spacers */
   --spacer-xxs: 0.4rem;
