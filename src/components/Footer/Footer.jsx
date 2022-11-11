@@ -1,39 +1,42 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import styles from './Footer.module.scss';
 import FacebookLogo from '~/assets/svg/facebookLogo';
 import TwitterLogo from '~/assets/svg/twitterLogo';
 import InstagramLogo from '../../assets/svg/instagramLogo';
 
+const cn = classNames.bind(styles);
+const today = new Date();
+const year = today.getFullYear();
+
 const Footer = () => {
   return (
-    <div className={styles.footerWrapper}>
-      <div className={styles.iconsBox}>
-        <div className={styles.iconBoxFacebook}>
-          <div className={styles.iconEclipseFacebook}>
-            <a href="https://www.facebook.com/devbridge">
-              <FacebookLogo />
-            </a>
-          </div>
+    <footer className={cn('footer-wrapper')}>
+      <div className={cn('icons-wrapper')}>
+        <div className={cn('icon-box-facebook')}>
+          <a href="https://www.facebook.com/devbridge">
+            <div className={cn('icon-eclipse-facebook')}>
+              <FacebookLogo alt="Link to Facebook" />
+            </div>
+          </a>
         </div>
-        <div className={styles.iconBoxTwitter}>
-          <div className={styles.iconEclipseTwitter}>
-            <a href="https://twitter.com/devbridge">
-              <TwitterLogo />
-            </a>
-          </div>
+        <div className={cn('icon-box-twitter')}>
+          <a href="https://twitter.com/devbridge">
+            <div className={cn('icon-eclipse-twitter')}>
+              <TwitterLogo alt="Link to Twitter" />
+            </div>
+          </a>
         </div>
-        <div className={styles.iconBoxInstagram}>
-          <div className={styles.iconEclipseInstagram}>
-            <a href="https://www.instagram.com/devbridge/?hl=en">
-              <InstagramLogo />
-            </a>
-          </div>
+        <div className={cn('icon-box-instagram')}>
+          <a href="https://www.instagram.com/devbridge/?hl=en">
+            <div className={cn('icon-eclipse-instagram')}>
+              <InstagramLogo alt="Link to Instagram" />
+            </div>
+          </a>
         </div>
       </div>
-      <div className={styles.textBox}>
-        <div className={styles.text}> Copyright © 2022 Sourcery Academy </div>
-      </div>
-    </div>
+      <div className={cn('text')}> Copyright © {year} Sourcery Academy </div>
+    </footer>
   );
 };
 
