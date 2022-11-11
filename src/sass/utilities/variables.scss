@@ -34,10 +34,10 @@
   --color-white: hsl(0, 0%, 100%);
 
   /* Shadows */
-  --color-shadow: hsl(270, 11%, 96%);
+  --shadow: hsl(270, 11%, 96%);
 
   /* Border radius */
-  --border-radius-400: 4.8rem;
+  --border-radius-normal: 4.8rem;
 
   /* Typography */
   --font-family-base: 'Raleway', sans-serif;
@@ -48,24 +48,25 @@
   // https://fonts.google.com/specimen/Montserrat
   --font-family: var(--font-family-base); /* alias for --font-family-base */
 
-  --font-size-300: 1.4rem; /* footer copyright */
-  --font-size-400: 1.8rem;
+  /* Font size */
+  --font-size-300: 1.4rem; /* Footer copyright */
+  --font-size-400: 1.8rem; /* All description texts */
   --font-size-500: 3.2rem; /* Titles 2 */
   --font-size-600: 3.8rem; /* testimonials-quotation-mark */
   --font-size-700: 4.8rem; /* Titles */
   --font-size: var(--font-size-400); /* alias for --font-size-400 */
 
-  // --font-weight-100: 100;
-  // --font-weight-200: 200;
-  // --font-weight-300: 300;
-  --font-weight-400: 400;
-  // --font-weight-500: 500;
-  // --font-weight-600: 600;
-  --font-weight-700: 700;
-  // --font-weight-800: 800;
-  // --font-weight-900: 900;
+  /* Font weight */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
 
+  /* Line heights */
   --line-height-base: 1.5;
+
+  --line-height: 5.9rem; /* Title */
+  --line-height: 2.1rem; /* Description text */
+  --line-height: 3.9rem; /* Academy Title */
+  --line-height: 1.6rem; /* Testimonials Description text */
 
   /* Spacers */
   --spacer-xxs: 0.4rem;
@@ -77,4 +78,92 @@
   --spacer-xl: 2.4rem;
   --spacer-xxl: 3.2rem;
   --spacer-xxxl: 4rem;
+
+  /* Header Spacers */
+  --spacer: 4rem; /* margin left, right */
+  --spacer: 2.8rem; /* margin top, bottom */
+  --spacer: 2rem; /* between logo and logo text */
+  --spacer: 2.4rem; /* between navigation items */
+  --spacer: 0.7rem; /* between navigation item and Icon_arrow_down.svg */
+
+  /* Promo Spacers */
+  --spacer: 8rem; /* margin left, right */
+  --spacer: 29rem; /* margin top */
+  --spacer: 41.15rem; /* margin bottom */
+  --spacer: 3.1rem; /* Title margin bottom */
+  --spacer: 3.1rem; /* Title margin bottom (space between title and description text) */
+  --spacer: 5.4rem; /* description text margin bottom (space between description text and button) */
+
+  /* Academies Spacers */
+  --spacer: 22.4rem; /* margin left, right */
+  --spacer: 29rem; /* margin top */
+  --spacer: 21.6rem; /* margin bottom till first particle */
+  --spacer: 2.9rem; /* Title margin bottom */
+  --spacer: 3.5rem; /* description text margin bottom (space between description text and first vertical line) */
+  --spacer: 3.2rem; /* vertical line margin bottom (space between vertical line and Icon_arrow_down_circle.svg ) */
+
+  /* Academy Spacers */
+  --spacer: 1.7rem; /* Title margin bottom till horizontal line */
+  --spacer: 2.5rem; /* Title horizontal line margin bottom */
+  --spacer: 4.8rem; /* description text margin bottom (space between description text and another step) */
+  --spacer: 5rem; /* The Admission Title margin bottom */
+  --spacer: 3.5rem; /* The Admission Subtitle margin bottom */
+  --spacer: 1.1rem; /* The Admission list margin bottom */
+  --spacer: 1.6rem; /* The Admission list margin between bullet point */
+  --spacer: 6rem; /* Schedule Title margin bottom */
+  --spacer: 4.6rem; /* Schedule Subtitle margin bottom */
+  --spacer: 4rem; /* between Schedule boxes */
+  --spacer: 7rem; /* Apply Title margin bottom */
+  --spacer: 5.2rem; /* Apply Title description text margin bottom (space between description text and button) */
+
+  /* Spacers. Academy > Dates Box */
+  --spacer: 1.9rem 2.1rem 2.4rem 2rem; /* padding */
+  --spacer: 2rem; /* padding between expanded schedule boxes */
+
+  /* Spacers. Schedule > Box */
+  --spacer: 0.7rem 1.6rem; /* padding */
+  --spacer: 0.8rem; /* between icon and text */
+  --spacer: 1.6rem; /* between line devider */
+
+  /* Content (Academies) Spacers */
+  --spacer: 12.8rem; /* margin left, right */
+  --spacer: 30.75rem; /* margin bottom till Testimonial title */
+  --spacer: 3.5rem; /* Title margin bottom */
+  --spacer: 5.4rem; /* description text margin bottom (space between description text and button) */
+
+  /* Testimonials Spacers */
+  --spacer: 6.7rem; /* Title margin bottom */
+  --spacer: 3.4rem; /* Box padding top */
+  --spacer: 2.9rem; /* Box padding left, right */
+  --spacer: 3.7rem; /* Box p adding bottom */
+  --spacer: 0.2rem; /* User margin bottom till fist quotation mark */
+  --spacer: 1.1rem; /* Second quotation mark margin bottom till user name */
+  --spacer: 0.7rem; /* User name margin bottom */
+
+  /* Media Spacers */
+  --spacer: 2.7rem; /* Title margin bottom */
+  --spacer: 4.2rem; /* margin between boxes */
+
+  /* Footer Spacers */
+  --spacer: 4rem; /* margin left, right */
+  --spacer: 2.8rem; /* margin top, bottom */
+  --spacer: 1.6rem; /* between icons */
+
+  /* Application form Spacers */
+  --spacer: 4rem 8rem; /* padding */
+  --spacer: 8rem; /* Title margin bottom */
+  --spacer: 6rem; /* Subtitle margin bottom */
+  --spacer: 6rem; /* Subtitle margin bottom */
+  --spacer: 1.7rem; /* Star description margin bottom */
+  --spacer: 0.7rem; /* slider padding */
+  --spacer: 0.8rem; /* between sliders */
+  --spacer: 3rem; /* Form Title margin bottom */
+  --spacer: 0.5rem; /* Form star description margin bottom */
+  --spacer: 1.25rem 1.35rem; /* Form input padding */
+  --spacer: 2rem; /* between inputs */
+  --spacer: 6rem; /* I have read, understand... margin top */
+  --spacer: 2.5rem; /* I have read, understand... between check box */
+  --spacer: 6rem; /* I have read, understand... margin bottom (space between description text and button) */
+
+  --spacer-shadow: 2rem;
 }
