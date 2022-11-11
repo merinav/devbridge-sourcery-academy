@@ -14,15 +14,15 @@ export default function Header() {
 
   return (
     <header className={cn('header')}>
-      <div className={cn('brandWrapper')} onClick={goToHome}>
-        <Logo className={cn('image')} />
-        <h1 className={cn('brandName')}>Sourcery Academy</h1>
-      </div>
+      <a className={cn('brand-wrapper')} href="#">
+        <Logo className={cn('image')} alt="Sourcery Academy logo" />
+        <h1 className={cn('brand-name')}>Sourcery Academy</h1>
+      </a>
       <nav className={cn('nav')}>
         <a href="#">About us</a>
         <a href="#">
           Academies
-          <IconArrowDown className={cn('icon')} />
+          <IconArrowDown className={cn('icon')} alt="Arrow down icon" />
         </a>
         <a href="#">Media</a>
         <a href="#">Register</a>

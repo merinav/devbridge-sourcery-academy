@@ -1,41 +1,40 @@
-.image {
-  height: 4rem;
-  width: 4rem;
-}
-
-.brandName {
-  color: #3d3691;
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin: 0 0 0 2rem;
-}
-
-.brandWrapper {
-  align-items: center;
-  display: flex;
-
-  &:hover {
-    cursor: pointer;
-  }
-}
-
 .header {
   align-items: center;
+  color: #3d3691;
   display: flex;
+  font-size: 1.8rem;
   justify-content: space-between;
-  padding: 2.8rem 4rem 0;
-}
+  padding: 2.8rem 4rem;
 
-.nav {
-  a {
-    color: #3d3691;
-    margin-left: 2.4rem;
+  .brand-wrapper {
+    align-items: center;
+    display: flex;
     text-decoration: none;
-  }
-}
 
-.icon {
-  height: 8px;
-  margin-left: 0.7rem;
-  width: 13.71px;
+    .image {
+      height: 4rem;
+      width: 4rem;
+    }
+
+    .brand-name {
+      font-size: unset;
+      font-weight: bold;
+      margin: 0 0 0 2rem;
+    }
+  }
+
+  .nav {
+    display: flex;
+    gap: 2.4rem;
+
+    a {
+      text-decoration: none;
+    }
+
+    .icon {
+      height: 8px;
+      margin-left: 0.7rem;
+      width: 13.71px;
+    }
+  }
 }
