@@ -1,4 +1,4 @@
-@function torem($pxValue) {
+@function toRem($pxValue) {
   $remValue: ($pxValue / 16) + rem;
   @return $remValue;
 }
