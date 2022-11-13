@@ -19,7 +19,10 @@ const Footer = () => {
             href="https://www.facebook.com/devbridge"
             className={cn('icon-eclipse')}
           >
-            <FacebookLogo alt="Link to Facebook" className={cn('image')} />
+            <FacebookLogo
+              alt="Devbridge Facebook page"
+              className={cn('image')}
+            />
           </a>
         </div>
         <div className={cn('icon-box')}>
@@ -27,7 +30,7 @@ const Footer = () => {
             href="https://twitter.com/devbridge"
             className={cn('icon-eclipse')}
           >
-            <TwitterLogo alt="Link to Twitter" className={cn('image')} />
+            <TwitterLogo alt="Devbridge Twitter page" className={cn('image')} />
           </a>
         </div>
         <div className={cn('icon-box')}>
@@ -35,7 +38,10 @@ const Footer = () => {
             href="https://www.instagram.com/devbridge/?hl=en"
             className={cn('icon-eclipse')}
           >
-            <InstagramLogo alt="Link to Instagram" className={cn('image')} />
+            <InstagramLogo
+              alt="Devbridge Instagram page"
+              className={cn('image')}
+            />
           </a>
         </div>
       </div>
