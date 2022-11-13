@@ -28,13 +28,15 @@
     gap: 2.4rem;
 
     a {
+      align-items: baseline;
+      display: flex;
+      gap: 0.7rem;
       text-decoration: none;
     }
 
     .icon {
-      height: 8px;
-      margin-left: 0.7rem;
-      width: 13.71px;
+      height: 0.8rem;
+      width: 1.4rem;
     }
   }
 }
