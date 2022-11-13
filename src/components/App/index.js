@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import styles from './styles.module';
 import Svg from '~/assets/svg/image.svg';
-import Footer from '../Footer/Footer';
+import Footer from '../Footer';
 
 const cn = classNames.bind(styles);
 
@@ -20,9 +20,7 @@ export default function App({ prop }) {
           </pre>
         </div>
       </div>
-      <div>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }
