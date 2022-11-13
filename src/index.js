@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import App from './components/App';
 import './sass/global.scss';
-import Header from './components/Header';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Header />
+    <App prop="welcome_to_sourcery_academy();" />
   </React.StrictMode>
 );
