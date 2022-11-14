@@ -18,12 +18,14 @@ const config = {
   // Dev server is used to quickly develop an application
   // More info: https://webpack.js.org/configuration/dev-server/
   devServer: {
-    contentBase: path.join(__dirname, 'public'), // Tells the server where to serve content from. This is only necessary if you want to serve static files.
+    static: path.join(__dirname, 'public/'), // Tells the server where to serve content from. This is only necessary if you want to serve static files.
     compress: true, // Enable gzip compression for everything served
     port: 9000, // Specify a port number to listen for requests on
     historyApiFallback: true, // When using the HTML5 History API, the index.html page will likely have to be served in place of any 404 responses.
     hot: true, // EnableS webpack's Hot Module Replacement feature
-    publicPath: '/', // The bundled files will be available in the browser under this path
+    devMiddleware: {
+      publicPath: '/', // The bundled files will be available in the browser under this path
+    },
   },
   module: {
     rules: [
@@ -35,7 +37,7 @@ const config = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          // devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
