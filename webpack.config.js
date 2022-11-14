@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const devMode = process.env.NODE_ENV !== 'production';
 
@@ -123,6 +124,7 @@ const config = {
     new CopyPlugin({
       patterns: [{ from: 'public' }],
     }), // During build, copies static files from /public to /dist
+    new ESLintPlugin(),
   ],
   resolve: {
     alias: {
