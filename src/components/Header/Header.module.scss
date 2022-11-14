@@ -1,6 +1,5 @@
 .header {
   align-items: center;
-  color: #3d3691;
   display: flex;
   font-size: 1.8rem;
   justify-content: space-between;
@@ -8,6 +7,7 @@
 
   .brand-wrapper {
     align-items: center;
+    color: #3d3691;
     display: flex;
     text-decoration: none;
 
@@ -29,6 +29,7 @@
 
     a {
       align-items: baseline;
+      color: #3d3691;
       display: flex;
       gap: 0.7rem;
       text-decoration: none;
