@@ -1,36 +1,28 @@
 :root {
   /* Colors */
-  --color-first-400: hsl(245, 46%, 39%); /* Home Title */
-
-  --color-second-300: hsl(243, 97%, 72%); /* button-active */
-  --color-second-400: hsl(244, 97%, 65%); /* Home button */
-  --color-second-500: hsl(244, 66%, 55%); /* button-hover */
-
-  --color-third-100: hsl(218, 84%, 70%); /* button-dev-active */
-  --color-third-200: hsl(218, 84%, 62%); /* Developers Academy button */
-  --color-third-300: hsl(218, 57%, 52%); /* button-dev-hover */
-  --color-third-400: hsl(218, 100%, 38%); /* Developers Academy Title */
-
-  --color-fourth-100: hsl(171, 70%, 40%); /* button-qa-hover */
-  --color-fourth-200: hsl(171, 100%, 30%); /* Testers Academy button */
-  --color-fourth-300: hsl(171, 100%, 24%); /* button-qa-active */
-  --color-fourth-400: hsl(187, 79%, 21%); /* Testers Academy Title */
-
-  --color-fifth-100: hsl(344, 86%, 62%); /* button-fe-hover */
-  --color-fifth-150: hsl(342, 100%, 51%); /* Application form star */
-  --color-fifth-200: hsl(344, 85%, 52%); /* Front-End Academy button */
-  --color-fifth-300: hsl(344, 79%, 42%); /* button-fe-active */
-  --color-fifth-400: hsl(344, 100%, 35%); /* Front-End Academy Title */
-
-  --color-sixth-200: hsl(0, 0%, 53%); /* Application form input placeholder */
-  --color-sixth-300: hsl(0, 0%, 36%); /* Application form input border */
-  --color-sixth-400: hsl(247, 13%, 27%); /* All description texts */
-
-  --color-accent-1-400: hsl(29, 93%, 63%); /* button-focus-tab */
-
-  --color-accent-2-300: hsl(164, 79%, 50%); /* Icon_Application_form_success */
-  --color-accent-2-400: hsl(141, 59%, 51%); /* Icon_Academy_check */
-
+  --color-purple-400: hsl(245, 46%, 39%);
+  --color-light-purple-300: hsl(243, 97%, 72%);
+  --color-light-purple-400: hsl(244, 97%, 65%);
+  --color-light-purple-500: hsl(244, 66%, 55%);
+  --color-blue-100: hsl(218, 84%, 70%);
+  --color-blue-200: hsl(218, 84%, 62%);
+  --color-blue-300: hsl(218, 57%, 52%);
+  --color-blue-400: hsl(218, 100%, 38%);
+  --color-green-100: hsl(171, 70%, 40%);
+  --color-green-200: hsl(171, 100%, 30%);
+  --color-green-300: hsl(171, 100%, 24%);
+  --color-green-400: hsl(187, 79%, 21%);
+  --color-red-100: hsl(344, 86%, 62%);
+  --color-red-150: hsl(342, 100%, 51%);
+  --color-red-200: hsl(344, 85%, 52%);
+  --color-red-300: hsl(344, 79%, 42%);
+  --color-red-400: hsl(344, 100%, 35%);
+  --color-grey-200: hsl(0, 0%, 53%);
+  --color-grey-300: hsl(0, 0%, 36%);
+  --color-grey-400: hsl(247, 13%, 27%);
+  --color-accent-orange-400: hsl(29, 93%, 63%);
+  --color-accent-green-300: hsl(164, 79%, 50%);
+  --color-accent-green-400: hsl(141, 59%, 51%);
   --color-white: hsl(0, 0%, 100%);
 
   /* Shadows */
@@ -41,116 +33,51 @@
 
   /* Typography */
   --font-family-base: 'Raleway', sans-serif;
-  // font-family: 'Raleway', sans-serif;
-  // https://fonts.google.com/specimen/Raleway
-
   --font-family-headline: 'Montserrat', sans-serif;
-  // font-family: 'Montserrat', sans-serif;
-  // https://fonts.google.com/specimen/Montserrat
   --font-family: var(--font-family-base); /* alias for --font-family-base */
 
   /* Font size */
-  --font-size-300: 1.4rem; /* Footer copyright */
-  --font-size-400: 1.8rem; /* All description texts */
-  --font-size-500: 3.2rem; /* Titles 2 */
-  --font-size-600: 3.8rem; /* testimonials-quotation-mark */
-  --font-size-700: 4.8rem; /* Titles */
-  --font-size: var(--font-size-400); /* alias for --font-size-400 */
+  --font-size-s: 1.4rem;
+  --font-size-m: 1.8rem;
+  --font-size-l: 3.2rem;
+  --font-size-xl: 3.8rem;
+  --font-size-xxl: 4.8rem;
+  --font-size: var(--font-size-m); /* alias for --font-size-m */
 
   /* Font weight */
   --font-weight-regular: 400;
   --font-weight-bold: 700;
 
   /* Line heights */
-  --line-height-m: 1.6; /* Testimonials Description text */
-  --line-height-l: 2.1; /* Description text */
-  --line-height-xl: 3.9; /* Academy Title */
-  --line-height-xxl: 5.9; /* Title */
+  --line-height-m: 1.6;
+  --line-height-l: 2.1;
+  --line-height-xl: 3.9;
+  --line-height-xxl: 5.9;
 
   /* Spacers */
-  --spacer-4xs: 0.2rem; /* Testimonials User margin bottom till fist quotation mark */
-  --spacer-xxxs: 0.5rem; /* Application form Form star description margin bottom */
-  --spacer-xxs: 0.8rem; /* Spacers. Schedule > Box between icon and text */
-  /* Header between navigation item and Icon_arrow_down.svg */
-  /* Testimonials User name margin bottom */
-  /* Application form slider padding */
-  /* Application form between sliders */
-  /* Spacers. Schedule > Box padding */
-
-  --spacer-xs: 1.1rem; /* Academy The Admission list margin bottom */
-
-  --spacer-s: 1.25rem; /* Application form Form input padding */
-  /* Testimonials Second quotation mark margin bottom till user name */
-
-  --spacer-m: 1.6rem; /* Academy The Admission list margin between bullet point */
-  /* Spacers. Schedule > Box between line devider */
-  /* Footer between icons */
-  /* Academy Title margin bottom till horizontal line */
-  /* Application form Star description margin bottom */
-  /* Spacers. Schedule > Box padding */
-
-  --spacer-l: 2rem; /* Header between logo and logo text */
-  /* Spacers. Academy > Dates Box padding between expanded schedule boxes */
-  /* Application form between inputs */
-  /* Spacers. Academy > Dates Box padding */
-
-  --spacer-xl: 2.4rem; /* Header between navigation items */
-  /* Academy Title horizontal line margin bottom */
-  /* Application form I have read, understand... between check box */
-  /* Spacers. Academy > Dates Box padding */
-
-  --spacer-xxl: 2.8rem; /* Header margin top, bottom */
-  /* Footer margin top, bottom */
-  /* Academies Title margin bottom */
-  /* Testimonials Box padding left, right */
-
-  --spacer-xxxl: 3rem; /* Application form Form Title margin bottom */
-  /* Academies vertical line margin bottom (space between vertical line and Icon_arrow_down_circle.svg ) */
-
-  --spacer-4xl: 3.4rem; /* Testimonials Box padding top */
-  /* Promo Title margin bottom (space between title and description text) */
-  /* Academies description text margin bottom (space between description text and first vertical line) */
-  /* Academy The Admission Subtitle margin bottom */
-  /* Content (Academies) Title margin bottom */
-  /* Testimonials Box padding bottom */
-
-  --spacer-5xl: 4rem; /* Header margin left, right */
-  /* Academy between Schedule boxes */
-  /* Footer margin left, right */
-  /* Media Title margin bottom */
-  /* Media margin between boxes */
-  /* Application form padding */
-
-  --spacer-6xl: 4.8rem; /* Academy description text margin bottom (space between description text and another step) */
-  /* Academy Schedule Subtitle margin bottom */
-
-  --spacer-7xl: 5.2rem; /* Academy Apply Title description text margin bottom (space between description text and button) */
-  /* Academy The Admission Title margin bottom */
-  /* Promo description text margin bottom (space between description text and button) */
-  /* Content (Academies) description text margin bottom (space between description text and button) */
-
-  --spacer-8xl: 6rem; /* Academy Schedule Title margin bottom */
-  /* Application form Subtitle margin bottom */
-  /* Application form Subtitle margin bottom */
-  /* Application form I have read, understand... margin top */
-  /* Application form I have read, understand... margin bottom (space between description text and button) */
-
-  --spacer-9xl: 7rem; /* Academy Apply Title margin bottom */
-  /* Testimonials Title margin bottom */
-
-  --spacer-10xl: 8rem; /* Promo margin left, right */
-  /* Application form Title margin bottom */
-  /* Application form padding */
-
-  --spacer-11xl: 12.8rem; /* Content (Academies) margin left, right */
-  --spacer-12xl: 19.2rem; /* Promo margin top */
-  --spacer-13xl: 21.6rem; /* Academies margin bottom till first particle */
-  --spacer-14xl: 22.4rem; /* Academies margin left, right */
-  /* Academies margin top */
-
-  --spacer-15xl: 30.4rem; /*  Content (Academies) margin bottom till Testimonial title */
-  --spacer-16xl: 41.2rem; /* Promo margin bottom */
-
+  // --spacer-4xs: 0.2rem;
+  // --spacer-xxxs: 0.5rem;
+  --spacer-xxs: 0.8rem;
+  // --spacer-xs: 1.1rem;
+  // --spacer-s: 1.25rem;
+  --spacer-m: 1.6rem;
+  --spacer-l: 2rem;
+  --spacer-xl: 2.4rem;
+  --spacer-xxl: 2.8rem;
+  --spacer-xxxl: 3rem;
+  --spacer-4xl: 3.4rem;
+  --spacer-5xl: 4rem;
+  // --spacer-6xl: 4.8rem;
+  --spacer-7xl: 5.2rem;
+  --spacer-8xl: 6rem;
+  // --spacer-9xl: 7rem;
+  // --spacer-10xl: 8rem;
+  // --spacer-11xl: 12.8rem;
+  // --spacer-12xl: 19.2rem;
+  // --spacer-13xl: 21.6rem;
+  // --spacer-14xl: 22.4rem;
+  // --spacer-15xl: 30.4rem;
+  // --spacer-16xl: 41.2rem;
   --spacer-shadow: var(--spacer-l);
   --spacer: var(--spacer-m); /* alias for --spacer-m */
 }
