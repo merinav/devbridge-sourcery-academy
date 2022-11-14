@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './styles.module';
 import Svg from '~/assets/svg/image.svg';
 import Header from '../Header';
+import Footer from '../Footer';
 
 const cn = classNames.bind(styles);
 
@@ -21,6 +22,7 @@ export default function App({ prop }) {
           </pre>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
