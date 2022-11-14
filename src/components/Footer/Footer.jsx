@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './Footer.module.scss';
-import TwitterLogo from '~/assets/svg/twitterLogo.svg';
-import FacebookLogo from '../../assets/svg/facebookLogo.svg';
-import InstagramLogo from '../../assets/svg/instagramLogo.svg';
+import Logo_Twitter from '~/assets/svg/Logo_Twitter.svg';
+import Logo_Facebook from '../../assets/svg/Logo_Facebook.svg';
+import Logo_Instagram from '../../assets/svg/Logo_Instagram.svg';
 
 const cn = classNames.bind(styles);
 
@@ -19,7 +19,7 @@ const Footer = () => {
             href="https://www.facebook.com/devbridge"
             className={cn('icon-eclipse')}
           >
-            <FacebookLogo
+            <Logo_Facebook
               alt="Devbridge Facebook page"
               className={cn('image')}
             />
@@ -30,7 +30,10 @@ const Footer = () => {
             href="https://twitter.com/devbridge"
             className={cn('icon-eclipse')}
           >
-            <TwitterLogo alt="Devbridge Twitter page" className={cn('image')} />
+            <Logo_Twitter
+              alt="Devbridge Twitter page"
+              className={cn('image')}
+            />
           </a>
         </div>
         <div className={cn('icon-box')}>
@@ -38,7 +41,7 @@ const Footer = () => {
             href="https://www.instagram.com/devbridge/?hl=en"
             className={cn('icon-eclipse')}
           >
-            <InstagramLogo
+            <Logo_Instagram
               alt="Devbridge Instagram page"
               className={cn('image')}
             />
