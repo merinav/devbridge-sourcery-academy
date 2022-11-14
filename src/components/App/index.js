@@ -21,8 +21,8 @@ export default function App({ prop }) {
             {prop}
           </pre>
         </div>
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 }
