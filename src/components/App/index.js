@@ -1,26 +1,13 @@
 import React from 'react';
-import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
-import styles from './styles.module';
-import Svg from '~/assets/svg/image.svg';
+import { RouteManager } from './routing';
 
-const cn = classNames.bind(styles);
-
-export default function App({ prop }) {
-  const charCount = prop.length;
-
+export default function App() {
   return (
-    <div className={cn('wrapper')}>
-      <div className={cn('content')}>
-        <Svg className={cn('image')} />
-        <pre className={cn('helloworld')} style={{ '--count': charCount }}>
-          {prop}
-        </pre>
-      </div>
-    </div>
+    <>
+      <RouteManager />
+    </>
   );
 }
 
-App.propTypes = {
-  prop: PropTypes.string,
-};
+App.propTypes = {};
