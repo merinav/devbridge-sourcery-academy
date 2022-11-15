@@ -1,0 +1,43 @@
+.header {
+  align-items: center;
+  display: flex;
+  font-size: 1.8rem;
+  justify-content: space-between;
+  padding: 2.8rem 4rem;
+
+  .brand-wrapper {
+    align-items: center;
+    color: #3d3691;
+    display: flex;
+    text-decoration: none;
+
+    .image {
+      height: 4rem;
+      width: 4rem;
+    }
+
+    .brand-name {
+      font-size: unset;
+      font-weight: bold;
+      margin: 0 0 0 2rem;
+    }
+  }
+
+  .nav {
+    display: flex;
+    gap: 2.4rem;
+
+    a {
+      align-items: baseline;
+      color: #3d3691;
+      display: flex;
+      gap: 0.7rem;
+      text-decoration: none;
+    }
+
+    .icon {
+      height: 0.8rem;
+      width: 1.4rem;
+    }
+  }
+}
