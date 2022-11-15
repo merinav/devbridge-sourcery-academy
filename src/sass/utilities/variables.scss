@@ -55,29 +55,16 @@
   --line-height-xxl: 5.9;
 
   /* Spacers */
-  // --spacer-4xs: 0.2rem;
-  // --spacer-xxxs: 0.5rem;
-  --spacer-xxs: 0.8rem;
-  // --spacer-xs: 1.1rem;
-  // --spacer-s: 1.25rem;
+  --spacer-s: 0.8rem;
   --spacer-m: 1.6rem;
   --spacer-l: 2rem;
   --spacer-xl: 2.4rem;
   --spacer-xxl: 2.8rem;
-  --spacer-xxxl: 3rem;
+  --spacer-3xl: 3rem;
   --spacer-4xl: 3.4rem;
   --spacer-5xl: 4rem;
-  // --spacer-6xl: 4.8rem;
   --spacer-7xl: 5.2rem;
   --spacer-8xl: 6rem;
-  // --spacer-9xl: 7rem;
-  // --spacer-10xl: 8rem;
-  // --spacer-11xl: 12.8rem;
-  // --spacer-12xl: 19.2rem;
-  // --spacer-13xl: 21.6rem;
-  // --spacer-14xl: 22.4rem;
-  // --spacer-15xl: 30.4rem;
-  // --spacer-16xl: 41.2rem;
   --spacer-shadow: var(--spacer-l);
   --spacer: var(--spacer-m); /* alias for --spacer-m */
 }
