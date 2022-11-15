@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import styles from './styles.module';
-import Svg from '~/assets/svg/image.svg';
+import Svg from '~/assets/images/image.svg';
 import Header from '../Header';
 import Footer from '../Footer';
 
