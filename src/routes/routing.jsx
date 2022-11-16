@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { routeConfig } from '../../../utils/constants';
+import { routeConfig } from './routeConfig';
 
 export const RouteManager = React.memo(() => {
   return (
