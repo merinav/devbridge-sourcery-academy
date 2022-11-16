@@ -1,7 +1,7 @@
 import React from 'react';
 
 function FrontEnd() {
-  return <></>;
+  return <>/academy/front-end</>;
 }
 
 export default FrontEnd;

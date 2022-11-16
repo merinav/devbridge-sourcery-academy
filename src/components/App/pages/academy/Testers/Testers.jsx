@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Testers() {
-  return <></>;
+  return <>/academy/testers</>;
 }
 
 export default Testers;
