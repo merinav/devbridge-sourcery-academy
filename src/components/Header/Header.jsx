@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './Header.module';
-import Logo from '~/assets/images/logo.svg';
-import IconArrowDown from '~/assets/icons/Icon_arrow_down.svg';
+import Logo from '~/assets/svg/logo.svg';
+import IconArrowDown from '~/assets/svg/icon-arrow-down.svg';
 
 const cn = classNames.bind(styles);
 
