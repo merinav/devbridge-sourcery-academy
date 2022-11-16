@@ -12,7 +12,7 @@ export const RouteManager = React.memo(() => {
             key={key}
             path={path}
             element={
-              <Suspense>
+              <Suspense fallback={<>Loading...</>}>
                 <Component />
               </Suspense>
             }
