@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { routeConfig } from '../../../utils/constants';
 
-export function RouteManager() {
+export const RouteManager = React.memo(() => {
   return (
     <Routes>
       {Object.entries(routeConfig).map(([key, route]) => {
@@ -21,4 +21,6 @@ export function RouteManager() {
       })}
     </Routes>
   );
-}
+});
+
+RouteManager.displayName = 'RouteManager';
