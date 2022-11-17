@@ -20,9 +20,9 @@
   background: var(--color-light-purple-400);
   border-radius: var(--border-radius-normal);
   display: flex;
-  height: torem(40);
+  height: var(--spacer-5xl);
   justify-content: center;
-  width: torem(40);
+  width: var(--spacer-5xl);
 }
 
 .text {
