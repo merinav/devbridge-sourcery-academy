@@ -21,7 +21,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "webpack-dev-server --mode development --open",
-    "build": "webpack -p --mode production",
+    "build": "webpack --mode production",
     "stylelint:lint": "stylelint \"src/**/*.css\"",
     "stylelint:fix": "stylelint \"src/**/*.css\" --fix",
     "stylelint-check": "stylelint-config-prettier-check",
