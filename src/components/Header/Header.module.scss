@@ -1,7 +1,8 @@
 .header {
   align-items: center;
+  background-color: var(--color-white);
   display: flex;
-  font-size: var(--spacer-l);
+  font-size: var(--font-size-m);
   justify-content: space-between;
   padding: var(--spacer-xxl) var(--spacer-5xl);
 

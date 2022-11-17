@@ -20,9 +20,9 @@
   background: var(--color-light-purple-400);
   border-radius: var(--border-radius-normal);
   display: flex;
-  height: var(--spacer-5xl);
+  height: torem(40);
   justify-content: center;
-  width: var(--spacer-5xl);
+  width: torem(40);
 }
 
 .text {
@@ -30,7 +30,6 @@
   font-family: var(--font-family-base);
   font-size: var(--font-size-s);
   font-weight: var(--font-weight-regular);
-  line-height: var(--spacer-m);
 }
 
 .image {
