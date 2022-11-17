@@ -1,1 +1,1 @@
-export * as Testers from './Testers';
+export { default } from './Testers';

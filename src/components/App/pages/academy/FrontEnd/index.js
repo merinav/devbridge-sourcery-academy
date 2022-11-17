@@ -1,1 +1,1 @@
-export * as FrontEnd from './FrontEnd';
+export { default } from './FrontEnd';
