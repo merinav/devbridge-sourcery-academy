@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './Footer.module.scss';
-import Logo_Twitter from '~/assets/svg/Logo_Twitter.svg';
-import Logo_Facebook from '../../assets/svg/Logo_Facebook.svg';
-import Logo_Instagram from '../../assets/svg/Logo_Instagram.svg';
+import Logo_Twitter from '~/assets/logos/Logo_Twitter.svg';
+import Logo_Facebook from '../../assets/logos/Logo_Facebook.svg';
+import Logo_Instagram from '../../assets/logos/Logo_Instagram.svg';
 
 const cn = classNames.bind(styles);
 
