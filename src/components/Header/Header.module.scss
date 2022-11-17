@@ -27,8 +27,9 @@
     display: flex;
     gap: var(--spacer-xl);
 
-    a {
-      align-items: baseline;
+    .link {
+      align-items: center;
+      // border: 1px solid blue;
       color: var(--color-purple-400);
       display: flex;
       gap: var(--spacer-s);
@@ -36,7 +37,8 @@
     }
 
     .icon {
-      height: var(--spacer-s);
+      // border: 1px solid red;
+      // height: var(--spacer-s);
       width: var(--spacer-m);
     }
   }

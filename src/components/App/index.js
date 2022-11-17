@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import styles from './styles.module';
-import Logo_SA from '~/assets/logos/Logo_SA.svg';
+import Image from '~/assets/images/image.svg';
 import Header from '../Header';
 import Footer from '../Footer';
 
@@ -16,7 +16,7 @@ export default function App({ prop }) {
       <Header />
       <div className={cn('wrapper')}>
         <div className={cn('content')}>
-          <Logo_SA className={cn('image')} />
+          <Image className={cn('image')} />
           <pre className={cn('helloworld')} style={{ '--count': charCount }}>
             {prop}
           </pre>
