@@ -28,6 +28,11 @@
   /* Shadows */
   --shadow: hsl(270, 11%, 96%);
 
+  /* Border */
+  --border-primary: 0.2rem;
+  --border-secondary: 0.1rem;
+  --border: var(--border-primary); /* alias for --border-primary */
+
   /* Border radius */
   --border-radius-normal: 4.8rem;
 
