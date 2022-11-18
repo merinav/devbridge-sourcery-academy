@@ -3,16 +3,18 @@ import classNames from 'classnames/bind';
 import styles from './Header.module';
 import Logo_SA from '~/assets/logos/Logo_SA.svg';
 import Icon_arrow_down from '~/assets/icons/Icon_arrow_down.svg';
+import { Link } from 'react-router-dom';
+import { routes } from '~/routes/routeConfig';
 
 const cn = classNames.bind(styles);
 
 export default function Header() {
   return (
     <header className={cn('header')}>
-      <a className={cn('brand-wrapper')} href="#">
+      <Link to={routes.home} className={cn('brand-wrapper')}>
         <Logo_SA className={cn('image')} alt="Sourcery Academy logo" />
         <h1 className={cn('brand-name')}>Sourcery Academy</h1>
-      </a>
+      </Link>
       <nav className={cn('nav')}>
         <a href="#">About us</a>
         <a href="#">
