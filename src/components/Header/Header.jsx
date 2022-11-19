@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Header.module';
 import Logo_SA from '~/assets/logos/Logo_SA.svg';
@@ -10,38 +10,109 @@ const cn = classNames.bind(styles);
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const dropdownRef = useRef();
+  const academiesRef = useRef();
+
+  useEffect(() => {
+    const handleCloseDropdown = (event) => {
+      if (
+        !dropdownRef.current.contains(event.target) &&
+        !academiesRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleCloseDropdown);
+
+    return () => document.removeEventListener('mousedown', handleCloseDropdown);
+  }, []);
+
   return (
     <header className={cn('header')}>
-      <a className={cn('brand-wrapper')} href="#">
-        <Logo_SA className={cn('image')} alt="Sourcery Academy logo" />
-        <h1 className={cn('brand-name')}>Sourcery Academy</h1>
+      <a className={cn('header-logo__wrapper')} href="#">
+        <Logo_SA className={cn('logo-icon')} alt="Sourcery Academy logo" />
+        <h1 className={cn('logo-name')}>Sourcery Academy</h1>
       </a>
-      <nav className={cn('nav')}>
-        <a className={cn('link')} href="#">
-          About us
-        </a>
-        <a
-          className={cn('link')}
-          href="#"
-          onClick={() => setIsOpen((isOpen) => !isOpen)}
-        >
-          Academies
-          {!isOpen ? (
-            <Icon_arrow_down className={cn('icon')} alt="Arrow down icon" />
-          ) : (
-            <Icon_arrow_up className={cn('icon')} alt="Arrow up icon" />
-          )}
-        </a>
-        <a className={cn('link')} href="#">
-          Media
-        </a>
-        <a className={cn('link')} href="#">
-          Register
-        </a>
-        <a className={cn('link')} href="#">
-          Questions
-        </a>
-      </nav>
+      <div className={cn('main-nav')}>
+        <nav className={cn('main-nav__wrapper')}>
+          <ul className={cn('main-nav__list')}>
+            <li className={cn('main-nav__list-item')}>
+              <a className={cn('main-nav__link')} href="#">
+                About us
+              </a>
+            </li>
+            <li
+              className={cn(
+                'main-nav__list-item',
+                'main-nav__list-item--have-dropdown'
+              )}
+            >
+              <a
+                className={cn('main-nav__link')}
+                href="#"
+                onClick={() => setIsOpen((isOpen) => !isOpen)}
+                ref={academiesRef}
+              >
+                Academies
+                {isOpen ? (
+                  <Icon_arrow_up
+                    className={cn('list-item__link--icon')}
+                    alt="Arrow up icon"
+                  />
+                ) : (
+                  <Icon_arrow_down
+                    className={cn('list-item__link--icon')}
+                    alt="Arrow down icon"
+                  />
+                )}
+              </a>
+
+              {isOpen && (
+                <div className={cn('dropdown__wrapper')} ref={dropdownRef}>
+                  <ul className={cn('dropdown__list')}>
+                    <li className={cn('dropdown__list-item')}>
+                      <a className={cn('dropdown__link')} href="#">
+                        Sourcery for Developers
+                      </a>
+                    </li>
+                    <li className={cn('dropdown__list-item')}>
+                      <a className={cn('dropdown__link')} href="#">
+                        Sourcery for Testers
+                      </a>
+                    </li>
+                    <li className={cn('dropdown__list-item')}>
+                      <a className={cn('dropdown__link')} href="#">
+                        Sourcery for Front-End
+                      </a>
+                    </li>
+                    <li className={cn('dropdown__list-item')}>
+                      <a className={cn('dropdown__link')} href="#">
+                        Sourcery for Kids
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </li>
+            <li className={cn('main-nav__list-item')}>
+              <a className={cn('main-nav__link')} href="#">
+                Media
+              </a>
+            </li>
+            <li className={cn('main-nav__list-item')}>
+              <a className={cn('main-nav__link')} href="#">
+                Register
+              </a>
+            </li>
+            <li className={cn('main-nav__list-item')}>
+              <a className={cn('main-nav__link')} href="#">
+                Questions
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 }
