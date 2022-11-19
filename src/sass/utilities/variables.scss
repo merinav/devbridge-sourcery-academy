@@ -29,12 +29,13 @@
   --shadow: hsl(270, 11%, 96%);
 
   /* Border */
-  --border-primary: 0.2rem;
-  --border-secondary: 0.1rem;
-  --border: var(--border-primary); /* alias for --border-primary */
+  --border-width-m: 0.2rem;
+  --border-width-s: 0.1rem;
+  --border-width: var(--border-width-m); /* alias for --border-width-m */
 
   /* Border radius */
-  --border-radius-normal: 4.8rem;
+  --border-radius-xs: 0.8rem;
+  --border-radius-m: 4.8rem;
 
   /* Typography */
   --font-family-base: 'Raleway', sans-serif;
