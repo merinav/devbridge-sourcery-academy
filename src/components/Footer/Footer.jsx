@@ -16,6 +16,8 @@ const Footer = () => {
       <div className={cn('icons-wrapper')}>
         <div className={cn('icon-box')}>
           <a
+            target="_blank"
+            rel="noopener noreferrer"
             href="https://www.facebook.com/devbridge"
             className={cn('icon-eclipse')}
           >
@@ -27,6 +29,8 @@ const Footer = () => {
         </div>
         <div className={cn('icon-box')}>
           <a
+            target="_blank"
+            rel="noopener noreferrer"
             href="https://twitter.com/devbridge"
             className={cn('icon-eclipse')}
           >
@@ -38,7 +42,9 @@ const Footer = () => {
         </div>
         <div className={cn('icon-box')}>
           <a
-            href="https://www.instagram.com/devbridge/?hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.instagram.com/devbridge/"
             className={cn('icon-eclipse')}
           >
             <Logo_Instagram
