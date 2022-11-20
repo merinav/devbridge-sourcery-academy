@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { routes } from '../../routes/routeConfig';
 import classNames from 'classnames/bind';
 import styles from './Header.module';
-import Logo_SA from '~/assets/logos/Logo_SA.svg';
-import Icon_arrow_down from '~/assets/icons/Icon_arrow_down.svg';
-import Icon_arrow_up from '~/assets/icons/Icon_arrow_up.svg';
+import Logo_SA from '../../assets/logos/Logo_SA.svg';
+import Icon_arrow_down from '../../assets/icons/Icon_arrow_down.svg';
+import Icon_arrow_up from '../../assets/icons/Icon_arrow_up.svg';
 
 const cn = classNames.bind(styles);
 
@@ -30,10 +32,10 @@ export default function Header() {
 
   return (
     <header className={cn('header')}>
-      <a className={cn('header-logo__wrapper')} href="#">
+      <Link to={routes.home} className={cn('header-logo__wrapper')} href="#">
         <Logo_SA className={cn('logo-icon')} alt="Sourcery Academy logo" />
         <h1 className={cn('logo-name')}>Sourcery Academy</h1>
-      </a>
+      </Link>
       <div className={cn('main-nav')}>
         <nav className={cn('main-nav__wrapper')}>
           <ul className={cn('main-nav__list')}>
@@ -72,24 +74,40 @@ export default function Header() {
                 <div className={cn('dropdown__wrapper')} ref={dropdownRef}>
                   <ul className={cn('dropdown__list')}>
                     <li className={cn('dropdown__list-item')}>
-                      <a className={cn('dropdown__link')} href="#">
+                      <Link
+                        to={routes.developers}
+                        className={cn('dropdown__link')}
+                        href="#"
+                      >
                         Sourcery for Developers
-                      </a>
+                      </Link>
                     </li>
                     <li className={cn('dropdown__list-item')}>
-                      <a className={cn('dropdown__link')} href="#">
+                      <Link
+                        to={routes.testers}
+                        className={cn('dropdown__link')}
+                        href="#"
+                      >
                         Sourcery for Testers
-                      </a>
+                      </Link>
                     </li>
                     <li className={cn('dropdown__list-item')}>
-                      <a className={cn('dropdown__link')} href="#">
+                      <Link
+                        to={routes.frontEnd}
+                        className={cn('dropdown__link')}
+                        href="#"
+                      >
                         Sourcery for Front-End
-                      </a>
+                      </Link>
                     </li>
                     <li className={cn('dropdown__list-item')}>
-                      <a className={cn('dropdown__link')} href="#">
+                      <Link
+                        to={routes.kids}
+                        className={cn('dropdown__link')}
+                        href="#"
+                      >
                         Sourcery for Kids
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>

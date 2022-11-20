@@ -26,9 +26,6 @@
   }
 }
 
-.main-nav {
-}
-
 .main-nav__wrapper {
   align-items: center;
   display: flex;
@@ -43,9 +40,6 @@
   padding: 0;
 }
 
-.main-nav__list-item {
-}
-
 .main-nav__list-item--have-dropdown {
   position: relative;
 }
@@ -58,22 +52,25 @@
   line-height: 1;
   margin: 0;
   padding: 0;
+  position: relative;
   text-decoration: none;
 
   // New disign implementation of main-nav menu hover effect
-  &:hover {
-    position: relative;
+  &::after {
+    background-color: var(--color-purple-400);
+    content: '';
+    height: 0.1em;
+    left: 0;
+    margin-top: 0.1em;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    transition: all 0.3s;
+  }
 
-    &::after {
-      background-color: var(--color-purple-400);
-      content: '';
-      height: 0.1em;
-      left: 0;
-      margin-top: 0.1em;
-      position: absolute;
-      right: 0;
-      top: 100%;
-    }
+  &:hover::after {
+    opacity: 1;
   }
 }
 
@@ -83,7 +80,8 @@
 
 .dropdown__wrapper {
   border-radius: 0.8rem; // raw value maybe add new variable
-  box-shadow: 0 0 var(--spacer-m) hsla(0, 0%, 0%, 0.2); // shadow color only for testing
+  // box-shadow: 0 0 var(--spacer-m) var(--shadow); // shadow color from Figma Testimonials borders shadow, it seems too light
+  box-shadow: 0 0 var(--spacer-m) hsla(0, 0%, 0%, 0.15); // new shadow color
   padding: var(--spacer-s) 0;
   position: absolute;
   top: calc(2rem + 1.4rem + 1.4rem); // main-nav height 2rem + dropdown__wrapper::before triangle 1.4 rem + 1.4 rem same heigh as triangle for proportions
@@ -108,9 +106,6 @@
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.dropdown__list-item {
 }
 
 .dropdown__link {

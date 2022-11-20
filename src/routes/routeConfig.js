@@ -14,6 +14,7 @@ export const routes = {
   developers: '/academy/developers',
   testers: '/academy/testers',
   frontEnd: '/academy/front-end',
+  kids: '/academy/kids',
   register: '/register',
   notFound: '*',
 };
