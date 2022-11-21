@@ -7,7 +7,13 @@
   //margin: 0; PRIKLAUSYS NUO MAIN CSS
   padding: var(--spacer-xxl) var(--spacer-5xl);
 
+  // @include mobile-only {
+  //   align-content: stretch;
+  //   align-items: stretch;
+  // }
+
   @include tablet-portrait {
+    align-items: flex-start;
     flex-direction: column;
   }
   // @include for-big-desktop-up {
@@ -24,8 +30,15 @@
   margin: 0;
   order: 0;
   padding: 0;
-  width: 50%;
-  //word-break: break-word;
+  width: 35%;
+  word-break: break-word;
+
+  @include mobile-only {
+    width: 100%;
+  }
+  @include tablet-portrait {
+    width: 100%;
+  }
 
   &__heading {
     color: var(--color-purple-400);
@@ -54,12 +67,12 @@
 
 .content-image {
   display: flex;
-  flex-shrink: 3; //???????????????????
+  //flex-shrink: 3; //???????????????????
   height: 100%;
   margin: 0;
   order: 1;
   padding: 0;
-  width: 50%;
+  width: 45%;
   @include mobile-only {
     display: none;
   }

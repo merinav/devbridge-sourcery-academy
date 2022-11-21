@@ -14,12 +14,11 @@ const Home = () => {
           Academy
         </h1>
         <p className={cn('content-text__text')}>
-          Sourcery academy is our free of charge education<br></br>
-          program created to allow students to improve their<br></br>
-          skills and prepare for a career in the IT industry. There<br></br>
-          are three academies available. They serve as our long-<br></br>
-          term commitment to increase the number of students<br></br>
-          in Lithuania entering information technologies studies.
+          Sourcery academy is our free of charge education program created to
+          allow students to improve their skills and prepare for a career in the
+          IT industry. There are three academies available. They serve as our
+          long- term commitment to increase the number of students in Lithuania
+          entering information technologies studies.
         </p>
         <p className={cn('content-text__button')}>BUTTON WILL BE HERE</p>
       </section>
