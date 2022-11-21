@@ -7,14 +7,13 @@ const cn = classNames.bind(styles);
 
 const Home = () => {
   return (
-    //<section className={cn('section')}>
-    <div className={cn('wrapper')}>
-      <section>
-        <h1 className={cn('heading')}>
-          Sourcery<br></br>
+    <article className={cn('container')}>
+      <section className={cn('content-text')}>
+        <h1 className={cn('content-text__heading')}>
+          Sourcery <br></br>
           Academy
         </h1>
-        <p className={cn('text')}>
+        <p className={cn('content-text__text')}>
           Sourcery academy is our free of charge education<br></br>
           program created to allow students to improve their<br></br>
           skills and prepare for a career in the IT industry. There<br></br>
@@ -22,16 +21,15 @@ const Home = () => {
           term commitment to increase the number of students<br></br>
           in Lithuania entering information technologies studies.
         </p>
-        <p>BUTTON WILL BE HERE</p>
+        <p className={cn('content-text__button')}>BUTTON WILL BE HERE</p>
       </section>
 
-      <aside>
-        <figure className={cn('image')}>
+      <aside className={cn('content-image')}>
+        <figure className={cn('content-image__image')}>
           <Image_Promo />
         </figure>
       </aside>
-      {/* //</section> */}
-    </div>
+    </article>
   );
 };
 
