@@ -79,13 +79,12 @@
 }
 
 .dropdown__wrapper {
-  border-radius: 0.8rem; // raw value maybe add new variable
+  border-radius: var(--border-radius-xs);
   // box-shadow: 0 0 var(--spacer-m) var(--shadow); // shadow color from Figma Testimonials borders shadow, it seems too light
   box-shadow: 0 0 var(--spacer-m) hsla(0, 0%, 0%, 0.15); // new shadow color
   padding: var(--spacer-s) 0;
   position: absolute;
-  top: calc(2rem + 1.4rem + 1.4rem); // main-nav height 2rem + dropdown__wrapper::before triangle 1.4 rem + 1.4 rem same heigh as triangle for proportions
-
+  top: 4.8rem; // main-nav height 2rem + dropdown__wrapper::before triangle 1.4 rem + 1.4 rem same heigh as triangle for proportions
   transform: translateX(-25%);
   z-index: 1;
 

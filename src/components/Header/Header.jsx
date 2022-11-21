@@ -18,8 +18,8 @@ export default function Header() {
   useEffect(() => {
     const handleCloseDropdown = (event) => {
       if (
-        !dropdownRef.current.contains(event.target) &&
-        !academiesRef.current.contains(event.target)
+        !dropdownRef?.current?.contains(event.target) &&
+        !academiesRef?.current?.contains(event.target)
       ) {
         setIsOpen(false);
       }
@@ -32,7 +32,7 @@ export default function Header() {
 
   return (
     <header className={cn('header')}>
-      <Link to={routes.home} className={cn('header-logo__wrapper')} href="#">
+      <Link className={cn('header-logo__wrapper')} to={routes.home}>
         <Logo_SA className={cn('logo-icon')} alt="Sourcery Academy logo" />
         <h1 className={cn('logo-name')}>Sourcery Academy</h1>
       </Link>
@@ -40,9 +40,9 @@ export default function Header() {
         <nav className={cn('main-nav__wrapper')}>
           <ul className={cn('main-nav__list')}>
             <li className={cn('main-nav__list-item')}>
-              <a className={cn('main-nav__link')} href="#">
+              <Link className={cn('main-nav__link')} to={'#'}>
                 About us
-              </a>
+              </Link>
             </li>
             <li
               className={cn(
@@ -50,9 +50,9 @@ export default function Header() {
                 'main-nav__list-item--have-dropdown'
               )}
             >
-              <a
+              <Link
                 className={cn('main-nav__link')}
-                href="#"
+                to={'#'}
                 onClick={() => setIsOpen((isOpen) => !isOpen)}
                 ref={academiesRef}
               >
@@ -68,44 +68,37 @@ export default function Header() {
                     alt="Arrow down icon"
                   />
                 )}
-              </a>
+              </Link>
 
               {isOpen && (
                 <div className={cn('dropdown__wrapper')} ref={dropdownRef}>
                   <ul className={cn('dropdown__list')}>
                     <li className={cn('dropdown__list-item')}>
                       <Link
-                        to={routes.developers}
                         className={cn('dropdown__link')}
-                        href="#"
+                        to={routes.developers}
                       >
                         Sourcery for Developers
                       </Link>
                     </li>
                     <li className={cn('dropdown__list-item')}>
                       <Link
-                        to={routes.testers}
                         className={cn('dropdown__link')}
-                        href="#"
+                        to={routes.testers}
                       >
                         Sourcery for Testers
                       </Link>
                     </li>
                     <li className={cn('dropdown__list-item')}>
                       <Link
-                        to={routes.frontEnd}
                         className={cn('dropdown__link')}
-                        href="#"
+                        to={routes.frontEnd}
                       >
                         Sourcery for Front-End
                       </Link>
                     </li>
                     <li className={cn('dropdown__list-item')}>
-                      <Link
-                        to={routes.kids}
-                        className={cn('dropdown__link')}
-                        href="#"
-                      >
+                      <Link className={cn('dropdown__link')} to={routes.kids}>
                         Sourcery for Kids
                       </Link>
                     </li>
@@ -114,19 +107,19 @@ export default function Header() {
               )}
             </li>
             <li className={cn('main-nav__list-item')}>
-              <a className={cn('main-nav__link')} href="#">
+              <Link className={cn('main-nav__link')} to={'#'}>
                 Media
-              </a>
+              </Link>
             </li>
             <li className={cn('main-nav__list-item')}>
-              <a className={cn('main-nav__link')} href="#">
+              <Link className={cn('main-nav__link')} to={'#'}>
                 Register
-              </a>
+              </Link>
             </li>
             <li className={cn('main-nav__list-item')}>
-              <a className={cn('main-nav__link')} href="#">
+              <Link className={cn('main-nav__link')} to={'#'}>
                 Questions
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
