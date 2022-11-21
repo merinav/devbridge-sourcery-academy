@@ -1,0 +1,71 @@
+.container {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  //margin: 0; PRIKLAUSYS NUO MAIN CSS
+  padding: var(--spacer-xxl) var(--spacer-5xl);
+
+  @include tablet-portrait {
+    flex-direction: column;
+  }
+  // @include for-big-desktop-up {
+  //   padding-left: 100px;
+  //   padding-right: 100px;
+  //   width: 1200px;
+  // }
+}
+
+.content-text {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  order: 0;
+  padding: 0;
+  width: 50%;
+  //word-break: break-word;
+
+  &__heading {
+    color: var(--color-purple-400);
+    font-family: var(--font-family-headline);
+    font-size: var(--font-size-xxl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-m);
+    margin: 0;
+    order: 0;
+  }
+
+  &__text {
+    color: var(--color-grey-400);
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-regular);
+    //line-height: var(--spacer-l);
+    order: 1;
+  }
+
+  &__button {
+    color: red;
+    order: 2;
+  }
+}
+
+.content-image {
+  display: flex;
+  flex-shrink: 3; //???????????????????
+  height: 100%;
+  margin: 0;
+  order: 1;
+  padding: 0;
+  width: 50%;
+  @include mobile-only {
+    display: none;
+  }
+
+  &__image {
+    margin: 0;
+    width: 100%;
+  }
+}
