@@ -1,0 +1,41 @@
+.dropdown__wrapper {
+  border-radius: var(--border-radius-xs);
+  // box-shadow: 0 0 var(--spacer-m) var(--shadow); // shadow color from Figma Testimonials borders shadow, it seems too light
+  box-shadow: 0 0 var(--spacer-m) hsla(0, 0%, 0%, 0.15); // new shadow color
+  padding: var(--spacer-s) 0;
+  position: absolute;
+  top: 4.8rem; // main-nav height 2rem + dropdown__wrapper::before triangle 1.4 rem + 1.4 rem same heigh as triangle for proportions
+  transform: translateX(-25%);
+  z-index: 1;
+
+  &::before {
+    border: 1.4rem solid transparent;
+    border-bottom-color: var(--color-white);
+    content: '';
+    left: 50%;
+    position: absolute;
+    top: calc(-1.4rem * 2);
+    transform: translateX(-50%);
+  }
+}
+
+.dropdown__list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown__link {
+  color: var(--color-purple-400);
+  font-size: var(--font-size-s);
+  margin: 0;
+  padding: var(--spacer-m) var(--spacer-l);
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: var(--shadow);
+  }
+}

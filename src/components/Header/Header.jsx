@@ -6,6 +6,7 @@ import styles from './Header.module';
 import Logo_SA from '../../assets/logos/Logo_SA.svg';
 import Icon_arrow_down from '../../assets/icons/Icon_arrow_down.svg';
 import Icon_arrow_up from '../../assets/icons/Icon_arrow_up.svg';
+import MainNavDropdown from '../MainNavDropdown';
 
 const cn = classNames.bind(styles);
 
@@ -69,42 +70,7 @@ export default function Header() {
                   />
                 )}
               </Link>
-
-              {isOpen && (
-                <div className={cn('dropdown__wrapper')} ref={dropdownRef}>
-                  <ul className={cn('dropdown__list')}>
-                    <li className={cn('dropdown__list-item')}>
-                      <Link
-                        className={cn('dropdown__link')}
-                        to={routes.developers}
-                      >
-                        Sourcery for Developers
-                      </Link>
-                    </li>
-                    <li className={cn('dropdown__list-item')}>
-                      <Link
-                        className={cn('dropdown__link')}
-                        to={routes.testers}
-                      >
-                        Sourcery for Testers
-                      </Link>
-                    </li>
-                    <li className={cn('dropdown__list-item')}>
-                      <Link
-                        className={cn('dropdown__link')}
-                        to={routes.frontEnd}
-                      >
-                        Sourcery for Front-End
-                      </Link>
-                    </li>
-                    <li className={cn('dropdown__list-item')}>
-                      <Link className={cn('dropdown__link')} to={routes.kids}>
-                        Sourcery for Kids
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              )}
+              {isOpen && <MainNavDropdown ref={dropdownRef} />}
             </li>
             <li className={cn('main-nav__list-item')}>
               <Link className={cn('main-nav__link')} to={'#'}>
