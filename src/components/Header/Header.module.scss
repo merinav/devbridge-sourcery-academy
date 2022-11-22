@@ -1,43 +1,44 @@
 .header {
   align-items: center;
+  background-color: var(--color-white);
   display: flex;
-  font-size: 1.8rem;
+  font-size: var(--font-size-m);
   justify-content: space-between;
-  padding: 2.8rem 4rem;
+  padding: var(--spacer-xxl) var(--spacer-5xl);
 
   .brand-wrapper {
     align-items: center;
-    color: #3d3691;
+    color: var(--color-purple-400);
     display: flex;
     text-decoration: none;
 
     .image {
-      height: 4rem;
-      width: 4rem;
+      height: toRem(40);
+      width: toRem(40);
     }
 
     .brand-name {
       font-size: unset;
-      font-weight: bold;
-      margin: 0 0 0 2rem;
+      font-weight: var(--font-weight-bold);
+      margin: 0 0 0 var(--spacer-l);
     }
   }
 
   .nav {
     display: flex;
-    gap: 2.4rem;
+    gap: var(--spacer-xl);
 
     a {
       align-items: baseline;
-      color: #3d3691;
+      color: var(--color-purple-400);
       display: flex;
-      gap: 0.7rem;
+      gap: var(--spacer-s);
       text-decoration: none;
     }
 
     .icon {
-      height: 0.8rem;
-      width: 1.4rem;
+      height: toRem(8);
+      width: toRem(16);
     }
   }
 }

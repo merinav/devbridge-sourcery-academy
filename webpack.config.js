@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const devMode = process.env.NODE_ENV !== 'production';
 
@@ -19,12 +20,17 @@ const config = {
   // Dev server is used to quickly develop an application
   // More info: https://webpack.js.org/configuration/dev-server/
   devServer: {
-    contentBase: path.join(__dirname, 'public'), // Tells the server where to serve content from. This is only necessary if you want to serve static files.
+    static: path.join(__dirname, 'public/'), // Tells the server where to serve content from. This is only necessary if you want to serve static files.
     compress: true, // Enable gzip compression for everything served
     port: 9000, // Specify a port number to listen for requests on
     historyApiFallback: true, // When using the HTML5 History API, the index.html page will likely have to be served in place of any 404 responses.
     hot: true, // EnableS webpack's Hot Module Replacement feature
-    publicPath: '/', // The bundled files will be available in the browser under this path
+    client: {
+      overlay: false,
+    },
+    devMiddleware: {
+      publicPath: '/', // The bundled files will be available in the browser under this path
+    },
   },
   module: {
     rules: [
@@ -122,6 +128,7 @@ const config = {
     new CopyPlugin({
       patterns: [{ from: 'public' }],
     }), // During build, copies static files from /public to /dist
+    new ESLintPlugin(),
   ],
   resolve: {
     alias: {
