@@ -1,0 +1,108 @@
+.button {
+  border-radius: var(--border-radius-normal);
+  color: var(--color-white);
+  display: inline-block;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: var(--font-weight-bold);
+  height: 4.8rem;
+  justify-content: center;
+  line-height: 125%;
+  padding: 1.2rem 2.4rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+}
+
+.green {
+  background: var(--color-green-200);
+  border: none;
+}
+
+.green:hover {
+  background: var(--color-green-100);
+}
+
+.green:active {
+  background: var(--color-green-300);
+}
+
+.green:focus {
+  background: var(--color-green-300);
+  border: 0.2rem solid var(--color-green-100);
+}
+
+.green:focus-visible {
+  border: none;
+  outline: 0.4rem dashed var(--color-accent-orange-400);
+}
+
+.red {
+  background: var(--color-red-150);
+  border: none;
+}
+
+.red:hover {
+  background: var(--color-red-100);
+}
+
+.red:active {
+  background: var(--color-red-300);
+}
+
+.red:focus {
+  background: var(--color-red-300);
+  border: 0.2rem solid var(--color-red-100);
+}
+
+.red:focus-visible {
+  border: none;
+  outline: 0.4rem dashed var(--color-accent-orange-400);
+}
+
+.blue {
+  background: var(--color-blue-200);
+  border: none;
+}
+
+.blue:hover {
+  background: var(--color-blue-300);
+}
+
+.blue:active {
+  background: var(--color-blue-100);
+}
+
+.blue:focus {
+  background: var(--color-blue-100);
+  border: 0.2rem solid var(--color-blue-300);
+}
+
+.blue:focus-visible {
+  border: none;
+  outline: 0.4rem dashed var(--color-accent-orange-400);
+}
+
+.violet {
+  background: var(--color-light-purple-400);
+  border: none;
+}
+
+.violet:hover {
+  background: var(--color-light-purple-500);
+}
+
+.violet:active {
+  background: var(--color-light-purple-300);
+}
+
+.violet:focus {
+  background: var(--color-light-purple-300);
+  border: 0.2rem solid var(--color-light-purple-500);
+}
+
+.violet:focus-visible {
+  border: none;
+  outline: 0.4rem dashed var(--color-accent-orange-400);
+}

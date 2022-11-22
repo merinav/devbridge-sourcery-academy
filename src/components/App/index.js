@@ -5,6 +5,7 @@ import styles from './styles.module';
 import Svg from '~/assets/images/image.svg';
 import Header from '../Header';
 import Footer from '../Footer';
+import Button from '../Button';
 
 const cn = classNames.bind(styles);
 
@@ -14,6 +15,7 @@ export default function App({ prop }) {
   return (
     <>
       <Header />
+      <Button color="blue">Show Academies</Button>
       <div className={cn('wrapper')}>
         <div className={cn('content')}>
           <Svg className={cn('image')} />
