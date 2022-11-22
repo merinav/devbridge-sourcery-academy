@@ -33,7 +33,7 @@ export default function Header() {
 
   return (
     <header className={cn('header')}>
-      <Link className={cn('header-logo__wrapper')} to={routes.home}>
+      <Link className={cn('header__logo-wrapper')} to={routes.home}>
         <Logo_SA className={cn('logo-icon')} alt="Sourcery Academy logo" />
         <h1 className={cn('logo-name')}>Sourcery Academy</h1>
       </Link>
@@ -60,12 +60,12 @@ export default function Header() {
                 Academies
                 {isOpen ? (
                   <Icon_arrow_up
-                    className={cn('list-item__link--icon')}
+                    className={cn('link-icon')}
                     alt="Arrow up icon"
                   />
                 ) : (
                   <Icon_arrow_down
-                    className={cn('list-item__link--icon')}
+                    className={cn('link-icon')}
                     alt="Arrow down icon"
                   />
                 )}

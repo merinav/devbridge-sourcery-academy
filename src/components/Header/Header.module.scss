@@ -5,75 +5,79 @@
   font-size: var(--font-size-m);
   justify-content: space-between;
   padding: var(--spacer-xxl) var(--spacer-5xl);
+
+  &__logo-wrapper {
+    align-items: center;
+    color: var(--color-purple-400);
+    display: flex;
+    text-decoration: none;
+
+    .logo-icon {
+      min-height: var(--spacer-5xl);
+      width: var(--spacer-5xl);
+    }
+
+    .logo-name {
+      font-size: unset;
+      font-weight: var(--font-weight-bold);
+      line-height: 1;
+      margin: 0 0 0 var(--spacer-l);
+    }
+  }
 }
 
-.header-logo__wrapper {
-  align-items: center;
-  color: var(--color-purple-400);
-  display: flex;
-  text-decoration: none;
-
-  .logo-icon {
-    min-height: var(--spacer-5xl);
-    width: var(--spacer-5xl);
+.main-nav {
+  &__wrapper {
+    align-items: center;
+    display: flex;
   }
 
-  .logo-name {
-    font-size: unset;
-    font-weight: var(--font-weight-bold);
+  &__list {
+    align-items: center;
+    display: flex;
+    gap: var(--spacer-xl);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__list-item {
+    .link-icon {
+      width: var(--spacer-m);
+    }
+  }
+
+  &__list-item--have-dropdown {
+    position: relative;
+  }
+
+  &__link {
+    align-items: center;
+    color: var(--color-purple-400);
+    display: flex;
+    gap: var(--spacer-s);
     line-height: 1;
-    margin: 0 0 0 var(--spacer-l);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-decoration: none;
+
+    // New disign implementation of main-nav menu hover effect
+    &::after {
+      background-color: var(--color-purple-400);
+      content: '';
+      height: 0.1em;
+      left: 0;
+      margin-top: 0.1em;
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      transition: all 0.3s;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
   }
-}
-
-.main-nav__wrapper {
-  align-items: center;
-  display: flex;
-}
-
-.main-nav__list {
-  align-items: center;
-  display: flex;
-  gap: var(--spacer-xl);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.main-nav__list-item--have-dropdown {
-  position: relative;
-}
-
-.main-nav__link {
-  align-items: center;
-  color: var(--color-purple-400);
-  display: flex;
-  gap: var(--spacer-s);
-  line-height: 1;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  text-decoration: none;
-
-  // New disign implementation of main-nav menu hover effect
-  &::after {
-    background-color: var(--color-purple-400);
-    content: '';
-    height: 0.1em;
-    left: 0;
-    margin-top: 0.1em;
-    opacity: 0;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    transition: all 0.3s;
-  }
-
-  &:hover::after {
-    opacity: 1;
-  }
-}
-
-.list-item__link--icon {
-  width: var(--spacer-m);
 }
