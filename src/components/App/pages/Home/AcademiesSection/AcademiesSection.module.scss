@@ -1,8 +1,10 @@
 .academies-section {
   align-items: center;
+  background-position: center;
+  background-size: contain;
   display: flex;
   flex-direction: column;
-  padding: var(--spacer-xxl) var(--spacer-5xl);
+  padding: 12rem 20rem;
   text-align: center;
 
   &__heading {
