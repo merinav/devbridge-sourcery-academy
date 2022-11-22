@@ -1,5 +1,5 @@
 .button {
-  border-radius: var(--border-radius-normal);
+  border-radius: var(--border-radius-m);
   color: var(--color-white);
   display: inline-block;
   font-family: var(--font-family-base);
@@ -17,7 +17,7 @@
 
 .green {
   background: var(--color-green-200);
-  border: none;
+  border: 0;
 }
 
 .green:hover {
@@ -34,13 +34,13 @@
 }
 
 .green:focus-visible {
-  border: none;
+  border: 0;
   outline: 0.4rem dashed var(--color-accent-orange-400);
 }
 
 .red {
   background: var(--color-red-150);
-  border: none;
+  border: 0;
 }
 
 .red:hover {
@@ -57,13 +57,13 @@
 }
 
 .red:focus-visible {
-  border: none;
+  border: 0;
   outline: 0.4rem dashed var(--color-accent-orange-400);
 }
 
 .blue {
   background: var(--color-blue-200);
-  border: none;
+  border: 0;
 }
 
 .blue:hover {
@@ -80,13 +80,13 @@
 }
 
 .blue:focus-visible {
-  border: none;
+  border: 0;
   outline: 0.4rem dashed var(--color-accent-orange-400);
 }
 
 .violet {
   background: var(--color-light-purple-400);
-  border: none;
+  border: 0;
 }
 
 .violet:hover {
@@ -103,6 +103,6 @@
 }
 
 .violet:focus-visible {
-  border: none;
+  border: 0;
   outline: 0.4rem dashed var(--color-accent-orange-400);
 }

@@ -9,7 +9,9 @@ export default function App() {
   return (
     <>
       <Header />
-	  <Button color="blue">Show Academies</Button>
+      <Button href="https://sourceryacademy.com" color="blue">
+        Show Academies
+      </Button>
       <RouteManager />
       <Footer />
     </>
