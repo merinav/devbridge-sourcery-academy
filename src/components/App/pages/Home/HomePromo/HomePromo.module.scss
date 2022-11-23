@@ -4,7 +4,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  //margin: 0; PRIKLAUSYS NUO MAIN CSS
+  margin: 0;
+  margin-right: 0;
   padding: var(--spacer-xxl) var(--spacer-5xl);
 
   // @include mobile-only {
@@ -16,6 +17,7 @@
     align-items: flex-start;
     flex-direction: column;
   }
+
   // @include for-big-desktop-up {
   //   padding-left: 100px;
   //   padding-right: 100px;
@@ -27,7 +29,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  margin: 0;
+  //margin: 0;
   order: 0;
   padding: 0;
   width: 35%;
@@ -45,22 +47,27 @@
     font-family: var(--font-family-headline);
     font-size: var(--font-size-xxl);
     font-weight: var(--font-weight-bold);
-    line-height: var(--line-height-m);
-    margin: 0;
+    line-height: normal;
+    //margin: 0;
     order: 0;
   }
 
   &__text {
     color: var(--color-grey-400);
-    font-family: var(--font-family-base);
+    //font-family: var(--font-family-base);
     font-size: var(--font-size-m);
     font-weight: var(--font-weight-regular);
-    //line-height: var(--spacer-l);
+    line-height: var(--line-height-l);
     order: 1;
   }
 
+  // font-family: var(--font-family-base);
+  // font-size: var(--font-size-400);
+  // line-height: var(--line-height-m);
+  // margin: 0;
+
   &__button {
-    color: red;
+    color: var(--color-red-200);
     order: 2;
   }
 }
