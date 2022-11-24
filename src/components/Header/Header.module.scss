@@ -23,6 +23,12 @@
       line-height: calc(toRem(21) / var(--font-size-m));
       margin: 0 0 0 var(--spacer-l);
     }
+
+    &:focus {
+      border-radius: 0.1rem;
+      outline: 0.2rem solid var(--color-purple-400);
+      outline-offset: var(--spacer-s);
+    }
   }
 }
 
@@ -47,8 +53,22 @@
     }
 
     &__list-item--have-dropdown {
-      cursor: pointer;
       position: relative;
+
+      button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 100%;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        text-transform: none;
+        white-space: nowrap;
+      }
     }
 
     &__link {
@@ -63,9 +83,9 @@
       &::after {
         background-color: var(--color-purple-400);
         content: '';
-        height: 0.1em;
+        height: 0.2rem;
         left: 0;
-        margin-top: 0.1em;
+        margin-top: 0.2rem;
         opacity: 0;
         position: absolute;
         right: 0;
@@ -75,6 +95,12 @@
 
       &:hover::after {
         opacity: 1;
+      }
+
+      &:focus {
+        border-radius: 0.1rem;
+        outline: 0.2rem solid var(--color-purple-400);
+        outline-offset: var(--spacer-s);
       }
     }
   }

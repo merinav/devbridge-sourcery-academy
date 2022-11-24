@@ -52,7 +52,7 @@ export default function Header() {
             <li
               className={cn('nav__list-item', 'nav__list-item--have-dropdown')}
             >
-              <div
+              <button
                 className={cn('nav__link')}
                 to={'#'}
                 onClick={() => setIsOpen((isOpen) => !isOpen)}
@@ -70,7 +70,7 @@ export default function Header() {
                     alt="Arrow down icon"
                   />
                 )}
-              </div>
+              </button>
               {isOpen && (
                 <NavDropdown
                   ref={dropdownRef}
