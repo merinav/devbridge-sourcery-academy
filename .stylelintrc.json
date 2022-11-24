@@ -72,7 +72,6 @@
         "resolveNestedSelectors": true,
         "message": "Class names should match the hyphenated BEM naming convention"
       }
-    ],
-    "function-calc-no-invalid": null
+    ]
   }
 }
