@@ -24,7 +24,7 @@
       margin: 0 0 0 var(--spacer-l);
     }
 
-    &:focus {
+    &:focus-visible {
       border-radius: 0.1rem;
       outline: 0.2rem solid var(--color-purple-400);
       outline-offset: var(--spacer-s);
@@ -97,7 +97,7 @@
         opacity: 1;
       }
 
-      &:focus {
+      &:focus-visible {
         border-radius: 0.1rem;
         outline: 0.2rem solid var(--color-purple-400);
         outline-offset: var(--spacer-s);
