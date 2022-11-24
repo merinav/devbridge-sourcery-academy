@@ -5,6 +5,8 @@
   font-size: var(--font-size-m);
   justify-content: space-between;
   padding: var(--spacer-xxl) var(--spacer-5xl);
+  position: sticky;
+  top: 0;
 
   .brand-wrapper {
     align-items: center;
