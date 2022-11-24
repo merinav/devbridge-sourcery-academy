@@ -1,13 +1,13 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import styles from './HomePromo.module';
 import Image_Promo from '~/assets/images/Image_Promo.svg';
+import styles from './PromoSection.module';
 
 const cn = classNames.bind(styles);
 
-const HomePromo = () => {
+const PromoSection = () => {
   return (
-    <article className={cn('container')}>
+    <section className={cn('container')}>
       <section className={cn('content-text')}>
         <h1 className={cn('content-text__heading')}>
           Sourcery <br></br>
@@ -23,13 +23,13 @@ const HomePromo = () => {
         <p className={cn('content-text__button')}>BUTTON WILL BE HERE</p>
       </section>
 
-      <aside className={cn('content-image')}>
+      <section className={cn('content-image')}>
         <figure className={cn('content-image__image')}>
           <Image_Promo />
         </figure>
-      </aside>
-    </article>
+      </section>
+    </section>
   );
 };
 
-export default HomePromo;
+export default PromoSection;
