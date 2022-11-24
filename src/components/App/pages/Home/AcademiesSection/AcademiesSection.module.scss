@@ -4,7 +4,7 @@
   background-size: contain;
   display: flex;
   flex-direction: column;
-  padding: 12rem 20rem;
+  padding: toRem(120) toRem(200);
   text-align: center;
 
   &__heading {
@@ -19,20 +19,37 @@
     color: var(--color-grey-400);
     font-family: var(--font-family-base);
     font-size: var(--font-size-m);
-    font-weight: var(--font-weight-regular);
     margin-bottom: var(--spacer-4xl);
     margin-top: var(--spacer-3xl);
-    //text-overflow: ellipsis;
   }
 
   &__vertical-line {
     border-left: var(--border-width-m) solid var(--color-purple-400);
-    height: 4.8rem;
+    height: toRem(48);
     margin-bottom: var(--spacer-3xl);
   }
 
   &__button {
+    animation: upAndDown 1.2s ease-in-out infinite;
     height: var(--spacer-6xl);
     width: var(--spacer-6xl);
+
+    &:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes upAndDown {
+      0% {
+        transform: translateY(0);
+      }
+
+      40% {
+        transform: translateY(toRem(12));
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
   }
 }

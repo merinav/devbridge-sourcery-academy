@@ -23,7 +23,9 @@ const AcademiesSection = () => {
         entries.
       </p>
       <div className={cn('academies-section__vertical-line')}></div>
-      <ArrowButton className={cn('academies-section__button')} />
+      <a href="#">
+        <ArrowButton className={cn('academies-section__button')} />
+      </a>
     </section>
   );
 };
