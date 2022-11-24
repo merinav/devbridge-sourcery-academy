@@ -7,6 +7,6 @@
   &__main {
     display: flex;
     flex: 1;
-    padding: var(--spacer-xxl) var(--spacer-4xl);
+    padding: toRem(40) toRem(80);
   }
 }

@@ -1,0 +1,3 @@
+.layout__front-end {
+  @include page-layout($padding-t: toRem(90), $padding-b: toRem(188));
+}

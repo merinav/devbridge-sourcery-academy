@@ -1,0 +1,3 @@
+.layout__home {
+  @include page-layout($padding-t: toRem(194), $padding-b: toRem(188));
+}
