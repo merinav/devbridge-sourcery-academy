@@ -8,48 +8,46 @@ import styles from './NavDropdown.module';
 const cn = classNames.bind(styles);
 
 const NavDropdown = forwardRef(function NavDropdown(props, ref) {
-  const setIsOpen = props.setIsOpen;
+  const handleOpenDropdown = props.handleOpenDropdown;
+
+  const dropdownItems = [
+    {
+      text: 'Sourcery for Developers',
+      routePath: routes.developers,
+      id: 'developers',
+    },
+    {
+      text: 'Sourcery for Testers',
+      routePath: routes.testers,
+      id: 'testers',
+    },
+    {
+      text: 'Sourcery for Front-End',
+      routePath: routes.frontEnd,
+      id: 'frontEnd',
+    },
+    {
+      text: 'Sourcery for Kids',
+      routePath: routes.kids,
+      id: 'kids',
+    },
+  ];
 
   return (
     <>
       <div className={cn('dropdown-wrapper')} ref={ref}>
         <ul className={cn('dropdown__list')}>
-          <li className={cn('dropdown__list-item')}>
-            <Link
-              className={cn('dropdown__link')}
-              to={routes.developers}
-              onClick={() => setIsOpen(false)}
-            >
-              Sourcery for Developers
-            </Link>
-          </li>
-          <li className={cn('dropdown__list-item')}>
-            <Link
-              className={cn('dropdown__link')}
-              to={routes.testers}
-              onClick={() => setIsOpen(false)}
-            >
-              Sourcery for Testers
-            </Link>
-          </li>
-          <li className={cn('dropdown__list-item')}>
-            <Link
-              className={cn('dropdown__link')}
-              to={routes.frontEnd}
-              onClick={() => setIsOpen(false)}
-            >
-              Sourcery for Front-End
-            </Link>
-          </li>
-          <li className={cn('dropdown__list-item')}>
-            <Link
-              className={cn('dropdown__link')}
-              to={routes.kids}
-              onClick={() => setIsOpen(false)}
-            >
-              Sourcery for Kids
-            </Link>
-          </li>
+          {dropdownItems.map((item, index) => (
+            <li className={cn('dropdown__list-item')} key={item.id}>
+              <Link
+                className={cn('dropdown__link')}
+                to={item.routePath}
+                onClick={handleOpenDropdown}
+              >
+                {item.text}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </>
@@ -57,7 +55,7 @@ const NavDropdown = forwardRef(function NavDropdown(props, ref) {
 });
 
 NavDropdown.propTypes = {
-  setIsOpen: PropTypes.func,
+  handleOpenDropdown: PropTypes.func,
 };
 
 export default NavDropdown;

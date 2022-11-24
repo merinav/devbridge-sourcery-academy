@@ -13,6 +13,10 @@ const cn = classNames.bind(styles);
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleOpenDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
   const dropdownRef = useRef();
   const academiesRef = useRef();
 
@@ -55,7 +59,7 @@ export default function Header() {
               <button
                 className={cn('nav__link')}
                 to={'#'}
-                onClick={() => setIsOpen((isOpen) => !isOpen)}
+                onClick={handleOpenDropdown}
                 ref={academiesRef}
               >
                 Academies
@@ -74,8 +78,7 @@ export default function Header() {
               {isOpen && (
                 <NavDropdown
                   ref={dropdownRef}
-                  isOpen={isOpen}
-                  setIsOpen={setIsOpen}
+                  handleOpenDropdown={handleOpenDropdown}
                 />
               )}
             </li>
