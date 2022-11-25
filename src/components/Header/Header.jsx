@@ -58,21 +58,14 @@ export default function Header() {
             >
               <button
                 className={cn('nav__link')}
-                to={'#'}
                 onClick={handleOpenDropdown}
                 ref={academiesRef}
               >
                 Academies
                 {isOpen ? (
-                  <Icon_arrow_up
-                    className={cn('dropdown-icon')}
-                    alt="Arrow up icon"
-                  />
+                  <Icon_arrow_up className={cn('dropdown-icon')} />
                 ) : (
-                  <Icon_arrow_down
-                    className={cn('dropdown-icon')}
-                    alt="Arrow down icon"
-                  />
+                  <Icon_arrow_down className={cn('dropdown-icon')} />
                 )}
               </button>
               {isOpen && (

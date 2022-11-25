@@ -3,7 +3,7 @@
   box-shadow: 0 toRem(10) toRem(30) var(--shadow);
   padding: var(--spacer-s) 0;
   position: absolute;
-  top: calc(var(--spacer-xl) * 2);
+  top: 4.8rem;
   transform: translateX(-25%);
   z-index: 1;
 
@@ -13,7 +13,7 @@
     content: '';
     left: 50%;
     position: absolute;
-    top: calc(-1 * var(--spacer-m) * 2);
+    top: -3.2rem;
     transform: translateX(-50%);
   }
 
@@ -25,7 +25,7 @@
   .dropdown__link {
     color: var(--color-purple-400);
     font-size: var(--font-size-s);
-    line-height: calc(toRem(16) / var(--font-size-s));
+    line-height: var(--line-height-m);
     padding: var(--spacer-m) var(--spacer-l);
     text-decoration: none;
     white-space: nowrap;

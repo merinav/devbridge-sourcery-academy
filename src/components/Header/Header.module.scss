@@ -20,7 +20,7 @@
     .logo-name {
       font-size: unset;
       font-weight: var(--font-weight-bold);
-      line-height: calc(toRem(21) / var(--font-size-m));
+      line-height: var(--line-height-l);
       margin: 0 0 0 var(--spacer-l);
     }
 
@@ -76,7 +76,7 @@
       color: var(--color-purple-400);
       display: flex;
       gap: var(--spacer-s);
-      line-height: calc(toRem(21) / var(--font-size-m));
+      line-height: var(--line-height-l);
       position: relative;
       text-decoration: none;
 

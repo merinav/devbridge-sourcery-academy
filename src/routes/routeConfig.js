@@ -6,6 +6,7 @@ const Developers = lazy(() =>
 );
 const Testers = lazy(() => import('../components/App/pages/academy/Testers'));
 const FrontEnd = lazy(() => import('../components/App/pages/academy/FrontEnd'));
+const Kids = lazy(() => import('../components/App/pages/academy/Kids'));
 const Register = lazy(() => import('../components/App/pages/Register'));
 const NotFound = lazy(() => import('../components/App/pages/NotFound'));
 
@@ -35,6 +36,10 @@ export const routeConfig = {
   frontEnd: {
     path: routes.frontEnd,
     component: FrontEnd,
+  },
+  kids: {
+    path: routes.kids,
+    component: Kids,
   },
   register: {
     path: routes.register,
