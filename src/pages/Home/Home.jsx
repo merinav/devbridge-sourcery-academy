@@ -1,5 +1,5 @@
 import React from 'react';
-import AcademiesSection from './AcademiesSection/AcademiesSection';
+import AcademiesSection from './AcademiesSection';
 
 function Home() {
   return <AcademiesSection />;

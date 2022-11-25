@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import styles from './AcademiesSection.module.scss';
 import backgroundParticles from '~/assets/images/Background_particles_Academies.svg?url';
 import ArrowButton from '~/assets/icons/Icon_arrow_down_circle.svg';
+import styles from './AcademiesSection.module.scss';
 
 const cn = classNames.bind(styles);
 

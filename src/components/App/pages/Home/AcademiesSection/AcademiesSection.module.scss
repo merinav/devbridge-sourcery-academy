@@ -12,12 +12,12 @@
     font-family: var(--font-family-headline);
     font-size: var(--font-size-xxl);
     font-weight: var(--font-weight-bold);
+    line-height: normal;
     margin: 0;
   }
 
   &__paragraph {
     color: var(--color-grey-400);
-    font-family: var(--font-family-base);
     font-size: var(--font-size-m);
     margin-bottom: var(--spacer-4xl);
     margin-top: var(--spacer-3xl);
@@ -30,7 +30,7 @@
   }
 
   &__button {
-    animation: upAndDown 1.2s ease-in-out infinite;
+    animation: upAndDown 1.3s ease-in-out 5;
     height: var(--spacer-6xl);
     width: var(--spacer-6xl);
 
@@ -44,7 +44,7 @@
       }
 
       40% {
-        transform: translateY(toRem(12));
+        transform: translateY(toRem(11));
       }
 
       100% {
