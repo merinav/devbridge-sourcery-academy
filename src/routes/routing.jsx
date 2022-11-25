@@ -6,7 +6,7 @@ export const RouteManager = React.memo(() => {
   return (
     <Routes>
       {Object.entries(routeConfig).map(([key, route]) => {
-        const { component: Component, path, layout } = route;
+        const { component: Component, path } = route;
         return (
           <Route
             key={key}
