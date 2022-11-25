@@ -1,40 +1,61 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './Button.module.scss';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const cn = classNames.bind(styles);
 
 const COLOR = {
   RED: 'red',
   GREEN: 'green',
-  BLUE: 'blue',
   VIOLET: 'violet',
 };
 
-const Button = (props) => {
+const Button = ({ color, href, children, type, onClick, to }) => {
   const className = cn(styles.button, {
-    [styles.red]: props.color === COLOR.RED,
-    [styles.green]: props.color === COLOR.GREEN,
-    [styles.blue]: props.color === COLOR.BLUE,
-    [styles.violet]: props.color === COLOR.VIOLET,
+    [styles['button--red']]: color === COLOR.RED,
+    [styles['button--green']]: color === COLOR.GREEN,
+    [styles['button--violet']]: color === COLOR.VIOLET,
   });
 
-  if (props.href) {
+  console.log(className);
+
+  if (href) {
     return (
-      <a href={props.href} className={className}>
-        {props.children}
+      <a
+        href={href}
+        className={className}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {children}
       </a>
     );
+  } else if (to) {
+    return (
+      <Link to={to} className={cn('button-wrapper')}>
+        <button className={className} type={type || 'button'} onClick={onClick}>
+          {children}
+        </button>
+      </Link>
+    );
+  } else {
+    return (
+      <button type={type || 'button'} className={className} onClick={onClick}>
+        {children}
+      </button>
+    );
   }
-  return (
-    <button
-      type={props.type || 'button'}
-      className={`${cn('button')} ${className}`}
-      onClick={props.onClick}
-    >
-      {props.children}
-    </button>
-  );
+};
+
+Button.propTypes = {
+  color: PropTypes.oneOf(['red', 'green', 'violet']),
+  href: PropTypes.string,
+  children: PropTypes.node,
+  type: PropTypes.string,
+  onClick: PropTypes.func,
+  to: PropTypes.string,
 };
 
 export default Button;

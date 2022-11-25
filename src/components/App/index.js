@@ -4,14 +4,13 @@ import { RouteManager } from '../../routes/routing';
 import Header from '../Header';
 import Footer from '../Footer';
 import Button from '../Button';
+import { routes } from '../../routes/routeConfig';
 
 export default function App() {
   return (
     <>
       <Header />
-      <Button href="https://sourceryacademy.com" color="blue">
-        Show Academies
-      </Button>
+      <Button color="violet">Button</Button>
       <RouteManager />
       <Footer />
     </>
