@@ -19,8 +19,6 @@ const Button = ({ color, href, children, type, onClick, to }) => {
     [styles['button--violet']]: color === COLOR.VIOLET,
   });
 
-  console.log(className);
-
   if (href) {
     return (
       <a
