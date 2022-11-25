@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { RouteManager } from './routes/';
-import MainLayout from './components/MainLayout';
+import Layout from './components/Layout';
 
 import './sass/global.scss';
 
@@ -10,9 +10,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
-      <MainLayout>
+      <Layout>
         <RouteManager />
-      </MainLayout>
+      </Layout>
     </Router>
   </React.StrictMode>
 );
