@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { routes } from '../../routes/routeConfig';
 import classNames from 'classnames/bind';
@@ -10,12 +11,18 @@ import styles from './Header.module';
 
 const cn = classNames.bind(styles);
 
+function ListItem({ to, children }) {
+  return (
+    <li className={cn('nav__list-item')}>
+      <Link className={cn('nav__link')} to={to}>
+        {children}
+      </Link>
+    </li>
+  );
+}
+
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-
-  const handleOpenDropdown = () => {
-    setIsOpen(!isOpen);
-  };
 
   const dropdownRef = useRef();
   const academiesRef = useRef();
@@ -25,9 +32,8 @@ export default function Header() {
       if (
         !dropdownRef?.current?.contains(event.target) &&
         !academiesRef?.current?.contains(event.target)
-      ) {
+      )
         setIsOpen(false);
-      }
     };
 
     document.addEventListener('mousedown', handleCloseDropdown);
@@ -48,17 +54,14 @@ export default function Header() {
       <div className={cn('nav-wrapper')}>
         <nav className={cn('nav')}>
           <ul className={cn('nav__list')}>
-            <li className={cn('nav__list-item')}>
-              <Link className={cn('nav__link')} to={'#'}>
-                About us
-              </Link>
-            </li>
+            <ListItem to={'#'}>About us</ListItem>
+
             <li
               className={cn('nav__list-item', 'nav__list-item--have-dropdown')}
             >
               <button
                 className={cn('nav__link')}
-                onClick={handleOpenDropdown}
+                onClick={() => setIsOpen((prevState) => !prevState)}
                 ref={academiesRef}
               >
                 Academies
@@ -69,30 +72,21 @@ export default function Header() {
                 )}
               </button>
               {isOpen && (
-                <NavDropdown
-                  ref={dropdownRef}
-                  handleOpenDropdown={handleOpenDropdown}
-                />
+                <NavDropdown ref={dropdownRef} setIsOpen={setIsOpen} />
               )}
             </li>
-            <li className={cn('nav__list-item')}>
-              <Link className={cn('nav__link')} to={'#'}>
-                Media
-              </Link>
-            </li>
-            <li className={cn('nav__list-item')}>
-              <Link className={cn('nav__link')} to={'#'}>
-                Register
-              </Link>
-            </li>
-            <li className={cn('nav__list-item')}>
-              <Link className={cn('nav__link')} to={'#'}>
-                Questions
-              </Link>
-            </li>
+
+            <ListItem to={'#'}>Media</ListItem>
+            <ListItem to={'#'}>Register</ListItem>
+            <ListItem to={'#'}>Questions</ListItem>
           </ul>
         </nav>
       </div>
     </header>
   );
 }
+
+ListItem.propTypes = {
+  to: PropTypes.string,
+  children: PropTypes.node.isRequired,
+};
