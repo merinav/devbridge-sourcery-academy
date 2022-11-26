@@ -37,11 +37,11 @@ export default function Header() {
     };
 
     document.addEventListener('mousedown', handleCloseDropdown);
-    document.addEventListener('keydown', handleCloseDropdown);
+    document.addEventListener('keyup', handleCloseDropdown);
 
     return () => {
       document.removeEventListener('mousedown', handleCloseDropdown);
-      document.removeEventListener('keydown', handleCloseDropdown);
+      document.removeEventListener('keyup', handleCloseDropdown);
     };
   }, []);
 

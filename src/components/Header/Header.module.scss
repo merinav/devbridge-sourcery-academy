@@ -18,7 +18,7 @@
     }
 
     .logo-name {
-      font-size: unset;
+      font-size: var(--font-size-m);
       font-weight: var(--font-weight-bold);
       line-height: var(--line-height-l);
       margin: 0 0 0 var(--spacer-l);
