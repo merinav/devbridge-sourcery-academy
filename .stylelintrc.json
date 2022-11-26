@@ -67,9 +67,10 @@
       }
     ],
     "selector-class-pattern": [
-      "^\\.[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$",
+      "^[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$",
       {
-        "resolveNestedSelectors": true
+        "resolveNestedSelectors": true,
+        "message": "Class names should match the hyphenated BEM naming convention"
       }
     ]
   }
