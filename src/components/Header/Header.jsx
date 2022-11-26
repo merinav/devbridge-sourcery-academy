@@ -6,22 +6,13 @@ import classNames from 'classnames/bind';
 import Logo_SA from '../../assets/logos/Logo_SA.svg';
 import Icon_arrow_down from '../../assets/icons/Icon_arrow_down.svg';
 import Icon_arrow_up from '../../assets/icons/Icon_arrow_up.svg';
+import NavLink from './NavLink';
 import NavDropdown from './NavDropdown';
 import styles from './Header.module';
 
 const cn = classNames.bind(styles);
 
-function ListItem({ to, children }) {
-  return (
-    <li className={cn('nav__list-item')}>
-      <Link className={cn('nav__link')} to={to}>
-        {children}
-      </Link>
-    </li>
-  );
-}
-
-export default function Header() {
+function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const dropdownRef = useRef();
@@ -54,7 +45,7 @@ export default function Header() {
       <div className={cn('nav-wrapper')}>
         <nav className={cn('nav')}>
           <ul className={cn('nav__list')}>
-            <ListItem to={'#'}>About us</ListItem>
+            <NavLink to={'#'}>About us</NavLink>
 
             <li
               className={cn('nav__list-item', 'nav__list-item--have-dropdown')}
@@ -76,9 +67,9 @@ export default function Header() {
               )}
             </li>
 
-            <ListItem to={'#'}>Media</ListItem>
-            <ListItem to={'#'}>Register</ListItem>
-            <ListItem to={'#'}>Questions</ListItem>
+            <NavLink to={'#'}>Media</NavLink>
+            <NavLink to={'#'}>Register</NavLink>
+            <NavLink to={'#'}>Questions</NavLink>
           </ul>
         </nav>
       </div>
@@ -86,7 +77,4 @@ export default function Header() {
   );
 }
 
-ListItem.propTypes = {
-  to: PropTypes.string,
-  children: PropTypes.node.isRequired,
-};
+export default Header;
