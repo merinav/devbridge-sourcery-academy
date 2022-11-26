@@ -1,5 +1,5 @@
 import React from 'react';
-import PromoSection from './PromoSection/PromoSection';
+import PromoSection from './PromoSection';
 
 const Home = () => {
   return <PromoSection />;
