@@ -8,5 +8,8 @@
     display: flex;
     flex: 1;
     padding: var(--spacer-5xl) calc(var(--spacer-5xl) * 2);
+    @include mobile-only {
+      padding: var(--spacer-5xl) var(--spacer-5xl);
+    }
   }
 }
