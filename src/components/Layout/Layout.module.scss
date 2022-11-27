@@ -5,8 +5,12 @@
   min-height: 100vh;
 
   &__main {
+    @include mobile-only {
+      padding: var(--spacer-5xl);
+    }
+
     display: flex;
     flex: 1;
-    padding: var(--spacer-5xl) calc(var(--spacer-5xl) * 2);
+    padding: var(--spacer-5xl) toRem(80);
   }
 }

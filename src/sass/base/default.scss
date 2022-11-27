@@ -15,6 +15,11 @@ html {
 }
 
 body {
+  @include big-desktop-up {
+    margin: auto;
+    max-width: 1440px;
+  }
+
   font-family: var(--font-family-base);
   font-size: var(--font-size-m);
   line-height: var(--line-height-m);
