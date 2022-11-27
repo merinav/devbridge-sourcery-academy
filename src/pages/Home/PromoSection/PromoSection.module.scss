@@ -1,13 +1,13 @@
 .promo-section {
-  align-content: center;
   align-items: center;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   padding: var(--spacer-5xl) 0;
+
   @include tablet-landscape {
     padding: 0;
   }
+
   @include tablet-portrait {
     flex-direction: column;
   }
@@ -20,22 +20,26 @@
   padding: var(--spacer-xxl) 0 0 0;
   width: 36%;
   word-break: break-word;
+
   @include tablet-landscape {
     padding: 0;
     width: 55%;
   }
+
   @include tablet-portrait {
     width: 100%;
   }
 
   &__heading {
     margin: 0;
+
     @include h1-h2;
   }
 
   &__text {
     margin-bottom: var(--spacer-6xl);
     margin-top: var(--spacer-4xl);
+
     @include paragraph;
   }
 
@@ -48,12 +52,15 @@
   margin: 0;
   padding: 0;
   width: 50%;
+
   @include tablet-landscape {
     width: 35%;
   }
+
   @include tablet-portrait {
     width: 60%;
   }
+
   @include mobile-only {
     display: none;
   }

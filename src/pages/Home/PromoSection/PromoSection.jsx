@@ -8,9 +8,9 @@ const cn = classNames.bind(styles);
 const PromoSection = () => {
   return (
     <section className={cn('promo-section')}>
-      <section className={cn('section-text')}>
+      <div className={cn('section-text')}>
         <h1 className={cn('section-text__heading')}>
-          Sourcery <br></br>
+          Sourcery <br />
           Academy
         </h1>
         <p className={cn('section-text__text')}>
@@ -21,9 +21,9 @@ const PromoSection = () => {
           entering information technologies studies.
         </p>
         <p className={cn('section-text__button')}>BUTTON WILL BE HERE</p>
-      </section>
+      </div>
       <figure className={cn('section-image')}>
-        <Image_Promo />
+        <Image_Promo alt="" />
       </figure>
     </section>
   );
