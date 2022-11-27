@@ -43,9 +43,7 @@
       align-items: center;
       display: flex;
       gap: var(--spacer-xl);
-      list-style: none;
-      margin: 0;
-      padding: 0;
+      @include reset-list-style;
     }
 
     &__list-item {

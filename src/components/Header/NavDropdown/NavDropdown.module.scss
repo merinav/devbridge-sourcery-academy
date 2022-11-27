@@ -18,8 +18,7 @@
   }
 
   .dropdown__list {
-    list-style: none;
-    padding: 0;
+    @include reset-list-style;
   }
 
   .dropdown__link {
