@@ -1,9 +1,4 @@
 .promo-section {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  padding: var(--spacer-5xl) 0;
-
   @include tablet-landscape {
     padding: 0;
   }
@@ -11,16 +6,14 @@
   @include tablet-portrait {
     flex-direction: column;
   }
+
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacer-5xl) 0;
 }
 
 .section-text {
-  display: flex;
-  flex-direction: column;
-  overflow-wrap: break-word;
-  padding: var(--spacer-xxl) 0 0 0;
-  width: 36%;
-  word-break: break-word;
-
   @include tablet-landscape {
     padding: 0;
     width: 55%;
@@ -30,17 +23,24 @@
     width: 100%;
   }
 
-  &__heading {
-    margin: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: break-word;
+  padding: var(--spacer-xxl) 0 0 0;
+  width: 36%;
+  word-break: break-word;
 
+  &__heading {
     @include h1-h2;
+
+    margin: 0;
   }
 
   &__text {
+    @include paragraph;
+
     margin-bottom: var(--spacer-6xl);
     margin-top: var(--spacer-4xl);
-
-    @include paragraph;
   }
 
   &__button {
@@ -49,10 +49,6 @@
 }
 
 .section-image {
-  margin: 0;
-  padding: 0;
-  width: 50%;
-
   @include tablet-landscape {
     width: 35%;
   }
@@ -64,4 +60,8 @@
   @include mobile-only {
     display: none;
   }
+
+  margin: 0;
+  padding: 0;
+  width: 50%;
 }
