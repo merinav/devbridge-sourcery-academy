@@ -1,7 +1,8 @@
 import React from 'react';
+import PromoSection from './PromoSection';
 
-function Home() {
-  return <>/</>;
-}
+const Home = () => {
+  return <PromoSection />;
+};
 
 export default Home;
