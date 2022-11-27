@@ -56,10 +56,9 @@
       position: relative;
 
       button {
-        -webkit-appearance: none;
-        -moz-appearance: none;
+        appearance: none;
         background: none;
-        border: none;
+        border: 0;
         cursor: pointer;
         font-family: inherit;
         font-size: 100%;
