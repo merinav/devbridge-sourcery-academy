@@ -14,7 +14,7 @@ function Layout({ children }) {
     <div className={cn('layout')}>
       <Header />
       <main className={cn('layout__main')}>
-        <Button to={routes.developers} color="violet">
+        <Button color="violet" to={routes.developers}>
           Button
         </Button>
         {children}

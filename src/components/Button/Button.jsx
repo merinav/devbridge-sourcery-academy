@@ -10,13 +10,14 @@ const COLOR = {
   RED: 'red',
   GREEN: 'green',
   VIOLET: 'violet',
+  BLUE: 'blue',
 };
 
 const Button = ({ color, href, children, type, onClick, to }) => {
   const className = cn(styles.button, {
-    [styles['button--red']]: color === COLOR.RED,
-    [styles['button--green']]: color === COLOR.GREEN,
-    [styles['button--violet']]: color === COLOR.VIOLET,
+    'button--red': color === COLOR.RED,
+    'button--green': color === COLOR.GREEN,
+    'button--blue': color === COLOR.BLUE,
   });
 
   if (href) {
@@ -32,10 +33,13 @@ const Button = ({ color, href, children, type, onClick, to }) => {
     );
   } else if (to) {
     return (
-      <Link to={to} className={cn('button-wrapper')}>
-        <button className={className} type={type || 'button'} onClick={onClick}>
-          {children}
-        </button>
+      <Link
+        to={to}
+        className={className}
+        type={type || 'button'}
+        onClick={onClick}
+      >
+        {children}
       </Link>
     );
   } else {
@@ -48,9 +52,9 @@ const Button = ({ color, href, children, type, onClick, to }) => {
 };
 
 Button.propTypes = {
-  color: PropTypes.oneOf(['red', 'green', 'violet']),
+  color: PropTypes.oneOf(['red', 'green', 'violet', 'blue']),
   href: PropTypes.string,
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
   type: PropTypes.string,
   onClick: PropTypes.func,
   to: PropTypes.string,
