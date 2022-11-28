@@ -53,65 +53,6 @@ function AcadList() {
       <AcadSection data={academyData.testers} img={Img_Testers} />
       <AcadSection data={academyData.frontEnd} img={Img_FrontEnd} />
       <AcadSection data={academyData.kids} img={Img_Kids} />
-
-      {/* <section
-        className={cn([
-          'academy-section',
-          'academy-section--test',
-          'academy-section--inv',
-        ])}
-      >
-        <div className={cn('academy-section__description')}>
-          <AcadDescription
-            title={academyData.testers.title}
-            paragr={academyData.testers.paragraph}
-            invertBtn={academyData.testers.invertBtn}
-          />
-        </div>
-
-        <div className={cn('academy-section__img')}>
-          <figure className={cn('img__test')}>
-            <Img_Testers />
-          </figure>
-        </div>
-      </section>
-
-      <section
-        className={cn([
-          'academy-section',
-          'academy-section--front',
-          'academy-section--inv',
-        ])}
-      >
-        <div className={cn('academy-section__description')}>
-          <AcadDescription
-            title={academyData.frontEnd.title}
-            paragr={academyData.frontEnd.paragraph}
-            invertBtn={academyData.frontEnd.invertBtn}
-          />
-        </div>
-
-        <div className={cn('academy-section__img')}>
-          <figure className={cn('img__front')}>
-            <Img_FrontEnd />
-          </figure>
-        </div>
-      </section>
-
-      <section className={cn(['academy-section', 'academy-section--kids'])}>
-        <div className={cn('academy-section__description')}>
-          <AcadDescription
-            title={academyData.kids.title}
-            paragr={academyData.kids.paragraph}
-          />
-        </div>
-
-        <div className={cn('academy-section__img')}>
-          <figure className={cn('img__kids')}>
-            <Img_Kids />
-          </figure>
-        </div>
-      </section> */}
     </div>
   );
 }
