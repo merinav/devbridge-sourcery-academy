@@ -5,13 +5,8 @@
   display: flex;
   flex-direction: column;
   margin-top: toRem(410);
-  padding: toRem(120) toRem(200);
+  padding: toRem(120);
   text-align: center;
-
-  @include desktop {
-    margin-top: toRem(410);
-    padding: toRem(120) toRem(120);
-  }
 
   @include tablet-landscape {
     margin-top: toRem(310);
@@ -19,13 +14,12 @@
   }
 
   @include tablet-portrait {
-    margin-top: toRem(310);
     padding: toRem(120) toRem(40);
   }
 
   @include mobile-only {
     margin-top: toRem(210);
-    padding: toRem(120) toRem(0);
+    padding: toRem(120) 0;
   }
 
   &__heading {
@@ -49,6 +43,8 @@
 
   &__button {
     animation: upAndDown 1.3s ease-in-out infinite;
+    background-color: var(--color-white);
+    border-radius: 50%;
     height: var(--spacer-6xl);
     width: var(--spacer-6xl);
 
