@@ -75,4 +75,7 @@
   --spacer-7xl: 6rem;
   --spacer-shadow: var(--spacer-l);
   --spacer: var(--spacer-m); /* alias for --spacer-m */
+
+  /* Z-indexes */
+  --z-header: 10;
 }

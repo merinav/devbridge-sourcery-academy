@@ -7,6 +7,7 @@
   padding: var(--spacer-xxl) var(--spacer-5xl);
   position: sticky;
   top: 0;
+  z-index: var(--z-header);
 
   &__logo-wrapper {
     align-items: center;
