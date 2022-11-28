@@ -20,7 +20,6 @@ const PromoSection = () => {
           long- term commitment to increase the number of students in Lithuania
           entering information technologies studies.
         </p>
-        <p className={cn('section-text__button')}>BUTTON WILL BE HERE</p>
       </div>
       <figure className={cn('section-image')}>
         <Image_Promo alt="" />
