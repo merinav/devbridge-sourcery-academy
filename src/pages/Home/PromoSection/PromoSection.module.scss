@@ -42,10 +42,6 @@
     margin-bottom: var(--spacer-6xl);
     margin-top: var(--spacer-4xl);
   }
-
-  &__button {
-    color: var(--color-red-200);
-  }
 }
 
 .section-image {
@@ -54,6 +50,7 @@
   }
 
   @include tablet-portrait {
+    margin-top: var(--spacer-m);
     width: 60%;
   }
 
