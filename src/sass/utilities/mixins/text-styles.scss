@@ -3,7 +3,7 @@
   font-family: var(--font-family-headline);
   font-size: var(--font-size-xxl);
   font-weight: var(--font-weight-bold);
-  line-height: normal;
+  line-height: var(--line-height-xl);
 }
 
 @mixin header-3 {
