@@ -1,0 +1,71 @@
+.academy-section {
+  display: flex;
+  gap: 3rem;
+  justify-content: space-between;
+  max-width: toRem(1137.87);
+  width: 100%;
+
+  &__description {
+    flex: 1;
+    // max-width: toRem(552);
+  }
+
+  &__img {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+
+  &--inv {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+
+  &--dev {
+    gap: toRem(148.69);
+  }
+
+  &--test {
+    gap: toRem(180.27);
+    margin-top: toRem(141);
+  }
+
+  &--front {
+    gap: toRem(129.56);
+    margin-top: toRem(238);
+  }
+
+  &--kids {
+    gap: toRem(174.62);
+    margin-top: toRem(154);
+  }
+}
+
+.img {
+  &__dev {
+    @include reset-list-style;
+
+    bottom: 2rem;
+    max-width: toRem(430.17);
+    position: relative;
+    width: toRem(430.17);
+  }
+
+  &__test {
+    @include reset-list-style;
+
+    width: toRem(352.6);
+  }
+
+  &__front {
+    @include reset-list-style;
+
+    width: toRem(453.14);
+  }
+
+  &__kids {
+    @include reset-list-style;
+
+    width: toRem(458.38);
+  }
+}
