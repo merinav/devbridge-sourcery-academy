@@ -1,7 +1,12 @@
 import React from 'react';
+import PromoSection from './PromoSection';
+import AcademiesSection from './AcademiesSection';
 
-function Home() {
-  return <>/</>;
+const Home = () => {
+  return <>
+    <PromoSection />
+    <AcademiesSection />
+  </>
 }
 
 export default Home;

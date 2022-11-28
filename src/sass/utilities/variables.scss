@@ -17,6 +17,7 @@
   --color-red-200: hsl(344, 85%, 52%);
   --color-red-300: hsl(344, 79%, 42%);
   --color-red-400: hsl(344, 100%, 35%);
+  --color-grey-100: hsl(270, 11%, 96%);
   --color-grey-200: hsl(0, 0%, 53%);
   --color-grey-300: hsl(0, 0%, 36%);
   --color-grey-400: hsl(247, 13%, 27%);
@@ -26,7 +27,7 @@
   --color-white: hsl(0, 0%, 100%);
 
   /* Shadows */
-  --shadow: hsl(270, 11%, 96%);
+  --shadow: hsla(0, 0%, 0%, 0.15);
 
   /* Border */
   --border-width-s: 0.1rem;
@@ -57,10 +58,9 @@
   --font-weight-bold: 700;
 
   /* Line heights */
-  --line-height-m: 1.6;
-  --line-height-l: 2.1;
-  --line-height-xl: 3.9;
-  --line-height-xxl: 5.9;
+  --line-height-m: 1.14;
+  --line-height-l: 1.17;
+  --line-height-xl: 1.22;
 
   /* Spacers */
   --spacer-s: 0.8rem;
