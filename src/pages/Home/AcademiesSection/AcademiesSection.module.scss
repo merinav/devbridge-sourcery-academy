@@ -4,22 +4,27 @@
   background-size: contain;
   display: flex;
   flex-direction: column;
+  margin-top: toRem(410);
   padding: toRem(120) toRem(200);
   text-align: center;
 
   @include desktop {
+    margin-top: toRem(410);
     padding: toRem(120) toRem(120);
   }
 
   @include tablet-landscape {
+    margin-top: toRem(310);
     padding: toRem(120) toRem(80);
   }
 
   @include tablet-portrait {
+    margin-top: toRem(310);
     padding: toRem(120) toRem(40);
   }
 
   @include mobile-only {
+    margin-top: toRem(210);
     padding: toRem(120) toRem(0);
   }
 
