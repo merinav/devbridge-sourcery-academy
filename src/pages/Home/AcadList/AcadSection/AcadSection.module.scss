@@ -30,8 +30,10 @@
   }
 
   &--test {
-    gap: toRem(180.27);
+    gap: toRem(100);
+    margin: 0;
     margin-top: toRem(141);
+    padding: 0;
   }
 
   &--front {
@@ -41,6 +43,7 @@
 
   &--kids {
     gap: toRem(174.62);
+    margin-bottom: toRem(314);
     margin-top: toRem(154);
   }
 }
@@ -50,6 +53,7 @@
     @include reset-list-style;
 
     bottom: 4rem;
+    display: block;
     max-width: toRem(430.17);
     position: relative;
     width: 100%;
@@ -58,33 +62,46 @@
   &__test {
     @include reset-list-style;
 
-    width: toRem(352.6);
+    display: block;
+    max-width: toRem(352.6);
+    // position: relative;
+    width: 100%;
   }
 
   &__front {
     @include reset-list-style;
 
-    width: toRem(453.14);
+    max-width: toRem(453.14);
+    width: 100%;
   }
 
   &__kids {
     @include reset-list-style;
 
-    width: toRem(458.38);
+    max-width: toRem(458.38);
+    width: 100%;
   }
 }
 
 .path {
-  // position: relative;
-  // width: 100%;
-  // overflow: hidden;
+  position: absolute;
 
   &--dev {
-    bottom: -13rem; // height: 100%
+    bottom: -13rem;
     left: -5rem;
-    // max-height: toRem(646.76);
-    // max-width: toRem(665.02);
-    position: absolute;
+    // position: absolute;
     width: 134%;
+  }
+
+  &--test {
+    right: 0;
+    top: -9rem;
+    width: 118%;
+  }
+
+  &--kids {
+    left: -6rem;
+    top: -3rem;
+    width: 140%;
   }
 }

@@ -1,5 +1,6 @@
 .academy {
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .academy__title {
@@ -31,7 +32,6 @@
   padding: toRem(12) toRem(24);
 
   &--inv {
-    position: absolute;
-    right: 0;
+    align-self: flex-end;
   }
 }
