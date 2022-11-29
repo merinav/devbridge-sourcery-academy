@@ -1,7 +1,7 @@
 .academy-section {
   align-items: center;
   display: flex;
-  gap: 3rem;
+  // gap: 3rem;
   justify-content: space-between;
   // max-width: toRem(1137.87);
   width: 100%;
@@ -26,7 +26,7 @@
   }
 
   &--dev {
-    gap: toRem(100);
+    // gap: toRem(68);
   }
 
   &--test {
@@ -52,9 +52,10 @@
   &__dev {
     @include reset-list-style;
 
-    bottom: 4rem;
-    display: block;
-    max-width: toRem(430.17);
+    bottom: 7rem;
+    display: flex;
+    justify-content: center;
+    left: 14rem;
     position: relative;
     width: 100%;
   }
@@ -83,25 +84,25 @@
   }
 }
 
-.path {
-  position: absolute;
+// .path {
+//   position: absolute;
 
-  &--dev {
-    bottom: -13rem;
-    left: -5rem;
-    // position: absolute;
-    width: 134%;
-  }
+//   &--dev {
+//     bottom: -13rem;
+//     left: -8rem;
+//     // position: absolute;
+//     width: 134%;
+//   }
 
-  &--test {
-    right: 0;
-    top: -9rem;
-    width: 118%;
-  }
+//   &--test {
+//     right: 0;
+//     top: -9rem;
+//     width: 118%;
+//   }
 
-  &--kids {
-    left: -6rem;
-    top: -3rem;
-    width: 140%;
-  }
-}
+//   &--kids {
+//     left: -6rem;
+//     top: -3rem;
+//     width: 140%;
+// }
+// }
