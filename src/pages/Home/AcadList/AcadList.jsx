@@ -8,6 +8,8 @@ import Img_FrontEnd from '/src/assets/images/Image_Academy_Front_End.svg';
 import Img_Kids from '/src/assets/images/Image_Academy_Kids.svg';
 
 import Path_Developers from '/src/assets/images/Path_Academy_Developers.svg';
+import Path_Testers from '/src/assets/images/Path_Academy_Testers.svg';
+import Path_Kids from '/src/assets/images/Path_Academy_Kids.svg';
 
 import styles from './AcadList.module';
 
@@ -56,9 +58,13 @@ function AcadList() {
         img={Img_Developers}
         bgSvg={Path_Developers}
       />
-      <AcadSection data={academyData.testers} img={Img_Testers} />
+      <AcadSection
+        data={academyData.testers}
+        img={Img_Testers}
+        bgSvg={Path_Testers}
+      />
       <AcadSection data={academyData.frontEnd} img={Img_FrontEnd} />
-      <AcadSection data={academyData.kids} img={Img_Kids} />
+      <AcadSection data={academyData.kids} img={Img_Kids} bgSvg={Path_Kids} />
     </div>
   );
 }
