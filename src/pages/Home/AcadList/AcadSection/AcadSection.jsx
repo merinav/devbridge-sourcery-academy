@@ -29,7 +29,7 @@ function AcadSection({ data, img: Img, bgSvg: BgSvg }) {
       <div className={cn('academy-section__img')}>
         <figure className={cn(`img__${data.id}`)}>
           <Img />
-          {BgSvg && <div className={cn(['path--dev'])}>{<BgSvg />}</div>}
+          {BgSvg && <div className={cn([`path--${data.id}`])}>{<BgSvg />}</div>}
         </figure>
       </div>
     </section>
