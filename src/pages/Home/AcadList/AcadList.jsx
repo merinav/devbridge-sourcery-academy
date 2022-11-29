@@ -7,6 +7,8 @@ import Img_Testers from '/src/assets/images/Image_Academy_Testers.svg';
 import Img_FrontEnd from '/src/assets/images/Image_Academy_Front_End.svg';
 import Img_Kids from '/src/assets/images/Image_Academy_Kids.svg';
 
+import Path_Developers from '/src/assets/images/Path_Academy_Developers.svg';
+
 import styles from './AcadList.module';
 
 const cn = classNames.bind(styles);
@@ -49,7 +51,11 @@ const academyData = {
 function AcadList() {
   return (
     <div className={cn('academy-list')}>
-      <AcadSection data={academyData.developers} img={Img_Developers} />
+      <AcadSection
+        data={academyData.developers}
+        img={Img_Developers}
+        bgSvg={Path_Developers}
+      />
       <AcadSection data={academyData.testers} img={Img_Testers} />
       <AcadSection data={academyData.frontEnd} img={Img_FrontEnd} />
       <AcadSection data={academyData.kids} img={Img_Kids} />

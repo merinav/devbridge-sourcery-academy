@@ -112,7 +112,7 @@ const config = {
         test: /\.svg$/i,
         issuer: /\.(js|jsx)$/,
         resourceQuery: { not: [/url/] }, // exclude react component if *.svg?url
-        use: ['@svgr/webpack'],
+        use: [{ loader: '@svgr/webpack', options: { dimensions: false } }],
       },
     ],
   },

@@ -1,19 +1,23 @@
 .academy-section {
+  align-items: center;
   display: flex;
   gap: 3rem;
   justify-content: space-between;
-  max-width: toRem(1137.87);
+  // max-width: toRem(1137.87);
   width: 100%;
 
   &__description {
     flex: 1;
-    // max-width: toRem(552);
+    min-width: toRem(405);
   }
 
   &__img {
+    align-items: center;
     display: flex;
     flex: 1;
     justify-content: center;
+    min-width: toRem(240);
+    position: relative;
   }
 
   &--inv {
@@ -22,7 +26,7 @@
   }
 
   &--dev {
-    gap: toRem(148.69);
+    gap: toRem(100);
   }
 
   &--test {
@@ -45,10 +49,10 @@
   &__dev {
     @include reset-list-style;
 
-    bottom: 2rem;
+    bottom: 4rem;
     max-width: toRem(430.17);
     position: relative;
-    width: toRem(430.17);
+    width: 100%;
   }
 
   &__test {
@@ -67,5 +71,20 @@
     @include reset-list-style;
 
     width: toRem(458.38);
+  }
+}
+
+.path {
+  // position: relative;
+  // width: 100%;
+  // overflow: hidden;
+
+  &--dev {
+    bottom: -13rem; // height: 100%
+    left: -5rem;
+    // max-height: toRem(646.76);
+    // max-width: toRem(665.02);
+    position: absolute;
+    width: 134%;
   }
 }

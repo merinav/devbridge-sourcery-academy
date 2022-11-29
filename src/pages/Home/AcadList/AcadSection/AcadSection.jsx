@@ -7,7 +7,7 @@ import styles from './AcadSection.module';
 
 const cn = classNames.bind(styles);
 
-function AcadSection({ data, img: Img }) {
+function AcadSection({ data, img: Img, bgSvg: BgSvg }) {
   const invert = data.invert ? 'academy-section--inv' : '';
 
   return (
@@ -29,6 +29,7 @@ function AcadSection({ data, img: Img }) {
       <div className={cn('academy-section__img')}>
         <figure className={cn(`img__${data.id}`)}>
           <Img />
+          {BgSvg && <div className={cn(['path--dev'])}>{<BgSvg />}</div>}
         </figure>
       </div>
     </section>
@@ -38,6 +39,7 @@ function AcadSection({ data, img: Img }) {
 AcadSection.propTypes = {
   data: PropTypes.object.isRequired,
   img: PropTypes.func.isRequired,
+  bgSvg: PropTypes.func,
 };
 
 export default AcadSection;
