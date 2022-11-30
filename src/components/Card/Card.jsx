@@ -6,10 +6,7 @@ import styles from './Card.module.scss';
 const cn = classNames.bind(styles);
 
 const Card = ({ children }) => {
-  return (
-    <article className={cn('card-component')}>
-    </article>
-  );
+  return <div className={cn('card-component')}>{children}</div>;
 };
 
 Card.propTypes = {
@@ -17,4 +14,3 @@ Card.propTypes = {
 };
 
 export default Card;
-

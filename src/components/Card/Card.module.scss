@@ -1,8 +1,6 @@
 .card-component {
-  background-color: var(--color-white); //might delete later
+  background-color: var(--color-white);
   border: var(--border-width-m) solid var(--color-purple-400);
   border-radius: var(--border-radius-s);
   box-shadow: toRem(-20) toRem(20) 0 0 var(--color-grey-100);
-  height: toRem(368); //might delete later
-  width: toRem(341); //might delete later
 }
