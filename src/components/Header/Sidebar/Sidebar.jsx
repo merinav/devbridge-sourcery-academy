@@ -1,15 +1,14 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import styles from './Sidebar.module.css';
+import Navigation from '../Navigation';
+import styles from './Sidebar.module.scss';
 
 const cn = classNames.bind(styles);
 
 const Sidebar = () => {
   return (
-    <div className={cn('icon')} onClick>
-      <div className={styles.sidebarTakeover}>
-        <nav className={styles.navmenu}>{/* <MainNavigation /> */}</nav>
-      </div>
+    <div className={cn('overlay')}>
+      <Navigation className={cn('navmenu')} />
     </div>
   );
 };

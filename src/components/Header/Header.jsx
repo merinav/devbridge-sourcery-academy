@@ -5,6 +5,7 @@ import classNames from 'classnames/bind';
 import Logo_SA from '../../assets/logos/Logo_SA.svg';
 import Navigation from './Navigation';
 import HamburgerButton from './Hamburger/HamburgerButton';
+import Sidebar from './Sidebar/Sidebar';
 import mediaQuery from '../../hooks/mediaQuery';
 import styles from './Header.module';
 
@@ -30,12 +31,6 @@ function Header() {
   // });
 
   return (
-    // <header className={styles.header}>
-    //       <MyMoviesLogo className={styles.icon} />
-    //       {isMobile ? <HamburgerButton isActive={showSidebar} onClick={handleOnClick} /> : <MainNavigation />}
-    //       {isMobile && showSidebar && <Sidebar onBackDropClick={handleOnBackDropClick} />}
-    //     </header>
-
     <header className={cn('header')}>
       <Link className={cn('header__logo-wrapper')} to={routes.home}>
         <Logo_SA className={cn('logo-icon')} alt="Sourcery Academy logo" />
@@ -43,6 +38,7 @@ function Header() {
       </Link>
 
       {isMobile ? <HamburgerButton /> : <Navigation />}
+      {/* {isMobile && showSidebar && <Sidebar onClick={handleOnBackDropClick}/>} */}
     </header>
   );
 }
