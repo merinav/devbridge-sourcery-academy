@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 
-import AcadSection from './AcadSection';
+import AcadListSection from './AcadListSection';
 
 import Img_Developers from '/src/assets/images/Image_Academy_Developers.svg';
 import Img_Testers from '/src/assets/images/Image_Academy_Testers.svg';
@@ -58,10 +58,10 @@ const academyData = {
 function AcadList() {
   return (
     <div className={cn('academy-list')}>
-      <AcadSection data={academyData.developers} />
-      <AcadSection data={academyData.testers} />
-      <AcadSection data={academyData.frontEnd} />
-      <AcadSection data={academyData.kids} />
+      <AcadListSection data={academyData.developers} />
+      <AcadListSection data={academyData.testers} />
+      <AcadListSection data={academyData.frontEnd} />
+      <AcadListSection data={academyData.kids} />
     </div>
   );
 }

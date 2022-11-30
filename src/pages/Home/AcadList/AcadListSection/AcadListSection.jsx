@@ -1,13 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
 import AcadDescription from '../AcadDescription';
-import styles from './AcadSection.module';
+import styles from './AcadListSection.module';
 
 const cn = classNames.bind(styles);
 
-function AcadSection({ data }) {
+function AcadListSection({ data }) {
+  const [showPath, setShowPath] = useState(false);
+
+  const windowResizeHandler = useCallback(() => {
+    return window.innerWidth > 880 ? setShowPath(true) : setShowPath(false);
+  }, []);
+
+  useEffect(() => {
+    console.log(window.innerWidth, document.documentElement.clientWidth);
+    windowResizeHandler();
+
+    window.addEventListener('resize', windowResizeHandler);
+    return () => window.removeEventListener('resize', windowResizeHandler);
+  }, [windowResizeHandler]);
+
   const {
     id,
     title,
@@ -17,20 +31,8 @@ function AcadSection({ data }) {
     invert: invertBtn,
   } = data;
 
-  const [showPath, setShowPath] = useState(false);
-
-  useEffect(() => {
-    const windowResizeHandler = () =>
-      window.innerWidth > 880 ? setShowPath(true) : setShowPath(false);
-
-    window.addEventListener('resize', windowResizeHandler);
-    return () => window.removeEventListener('resize', windowResizeHandler);
-  }, []);
-
   const invert = invertBtn ? 'academy-section--inv' : '';
   const imgModifier = showPath ? `img__${id}--path` : '';
-
-  const renderedImage = showPath ? <SvgPath /> : <Img />;
 
   return (
     <section
@@ -46,15 +48,15 @@ function AcadSection({ data }) {
 
       <div className={cn('academy-section__img')}>
         <figure className={cn(`img__${id}`, `${imgModifier}`)}>
-          {renderedImage}
+          {showPath ? <SvgPath /> : <Img />}
         </figure>
       </div>
     </section>
   );
 }
 
-AcadSection.propTypes = {
+AcadListSection.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
-export default AcadSection;
+export default AcadListSection;
