@@ -10,7 +10,7 @@ const COLOR = {
   GREEN: 'green',
   RED: 'red',
 };
-const Card = ({ color, children }) => {
+const Card = ({ color = 'violet', children }) => {
   const className = cn(styles.card, {
     'card--violet': color === COLOR.VIOLET,
     'card--blue': color === COLOR.BLUE,

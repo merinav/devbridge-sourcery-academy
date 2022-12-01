@@ -3,6 +3,7 @@
   border: var(--border-width-m) solid;
   border-radius: var(--border-radius-s);
   box-shadow: toRem(-20) toRem(20) 0 0 var(--color-grey-100);
+  width: fit-content;
 
   &--violet {
     border-color: var(--color-purple-400);
