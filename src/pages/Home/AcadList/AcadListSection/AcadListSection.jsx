@@ -4,23 +4,12 @@ import classNames from 'classnames/bind';
 
 import AcadDescription from '../AcadDescription';
 import styles from './AcadListSection.module';
+import useMediaQuery from '/src/hooks/useMediaQuery';
 
 const cn = classNames.bind(styles);
 
 function AcadListSection({ data }) {
-  const [showPath, setShowPath] = useState(false);
-
-  const windowResizeHandler = useCallback(() => {
-    return window.innerWidth > 880 ? setShowPath(true) : setShowPath(false);
-  }, []);
-
-  useEffect(() => {
-    console.log(window.innerWidth, document.documentElement.clientWidth);
-    windowResizeHandler();
-
-    window.addEventListener('resize', windowResizeHandler);
-    return () => window.removeEventListener('resize', windowResizeHandler);
-  }, [windowResizeHandler]);
+  const isDesktop = useMediaQuery('(min-width: 1200px)');
 
   const {
     id,
@@ -32,7 +21,7 @@ function AcadListSection({ data }) {
   } = data;
 
   const invert = invertBtn ? 'academy-section--inv' : '';
-  const imgModifier = showPath ? `img__${id}--path` : '';
+  const imgModifier = isDesktop ? `img__${id}--path` : '';
 
   return (
     <section
@@ -48,7 +37,7 @@ function AcadListSection({ data }) {
 
       <div className={cn('academy-section__img')}>
         <figure className={cn(`img__${id}`, `${imgModifier}`)}>
-          {showPath ? <SvgPath /> : <Img />}
+          {isDesktop ? <SvgPath /> : <Img />}
         </figure>
       </div>
     </section>
