@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Header from '../Header';
 import Footer from '../Footer';
-import Card from '~/components/Card';
+import Card from '../Card';
 import styles from './Layout.module';
 
 const cn = classNames.bind(styles);
