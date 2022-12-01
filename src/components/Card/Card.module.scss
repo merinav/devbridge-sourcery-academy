@@ -1,6 +1,22 @@
-.card-component {
+.card {
   background-color: var(--color-white);
-  border: var(--border-width-m) solid var(--color-purple-400);
+  border: var(--border-width-m) solid;
   border-radius: var(--border-radius-s);
   box-shadow: toRem(-20) toRem(20) 0 0 var(--color-grey-100);
+
+  &--violet {
+    border-color: var(--color-purple-400);
+  }
+
+  &--blue {
+    border-color: var(--color-blue-200);
+  }
+
+  &--green {
+    border-color: var(--color-green-200);
+  }
+
+  &--red {
+    border-color: var(--color-red-150);
+  }
 }
