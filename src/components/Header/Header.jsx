@@ -5,7 +5,7 @@ import classNames from 'classnames/bind';
 import Logo_SA from '../../assets/logos/Logo_SA.svg';
 import Navigation from './Navigation';
 import HamburgerButton from './Hamburger/HamburgerButton';
-import Sidebar from './Sidebar/Sidebar';
+//import Sidebar from './Sidebar/Sidebar';
 import mediaQuery from '../../hooks/mediaQuery';
 import styles from './Header.module';
 
@@ -14,11 +14,13 @@ const cn = classNames.bind(styles);
 function Header() {
   const isMobile = mediaQuery('(max-width: 880px)');
 
-  // const [showSidebar, setShowSidebar] = useState(false);
+  const showSidebar = false;
 
-  // function handleOnClick() {
-  //   setShowSidebar(!showSidebar);
-  // }
+  //  const [showSidebar, setShowSidebar] = useState(true);
+
+  //   function handleOnClick() {
+  //     setShowSidebar(!showSidebar);
+  //   }
 
   // function handleOnBackDropClick() {
   //   setShowSidebar(false);
@@ -37,7 +39,8 @@ function Header() {
         <h1 className={cn('logo-name')}>Sourcery Academy</h1>
       </Link>
 
-      {isMobile ? <HamburgerButton /> : <Navigation />}
+      {isMobile ? <HamburgerButton props={showSidebar} /> : <Navigation />}
+      {/* {isMobile ? <HamburgerButton isActive={showSidebar} onClick={handleOnClick} /> : <MainNavigation />} */}
       {/* {isMobile && showSidebar && <Sidebar onClick={handleOnBackDropClick}/>} */}
     </header>
   );
