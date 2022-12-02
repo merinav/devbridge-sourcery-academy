@@ -1,14 +1,14 @@
 .academy-section {
   align-items: center;
   display: flex;
-  // gap: 3rem;
+  gap: 6rem;
   justify-content: space-between;
-  // max-width: toRem(1137.87);
   width: 100%;
 
   &__description {
     flex: 1;
-    min-width: toRem(405);
+    min-width: toRem(380);
+    word-wrap: break-word;
   }
 
   &__img {
@@ -16,35 +16,33 @@
     display: flex;
     flex: 1;
     justify-content: center;
-    min-width: toRem(240);
-    position: relative;
   }
 
   &--inv {
+    align-items: flex-start;
     flex-direction: row-reverse;
     text-align: right;
   }
 
+  // &--test + &--inv {
+  //   bottom: 12rem;
+  // }
+
   &--dev {
-    // gap: toRem(68);
   }
 
   &--test {
-    gap: toRem(100);
-    margin: 0;
-    margin-top: toRem(141);
-    padding: 0;
+    align-items: flex-start;
   }
 
   &--front {
-    gap: toRem(129.56);
-    margin-top: toRem(238);
+    align-items: flex-start;
   }
 
   &--kids {
-    gap: toRem(174.62);
-    margin-bottom: toRem(314);
-    margin-top: toRem(154);
+    // position: relative;
+    align-items: flex-start;
+    margin-top: toRem(50);
   }
 }
 
@@ -52,57 +50,54 @@
   &__dev {
     @include reset-list-style;
 
-    bottom: 7rem;
+    bottom: 5rem;
     display: flex;
     justify-content: center;
-    left: 14rem;
-    position: relative;
     width: 100%;
+  }
+
+  &__dev--path {
+    bottom: 7rem;
+    left: 1rem;
+    min-width: toRem(315);
+    position: relative;
   }
 
   &__test {
     @include reset-list-style;
 
-    display: block;
-    max-width: toRem(352.6);
-    // position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
     width: 100%;
+  }
+
+  &__test--path {
+    bottom: 7.5rem;
+    min-width: toRem(350);
+    position: relative;
+    right: 6rem;
   }
 
   &__front {
     @include reset-list-style;
 
-    max-width: toRem(453.14);
-    width: 100%;
+    bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    width: 72%;
   }
 
   &__kids {
     @include reset-list-style;
 
-    max-width: toRem(458.38);
+    width: 100%;
+  }
+
+  &__kids--path {
+    bottom: 6rem;
+    left: 8rem;
+    position: relative;
     width: 100%;
   }
 }
-
-// .path {
-//   position: absolute;
-
-//   &--dev {
-//     bottom: -13rem;
-//     left: -8rem;
-//     // position: absolute;
-//     width: 134%;
-//   }
-
-//   &--test {
-//     right: 0;
-//     top: -9rem;
-//     width: 118%;
-//   }
-
-//   &--kids {
-//     left: -6rem;
-//     top: -3rem;
-//     width: 140%;
-// }
-// }

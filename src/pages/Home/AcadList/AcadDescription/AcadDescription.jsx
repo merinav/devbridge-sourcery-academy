@@ -12,7 +12,7 @@ function AcadDescription({ title, paragr, invertBtn }) {
     <div className={cn('academy')}>
       <h3 className={cn('academy__title')}>{title}</h3>
       <p className={cn('academy__text')}>{paragr}</p>
-      <p className={cn(['academy__link', `${invertButton}`])}>Learn More</p>
+      <p className={cn(['academy__link', `${invertButton}`])}>Learn more</p>
     </div>
   );
 }

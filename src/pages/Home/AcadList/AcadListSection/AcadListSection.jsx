@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
@@ -9,7 +9,7 @@ import useMediaQuery from '/src/hooks/useMediaQuery';
 const cn = classNames.bind(styles);
 
 function AcadListSection({ data }) {
-  const isDesktop = useMediaQuery('(min-width: 1200px)');
+  const isDesktop = useMediaQuery('(min-width: 880px)');
 
   const {
     id,
