@@ -11,16 +11,14 @@ import styles from './Header.module';
 
 const cn = classNames.bind(styles);
 
-function Header() {
+const Header = () => {
   const isMobile = mediaQuery('(max-width: 880px)');
 
-  const showSidebar = false;
+  const [showSidebar, setShowSidebar] = useState(true);
 
-  //  const [showSidebar, setShowSidebar] = useState(true);
-
-  //   function handleOnClick() {
-  //     setShowSidebar(!showSidebar);
-  //   }
+  function handleOnClick() {
+    setShowSidebar(!showSidebar);
+  }
 
   // function handleOnBackDropClick() {
   //   setShowSidebar(false);
@@ -39,11 +37,15 @@ function Header() {
         <h1 className={cn('logo-name')}>Sourcery Academy</h1>
       </Link>
 
-      {isMobile ? <HamburgerButton props={showSidebar} /> : <Navigation />}
+      {isMobile ? (
+        <HamburgerButton active={showSidebar} onClick={handleOnClick} />
+      ) : (
+        <Navigation />
+      )}
       {/* {isMobile ? <HamburgerButton isActive={showSidebar} onClick={handleOnClick} /> : <MainNavigation />} */}
       {/* {isMobile && showSidebar && <Sidebar onClick={handleOnBackDropClick}/>} */}
     </header>
   );
-}
+};
 
 export default Header;
