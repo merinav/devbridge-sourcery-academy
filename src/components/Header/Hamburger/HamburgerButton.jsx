@@ -15,11 +15,11 @@ const HamburgerButton = (props) => {
     <>
       {active ? (
         <button onClick={onClick} className={cn('hamburger')}>
-          <Icon_hamburger />
+          <Icon_hamburger_x />
         </button>
       ) : (
         <button onClick={onClick} className={cn('hamburger')}>
-          <Icon_hamburger_x />
+          <Icon_hamburger />
         </button>
       )}
     </>
