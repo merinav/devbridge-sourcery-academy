@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 function Kids() {
-  return <h1>/academy/kids</h1>;
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', 'kids-theme');
+
+    return () => {
+      document.documentElement.removeAttribute('data-theme');
+    };
+  }, []);
+
+  return <h1 className="only-for-testing">/academy/kids</h1>;
 }
 
 export default Kids;

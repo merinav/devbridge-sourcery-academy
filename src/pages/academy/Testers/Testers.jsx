@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 function Testers() {
-  return <h1>/academy/testers</h1>;
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', 'green-theme');
+
+    return () => {
+      document.documentElement.removeAttribute('data-theme');
+    };
+  }, []);
+
+  return <h1 className="only-for-testing">/academy/testers</h1>;
 }
 
 export default Testers;
