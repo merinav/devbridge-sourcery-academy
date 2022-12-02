@@ -1,14 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+
 import Icon_arrow_down from '../../../assets/icons/Icon_arrow_down.svg';
 import Icon_arrow_up from '../../../assets/icons/Icon_arrow_up.svg';
 import NavLink from '../NavLink';
 import NavDropdown from '../NavDropdown';
+
 import styles from './Navigation.module';
 
 const cn = classNames.bind(styles);
 
-function Navigation() {
+const Navigation = (props) => {
+  const { sidebar } = props;
   const [isOpen, setIsOpen] = useState(false);
 
   const dropdownRef = useRef();
@@ -35,7 +39,7 @@ function Navigation() {
   return (
     <div className={cn('nav-wrapper')}>
       <nav className={cn('nav')}>
-        <ul className={cn('nav__list')}>
+        <ul className={cn('nav__list', `${sidebar}`)}>
           <NavLink to={'#'}>About us</NavLink>
 
           <li className={cn('nav__list-item', 'nav__list-item--have-dropdown')}>
@@ -61,6 +65,9 @@ function Navigation() {
       </nav>
     </div>
   );
-}
+};
+Navigation.propTypes = {
+  sidebar: PropTypes.string,
+};
 
 export default Navigation;

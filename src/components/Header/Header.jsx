@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { routes } from '../../routes/routeConfig';
 import classNames from 'classnames/bind';
+
 import Logo_SA from '../../assets/logos/Logo_SA.svg';
 import Navigation from './Navigation';
 import HamburgerButton from './Hamburger/HamburgerButton';
-import Sidebar from './Sidebar/Sidebar';
 import mediaQuery from '../../hooks/mediaQuery';
+
 import styles from './Header.module';
 
 const cn = classNames.bind(styles);
@@ -38,8 +39,8 @@ const Header = () => {
       </Link>
       {isMobile && showSidebar ? (
         <>
-          <Sidebar onClick={handleOnBackDropClick} />
           <HamburgerButton active={showSidebar} onClick={handleOnClick} />
+          <Navigation sidebar={'sidebar'} />
         </>
       ) : isMobile ? (
         <HamburgerButton active={showSidebar} onClick={handleOnClick} />

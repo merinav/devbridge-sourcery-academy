@@ -67,4 +67,17 @@
       }
     }
   }
+
+  .sidebar {
+    align-items: flex-start;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 30px;
+    position: absolute;
+    right: 0;
+    top: 95px;
+    width: 100%;
+  }
 }
