@@ -3,10 +3,12 @@ import PromoSection from './PromoSection';
 import AcademiesSection from './AcademiesSection';
 
 const Home = () => {
-  return <>
-    <PromoSection />
-    <AcademiesSection />
-  </>
-}
+  return (
+    <>
+      <PromoSection />
+      <AcademiesSection />
+    </>
+  );
+};
 
 export default Home;
