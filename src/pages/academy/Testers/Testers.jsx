@@ -1,13 +1,8 @@
 import React, { useEffect } from 'react';
+import useTheme from '../../../hooks/useTheme';
 
 function Testers() {
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', 'green-theme');
-
-    return () => {
-      document.documentElement.removeAttribute('data-theme');
-    };
-  }, []);
+  useTheme('green');
 
   return <h1 className="only-for-testing">/academy/testers</h1>;
 }

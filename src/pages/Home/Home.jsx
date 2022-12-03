@@ -1,15 +1,10 @@
 import React, { useEffect } from 'react';
+import useTheme from '../../hooks/useTheme';
 import PromoSection from './PromoSection';
 import AcademiesSection from './AcademiesSection';
 
 const Home = () => {
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', 'violet-theme');
-
-    return () => {
-      document.documentElement.removeAttribute('data-theme');
-    };
-  }, []);
+  useTheme();
 
   return (
     <>

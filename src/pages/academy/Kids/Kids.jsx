@@ -1,13 +1,8 @@
 import React, { useEffect } from 'react';
+import useTheme from '../../../hooks/useTheme';
 
 function Kids() {
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', 'kids-theme');
-
-    return () => {
-      document.documentElement.removeAttribute('data-theme');
-    };
-  }, []);
+  useTheme('kids');
 
   return <h1 className="only-for-testing">/academy/kids</h1>;
 }
