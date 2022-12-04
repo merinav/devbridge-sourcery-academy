@@ -12,17 +12,7 @@ function Layout({ children }) {
   return (
     <div className={cn('layout')}>
       <Header />
-      <main className={cn('layout__main')}>
-        {/*TODO: Remove after testing*/}
-        <Card color="red">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-            pharetra odio tortor, eget dapibus tellus euismod sed. Aliquam
-            lobortis nibh magna, in auctor justo aliquet ultrices.
-          </p>
-        </Card>
-        {children}
-      </main>
+      <main className={cn('layout__main')}>{children}</main>
       <Footer />
     </div>
   );
