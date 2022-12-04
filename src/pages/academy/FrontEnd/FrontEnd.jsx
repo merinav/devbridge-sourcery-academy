@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import useTheme from '../../../hooks/useTheme';
+import React from 'react';
+import useTheme from '/src/hooks/useTheme';
 
 function FrontEnd() {
   useTheme('red');
