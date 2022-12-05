@@ -8,7 +8,7 @@ function useTheme(theme = 'purple') {
     return () => {
       document.documentElement.removeAttribute('data-theme');
     };
-  }, []);
+  }, [theme]);
 }
 
 useTheme.propTypes = {
