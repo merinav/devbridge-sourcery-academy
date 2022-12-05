@@ -1,3 +1,5 @@
+@use '/src/sass/utilities/functions/index' as *;
+
 .footer-wrapper {
   align-items: center;
   background-color: var(--color-white);

@@ -1,3 +1,6 @@
+@use '/src/sass/utilities/mixins/index' as *;
+@use '/src/sass/utilities/functions/index' as *;
+
 .layout {
   display: flex;
   flex-direction: column;
