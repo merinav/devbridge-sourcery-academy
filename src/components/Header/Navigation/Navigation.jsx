@@ -37,7 +37,7 @@ const Navigation = (props) => {
   }, []);
 
   return (
-    <div className={cn('nav-wrapper')}>
+    <div className={cn('nav-wrapper', `nav-wrapper__${navSidebar}`)}>
       <nav className={cn('nav')}>
         <ul className={cn('nav__list', `nav__list-${navSidebar}`)}>
           <NavLink to={'#'}>About us</NavLink>

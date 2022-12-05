@@ -46,8 +46,8 @@
   background-color: var(--color-white);
   border-radius: var(--border-radius-xs);
   box-shadow: none;
-  margin-left: toRem(50); //add variable?
-  margin-top: toRem(20); //add variable?
+  margin-left: var(--spacer-6xl);
+  margin-top: var(--spacer-l);
   position: static;
   top: 4.8rem;
   transform: translateX(-25%);
@@ -55,11 +55,11 @@
 
   .dropdown__link-sidebar {
     &:hover {
-      background-color: white;
+      background-color: var(--color-white);
     }
 
     &:focus-visible {
-      background-color: white;
+      background-color: var(--color-white);
     }
   }
 }
