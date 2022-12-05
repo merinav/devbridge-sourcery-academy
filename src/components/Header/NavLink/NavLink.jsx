@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
-import styles from '../Header.module';
+
+import styles from '../Navigation/Navigation.module';
 
 const cn = classNames.bind(styles);
 
