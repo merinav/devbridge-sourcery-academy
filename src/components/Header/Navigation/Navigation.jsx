@@ -12,7 +12,7 @@ import styles from './Navigation.module';
 const cn = classNames.bind(styles);
 
 const Navigation = (props) => {
-  const { sidebar } = props;
+  const { navSidebar, dropDownSidebar } = props;
   const [isOpen, setIsOpen] = useState(false);
 
   const dropdownRef = useRef();
@@ -39,9 +39,8 @@ const Navigation = (props) => {
   return (
     <div className={cn('nav-wrapper')}>
       <nav className={cn('nav')}>
-        <ul className={cn('nav__list', `${sidebar}`)}>
+        <ul className={cn('nav__list', `nav__list-${navSidebar}`)}>
           <NavLink to={'#'}>About us</NavLink>
-
           <li className={cn('nav__list-item', 'nav__list-item--have-dropdown')}>
             <button
               className={cn('nav__link')}
@@ -55,7 +54,13 @@ const Navigation = (props) => {
                 <Icon_arrow_down className={cn('dropdown-icon')} />
               )}
             </button>
-            {isOpen && <NavDropdown ref={dropdownRef} setIsOpen={setIsOpen} />}
+            {isOpen && (
+              <NavDropdown
+                ref={dropdownRef}
+                setIsOpen={setIsOpen}
+                sidebar={dropDownSidebar}
+              />
+            )}
           </li>
 
           <NavLink to={'#'}>Media</NavLink>
@@ -67,7 +72,8 @@ const Navigation = (props) => {
   );
 };
 Navigation.propTypes = {
-  sidebar: PropTypes.string,
+  navSidebar: PropTypes.string,
+  dropDownSidebar: PropTypes.string,
 };
 
 export default Navigation;

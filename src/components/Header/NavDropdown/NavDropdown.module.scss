@@ -41,3 +41,25 @@
     }
   }
 }
+
+.dropdown-wrapper-sidebar {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-xs);
+  box-shadow: none;
+  margin-left: toRem(50); //add variable?
+  margin-top: toRem(20); //add variable?
+  position: static;
+  top: 4.8rem;
+  transform: translateX(-25%);
+  z-index: 1;
+
+  .dropdown__link-sidebar {
+    &:hover {
+      background-color: white;
+    }
+
+    &:focus-visible {
+      background-color: white;
+    }
+  }
+}

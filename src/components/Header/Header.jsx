@@ -40,7 +40,7 @@ const Header = () => {
       {isMobile && showSidebar ? (
         <>
           <HamburgerButton active={showSidebar} onClick={handleOnClick} />
-          <Navigation sidebar={'sidebar'} />
+          <Navigation navSidebar={'sidebar'} dropDownSidebar={'sidebar'} />
         </>
       ) : isMobile ? (
         <HamburgerButton active={showSidebar} onClick={handleOnClick} />
