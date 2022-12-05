@@ -38,12 +38,12 @@ const NavDropdown = forwardRef(function NavDropdown(
   ];
 
   const setState = () => {
-    return setIsOpen((prevState) => !prevState);
+    setIsOpen((prevState) => !prevState);
+    if (setIsOpen) {
+      return <Navigation />;
+    }
+    return setIsOpen;
   };
-  //const openNavigation = () => {return <Navigation/>}
-
-  // openNavigation();
-  //onClick={() => setIsOpen((prevState) => !prevState)}
   return (
     <div
       className={cn('dropdown-wrapper', `dropdown-wrapper-${sidebar}`)}
@@ -55,9 +55,7 @@ const NavDropdown = forwardRef(function NavDropdown(
             <Link
               className={cn('dropdown__link', `dropdown__link-${sidebar}`)}
               to={item.routePath}
-              onClick={() => {
-                setState();
-              }}
+              onClick={setState()}
             >
               {item.text}
             </Link>
