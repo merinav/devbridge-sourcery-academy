@@ -10,10 +10,7 @@ import styles from './NavDropdown.module';
 
 const cn = classNames.bind(styles);
 
-const NavDropdown = forwardRef(function NavDropdown(
-  { setIsOpen, sidebar },
-  ref
-) {
+const NavDropdown = forwardRef(function NavDropdown({ sidebar }, ref) {
   const dropdownItems = [
     {
       text: 'Sourcery for Developers',
@@ -37,13 +34,6 @@ const NavDropdown = forwardRef(function NavDropdown(
     },
   ];
 
-  const setState = () => {
-    setIsOpen((prevState) => !prevState);
-    if (setIsOpen) {
-      return <Navigation />;
-    }
-    return setIsOpen;
-  };
   return (
     <div
       className={cn('dropdown-wrapper', `dropdown-wrapper-${sidebar}`)}
@@ -55,7 +45,7 @@ const NavDropdown = forwardRef(function NavDropdown(
             <Link
               className={cn('dropdown__link', `dropdown__link-${sidebar}`)}
               to={item.routePath}
-              onClick={setState()}
+              onClick={<Navigation />}
             >
               {item.text}
             </Link>
@@ -67,7 +57,6 @@ const NavDropdown = forwardRef(function NavDropdown(
 });
 
 NavDropdown.propTypes = {
-  setIsOpen: PropTypes.func,
   sidebar: PropTypes.string,
 };
 

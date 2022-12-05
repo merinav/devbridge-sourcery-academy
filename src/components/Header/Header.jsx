@@ -21,10 +21,6 @@ const Header = () => {
     setShowSidebar(!showSidebar);
   }
 
-  function handleOnBackDropClick() {
-    setShowSidebar(false);
-  }
-
   useEffect(() => {
     if (!isMobile) {
       setShowSidebar(false);

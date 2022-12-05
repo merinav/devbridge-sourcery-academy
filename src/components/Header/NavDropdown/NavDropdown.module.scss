@@ -47,19 +47,8 @@
   border-radius: var(--border-radius-xs);
   box-shadow: none;
   margin-left: var(--spacer-6xl);
-  margin-top: var(--spacer-l);
+  margin-top: var(--spacer-xxl);
   position: static;
-  top: 4.8rem;
   transform: translateX(-25%);
   z-index: 1;
-
-  .dropdown__link-sidebar {
-    &:hover {
-      background-color: var(--color-white);
-    }
-
-    &:focus-visible {
-      background-color: var(--color-white);
-    }
-  }
 }
