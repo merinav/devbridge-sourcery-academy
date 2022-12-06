@@ -37,7 +37,7 @@
   }
 
   &__vertical-line {
-    border-left: var(--border-width-m) solid var(--color-purple-400);
+    border-left: var(--border-width-m) solid var(--primary-color);
     height: toRem(48);
     margin-bottom: var(--spacer-3xl);
   }
