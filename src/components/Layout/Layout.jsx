@@ -6,6 +6,7 @@ import Footer from '../Footer';
 import Button from '../Button';
 import styles from './Layout.module';
 import { routes } from '../../routes/routeConfig';
+import Developers from '../../pages/academy/Developers';
 
 const cn = classNames.bind(styles);
 
@@ -14,7 +15,7 @@ function Layout({ children }) {
     <div className={cn('layout')}>
       <Header />
       <main className={cn('layout__main')}>
-        <Button color="violet" to={routes.developers}>
+        <Button color="red" to={routes.developers} ariaLabel="to routes">
           Button
         </Button>
         {children}
