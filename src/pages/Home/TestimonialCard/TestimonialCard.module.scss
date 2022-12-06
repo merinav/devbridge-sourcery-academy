@@ -1,0 +1,50 @@
+.testimonial {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: toRem(35) toRem(30);
+  text-align: center;
+  width: toRem(341);
+
+  &__photo {
+    background: plum;
+    border-radius: 50%;
+    height: toRem(78);
+    margin: 0 0 toRem(2);
+    width: toRem(78);
+  }
+
+  &__quotation-before {
+    align-self: start;
+    height: toRem(17);
+    margin: 0;
+    width: toRem(20);
+  }
+
+  &__quotation-after {
+    align-self: end;
+    height: toRem(17);
+    margin: 0;
+    width: toRem(20);
+  }
+
+  &__message {
+    font-size: var(--font-size-m);
+    line-height: var(--line-height-m);
+    margin: toRem(18) 0;
+  }
+
+  &__name {
+    font-size: toRem(20);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-m);
+    margin: toRem(10) 0 toRem(7);
+  }
+
+  &__academy {
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-m);
+    margin: 0;
+  }
+}
