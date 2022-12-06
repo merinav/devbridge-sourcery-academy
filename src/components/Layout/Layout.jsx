@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Header from '../Header';
 import Footer from '../Footer';
-import Button from '../Button';
+import Card from '../Card';
 import styles from './Layout.module';
 import { routes } from '../../routes/routeConfig';
 import Developers from '../../pages/academy/Developers';
@@ -14,12 +14,7 @@ function Layout({ children }) {
   return (
     <div className={cn('layout')}>
       <Header />
-      <main className={cn('layout__main')}>
-        <Button color="red" to={routes.developers} ariaLabel="to routes">
-          Button
-        </Button>
-        {children}
-      </main>
+      <main className={cn('layout__main')}>{children}</main>
       <Footer />
     </div>
   );

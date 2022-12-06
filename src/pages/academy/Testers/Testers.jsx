@@ -1,7 +1,10 @@
 import React from 'react';
+import useTheme from '/src/hooks/useTheme';
 
 function Testers() {
-  return <h1>/academy/testers</h1>;
+  useTheme('green');
+
+  return <h1 className="only-for-testing">/academy/testers</h1>;
 }
 
 export default Testers;

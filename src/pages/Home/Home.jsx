@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import useTheme from '../../hooks/useTheme';
 import PromoSection from './PromoSection';
 import AcademiesSection from './AcademiesSection';
 
 const Home = () => {
-  return <>
-    <PromoSection />
-    <AcademiesSection />
-  </>
-}
+  useTheme();
+
+  return (
+    <>
+      <PromoSection />
+      <AcademiesSection />
+    </>
+  );
+};
 
 export default Home;

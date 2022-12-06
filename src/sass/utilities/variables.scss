@@ -36,9 +36,10 @@
 
   /* Border radius */
   --border-radius-xs: 0.8rem;
-  --border-radius-s: 2.4rem;
-  --border-radius-m: 4.8rem;
-  --border-radius: var(--border-radius-m); /* alias for --border-radius-m */
+  --border-radius-s: 1.6rem;
+  --border-radius-m: 2.4rem;
+  --border-radius-l: 4.8rem;
+  --border-radius: var(--border-radius-l); /* alias for --border-radius-l */
 
   /* Typography */
   --font-family-base: 'Raleway', sans-serif;
@@ -75,4 +76,7 @@
   --spacer-7xl: 6rem;
   --spacer-shadow: var(--spacer-l);
   --spacer: var(--spacer-m); /* alias for --spacer-m */
+
+  /* Z-indexes */
+  --z-header: 10;
 }

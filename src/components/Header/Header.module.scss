@@ -2,11 +2,11 @@
   align-items: center;
   background-color: var(--color-white);
   display: flex;
-  font-size: var(--font-size-m);
   justify-content: space-between;
   padding: var(--spacer-xxl) var(--spacer-5xl);
   position: sticky;
   top: 0;
+  z-index: var(--z-header);
 
   &__logo-wrapper {
     align-items: center;
