@@ -4,9 +4,13 @@ import PromoSection from './PromoSection';
 import AcademiesSection from './AcademiesSection';
 import TestimonialCard from '~/pages/Home/TestimonialCard';
 import TestPhoto from '~/assets/images/Image.svg';
+import { useTestimonialData } from '~/hooks/useTestimonialData';
 
 const Home = () => {
   useTheme();
+
+  const testimonialData = useTestimonialData();
+  console.log(testimonialData);
 
   return (
     <>
