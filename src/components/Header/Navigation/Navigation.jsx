@@ -15,10 +15,6 @@ const Navigation = (props) => {
   const { navSidebar, dropDownSidebar } = props;
   const [isOpen, setIsOpen] = useState(false);
 
-  function setState() {
-    setIsOpen((prevState) => !prevState);
-  }
-
   const dropdownRef = useRef();
   const academiesRef = useRef();
 
@@ -48,7 +44,7 @@ const Navigation = (props) => {
           <li className={cn('nav__list-item', 'nav__list-item--have-dropdown')}>
             <button
               className={cn('nav__link')}
-              onClick={setState}
+              onClick={() => setIsOpen((prevState) => !prevState)}
               ref={academiesRef}
             >
               Academies

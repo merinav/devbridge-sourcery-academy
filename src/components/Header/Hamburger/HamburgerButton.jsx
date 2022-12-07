@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import classNames from 'classnames/bind';
 
-import Icon_hamburger_x from '../../../assets/icons/Icon_hamburger_x.svg';
-import Icon_hamburger from '../../../assets/icons/Icon_hamburger.svg';
+import Icon_close_x from '../../../assets/icons/Icon_close_x.svg';
+import Icon_open from '../../../assets/icons/Icon_open.svg';
 import styles from './HamburgerButton.module';
 
 const cn = classNames.bind(styles);
@@ -15,11 +15,11 @@ const HamburgerButton = (props) => {
     <>
       {active ? (
         <button onClick={onClick} className={cn('hamburger')}>
-          <Icon_hamburger_x />
+          <Icon_close_x />
         </button>
       ) : (
         <button onClick={onClick} className={cn('hamburger')}>
-          <Icon_hamburger />
+          <Icon_open />
         </button>
       )}
     </>
@@ -28,7 +28,7 @@ const HamburgerButton = (props) => {
 
 HamburgerButton.propTypes = {
   active: PropTypes.bool,
-  onClick: PropTypes.any,
+  onClick: PropTypes.func,
 };
 
 export default HamburgerButton;
