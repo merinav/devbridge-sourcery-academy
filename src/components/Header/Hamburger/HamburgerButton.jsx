@@ -11,8 +11,9 @@ const cn = classNames.bind(styles);
 
 const HamburgerButton = (props) => {
   const { active, onClick } = props;
-  let useIcon =
-    active === true ? (useIcon = <Icon_close_x />) : (useIcon = <Icon_open />);
+  let useIcon = active
+    ? (useIcon = <Icon_close_x />)
+    : (useIcon = <Icon_open />);
 
   return (
     <button onClick={onClick} className={cn('hamburger')}>
