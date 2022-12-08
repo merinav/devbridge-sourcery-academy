@@ -29,14 +29,14 @@
   }
 
   &__message {
-    //-webkit-box-orient: vertical;
-    //display: -webkit-box;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
     font-size: var(--font-size-m);
-    //-webkit-line-clamp: 8;
+    -webkit-line-clamp: 8;
     line-height: var(--line-height-m);
     margin: toRem(18) 0;
-    //overflow: hidden;
-    //text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__name {
