@@ -25,7 +25,7 @@ const Header = () => {
     if (!isMobile) {
       setShowSidebar(false);
     }
-  });
+  }, [isMobile]);
 
   return (
     <header className={cn('header')}>
