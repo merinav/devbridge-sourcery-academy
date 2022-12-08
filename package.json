@@ -94,7 +94,7 @@
   },
   "lint-staged": {
     "./src/**/*.{js,jsx,ts,tsx,json,md}": [
-      "npm run eslint:check",
+      "eslint",
       "git add"
     ],
     "./src/**/*.{css,scss}": [
