@@ -1,4 +1,4 @@
-@use '/src/sass/utilities/mixins/index' as *;
+@use '/src/sass/utilities/mixins/' as *;
 
 .promo-section {
   @include tablet-landscape {
