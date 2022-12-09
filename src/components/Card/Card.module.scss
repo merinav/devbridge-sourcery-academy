@@ -1,3 +1,5 @@
+@use '/src/sass/utilities/functions/' as *;
+
 .card {
   background-color: var(--color-white);
   border: var(--border-width-m) solid var(--primary-color);

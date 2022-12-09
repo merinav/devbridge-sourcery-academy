@@ -1,3 +1,5 @@
+@use '/src/sass/utilities/mixins/' as *;
+
 .promo-section {
   @include tablet-landscape {
     padding: 0;
