@@ -4,10 +4,11 @@
     display: flex;
 
     &__list {
+      @include reset-list-style;
+
       align-items: center;
       display: flex;
       gap: var(--spacer-xl);
-      @include reset-list-style;
     }
 
     &__list-sidebar {

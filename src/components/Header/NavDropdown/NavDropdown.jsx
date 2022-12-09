@@ -2,10 +2,7 @@ import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
-
 import { routes } from '../../../routes/routeConfig';
-import Navigation from '../Navigation';
-
 import styles from './NavDropdown.module';
 
 const cn = classNames.bind(styles);
@@ -40,12 +37,11 @@ const NavDropdown = forwardRef(function NavDropdown({ sidebar }, ref) {
       ref={ref}
     >
       <ul className={cn('dropdown__list')}>
-        {dropdownItems.map((item, index) => (
+        {dropdownItems.map((item) => (
           <li className={cn('dropdown__list-item')} key={item.id}>
             <Link
               className={cn('dropdown__link', `dropdown__link-${sidebar}`)}
               to={item.routePath}
-              onClick={<Navigation />}
             >
               {item.text}
             </Link>
