@@ -1,23 +1,9 @@
+@use '/src/sass/utilities/functions/' as *;
+
 .card {
   background-color: var(--color-white);
-  border: var(--border-width-m) solid;
+  border: var(--border-width-m) solid var(--primary-color);
   border-radius: var(--border-radius-s);
   box-shadow: toRem(-20) toRem(20) 0 0 var(--color-grey-100);
   width: fit-content;
-
-  &--violet {
-    border-color: var(--color-purple-400);
-  }
-
-  &--blue {
-    border-color: var(--color-blue-400);
-  }
-
-  &--green {
-    border-color: var(--color-green-400);
-  }
-
-  &--red {
-    border-color: var(--color-red-400);
-  }
 }

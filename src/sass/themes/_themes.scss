@@ -6,6 +6,10 @@
   --button-active-color: var(--color-light-purple-300);
   --button-focus-tab-color: var(--color-accent-orange-400);
   --button-focus-border-color: var(--color-light-purple-500);
+
+  .only-for-testing {
+    color: var(--primary-color);
+  }
 }
 
 [data-theme='blue'] {
