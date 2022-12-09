@@ -12,6 +12,8 @@
 
   &__logo-wrapper {
     align-items: center;
+    // border: 2px dashed red;
+    border: 2px dashed var(--color-red-150);
     color: var(--color-purple-400);
     display: flex;
     text-decoration: none;
