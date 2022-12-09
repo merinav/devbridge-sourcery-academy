@@ -10,7 +10,7 @@
     "stylelint-config-sass-guidelines"
   ],
   "rules": {
-    "linebreaks": "windows",
+    "linebreaks": "unix",
     "sh-waqar/declaration-use-variable": [
       [
         "/color/",
