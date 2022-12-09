@@ -1,6 +1,10 @@
 .academy {
   display: flex;
   flex-direction: column;
+
+  &--inv {
+    align-items: flex-end;
+  }
 }
 
 .academy__title {
@@ -15,6 +19,8 @@
   font-size: var(--font-size-m);
   line-height: var(--line-height-m);
   margin: 0 0 var(--spacer-6xl);
+  width: 90%;
+  word-wrap: break-word;
 }
 
 .academy__link {

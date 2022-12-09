@@ -6,13 +6,14 @@ import styles from './AcadDescription.module';
 const cn = classNames.bind(styles);
 
 function AcadDescription({ title, paragr, invertBtn }) {
-  const invertButton = invertBtn ? 'academy__link--inv' : '';
+  const invBtn = invertBtn ? 'academy__link--inv' : '';
+  const invTxt = invertBtn ? 'academy--inv' : '';
 
   return (
-    <div className={cn('academy')}>
+    <div className={cn(['academy', `${invTxt}`])}>
       <h3 className={cn('academy__title')}>{title}</h3>
       <p className={cn('academy__text')}>{paragr}</p>
-      <p className={cn(['academy__link', `${invertButton}`])}>Learn more</p>
+      <p className={cn(['academy__link', `${invBtn}`])}>Learn more</p>
     </div>
   );
 }
