@@ -39,6 +39,14 @@
     //text-overflow: ellipsis;
   }
 
+  &__read-more {
+    background-color: white;
+    border: white;
+    cursor: pointer;
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-l);
+  }
+
   &__name {
     font-size: toRem(20);
     font-weight: var(--font-weight-bold);

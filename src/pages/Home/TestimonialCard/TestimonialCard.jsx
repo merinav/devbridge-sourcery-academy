@@ -17,10 +17,15 @@ const TestimonialCard = ({ photo, message, name, academy, openModal }) => {
           <QuotationBefore alt="Quotation mark" />
         </figure>
         <div className={cn('testimonial__message')}>
-          {message.length > 100 ? (
+          {message.length > 330 ? (
             <>
-              {message.substring(0, 100)}
-              <button onClick={openModal}>Read more</button>
+              {message.substring(0, 330)}
+              <button
+                className={cn('testimonial__read-more')}
+                onClick={openModal}
+              >
+                ..Read more
+              </button>
             </>
           ) : (
             <>{message}</>
