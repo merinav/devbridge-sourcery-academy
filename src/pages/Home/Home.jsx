@@ -21,7 +21,7 @@ const Home = () => {
       <AcademiesSection />
       <TestimonialCard
         photo={TestPhoto}
-        message="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam congue dapibus cursus. Sed nec neque eget nibh semper interdum. Mauris nisi felis, congue sit amet blandit vel, rhoncus non felis. Fusce sit amet sapien viverra, elementum felis vitae, ultricies tortor. Ut feugiat leo at libero facilisis, nec pharetra massa bibendum."
+        message="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam congue dapibus cursus. Sed nec neque eget nibh semper interdum. Mauris nisi felis, congue sit amet blandit vel, rhoncus non felis. Fusce sit amet sapien viverra, elementum felis vitae, ultricies tortor. Ut feugiat leo at libero facilisis, nec pharetra massa bibendum.aaaaaaaaaaaaaaaaaaa"
         name={'Laura Hales'}
         academy={'Sourcery for Front-End Graduate'}
         openModal={() => setIsModalOpen(true)}
