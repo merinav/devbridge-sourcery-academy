@@ -13,15 +13,15 @@ const cn = classNames.bind(styles);
 const Header = () => {
   const isMobile = useMediaQuery('(max-width: 880px)');
 
-  const [showOverlay, setOverlay] = useState(false);
+  const [showOverlay, setShowOverlay] = useState(false);
 
   function handleOnClick() {
-    setOverlay(!showOverlay);
+    setShowOverlay(!showOverlay);
   }
 
   useEffect(() => {
     if (!isMobile) {
-      setOverlay(false);
+      setShowOverlay(false);
     }
   }, [isMobile]);
 
@@ -29,7 +29,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleLogoClick = (event) => {
-      if (logoRef?.current?.contains(event.target)) setOverlay(false);
+      if (logoRef?.current?.contains(event.target)) setShowOverlay(false);
     };
 
     document.addEventListener('click', handleLogoClick);
