@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import { routes } from '../../routes/routeConfig';
@@ -25,9 +25,27 @@ const Header = () => {
     }
   }, [isMobile]);
 
+  const navRef = useRef();
+
+  useEffect(() => {
+    const handleLogoClick = (event) => {
+      if (navRef?.current?.contains(event.target)) setShowSidebar(false);
+    };
+
+    document.addEventListener('click', handleLogoClick);
+
+    return () => {
+      document.removeEventListener('click', handleLogoClick);
+    };
+  }, []);
+
   return (
     <header className={cn('header')}>
-      <Link className={cn('header__logo-wrapper')} to={routes.home}>
+      <Link
+        className={cn('header__logo-wrapper')}
+        to={routes.home}
+        ref={navRef}
+      >
         <Logo_SA className={cn('logo-icon')} alt="Sourcery Academy logo" />
         <h1 className={cn('logo-name')}>Sourcery Academy</h1>
       </Link>
@@ -42,8 +60,6 @@ const Header = () => {
         <Navigation />
       )}
     </header>
-
-    //
   );
 };
 
