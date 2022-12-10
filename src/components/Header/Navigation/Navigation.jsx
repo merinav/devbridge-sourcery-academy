@@ -9,7 +9,7 @@ import styles from './Navigation.module';
 
 const cn = classNames.bind(styles);
 
-const Navigation = ({ navSidebar, dropDownSidebar }) => {
+const Navigation = ({ fullScreenOverlay }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const dropdownRef = useRef();
@@ -34,9 +34,17 @@ const Navigation = ({ navSidebar, dropDownSidebar }) => {
   }, []);
 
   return (
-    <div className={cn('nav-wrapper', `nav-wrapper__${navSidebar}`)}>
+    <div
+      className={cn('nav-wrapper', {
+        'nav-wrapper__overlay': fullScreenOverlay,
+      })}
+    >
       <nav className={cn('nav')}>
-        <ul className={cn('nav__list', `nav__list-${navSidebar}`)}>
+        <ul
+          className={cn('nav__list', {
+            'nav__list-overlay': fullScreenOverlay,
+          })}
+        >
           <NavLink to={'#'}>About us</NavLink>
           <li className={cn('nav__list-item', 'nav__list-item--have-dropdown')}>
             <button
@@ -52,7 +60,10 @@ const Navigation = ({ navSidebar, dropDownSidebar }) => {
               )}
             </button>
             {isOpen && (
-              <NavDropdown ref={dropdownRef} sidebar={dropDownSidebar} />
+              <NavDropdown
+                ref={dropdownRef}
+                fullScreenOverlay={fullScreenOverlay}
+              />
             )}
           </li>
           <NavLink to={'#'}>Media</NavLink>
@@ -65,8 +76,7 @@ const Navigation = ({ navSidebar, dropDownSidebar }) => {
 };
 
 Navigation.propTypes = {
-  navSidebar: PropTypes.string,
-  dropDownSidebar: PropTypes.string,
+  fullScreenOverlay: PropTypes.bool,
 };
 
 export default Navigation;

@@ -25,11 +25,11 @@ const Header = () => {
     }
   }, [isMobile]);
 
-  const navRef = useRef();
+  const logoRef = useRef();
 
   useEffect(() => {
     const handleLogoClick = (event) => {
-      if (navRef?.current?.contains(event.target)) setShowSidebar(false);
+      if (logoRef?.current?.contains(event.target)) setShowSidebar(false);
     };
 
     document.addEventListener('click', handleLogoClick);
@@ -44,7 +44,7 @@ const Header = () => {
       <Link
         className={cn('header__logo-wrapper')}
         to={routes.home}
-        ref={navRef}
+        ref={logoRef}
       >
         <Logo_SA className={cn('logo-icon')} alt="Sourcery Academy logo" />
         <h1 className={cn('logo-name')}>Sourcery Academy</h1>
@@ -52,9 +52,7 @@ const Header = () => {
       {isMobile ? (
         <>
           <HamburgerButton active={showSidebar} onClick={handleOnClick} />
-          {showSidebar && (
-            <Navigation navSidebar={'sidebar'} dropDownSidebar={'sidebar'} />
-          )}
+          {showSidebar && <Navigation fullScreenOverlay={isMobile} />}
         </>
       ) : (
         <Navigation />

@@ -14,7 +14,7 @@
       gap: var(--spacer-xl);
     }
 
-    &__list-sidebar {
+    &__list-overlay {
       align-items: flex-start;
       background-color: var(--color-white);
       display: flex;
@@ -85,7 +85,7 @@
     }
   }
 
-  &__sidebar {
+  &__overlay {
     height: 100vh;
     position: absolute;
     right: 0;

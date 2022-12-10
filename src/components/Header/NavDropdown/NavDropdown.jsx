@@ -7,7 +7,10 @@ import styles from './NavDropdown.module';
 
 const cn = classNames.bind(styles);
 
-const NavDropdown = forwardRef(function NavDropdown({ sidebar }, ref) {
+const NavDropdown = forwardRef(function NavDropdown(
+  { fullScreenOverlay },
+  ref
+) {
   const dropdownItems = [
     {
       text: 'Sourcery for Developers',
@@ -33,16 +36,15 @@ const NavDropdown = forwardRef(function NavDropdown({ sidebar }, ref) {
 
   return (
     <div
-      className={cn('dropdown-wrapper', `dropdown-wrapper-${sidebar}`)}
+      className={cn('dropdown-wrapper', {
+        'dropdown-wrapper-overlay': fullScreenOverlay,
+      })}
       ref={ref}
     >
       <ul className={cn('dropdown__list')}>
         {dropdownItems.map((item) => (
           <li className={cn('dropdown__list-item')} key={item.id}>
-            <Link
-              className={cn('dropdown__link', `dropdown__link-${sidebar}`)}
-              to={item.routePath}
-            >
+            <Link className={cn('dropdown__link')} to={item.routePath}>
               {item.text}
             </Link>
           </li>
@@ -53,7 +55,7 @@ const NavDropdown = forwardRef(function NavDropdown({ sidebar }, ref) {
 });
 
 NavDropdown.propTypes = {
-  sidebar: PropTypes.string,
+  fullScreenOverlay: PropTypes.bool,
 };
 
 export default NavDropdown;
