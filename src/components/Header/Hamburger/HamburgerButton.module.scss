@@ -7,4 +7,10 @@
   height: toRem(22);
   padding: 0;
   width: toRem(22);
+
+  &:focus-visible {
+    border-radius: 0.1rem;
+    outline: 0.2rem solid var(--color-purple-400);
+    outline-offset: var(--spacer-s);
+  }
 }
