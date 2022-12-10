@@ -6,34 +6,12 @@ import styles from './Button.module.scss';
 
 const cn = classNames.bind(styles);
 
-const COLOR = {
-  RED: 'red',
-  GREEN: 'green',
-  VIOLET: 'violet',
-  BLUE: 'blue',
-};
-
-const Button = ({
-  color = COLOR.VIOLET,
-  href,
-  children,
-  type,
-  onClick,
-  to,
-  ariaLabel,
-}) => {
-  const className = cn(styles.button, {
-    'button--red': color === COLOR.RED,
-    'button--green': color === COLOR.GREEN,
-    'button--blue': color === COLOR.BLUE,
-    'button--violet': color === COLOR.VIOLET,
-  });
-
+const Button = ({ children, href, to, type, onClick, ariaLabel }) => {
   if (href) {
     return (
       <a
         href={href}
-        className={className}
+        className={cn('button')}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={ariaLabel}
@@ -45,7 +23,7 @@ const Button = ({
     return (
       <Link
         to={to}
-        className={className}
+        className={cn('button')}
         type={type}
         onClick={onClick}
         aria-label={ariaLabel}
@@ -57,7 +35,7 @@ const Button = ({
     return (
       <button
         type={type || 'button'}
-        className={className}
+        className={cn('button')}
         onClick={onClick}
         aria-label={ariaLabel}
       >
@@ -68,13 +46,12 @@ const Button = ({
 };
 
 Button.propTypes = {
-  color: PropTypes.oneOf(['red', 'green', 'violet', 'blue']),
-  href: PropTypes.string,
   children: PropTypes.node.isRequired,
-  ariaLabel: PropTypes.string.isRequired,
+  href: PropTypes.string,
+  to: PropTypes.string,
   type: PropTypes.string,
   onClick: PropTypes.func,
-  to: PropTypes.string,
+  ariaLabel: PropTypes.string,
 };
 
 export default Button;

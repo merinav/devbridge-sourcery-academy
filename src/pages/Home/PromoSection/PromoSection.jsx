@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import Image_Promo from '~/assets/images/Image_Promo.svg';
+import Image_Promo from '../../../assets/images/Image_Promo.svg';
+import Button from '../../../components/Button/Button';
 import styles from './PromoSection.module';
 
 const cn = classNames.bind(styles);
@@ -20,6 +21,14 @@ const PromoSection = () => {
           long- term commitment to increase the number of students in Lithuania
           entering information technologies studies.
         </p>
+        <Button>View academies</Button>
+        <Button href={'https://www.google.lt/'}>href prop</Button>
+        <Button to={'/academy/front-end'}>to prop</Button>
+        <Button type={'submit'}>type prop</Button>
+        <Button onClick={() => console.log('button with onClick prop')}>
+          onClick prop
+        </Button>
+        <Button ariaLabel={'button accessible name'}>ariaLabel prop</Button>
       </div>
       <figure className={cn('section-image')}>
         <Image_Promo alt="" />

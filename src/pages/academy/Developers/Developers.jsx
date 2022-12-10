@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../../../components/Button/Button';
 import useTheme from '/src/hooks/useTheme';
 
 function Developers() {
@@ -6,6 +7,7 @@ function Developers() {
 
   return (
     <>
+      <Button>developers</Button>
       <h1 className="only-for-testing">/academy/developers</h1>
     </>
   );

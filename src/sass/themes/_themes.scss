@@ -54,6 +54,10 @@
 [data-theme='kids'] {
   --primary-color: var(--color-accent-orange-400);
   --button-color: var(--color-accent-green-400);
+  --button-hover-color: var(--color-accent-green-300);
+  --button-active-color: var(--color-accent-green-300);
+  --button-focus-tab-color: var(--color-accent-green-300);
+  --button-focus-border-color: var(--color-accent-green-300);
 
   .only-for-testing {
     color: var(--primary-color);
