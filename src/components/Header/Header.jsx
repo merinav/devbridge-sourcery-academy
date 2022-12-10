@@ -68,7 +68,7 @@ function Header() {
             </li>
 
             <NavLink to={'#'}>Media</NavLink>
-            <NavLink to={'#'}>Register</NavLink>
+            <NavLink to={'/register'}>Register</NavLink>
             <NavLink to={'#'}>Questions</NavLink>
           </ul>
         </nav>

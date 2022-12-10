@@ -1,3 +1,6 @@
+@use '/src/sass/utilities/mixins/' as *;
+@use '/src/sass/utilities/functions/' as *;
+
 .dropdown-wrapper {
   background-color: var(--color-white);
   border-radius: var(--border-radius-xs);
