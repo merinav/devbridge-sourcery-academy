@@ -5,6 +5,7 @@ import Icon_arrow_down from '../../../assets/icons/Icon_arrow_down.svg';
 import Icon_arrow_up from '../../../assets/icons/Icon_arrow_up.svg';
 import NavLink from '../NavLink';
 import NavDropdown from '../NavDropdown';
+import { routes } from '../../../routes/routeConfig';
 import styles from './Navigation.module';
 
 const cn = classNames.bind(styles);
@@ -67,7 +68,7 @@ const Navigation = ({ fullScreenOverlay }) => {
             )}
           </li>
           <NavLink to={'#'}>Media</NavLink>
-          <NavLink to={'#'}>Register</NavLink>
+          <NavLink to={routes.register}>Register</NavLink>
           <NavLink to={'#'}>Questions</NavLink>
         </ul>
       </nav>
