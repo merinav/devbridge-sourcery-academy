@@ -13,15 +13,15 @@ const cn = classNames.bind(styles);
 const Header = () => {
   const isMobile = useMediaQuery('(max-width: 880px)');
 
-  const [showSidebar, setShowSidebar] = useState(false);
+  const [showOverlay, setOverlay] = useState(false);
 
   function handleOnClick() {
-    setShowSidebar(!showSidebar);
+    setOverlay(!showOverlay);
   }
 
   useEffect(() => {
     if (!isMobile) {
-      setShowSidebar(false);
+      setOverlay(false);
     }
   }, [isMobile]);
 
@@ -29,7 +29,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleLogoClick = (event) => {
-      if (logoRef?.current?.contains(event.target)) setShowSidebar(false);
+      if (logoRef?.current?.contains(event.target)) setOverlay(false);
     };
 
     document.addEventListener('click', handleLogoClick);
@@ -51,8 +51,8 @@ const Header = () => {
       </Link>
       {isMobile ? (
         <>
-          <HamburgerButton active={showSidebar} onClick={handleOnClick} />
-          {showSidebar && <Navigation fullScreenOverlay={isMobile} />}
+          <HamburgerButton active={showOverlay} onClick={handleOnClick} />
+          {showOverlay && <Navigation fullScreenOverlay={isMobile} />}
         </>
       ) : (
         <Navigation />
