@@ -1,4 +1,4 @@
-// @use '/src/sass/utilities/functions/' as *;
+@use '/src/sass/utilities/functions/' as *;
 
 .button {
   align-items: center;
@@ -25,7 +25,13 @@
     background: var(--button-active-color);
   }
 
+  &:focus {
+    background: var(--button-active-color);
+    box-shadow: 0 0 0 0.2rem var(--button-focus-border-color) inset;
+  }
+
   &:focus-visible {
+    box-shadow: none;
     outline: toRem(4) dashed var(--button-focus-tab-color);
   }
 }
