@@ -23,7 +23,7 @@
       padding: var(--spacer-5xl);
       position: absolute;
       right: 0;
-      top: toRem(10);
+      top: 0;
       width: 100%;
     }
 
@@ -89,7 +89,7 @@
     height: 100vh;
     position: absolute;
     right: 0;
-    top: toRem(85);
+    top: toRem(96);
     width: 100%;
   }
 }
