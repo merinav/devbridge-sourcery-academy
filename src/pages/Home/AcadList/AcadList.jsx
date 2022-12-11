@@ -1,4 +1,5 @@
 import React from 'react';
+import useMediaQuery from '/src/hooks/useMediaQuery';
 import classNames from 'classnames/bind';
 
 import AcadListSection from './AcadListSection';
@@ -68,6 +69,9 @@ const academyData = {
 };
 
 function AcadList() {
+  const isDesktop = useMediaQuery('(min-width: 880px)');
+  const isWidescreen = useMediaQuery('(min-width: 1201px)');
+
   return (
     <>
       <div className={cn('academy-list')}>
@@ -85,6 +89,7 @@ function AcadList() {
           <Particles_AcadList_Test_1
             className={cn('academy-particles', 'academy-particles--test-top')}
           />
+
           <AcadListSection data={academyData.testers} />
           <Particles_AcadList_Test_2
             className={cn('academy-particles', 'academy-particles--test-bot')}

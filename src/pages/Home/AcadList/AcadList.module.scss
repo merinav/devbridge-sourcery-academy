@@ -66,6 +66,11 @@
   position: absolute;
   right: toRem(280);
   width: toRem(229.42);
+
+  @include desktop-small {
+    right: toRem(210);
+    // width: toRem(210);
+  }
 }
 
 .academy-particles--front-top {
@@ -98,4 +103,25 @@
   position: absolute;
   top: 35rem;
   width: toRem(441.72);
+
+  @include desktop {
+    left: toRem(35);
+  }
+
+  @include desktop-small {
+    top: 33rem;
+    width: toRem(350);
+  }
 }
+
+// .img__dev--path {
+//   height: toRem(646.76);
+//   overflow: hidden;
+//   // bottom: 7rem;
+//   // left: 1rem;
+//   // min-width: toRem(315);
+//   position: absolute;
+//   right: -14rem;
+//   top: -8rem;
+//   width: toRem(665.02);
+// }

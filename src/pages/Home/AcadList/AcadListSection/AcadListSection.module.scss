@@ -1,16 +1,21 @@
 .academy-section {
   align-items: center;
-  background-clip: scroll;
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: auto;
   display: flex;
   justify-content: space-between;
   width: 100%;
 
+  @include tablet-landscape {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   &__description {
     flex: 1;
     min-width: toRem(380);
+
+    @include tablet-landscape {
+      width: 100%;
+    }
   }
 
   &__img {
@@ -55,6 +60,14 @@
     left: 10rem;
     position: relative;
     width: 67.5%;
+
+    @include desktop {
+      min-width: toRem(330);
+    }
+
+    @include tablet-landscape {
+      position: static;
+    }
   }
 
   &__dev--path {
@@ -65,6 +78,16 @@
     position: absolute;
     top: -26rem;
     width: 100%;
+
+    @include desktop {
+      width: 120%;
+    }
+
+    @include desktop-small {
+      left: 5rem;
+      top: -20rem;
+      width: 130%;
+    }
   }
 
   &__test {
@@ -72,6 +95,14 @@
     display: flex;
     justify-content: center;
     width: 55%;
+
+    @include desktop {
+      min-width: toRem(270);
+    }
+
+    @include tablet-landscape {
+      // flex-grow: 0;
+    }
   }
 
   &__test--path {
@@ -80,6 +111,17 @@
     right: 7rem;
     top: -10rem;
     width: 100%;
+
+    @include desktop {
+      right: 3rem;
+      width: 120%;
+    }
+
+    @include desktop-small {
+      right: 1rem;
+      top: -8.5rem;
+      width: 130%;
+    }
   }
 
   &__front {
@@ -89,6 +131,10 @@
     min-width: toRem(300);
     // top: -5rem;
     width: 71%;
+
+    @include desktop {
+      min-width: toRem(324);
+    }
   }
 
   &__kids {
@@ -98,6 +144,15 @@
     position: relative;
     top: 2.5rem;
     width: 71.6%;
+
+    @include desktop {
+      min-width: toRem(325);
+      top: -2rem;
+    }
+
+    @include desktop-small {
+      top: -6rem;
+    }
   }
 
   &__kids--path {
@@ -105,5 +160,16 @@
     position: absolute;
     top: -4rem;
     width: 102.7%;
+
+    @include desktop {
+      top: -10rem;
+      width: 120%;
+    }
+
+    @include desktop-small {
+      left: toRem(40);
+      top: -14rem;
+      width: 130%;
+    }
   }
 }

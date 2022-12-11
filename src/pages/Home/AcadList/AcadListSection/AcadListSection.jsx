@@ -1,10 +1,10 @@
 import React from 'react';
+import useMediaQuery from '/src/hooks/useMediaQuery';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
 import AcadDescription from '../AcadDescription';
 import styles from './AcadListSection.module';
-import useMediaQuery from '/src/hooks/useMediaQuery';
 
 const cn = classNames.bind(styles);
 
