@@ -64,6 +64,7 @@ const Navigation = ({ fullScreenOverlay }) => {
               <NavDropdown
                 ref={dropdownRef}
                 fullScreenOverlay={fullScreenOverlay}
+                setIsOpen={setIsOpen}
               />
             )}
           </li>
