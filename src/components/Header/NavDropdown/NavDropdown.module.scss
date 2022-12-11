@@ -47,11 +47,21 @@
 
 .dropdown-wrapper-overlay {
   background-color: var(--color-white);
-  border-radius: var(--border-radius-xs);
+  border-radius: initial;
   box-shadow: none;
-  margin-left: var(--spacer-6xl);
   margin-top: var(--spacer-xxl);
+  padding: 0;
   position: static;
-  transform: translateX(-25%);
+  transform: none;
   z-index: 1;
+
+  &::before {
+    border: 0;
+    border-bottom: 0;
+    content: none;
+    left: none;
+    position: none;
+    top: none;
+    transform: none;
+  }
 }
