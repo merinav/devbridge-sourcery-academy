@@ -34,10 +34,6 @@ const NavDropdown = forwardRef(function NavDropdown(
     },
   ];
 
-  // const onClickFunction = () => {
-  //   // setIsOpen((prevState) => !prevState);
-  //   toggleOverlayNavigationDropdown;}
-
   return (
     <div
       className={cn('dropdown-wrapper', {
