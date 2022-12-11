@@ -1,9 +1,12 @@
+@use '/src/sass/utilities/functions/' as *;
+
 .testimonial-modal {
   align-items: flex-start;
+  color: var(--primary-color);
   display: flex;
   flex-direction: column;
-  height: 500px;
-  max-height: 500px;
+  height: toRem(500);
+  max-height: toRem(500);
   overflow-y: auto;
   padding: toRem(35) toRem(30);
   text-align: center;
@@ -31,7 +34,7 @@
   }
 
   &__photo {
-    background: plum;
+    background: var(--color-green-200);
     border-radius: 50%;
     height: toRem(78);
     margin: 0 0 toRem(2);
@@ -40,19 +43,21 @@
 
   &__close {
     align-items: flex-end;
-    border: black solid;
-    color: black;
     cursor: pointer;
-    height: 30px;
-    width: 30px;
+    fill: var(--primary-color);
+    height: 22px;
+    stroke: var(--primary-color);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: toRem(2);
+    width: 22px;
   }
 
   &__message {
     font-size: var(--font-size-m);
     height: 100%;
-    line-height: var(--line-height-m);
-    margin: var(--spacer-xxl) 0 0;
-    //max-height: 322px;
+    line-height: var(--line-height-xl);
+    margin: var(--spacer-xxl) var(--spacer-l) 0;
     overflow: auto;
     text-align: left;
   }

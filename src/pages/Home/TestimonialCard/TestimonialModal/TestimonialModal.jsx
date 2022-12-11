@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import styles from './TestimonialModal.module.scss';
 import PropTypes from 'prop-types';
 import Modal from '~/components/Modal';
-import Icon_close_x from '../../../../assets/icons/Icon_Academy_check.svg';
+import IconClose from '~/assets/icons/Icon_close_x.svg';
+import styles from './TestimonialModal.module.scss';
 
 const cn = classNames.bind(styles);
 
@@ -13,14 +13,18 @@ const TestimonialModal = ({ photo, message, name, academy, closeModal }) => {
       <div className={cn('testimonial-modal')}>
         <header className={cn('header')}>
           <div className={cn('testimonial-modal__graduate')}>
-            <figure className={cn('testimonial-modal__photo')}>{photo}</figure>
+            <img
+              className={cn('testimonial-modal__photo')}
+              src={photo}
+              alt={`${name} photo`}
+            />
             <div className={cn('testimonial-modal__graduate-name-academy')}>
               <h2 className={cn('testimonial-modal__name')}>{name}</h2>
               <h2 className={cn('testimonial-modal__academy')}>{academy}</h2>
             </div>
           </div>
           <div className={cn('testimonial-modal__close')} onClick={closeModal}>
-            <Icon_close_x alt="" />
+            <IconClose alt="close icon" />
           </div>
         </header>
 
@@ -31,7 +35,6 @@ const TestimonialModal = ({ photo, message, name, academy, closeModal }) => {
 };
 
 TestimonialModal.propTypes = {
-  // TODO: change photo propType
   photo: PropTypes.any,
   message: PropTypes.string,
   name: PropTypes.string,
