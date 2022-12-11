@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Icon_arrow_down from '../../../assets/icons/Icon_arrow_down.svg';
 import Icon_arrow_up from '../../../assets/icons/Icon_arrow_up.svg';
-import NavLink from '../NavLink';
+import NavigationLink from '../NavigationLink';
 import NavDropdown from '../NavDropdown';
 import { routes } from '../../../routes/routeConfig';
 import styles from './Navigation.module';
 
 const cn = classNames.bind(styles);
 
-const Navigation = ({ fullScreenOverlay }) => {
+const Navigation = ({ fullScreenOverlay, toggleOverlayNavigation }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const dropdownRef = useRef();
@@ -46,7 +46,9 @@ const Navigation = ({ fullScreenOverlay }) => {
             'nav__list-overlay': fullScreenOverlay,
           })}
         >
-          <NavLink to={'#'}>About us</NavLink>
+          <NavigationLink to={'#'} onClick={toggleOverlayNavigation}>
+            About us
+          </NavigationLink>
           <li className={cn('nav__list-item', 'nav__list-item--have-dropdown')}>
             <button
               className={cn('nav__link')}
@@ -65,12 +67,22 @@ const Navigation = ({ fullScreenOverlay }) => {
                 ref={dropdownRef}
                 fullScreenOverlay={fullScreenOverlay}
                 setIsOpen={setIsOpen}
+                toggleOverlayNavigation={toggleOverlayNavigation}
               />
             )}
           </li>
-          <NavLink to={'#'}>Media</NavLink>
-          <NavLink to={routes.register}>Register</NavLink>
-          <NavLink to={'#'}>Questions</NavLink>
+          <NavigationLink to={'#'} onClick={toggleOverlayNavigation}>
+            Media
+          </NavigationLink>
+          <NavigationLink
+            to={routes.register}
+            onClick={toggleOverlayNavigation}
+          >
+            Register
+          </NavigationLink>
+          <NavigationLink to={'#'} onClick={toggleOverlayNavigation}>
+            Questions
+          </NavigationLink>
         </ul>
       </nav>
     </div>
@@ -79,6 +91,7 @@ const Navigation = ({ fullScreenOverlay }) => {
 
 Navigation.propTypes = {
   fullScreenOverlay: PropTypes.bool,
+  toggleOverlayNavigation: PropTypes.func,
 };
 
 export default Navigation;
