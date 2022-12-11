@@ -8,7 +8,7 @@ import styles from './NavDropdown.module';
 const cn = classNames.bind(styles);
 
 const NavDropdown = forwardRef(function NavDropdown(
-  { fullScreenOverlay, setIsOpen },
+  { fullScreenOverlay, setIsOpen, showOverlayNavigationState },
   ref
 ) {
   const dropdownItems = [
@@ -34,6 +34,10 @@ const NavDropdown = forwardRef(function NavDropdown(
     },
   ];
 
+  // const onClickFunction = () => {
+  //   // setIsOpen((prevState) => !prevState);
+  //   toggleOverlayNavigationDropdown;}
+
   return (
     <div
       className={cn('dropdown-wrapper', {
@@ -47,7 +51,10 @@ const NavDropdown = forwardRef(function NavDropdown(
             <Link
               className={cn('dropdown__link')}
               to={item.routePath}
-              onClick={() => setIsOpen((prevState) => !prevState)}
+              onClick={() => {
+                setIsOpen((prevState) => !prevState);
+                showOverlayNavigationState((prevState) => !prevState);
+              }}
             >
               {item.text}
             </Link>
@@ -61,6 +68,7 @@ const NavDropdown = forwardRef(function NavDropdown(
 NavDropdown.propTypes = {
   fullScreenOverlay: PropTypes.bool,
   setIsOpen: PropTypes.func,
+  showOverlayNavigationState: PropTypes.func,
 };
 
 export default NavDropdown;

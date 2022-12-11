@@ -15,7 +15,7 @@ const Header = () => {
 
   const [showOverlayNavigation, setShowOverlayNavigation] = useState(false);
 
-  function toggleOverlayNavgation() {
+  function toggleOverlayNavigation() {
     setShowOverlayNavigation(!showOverlayNavigation);
   }
 
@@ -54,17 +54,22 @@ const Header = () => {
         <>
           <HamburgerButton
             active={showOverlayNavigation}
-            onClick={toggleOverlayNavgation}
+            onClick={toggleOverlayNavigation}
           />
           {showOverlayNavigation && (
             <Navigation
               fullScreenOverlay={isMobile}
-              toggleOverlayNavigation={toggleOverlayNavgation}
+              showOverlayNavigationState={setShowOverlayNavigation}
+              toggleOverlayNavigation={toggleOverlayNavigation}
             />
           )}
         </>
       ) : (
-        <Navigation fullScreenOverlay={isMobile} />
+        <Navigation
+          fullScreenOverlay={isMobile}
+          showOverlayNavigationState={setShowOverlayNavigation}
+          toggleOverlayNavigation={toggleOverlayNavigation}
+        />
       )}
     </header>
   );

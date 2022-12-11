@@ -10,7 +10,11 @@ import styles from './Navigation.module';
 
 const cn = classNames.bind(styles);
 
-const Navigation = ({ fullScreenOverlay, toggleOverlayNavigation }) => {
+const Navigation = ({
+  fullScreenOverlay,
+  showOverlayNavigationState,
+  toggleOverlayNavigation,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const dropdownRef = useRef();
@@ -67,7 +71,7 @@ const Navigation = ({ fullScreenOverlay, toggleOverlayNavigation }) => {
                 ref={dropdownRef}
                 fullScreenOverlay={fullScreenOverlay}
                 setIsOpen={setIsOpen}
-                toggleOverlayNavigation={toggleOverlayNavigation}
+                showOverlayNavigationState={showOverlayNavigationState}
               />
             )}
           </li>
@@ -91,6 +95,7 @@ const Navigation = ({ fullScreenOverlay, toggleOverlayNavigation }) => {
 
 Navigation.propTypes = {
   fullScreenOverlay: PropTypes.bool,
+  showOverlayNavigationState: PropTypes.func,
   toggleOverlayNavigation: PropTypes.func,
 };
 
