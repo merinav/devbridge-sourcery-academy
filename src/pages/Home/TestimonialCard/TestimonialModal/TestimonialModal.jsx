@@ -35,7 +35,7 @@ const TestimonialModal = ({ photo, message, name, academy, closeModal }) => {
 };
 
 TestimonialModal.propTypes = {
-  photo: PropTypes.any,
+  photo: PropTypes.string,
   message: PropTypes.string,
   name: PropTypes.string,
   academy: PropTypes.string,
