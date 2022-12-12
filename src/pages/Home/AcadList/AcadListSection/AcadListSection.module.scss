@@ -69,7 +69,6 @@
   &--kids {
     align-self: flex-start;
     display: flex;
-    // gap: toRem(55);
     margin-top: toRem(120);
   }
 }
@@ -77,8 +76,6 @@
 .img {
   &__dev {
     bottom: 3rem;
-    // display: flex;
-    // justify-content: center;
     left: 10rem;
     position: relative;
     width: 67.5%;
@@ -90,12 +87,13 @@
     @include tablet-landscape {
       position: static;
     }
+
+    @include mobile-only {
+      display: none;
+    }
   }
 
   &__dev--path {
-    // bottom: 7rem;
-    // left: 1rem;
-    // min-width: toRem(315);
     position: absolute;
     top: -26rem;
     width: 100%;
@@ -115,7 +113,6 @@
   &__test {
     align-self: flex-start;
     display: flex;
-    // justify-content: center;
     width: 55%;
 
     @include desktop {
@@ -125,10 +122,13 @@
     @include tablet-landscape {
       width: 100%;
     }
+
+    @include mobile-only {
+      display: none;
+    }
   }
 
   &__test--path {
-    // min-width: toRem(350);
     position: absolute;
     right: 7rem;
     top: -10rem;
@@ -147,11 +147,7 @@
   }
 
   &__front {
-    // bottom: 3rem;
-    // display: flex;
-    // justify-content: center;
     min-width: toRem(300);
-    // top: -5rem;
     width: 71%;
 
     @include desktop {
@@ -159,7 +155,7 @@
     }
 
     @include mobile-only {
-      min-width: toRem(280);
+      display: none;
     }
   }
 
@@ -185,7 +181,7 @@
     }
 
     @include mobile-only {
-      min-width: toRem(280);
+      display: none;
     }
   }
 

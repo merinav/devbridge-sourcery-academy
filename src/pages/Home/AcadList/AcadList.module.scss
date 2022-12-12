@@ -3,11 +3,8 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  // padding: 0 toRem(48);
   gap: 5rem;
-  // grid-gap: 3rem;
   margin-top: toRem(120);
-  // position: relative;
   width: 100%;
 }
 
@@ -21,7 +18,6 @@
 }
 
 .academy-particles--dev-top {
-  // background-position: top left;
   background-repeat: no-repeat;
   background-size: auto;
   height: 50rem;
@@ -50,7 +46,6 @@
 }
 
 .academy-particles--dev-bot {
-  // background-position: top left;
   background-repeat: no-repeat;
   background-size: auto;
   bottom: toRem(24);
@@ -107,7 +102,6 @@
 
   @include desktop-small {
     right: toRem(210);
-    // width: toRem(210);
   }
 
   @include tablet-landscape {
@@ -226,15 +220,3 @@
     transform: rotate(72deg);
   }
 }
-
-// .img__dev--path {
-//   height: toRem(646.76);
-//   overflow: hidden;
-//   // bottom: 7rem;
-//   // left: 1rem;
-//   // min-width: toRem(315);
-//   position: absolute;
-//   right: -14rem;
-//   top: -8rem;
-//   width: toRem(665.02);
-// }
