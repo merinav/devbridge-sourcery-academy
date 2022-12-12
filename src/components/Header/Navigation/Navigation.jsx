@@ -10,11 +10,7 @@ import styles from './Navigation.module';
 
 const cn = classNames.bind(styles);
 
-const Navigation = ({
-  fullScreenOverlay,
-  setShowOverlayNav,
-  toggleOverlayNav,
-}) => {
+const Navigation = ({ fullScreenOverlay, setShowOverlayNav }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const dropdownRef = useRef();
@@ -50,7 +46,7 @@ const Navigation = ({
             'nav__list-overlay': fullScreenOverlay,
           })}
         >
-          <NavigationLink to={'#'} onClick={toggleOverlayNav}>
+          <NavigationLink to={'#'} onClick={() => setShowOverlayNav(false)}>
             About us
           </NavigationLink>
           <li className={cn('nav__list-item', 'nav__list-item--have-dropdown')}>
@@ -75,13 +71,16 @@ const Navigation = ({
               />
             )}
           </li>
-          <NavigationLink to={'#'} onClick={toggleOverlayNav}>
+          <NavigationLink to={'#'} onClick={() => setShowOverlayNav(false)}>
             Media
           </NavigationLink>
-          <NavigationLink to={routes.register} onClick={toggleOverlayNav}>
+          <NavigationLink
+            to={routes.register}
+            onClick={() => setShowOverlayNav(false)}
+          >
             Register
           </NavigationLink>
-          <NavigationLink to={'#'} onClick={toggleOverlayNav}>
+          <NavigationLink to={'#'} onClick={() => setShowOverlayNav(false)}>
             Questions
           </NavigationLink>
         </ul>
@@ -93,7 +92,6 @@ const Navigation = ({
 Navigation.propTypes = {
   fullScreenOverlay: PropTypes.bool.isRequired,
   setShowOverlayNav: PropTypes.func.isRequired,
-  toggleOverlayNav: PropTypes.func.isRequired,
 };
 
 export default Navigation;

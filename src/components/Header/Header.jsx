@@ -50,7 +50,6 @@ const Header = () => {
         <Navigation
           fullScreenOverlay={isMobile}
           setShowOverlayNav={setShowOverlayNav}
-          toggleOverlayNav={toggleOverlayNav}
         />
       )}
     </header>
