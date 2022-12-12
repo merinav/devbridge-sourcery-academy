@@ -31,7 +31,7 @@ const PromoSection = () => {
         <Button ariaLabel={'button accessible name'}>ariaLabel prop</Button>
       </div>
       <figure className={cn('section-image')}>
-        <Image_Promo alt="" />
+        <Image_Promo alt="Person standing near huge laptop" />
       </figure>
     </section>
   );

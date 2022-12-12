@@ -11,10 +11,12 @@
   font-family: var(--font-family-base);
   font-size: var(--font-size-m);
   font-weight: var(--font-weight-bold);
+  height: toRem(48);
   justify-content: center;
   line-height: var(--line-height-xl);
   padding: toRem(12.5) var(--spacer-xl);
   text-decoration: none;
+  transition: all 0.3s;
   width: fit-content;
 
   &:hover {
@@ -33,5 +35,11 @@
   &:focus-visible {
     box-shadow: none;
     outline: toRem(4) dashed var(--button-focus-tab-color);
+  }
+
+  &:focus:not(:focus-visible) {
+    background: var(--button-color);
+    box-shadow: none;
+    outline: 0;
   }
 }

@@ -6,7 +6,14 @@ import styles from './Button.module.scss';
 
 const cn = classNames.bind(styles);
 
-const Button = ({ children, href, to, type, onClick, ariaLabel }) => {
+const Button = ({
+  children,
+  href,
+  to,
+  type = 'button',
+  onClick,
+  ariaLabel,
+}) => {
   if (href) {
     return (
       <a
@@ -34,7 +41,7 @@ const Button = ({ children, href, to, type, onClick, ariaLabel }) => {
   } else {
     return (
       <button
-        type={type || 'button'}
+        type={type}
         className={cn('button')}
         onClick={onClick}
         aria-label={ariaLabel}
@@ -49,7 +56,7 @@ Button.propTypes = {
   children: PropTypes.node.isRequired,
   href: PropTypes.string,
   to: PropTypes.string,
-  type: PropTypes.string,
+  type: PropTypes.oneOf(['button', 'submit', 'reset']),
   onClick: PropTypes.func,
   ariaLabel: PropTypes.string,
 };
