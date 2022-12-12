@@ -13,24 +13,23 @@ const cn = classNames.bind(styles);
 const Header = () => {
   const isMobile = useMediaQuery('(max-width: 880px)');
 
-  const [showOverlayNavigation, setShowOverlayNavigation] = useState(false);
+  const [showOverlayNav, setShowOverlayNav] = useState(false);
 
-  function toggleOverlayNavigation() {
-    setShowOverlayNavigation(!showOverlayNavigation);
+  const logoRef = useRef();
+
+  function toggleOverlayNav() {
+    setShowOverlayNav((prevState) => !prevState);
   }
 
   useEffect(() => {
     if (!isMobile) {
-      setShowOverlayNavigation(false);
+      setShowOverlayNav(false);
     }
   }, [isMobile]);
 
-  const logoRef = useRef();
-
   useEffect(() => {
     const handleLogoClick = (event) => {
-      if (logoRef?.current?.contains(event.target))
-        setShowOverlayNavigation(false);
+      if (logoRef?.current?.contains(event.target)) setShowOverlayNav(false);
     };
 
     document.addEventListener('click', handleLogoClick);
@@ -52,23 +51,20 @@ const Header = () => {
       </Link>
       {isMobile ? (
         <>
-          <HamburgerButton
-            active={showOverlayNavigation}
-            onClick={toggleOverlayNavigation}
-          />
-          {showOverlayNavigation && (
+          <HamburgerButton active={showOverlayNav} onClick={toggleOverlayNav} />
+          {showOverlayNav && (
             <Navigation
               fullScreenOverlay={isMobile}
-              showOverlayNavigationState={setShowOverlayNavigation}
-              toggleOverlayNavigation={toggleOverlayNavigation}
+              setShowOverlayNav={setShowOverlayNav}
+              toggleOverlayNav={toggleOverlayNav}
             />
           )}
         </>
       ) : (
         <Navigation
           fullScreenOverlay={isMobile}
-          showOverlayNavigationState={setShowOverlayNavigation}
-          toggleOverlayNavigation={toggleOverlayNavigation}
+          setShowOverlayNav={setShowOverlayNav}
+          toggleOverlayNav={toggleOverlayNav}
         />
       )}
     </header>

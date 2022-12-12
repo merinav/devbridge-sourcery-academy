@@ -12,8 +12,8 @@ const cn = classNames.bind(styles);
 
 const Navigation = ({
   fullScreenOverlay,
-  showOverlayNavigationState,
-  toggleOverlayNavigation,
+  setShowOverlayNav,
+  toggleOverlayNav,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -50,7 +50,7 @@ const Navigation = ({
             'nav__list-overlay': fullScreenOverlay,
           })}
         >
-          <NavigationLink to={'#'} onClick={toggleOverlayNavigation}>
+          <NavigationLink to={'#'} onClick={toggleOverlayNav}>
             About us
           </NavigationLink>
           <li className={cn('nav__list-item', 'nav__list-item--have-dropdown')}>
@@ -71,20 +71,17 @@ const Navigation = ({
                 ref={dropdownRef}
                 fullScreenOverlay={fullScreenOverlay}
                 setIsOpen={setIsOpen}
-                showOverlayNavigationState={showOverlayNavigationState}
+                setShowOverlayNav={setShowOverlayNav}
               />
             )}
           </li>
-          <NavigationLink to={'#'} onClick={toggleOverlayNavigation}>
+          <NavigationLink to={'#'} onClick={toggleOverlayNav}>
             Media
           </NavigationLink>
-          <NavigationLink
-            to={routes.register}
-            onClick={toggleOverlayNavigation}
-          >
+          <NavigationLink to={routes.register} onClick={toggleOverlayNav}>
             Register
           </NavigationLink>
-          <NavigationLink to={'#'} onClick={toggleOverlayNavigation}>
+          <NavigationLink to={'#'} onClick={toggleOverlayNav}>
             Questions
           </NavigationLink>
         </ul>
@@ -94,9 +91,9 @@ const Navigation = ({
 };
 
 Navigation.propTypes = {
-  fullScreenOverlay: PropTypes.bool,
-  showOverlayNavigationState: PropTypes.func,
-  toggleOverlayNavigation: PropTypes.func,
+  fullScreenOverlay: PropTypes.bool.isRequired,
+  setShowOverlayNav: PropTypes.func.isRequired,
+  toggleOverlayNav: PropTypes.func.isRequired,
 };
 
 export default Navigation;
