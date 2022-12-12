@@ -10,11 +10,11 @@
   width: 100%;
 
   @include tablet-landscape {
-    gap: 5rem;
+    gap: var(--spacer-6xl);
   }
 
   @include mobile-only {
-    gap: 6rem;
+    gap: var(--spacer-7xl);
   }
 }
 
@@ -31,7 +31,6 @@
   &--dev-top {
     background-repeat: no-repeat;
     background-size: auto;
-    height: 50rem;
     height: toRem(40);
     left: 0;
     position: absolute;
@@ -39,7 +38,6 @@
     width: toRem(127);
 
     @include tablet-landscape {
-      left: 0;
       top: 16rem;
       transform: rotate(-45deg);
     }
