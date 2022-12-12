@@ -17,10 +17,10 @@ function AcadListSection({ data }) {
     paragraph,
     img: Img,
     svgPath: SvgPath,
-    invert: invertBtn,
+    invert: isInverted,
   } = data;
 
-  const invert = invertBtn ? 'academy-section--inv' : '';
+  const invert = isInverted ? 'academy-section--inv' : '';
 
   return (
     <section
@@ -30,7 +30,7 @@ function AcadListSection({ data }) {
         <AcadDescription
           title={title}
           paragr={paragraph}
-          invertBtn={!!invert}
+          isInverted={!!invert}
         />
       </div>
 

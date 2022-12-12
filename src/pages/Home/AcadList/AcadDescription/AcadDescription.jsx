@@ -5,9 +5,9 @@ import styles from './AcadDescription.module';
 
 const cn = classNames.bind(styles);
 
-function AcadDescription({ title, paragr, invertBtn }) {
-  const invBtn = invertBtn ? 'academy__link--inv' : '';
-  const invTxt = invertBtn ? 'academy--inv' : '';
+function AcadDescription({ title, paragr, isInverted }) {
+  const invBtn = isInverted ? 'academy__link--inv' : '';
+  const invTxt = isInverted ? 'academy--inv' : '';
 
   return (
     <div className={cn(['academy', `${invTxt}`])}>
@@ -21,7 +21,7 @@ function AcadDescription({ title, paragr, invertBtn }) {
 AcadDescription.propTypes = {
   title: PropTypes.string.isRequired,
   paragr: PropTypes.string.isRequired,
-  invertBtn: PropTypes.bool,
+  isInverted: PropTypes.bool,
 };
 
 export default AcadDescription;
