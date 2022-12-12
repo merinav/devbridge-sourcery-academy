@@ -36,10 +36,4 @@
     box-shadow: none;
     outline: toRem(4) dashed var(--button-focus-tab-color);
   }
-
-  &:focus:not(:focus-visible) {
-    background: var(--button-color);
-    box-shadow: none;
-    outline: 0;
-  }
 }
