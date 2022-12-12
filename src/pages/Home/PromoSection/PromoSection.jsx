@@ -22,13 +22,6 @@ const PromoSection = () => {
           entering information technologies studies.
         </p>
         <Button>View academies</Button>
-        <Button href={'https://www.google.lt/'}>href prop</Button>
-        <Button to={'/academy/front-end'}>to prop</Button>
-        <Button type={'submit'}>type prop</Button>
-        <Button onClick={() => console.log('button with onClick prop')}>
-          onClick prop
-        </Button>
-        <Button ariaLabel={'button accessible name'}>ariaLabel prop</Button>
       </div>
       <figure className={cn('section-image')}>
         <Image_Promo alt="Person standing near huge laptop" />
