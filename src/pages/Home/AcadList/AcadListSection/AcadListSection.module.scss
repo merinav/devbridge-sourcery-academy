@@ -67,6 +67,10 @@
 
   &--front {
     margin-top: toRem(175);
+
+    @include desktop {
+      margin-top: toRem(150);
+    }
   }
 
   &--kids {
@@ -97,6 +101,7 @@
   }
 
   &__dev--path {
+    left: 7rem;
     position: absolute;
     top: -26rem;
     width: 100%;

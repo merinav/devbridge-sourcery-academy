@@ -6,9 +6,16 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  gap: 5rem;
   margin-top: toRem(120);
   width: 100%;
+
+  @include tablet-landscape {
+    gap: 5rem;
+  }
+
+  @include mobile-only {
+    gap: 6rem;
+  }
 }
 
 .demo-container {
@@ -127,6 +134,10 @@
   right: toRem(39);
   top: 14rem;
   width: toRem(98.65);
+
+  @include desktop {
+    top: 11.5rem;
+  }
 
   @include tablet-landscape {
     right: toRem(-20);
