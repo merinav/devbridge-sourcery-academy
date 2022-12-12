@@ -27,211 +27,213 @@
   position: relative;
 }
 
-.academy-particles--dev-top {
-  background-repeat: no-repeat;
-  background-size: auto;
-  height: 50rem;
-  height: toRem(40);
-  left: 0;
-  position: absolute;
-  top: 14rem;
-  width: toRem(127);
-
-  @include tablet-landscape {
+.academy-particles {
+  &--dev-top {
+    background-repeat: no-repeat;
+    background-size: auto;
+    height: 50rem;
+    height: toRem(40);
     left: 0;
-    top: 16rem;
-    transform: rotate(-45deg);
+    position: absolute;
+    top: 14rem;
+    width: toRem(127);
+
+    @include tablet-landscape {
+      left: 0;
+      top: 16rem;
+      transform: rotate(-45deg);
+    }
+
+    @include tablet-portrait {
+      left: -4rem;
+      top: 19rem;
+      transform: rotate(-45deg);
+    }
+
+    @include mobile-only {
+      left: 2rem;
+      transform: rotate(-65deg);
+    }
   }
 
-  @include tablet-portrait {
-    left: -4rem;
-    top: 19rem;
-    transform: rotate(-45deg);
+  &--dev-bot {
+    background-repeat: no-repeat;
+    background-size: auto;
+    bottom: toRem(24);
+    height: toRem(85);
+    left: 24rem;
+    position: absolute;
+    width: toRem(191);
+
+    @include tablet-landscape {
+      bottom: toRem(240);
+      left: 45rem;
+    }
+
+    @include tablet-portrait {
+      bottom: 27rem;
+      left: unset;
+      right: -4rem;
+      transform: rotate(-25deg);
+    }
+
+    @include mobile-only {
+      bottom: 10rem;
+      right: 2.5rem;
+      transform: rotate(-20deg);
+    }
   }
 
-  @include mobile-only {
-    left: 2rem;
-    transform: rotate(-65deg);
-  }
-}
+  &--test-top {
+    height: topRem(60.83);
+    position: absolute;
+    right: toRem(40);
+    top: 7.5rem;
+    width: toRem(124.48);
 
-.academy-particles--dev-bot {
-  background-repeat: no-repeat;
-  background-size: auto;
-  bottom: toRem(24);
-  height: toRem(85);
-  left: 24rem;
-  position: absolute;
-  width: toRem(191);
+    @include tablet-landscape {
+      bottom: 33rem;
+      left: -2rem;
+      right: unset;
+      top: unset;
+    }
 
-  @include tablet-landscape {
-    bottom: toRem(240);
-    left: 45rem;
-  }
-
-  @include tablet-portrait {
-    bottom: 27rem;
-    left: unset;
-    right: -4rem;
-    transform: rotate(-25deg);
+    @include mobile-only {
+      bottom: 16rem;
+      left: 2.5rem;
+      transform: rotate(25deg);
+    }
   }
 
-  @include mobile-only {
-    bottom: 10rem;
-    right: 2.5rem;
-    transform: rotate(-20deg);
-  }
-}
+  &--test-bot {
+    bottom: 0;
+    height: toRem(86);
+    position: absolute;
+    right: toRem(280);
+    width: toRem(229.42);
 
-.academy-particles--test-top {
-  height: topRem(60.83);
-  position: absolute;
-  right: toRem(40);
-  top: 7.5rem;
-  width: toRem(124.48);
+    @include desktop-small {
+      right: toRem(210);
+    }
 
-  @include tablet-landscape {
-    bottom: 33rem;
-    left: -2rem;
-    right: unset;
-    top: unset;
-  }
+    @include tablet-landscape {
+      bottom: unset;
+      right: toRem(10);
+      top: 7rem;
+      transform: rotate(20deg);
+    }
 
-  @include mobile-only {
-    bottom: 16rem;
-    left: 2.5rem;
-    transform: rotate(25deg);
-  }
-}
-
-.academy-particles--test-bot {
-  bottom: 0;
-  height: toRem(86);
-  position: absolute;
-  right: toRem(280);
-  width: toRem(229.42);
-
-  @include desktop-small {
-    right: toRem(210);
+    @include tablet-portrait {
+      right: -3rem;
+      top: 9rem;
+    }
   }
 
-  @include tablet-landscape {
-    bottom: unset;
-    right: toRem(10);
-    top: 7rem;
-    transform: rotate(20deg);
+  &--front-top {
+    height: toRem(34.31);
+    position: absolute;
+    right: toRem(39);
+    top: 14rem;
+    width: toRem(98.65);
+
+    @include desktop {
+      top: 11.5rem;
+    }
+
+    @include tablet-landscape {
+      right: toRem(-20);
+      top: 37rem;
+      transform: rotate(-35deg);
+    }
+
+    @include tablet-portrait {
+      right: toRem(-32);
+      top: 41rem;
+    }
+
+    @include mobile-only {
+      right: 2rem;
+      top: 46rem;
+      transform: rotate(-75deg);
+    }
   }
 
-  @include tablet-portrait {
-    right: -3rem;
-    top: 9rem;
-  }
-}
+  &--front-bot {
+    bottom: -2rem;
+    height: toRem(67.76);
+    position: absolute;
+    right: toRem(220.58);
+    width: toRem(284.76);
 
-.academy-particles--front-top {
-  height: toRem(34.31);
-  position: absolute;
-  right: toRem(39);
-  top: 14rem;
-  width: toRem(98.65);
+    @include tablet-landscape {
+      bottom: unset;
+      left: -4rem;
+      right: unset;
+      top: 12rem;
+      transform: rotate(-30deg);
+    }
 
-  @include desktop {
-    top: 11.5rem;
-  }
+    @include tablet-portrait {
+      left: -6rem;
+      top: 11rem;
+    }
 
-  @include tablet-landscape {
-    right: toRem(-20);
-    top: 37rem;
-    transform: rotate(-35deg);
-  }
-
-  @include tablet-portrait {
-    right: toRem(-32);
-    top: 41rem;
-  }
-
-  @include mobile-only {
-    right: 2rem;
-    top: 46rem;
-    transform: rotate(-75deg);
-  }
-}
-
-.academy-particles--front-bot {
-  bottom: -2rem;
-  height: toRem(67.76);
-  position: absolute;
-  right: toRem(220.58);
-  width: toRem(284.76);
-
-  @include tablet-landscape {
-    bottom: unset;
-    left: -4rem;
-    right: unset;
-    top: 12rem;
-    transform: rotate(-30deg);
+    @include mobile-only {
+      left: -4rem;
+      top: 20rem;
+      transform: rotate(-56deg);
+    }
   }
 
-  @include tablet-portrait {
-    left: -6rem;
-    top: 13rem;
+  &--kids-top {
+    height: toRem(100.76);
+    left: toRem(378.94);
+    position: absolute;
+    top: toRem(50);
+    width: toRem(139.48);
+
+    @include tablet-landscape {
+      left: unset;
+      right: -3rem;
+      top: 8rem;
+      transform: rotate(65deg);
+    }
+
+    @include mobile-only {
+      right: 1.5rem;
+      top: 8rem;
+      transform: rotate(95deg);
+    }
   }
 
-  @include mobile-only {
-    left: -4rem;
-    top: 20rem;
-    transform: rotate(-56deg);
-  }
-}
-
-.academy-particles--kids-top {
-  height: toRem(100.76);
-  left: toRem(378.94);
-  position: absolute;
-  top: toRem(50);
-  width: toRem(139.48);
-
-  @include tablet-landscape {
-    left: unset;
-    right: -3rem;
-    top: 8rem;
-    transform: rotate(65deg);
-  }
-
-  @include mobile-only {
-    right: 1.5rem;
-    top: 8rem;
-    transform: rotate(95deg);
-  }
-}
-
-.academy-particles--kids-bot {
-  height: toRem(354.56);
-  left: toRem(106.78);
-  position: absolute;
-  top: 35rem;
-  width: toRem(441.72);
-
-  @include desktop {
-    left: toRem(35);
-  }
-
-  @include desktop-small {
-    top: 33rem;
-    width: toRem(350);
-  }
-
-  @include tablet-landscape {
-    height: toRem(84.83);
-    left: -12rem;
-    top: 26rem;
-    transform: rotate(90deg);
-    width: toRem(298);
-  }
-
-  @include mobile-only {
-    left: -8rem;
+  &--kids-bot {
+    height: toRem(354.56);
+    left: toRem(106.78);
+    position: absolute;
     top: 35rem;
-    transform: rotate(72deg);
+    width: toRem(441.72);
+
+    @include desktop {
+      left: toRem(35);
+    }
+
+    @include desktop-small {
+      top: 33rem;
+      width: toRem(350);
+    }
+
+    @include tablet-landscape {
+      height: toRem(84.83);
+      left: -12rem;
+      top: 26rem;
+      transform: rotate(90deg);
+      width: toRem(298);
+    }
+
+    @include mobile-only {
+      left: -8rem;
+      top: 35rem;
+      transform: rotate(72deg);
+    }
   }
 }
