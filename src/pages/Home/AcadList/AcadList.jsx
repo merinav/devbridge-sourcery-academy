@@ -17,6 +17,7 @@ import Particles_AcadList_Front_1 from '/src/assets/images/Particles_AcadList_Fr
 import Particles_AcadList_Front_2 from '/src/assets/images/Particles_AcadList_Front-2.svg';
 import Particles_AcadList_Kids_1 from '/src/assets/images/Particles_AcadList_Kids-1.svg';
 import Particles_AcadList_Kids_2 from '/src/assets/images/Particles_AcadList_Kids-2.svg';
+import Particles_AcadList_Kids_3 from '/src/assets/images/Particles_AcadList_Kids-3.svg';
 
 // import Path_Testers from '/src/assets/images/Path_Academy_Testers_2.svg';
 // import Path_Kids from '/src/assets/images/Path_Academy_Kids_2.svg';
@@ -70,7 +71,6 @@ const academyData = {
 
 function AcadList() {
   const isDesktop = useMediaQuery('(min-width: 880px)');
-  const isWidescreen = useMediaQuery('(min-width: 1201px)');
 
   return (
     <>
@@ -111,9 +111,15 @@ function AcadList() {
             className={cn('academy-particles', 'academy-particles--kids-top')}
           />
           <AcadListSection data={academyData.kids} />
-          <Particles_AcadList_Kids_2
-            className={cn('academy-particles', 'academy-particles--kids-bot')}
-          />
+          {isDesktop ? (
+            <Particles_AcadList_Kids_2
+              className={cn('academy-particles', 'academy-particles--kids-bot')}
+            />
+          ) : (
+            <Particles_AcadList_Kids_3
+              className={cn('academy-particles', 'academy-particles--kids-bot')}
+            />
+          )}
         </div>
       </div>
       <div className={cn('demo-container')}></div>

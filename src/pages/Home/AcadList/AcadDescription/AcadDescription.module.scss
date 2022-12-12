@@ -4,6 +4,20 @@
 
   &--inv {
     align-items: flex-end;
+
+    // @include tablet-landscape {
+    //   align-items: center;
+    // }
+  }
+
+  @include tablet-landscape {
+    align-items: center;
+    text-align: center;
+  }
+
+  @include mobile-only {
+    // width: 100%;
+    padding: 0 6rem;
   }
 }
 
@@ -39,5 +53,9 @@
 
   &--inv {
     align-self: flex-end;
+
+    @include tablet-landscape {
+      align-self: unset;
+    }
   }
 }

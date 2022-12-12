@@ -5,39 +5,61 @@
   width: 100%;
 
   @include tablet-landscape {
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+
+    &:not(.academy-section--dev) {
+      gap: 8rem;
+    }
   }
 
   &__description {
-    flex: 1;
+    flex-basis: 50%;
     min-width: toRem(380);
 
     @include tablet-landscape {
-      width: 100%;
+      flex-basis: 100%;
     }
   }
 
   &__img {
     align-items: center;
     display: flex;
-    flex: 1;
+    flex-basis: 50%;
     justify-content: center;
     position: relative;
+
+    @include tablet-landscape {
+      flex-basis: 50%;
+      width: 100%;
+    }
   }
 
   &--inv {
     align-items: flex-start;
     flex-direction: row-reverse;
     text-align: right;
+
+    @include tablet-landscape {
+      align-items: center;
+      flex-direction: row;
+      justify-content: center;
+      text-align: center;
+    }
   }
 
   &--dev {
+    gap: 5rem;
     margin-top: 20rem;
   }
 
   &--test {
     margin-top: 14.1rem;
+
+    @include tablet-landscape {
+      width: 100%;
+    }
   }
 
   &--front {
@@ -71,7 +93,6 @@
   }
 
   &__dev--path {
-    left: 10rem;
     // bottom: 7rem;
     // left: 1rem;
     // min-width: toRem(315);
@@ -80,6 +101,7 @@
     width: 100%;
 
     @include desktop {
+      left: 5rem;
       width: 120%;
     }
 
@@ -93,15 +115,15 @@
   &__test {
     align-self: flex-start;
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     width: 55%;
 
     @include desktop {
-      min-width: toRem(270);
+      min-width: toRem(250);
     }
 
     @include tablet-landscape {
-      // flex-grow: 0;
+      width: 100%;
     }
   }
 
@@ -135,6 +157,10 @@
     @include desktop {
       min-width: toRem(324);
     }
+
+    @include mobile-only {
+      min-width: toRem(280);
+    }
   }
 
   &__kids {
@@ -152,6 +178,14 @@
 
     @include desktop-small {
       top: -6rem;
+    }
+
+    @include tablet-landscape {
+      position: static;
+    }
+
+    @include mobile-only {
+      min-width: toRem(280);
     }
   }
 

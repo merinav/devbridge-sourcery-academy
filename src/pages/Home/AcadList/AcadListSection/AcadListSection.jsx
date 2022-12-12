@@ -23,30 +23,22 @@ function AcadListSection({ data }) {
   const invert = invertBtn ? 'academy-section--inv' : '';
 
   return (
-    <div className={cn(`academy-wrapper academy-wrapper--${id}`)}>
-      <section
-        className={cn([
-          'academy-section',
-          `academy-section--${id}`,
-          `${invert}`,
-        ])}
-      >
-        <div className={cn('academy-section__description')}>
-          <AcadDescription
-            title={title}
-            paragr={paragraph}
-            invertBtn={!!invert}
-          />
-        </div>
+    <section
+      className={cn(['academy-section', `academy-section--${id}`, `${invert}`])}
+    >
+      <div className={cn('academy-section__description')}>
+        <AcadDescription
+          title={title}
+          paragr={paragraph}
+          invertBtn={!!invert}
+        />
+      </div>
 
-        <div className={cn('academy-section__img')}>
-          {SvgPath && isDesktop && (
-            <SvgPath className={cn(`img__${id}--path`)} />
-          )}
-          <Img className={cn(`img__${id}`)} />
-        </div>
-      </section>
-    </div>
+      <div className={cn('academy-section__img')}>
+        {SvgPath && isDesktop && <SvgPath className={cn(`img__${id}--path`)} />}
+        <Img className={cn(`img__${id}`)} />
+      </div>
+    </section>
   );
 }
 
