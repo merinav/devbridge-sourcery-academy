@@ -23,7 +23,7 @@ const AcademiesSection = () => {
         entries.
       </p>
       <div className={cn('academies-section__vertical-line')}></div>
-      <a href="#">
+      <a href="#academy-list">
         <ArrowButton className={cn('academies-section__button')} />
       </a>
     </section>

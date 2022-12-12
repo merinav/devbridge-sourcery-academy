@@ -74,7 +74,7 @@ function AcadList() {
 
   return (
     <>
-      <div className={cn('academy-list')}>
+      <div id="academy-list" className={cn('academy-list')}>
         <div className={cn(['academy-wrapper', 'academy-wrapper--dev'])}>
           <Particles_AcadList_Dev_1
             className={cn('academy-particles', 'academy-particles--dev-top')}
