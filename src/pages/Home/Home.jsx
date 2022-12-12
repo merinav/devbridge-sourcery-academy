@@ -1,7 +1,7 @@
 import React from 'react';
 import AcadList from './AcadList/AcadList';
 import useTheme from '../../hooks/useTheme';
-import PromoSection from './PromoSection';
+import PromoHome from './PromoHome';
 import AcademiesSection from './AcademiesSection';
 
 const Home = () => {
@@ -9,7 +9,7 @@ const Home = () => {
 
   return (
     <>
-      <PromoSection />
+      <PromoHome />
       <AcademiesSection />
       <AcadList />
     </>

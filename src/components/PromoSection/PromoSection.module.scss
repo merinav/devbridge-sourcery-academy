@@ -15,7 +15,7 @@
   padding: var(--spacer-5xl) 0;
 }
 
-.section-text {
+.promo-text {
   @include tablet-landscape {
     padding: 0;
     width: 55%;
@@ -36,31 +36,13 @@
     @include h1-h2;
 
     margin: 0;
+    white-space: pre-line;
   }
 
-  &__text {
+  &__par {
     @include paragraph;
 
     margin-bottom: var(--spacer-6xl);
     margin-top: var(--spacer-4xl);
   }
-}
-
-.section-image {
-  @include tablet-landscape {
-    width: 35%;
-  }
-
-  @include tablet-portrait {
-    margin-top: var(--spacer-m);
-    width: 60%;
-  }
-
-  @include mobile-only {
-    display: none;
-  }
-
-  margin: 0;
-  padding: 0;
-  width: 50%;
 }
