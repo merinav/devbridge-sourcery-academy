@@ -35,8 +35,10 @@ function AcadListSection({ data }) {
       </div>
 
       <div className={cn('academy-section__img')}>
-        {SvgPath && isDesktop && <SvgPath className={cn(`img__${id}--path`)} />}
-        <Img className={cn(`img__${id}`)} />
+        {SvgPath && isDesktop && (
+          <SvgPath className={cn(`img__${id}--path`)} aria-hidden="true" />
+        )}
+        <Img className={cn(`img__${id}`)} aria-hidden="true" />
       </div>
     </section>
   );
