@@ -1,6 +1,10 @@
 @use '/src/sass/utilities/mixins/' as *;
 
 .promo-home__img {
+  margin: 0;
+  padding: 0;
+  width: 50%;
+
   @include tablet-landscape {
     width: 35%;
   }
@@ -13,8 +17,4 @@
   @include mobile-only {
     display: none;
   }
-
-  margin: 0;
-  padding: 0;
-  width: 50%;
 }

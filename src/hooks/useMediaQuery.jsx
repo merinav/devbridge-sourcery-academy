@@ -1,25 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 
-function useMediaQuery(query) {
-  const [matches, setMatches] = useState(window.matchMedia(query).matches);
+const useMediaQuery = (query) => {
+  const [matches, setMatches] = useState(false);
+  const media = window.matchMedia(query);
 
   useEffect(() => {
-    const media = window.matchMedia(query);
     if (media.matches !== matches) {
       setMatches(media.matches);
     }
-
-    const listener = () => setMatches(media.matches);
-    window.addEventListener('resize', listener);
-    return () => window.removeEventListener('resize', listener);
-  }, [matches, query]);
+    const listener = (event) => setMatches(event.matches);
+    media.addEventListener('change', listener);
+    return () => media.removeEventListener('change', listener);
+  }, [media]);
 
   return matches;
-}
-
-useMediaQuery.propTypes = {
-  query: PropTypes.string.isRequired,
 };
-
 export default useMediaQuery;

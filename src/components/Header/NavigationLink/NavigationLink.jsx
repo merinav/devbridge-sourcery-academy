@@ -2,23 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
-import styles from '../Header.module';
+import styles from '../Navigation/Navigation.module';
 
 const cn = classNames.bind(styles);
 
-function NavLink({ to, children }) {
+function NavigationLink({ to, children, onClick }) {
   return (
     <li className={cn('nav__list-item')}>
-      <Link className={cn('nav__link')} to={to}>
+      <Link className={cn('nav__link')} to={to} onClick={onClick}>
         {children}
       </Link>
     </li>
   );
 }
 
-NavLink.propTypes = {
+NavigationLink.propTypes = {
   to: PropTypes.string,
   children: PropTypes.node.isRequired,
+  onClick: PropTypes.func,
 };
 
-export default NavLink;
+export default NavigationLink;
