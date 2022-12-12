@@ -9,13 +9,12 @@ import TestimonialModal from '~/pages/Home/TestimonialCard/TestimonialModal';
 const Home = () => {
   useTheme();
   const testimonialData = useTestimonialData();
-  console.log(testimonialData);
-  const [isModelOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Disable background scroll when modal is open
   useEffect(() => {
-    document.body.style.overflow = isModelOpen ? 'hidden' : 'unset';
-  }, [isModelOpen]);
+    document.body.style.overflow = isModalOpen ? 'hidden' : 'unset';
+  }, [isModalOpen]);
 
   return (
     <>
@@ -31,7 +30,7 @@ const Home = () => {
             academy={testimonialData[0].academy}
             openModal={() => setIsModalOpen(true)}
           />
-          {isModelOpen && (
+          {isModalOpen && (
             <TestimonialModal
               photo={testimonialData[0].photo}
               // TODO: This is to only simulate what happens when message too long. Remove after testing
