@@ -1,3 +1,6 @@
+@use '/src/sass/utilities/functions' as *;
+@use '/src/sass/utilities/mixins' as *;
+
 .academy-list {
   align-items: center;
   display: flex;
