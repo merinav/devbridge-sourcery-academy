@@ -1,6 +1,6 @@
 import React from 'react';
-import useMediaQuery from '/src/hooks/useMediaQuery';
 import classNames from 'classnames/bind';
+import useMediaQuery from '/src/hooks/useMediaQuery';
 import AcadListSection from './AcadListSection';
 import Img_Developers from '/src/assets/images/Image_Academy_Developers.svg';
 import Img_Testers from '/src/assets/images/Image_Academy_Testers.svg';
@@ -15,9 +15,9 @@ import Particles_AcadList_Front_2 from '/src/assets/images/Particles_AcadList_Fr
 import Particles_AcadList_Kids_1 from '/src/assets/images/Particles_AcadList_Kids-1.svg';
 import Particles_AcadList_Kids_2 from '/src/assets/images/Particles_AcadList_Kids-2.svg';
 import Particles_AcadList_Kids_3 from '/src/assets/images/Particles_AcadList_Kids-3.svg';
-import Path_Developers from '/src/assets/images/Path_Academy_Developers_1.svg';
-import Path_Testers from '/src/assets/images/Path_Academy_Testers_1.svg';
-import Path_Kids from '/src/assets/images/Path_Academy_Kids_1.svg';
+import Path_Developers from '/src/assets/images/Path_Academy_Developers.svg';
+import Path_Testers from '/src/assets/images/Path_Academy_Testers.svg';
+import Path_Kids from '/src/assets/images/Path_Academy_Kids.svg';
 import styles from './AcadList.module';
 
 const cn = classNames.bind(styles);
