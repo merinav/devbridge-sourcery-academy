@@ -1,3 +1,6 @@
+@use '/src/sass/utilities/mixins/' as *;
+@use '/src/sass/utilities/functions/' as *;
+
 .dropdown-wrapper {
   background-color: var(--color-white);
   border-radius: var(--border-radius-xs);
@@ -25,7 +28,6 @@
   .dropdown__link {
     color: var(--color-purple-400);
     font-size: var(--font-size-s);
-    line-height: var(--line-height-m);
     padding: var(--spacer-m) var(--spacer-l);
     text-decoration: none;
     white-space: nowrap;

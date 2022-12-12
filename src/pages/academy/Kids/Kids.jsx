@@ -1,7 +1,14 @@
 import React from 'react';
+import useTheme from '/src/hooks/useTheme';
 
 function Kids() {
-  return <h1>/academy/kids</h1>;
+  useTheme('kids');
+
+  return (
+    <>
+      <h1 className="only-for-testing">/academy/kids</h1>
+    </>
+  );
 }
 
 export default Kids;
