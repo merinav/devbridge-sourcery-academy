@@ -21,7 +21,9 @@ const PromoSection = () => {
           long- term commitment to increase the number of students in Lithuania
           entering information technologies studies.
         </p>
-        <Button>View academies</Button>
+        <Button>button without props</Button>
+        <Button href="#academies-section">View academies</Button>
+        <Button href="https://google.lt">google.lt</Button>
       </div>
       <figure className={cn('section-image')}>
         <Image_Promo alt="" />
