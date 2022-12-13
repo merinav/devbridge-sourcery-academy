@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import classNames from 'classnames/bind';
 import Image_Promo from '../../../assets/images/Image_Promo.svg';
 import Button from '../../../components/Button/Button';
@@ -21,9 +21,7 @@ const PromoSection = () => {
           long- term commitment to increase the number of students in Lithuania
           entering information technologies studies.
         </p>
-        <Button>button without props</Button>
         <Button href="#academies-section">View academies</Button>
-        <Button href="https://google.lt">google.lt</Button>
       </div>
       <figure className={cn('section-image')}>
         <Image_Promo alt="" />

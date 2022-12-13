@@ -26,7 +26,7 @@ const Header = () => {
   }, [isMobile]);
 
   return (
-    <header className={cn('header')}>
+    <header className={cn('header')} id="header">
       <Link
         className={cn('header__logo-wrapper')}
         to={routes.home}

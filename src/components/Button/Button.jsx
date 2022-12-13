@@ -5,11 +5,10 @@ import { Link } from 'react-router-dom';
 import styles from './Button.module.scss';
 
 const cn = classNames.bind(styles);
+
 function Button({ children, href, to, type = 'button', onClick, ariaLabel }) {
   const outerLink = href?.includes('.');
   const innerLink = href?.includes('#');
-  console.log(outerLink);
-  console.log(innerLink);
 
   {
     if (outerLink) {
