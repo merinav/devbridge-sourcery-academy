@@ -31,7 +31,6 @@ const Button = ({
       <Link
         to={to}
         className={cn('button')}
-        type={type}
         onClick={onClick}
         aria-label={ariaLabel}
       >

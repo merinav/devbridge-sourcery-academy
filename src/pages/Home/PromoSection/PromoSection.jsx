@@ -24,7 +24,7 @@ const PromoSection = () => {
         <Button>View academies</Button>
       </div>
       <figure className={cn('section-image')}>
-        <Image_Promo alt="Person standing near huge laptop" />
+        <Image_Promo alt="" />
       </figure>
     </section>
   );

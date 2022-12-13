@@ -7,7 +7,6 @@ function FrontEnd() {
 
   return (
     <>
-      <Button>front-end</Button>
       <h1 className="only-for-testing">/academy/front-end</h1>
     </>
   );

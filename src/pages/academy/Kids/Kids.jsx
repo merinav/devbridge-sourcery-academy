@@ -7,7 +7,6 @@ function Kids() {
 
   return (
     <>
-      <Button>kids</Button>
       <h1 className="only-for-testing">/academy/kids</h1>
     </>
   );

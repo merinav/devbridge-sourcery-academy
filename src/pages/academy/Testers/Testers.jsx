@@ -7,7 +7,6 @@ function Testers() {
 
   return (
     <>
-      <Button>testers</Button>
       <h1 className="only-for-testing">/academy/testers</h1>
     </>
   );
