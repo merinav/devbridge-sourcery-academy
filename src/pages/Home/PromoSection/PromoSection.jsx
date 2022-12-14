@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import Image_Promo from '~/assets/images/Image_Promo.svg';
+import Image_Promo from '../../../assets/images/Image_Promo.svg';
+import Button from '../../../components/Button/Button';
 import styles from './PromoSection.module';
 
 const cn = classNames.bind(styles);
@@ -20,6 +21,7 @@ const PromoSection = () => {
           long- term commitment to increase the number of students in Lithuania
           entering information technologies studies.
         </p>
+        <Button href="#academies-section">View academies</Button>
       </div>
       <figure className={cn('section-image')}>
         <Image_Promo alt="" />

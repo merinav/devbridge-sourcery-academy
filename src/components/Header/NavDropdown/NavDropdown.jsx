@@ -1,13 +1,16 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import { routes } from '../../../routes/routeConfig';
-import classNames from 'classnames/bind';
 import styles from './NavDropdown.module';
 
 const cn = classNames.bind(styles);
 
-const NavDropdown = forwardRef(function NavDropdown({ setIsOpen }, ref) {
+const NavDropdown = forwardRef(function NavDropdown(
+  { fullScreenOverlay, setIsOpen, setShowOverlayNav },
+  ref
+) {
   const dropdownItems = [
     {
       text: 'Sourcery for Developers',
@@ -32,14 +35,22 @@ const NavDropdown = forwardRef(function NavDropdown({ setIsOpen }, ref) {
   ];
 
   return (
-    <div className={cn('dropdown-wrapper')} ref={ref}>
+    <div
+      className={cn('dropdown-wrapper', {
+        'dropdown-wrapper-overlay': fullScreenOverlay,
+      })}
+      ref={ref}
+    >
       <ul className={cn('dropdown__list')}>
-        {dropdownItems.map((item, index) => (
+        {dropdownItems.map((item) => (
           <li className={cn('dropdown__list-item')} key={item.id}>
             <Link
               className={cn('dropdown__link')}
               to={item.routePath}
-              onClick={() => setIsOpen((prevState) => !prevState)}
+              onClick={() => {
+                setIsOpen((prevState) => !prevState);
+                setShowOverlayNav(false);
+              }}
             >
               {item.text}
             </Link>
@@ -51,7 +62,9 @@ const NavDropdown = forwardRef(function NavDropdown({ setIsOpen }, ref) {
 });
 
 NavDropdown.propTypes = {
-  setIsOpen: PropTypes.func,
+  fullScreenOverlay: PropTypes.bool.isRequired,
+  setIsOpen: PropTypes.func.isRequired,
+  setShowOverlayNav: PropTypes.func.isRequired,
 };
 
 export default NavDropdown;
