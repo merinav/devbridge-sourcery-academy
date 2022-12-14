@@ -14,11 +14,7 @@ const TestimonialCard = ({ photo, message, name, academy, openModal }) => {
   return (
     <Card>
       <div className={cn('testimonial')}>
-        <img
-          className={cn('testimonial__photo')}
-          src={photo}
-          alt={`Photo of ${name}`}
-        />
+        <img className={cn('testimonial__photo')} src={photo} alt={name} />
         <figure
           className={cn(
             'testimonial__quotation',

@@ -11,12 +11,12 @@ const TestimonialModal = ({ photo, message, name, academy, closeModal }) => {
   return (
     <Modal closeModal={closeModal}>
       <div className={cn('testimonial-modal')}>
-        <header className={cn('header')}>
+        <header className={cn('testimonial-modal__header')}>
           <div className={cn('testimonial-modal__graduate')}>
             <img
               className={cn('testimonial-modal__photo')}
               src={photo}
-              alt={`Photo of ${name}`}
+              alt={name}
             />
             <div className={cn('testimonial-modal__graduate-info')}>
               <h2 className={cn('testimonial-modal__graduate-name')}>{name}</h2>
