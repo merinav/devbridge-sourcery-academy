@@ -19,12 +19,15 @@ const TestimonialModal = ({ photo, message, name, academy, closeModal }) => {
               alt={`Photo of ${name}`}
             />
             <div className={cn('testimonial-modal__graduate-info')}>
-              <h2 className={cn('testimonial-modal__name')}>{name}</h2>
+              <h2 className={cn('testimonial-modal__graduate-name')}>{name}</h2>
               <h2 className={cn('testimonial-modal__academy')}>{academy}</h2>
             </div>
           </div>
-          <div className={cn('testimonial-modal__close')} onClick={closeModal}>
-            <IconClose alt="close icon" />
+          <div
+            className={cn('testimonial-modal__close-button')}
+            onClick={closeModal}
+          >
+            <IconClose alt="close" />
           </div>
         </header>
 

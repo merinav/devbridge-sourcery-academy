@@ -14,7 +14,6 @@
 
   .header {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     position: sticky;
     width: 100%;
@@ -41,7 +40,7 @@
     width: toRem(78);
   }
 
-  &__close {
+  &__close-button {
     align-items: flex-end;
     cursor: pointer;
     fill: var(--primary-color);
@@ -50,7 +49,7 @@
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-width: toRem(2);
-    width: 22px;
+    width: toRem(22);
   }
 
   &__message {
@@ -62,7 +61,7 @@
     text-align: left;
   }
 
-  &__name {
+  &__graduate-name {
     font-size: toRem(20);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-m);
