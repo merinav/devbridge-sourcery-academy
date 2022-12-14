@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 import Image_Promo from '../../../assets/images/Image_Promo.svg';
 import Button from '../../../components/Button/Button';
