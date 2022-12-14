@@ -49,7 +49,7 @@ const NavDropdown = forwardRef(function NavDropdown(
               to={item.routePath}
               onClick={() => {
                 setIsOpen((prevState) => !prevState);
-                setShowOverlayNav((prevState) => !prevState);
+                setShowOverlayNav(false);
               }}
             >
               {item.text}
