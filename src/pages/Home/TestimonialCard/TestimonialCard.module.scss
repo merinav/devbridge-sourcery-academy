@@ -47,6 +47,7 @@
     cursor: pointer;
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-l);
+    padding: 0 toRem(6);
   }
 
   &__graduate-info {
