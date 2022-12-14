@@ -6,8 +6,8 @@
   line-height: var(--line-height-xl);
 }
 
-@mixin header-3 {
-  color: var(--color-purple-400);
+@mixin heading-3 {
+  color: var(--primary-color);
   font-family: var(--font-family-headline);
   font-size: var(--font-size-l);
   font-weight: var(--font-weight-bold);
