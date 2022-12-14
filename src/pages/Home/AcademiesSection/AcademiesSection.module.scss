@@ -10,6 +10,7 @@
   flex-direction: column;
   margin-top: toRem(410);
   padding: toRem(120);
+  scroll-margin-top: toRem(96);
   text-align: center;
 
   @include tablet-landscape {
