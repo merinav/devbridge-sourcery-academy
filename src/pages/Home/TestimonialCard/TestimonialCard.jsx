@@ -18,7 +18,7 @@ const TestimonialCard = ({ photo, message, name, academy, openModal }) => {
         <figure
           className={cn(
             'testimonial__quotation',
-            'testimonial__quotation-before'
+            'testimonial__quotation--before'
           )}
         >
           <QuotationBefore alt="" />
@@ -41,7 +41,7 @@ const TestimonialCard = ({ photo, message, name, academy, openModal }) => {
         <figure
           className={cn(
             'testimonial__quotation',
-            'testimonial__quotation-after'
+            'testimonial__quotation--after'
           )}
         >
           <QuotationAfter alt="" />
@@ -57,10 +57,10 @@ const TestimonialCard = ({ photo, message, name, academy, openModal }) => {
 
 TestimonialCard.propTypes = {
   photo: PropTypes.string.isRequired,
-  message: PropTypes.string,
-  name: PropTypes.string,
-  academy: PropTypes.string,
-  openModal: PropTypes.func,
+  message: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  academy: PropTypes.string.isRequired,
+  openModal: PropTypes.func.isRequired,
 };
 
 export default TestimonialCard;

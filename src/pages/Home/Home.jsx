@@ -15,6 +15,14 @@ const Home = () => {
     document.body.style.overflow = isModalOpen ? 'hidden' : 'unset';
   }, [isModalOpen]);
 
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <>
       <PromoSection />
@@ -27,7 +35,7 @@ const Home = () => {
             message={testimonialData[0].message.repeat(4)}
             name={testimonialData[0].name}
             academy={testimonialData[0].academy}
-            openModal={() => setIsModalOpen(true)}
+            openModal={handleOpenModal}
           />
           {isModalOpen && (
             <TestimonialModal
@@ -36,7 +44,7 @@ const Home = () => {
               message={testimonialData[0].message.repeat(4)}
               name={testimonialData[0].name}
               academy={testimonialData[0].academy}
-              closeModal={() => setIsModalOpen(false)}
+              closeModal={handleCloseModal}
             />
           )}
         </>

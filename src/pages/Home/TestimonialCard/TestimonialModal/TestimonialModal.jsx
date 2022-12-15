@@ -26,6 +26,7 @@ const TestimonialModal = ({ photo, message, name, academy, closeModal }) => {
           <div
             className={cn('testimonial-modal__close-button')}
             onClick={closeModal}
+            tabIndex={1}
           >
             <IconClose alt="close" />
           </div>
@@ -39,10 +40,10 @@ const TestimonialModal = ({ photo, message, name, academy, closeModal }) => {
 
 TestimonialModal.propTypes = {
   photo: PropTypes.string.isRequired,
-  message: PropTypes.string,
-  name: PropTypes.string,
-  academy: PropTypes.string,
-  closeModal: PropTypes.func,
+  message: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  academy: PropTypes.string.isRequired,
+  closeModal: PropTypes.func.isRequired,
 };
 
 export default TestimonialModal;

@@ -14,6 +14,7 @@ export function useTestimonialData() {
       const data = await response.json();
       setTestimonials(data);
     } catch (error) {
+      // TODO: more complete error handling will be implemented with ticket XXX
       console.error(error);
     }
   };
