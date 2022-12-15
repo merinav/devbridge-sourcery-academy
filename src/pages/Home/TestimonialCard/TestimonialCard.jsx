@@ -47,8 +47,8 @@ const TestimonialCard = ({ photo, message, name, academy, openModal }) => {
           <QuotationAfter alt="" />
         </figure>
         <div className={cn('testimonial__graduate-info')}>
-          <h2 className={cn('testimonial__graduate-name')}>{name}</h2>
-          <h2 className={cn('testimonial__academy')}>{academy}</h2>
+          <h3 className={cn('testimonial__graduate-name')}>{name}</h3>
+          <h3 className={cn('testimonial__academy')}>{academy}</h3>
         </div>
       </div>
     </Card>

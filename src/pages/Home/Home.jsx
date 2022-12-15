@@ -11,7 +11,6 @@ const Home = () => {
   const testimonialData = useTestimonialData();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Disable background scroll when modal is open
   useEffect(() => {
     document.body.style.overflow = isModalOpen ? 'hidden' : 'unset';
   }, [isModalOpen]);
