@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import Modal from '~/components/Modal';
@@ -8,20 +8,6 @@ import styles from './TestimonialModal.module.scss';
 const cn = classNames.bind(styles);
 
 const TestimonialModal = ({ photo, message, name, academy, closeModal }) => {
-  const handleKeyDown = (event) => {
-    if (event.key === 'Escape') {
-      closeModal();
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, []);
-
   return (
     <Modal closeModal={closeModal}>
       <div className={cn('testimonial-modal')}>
