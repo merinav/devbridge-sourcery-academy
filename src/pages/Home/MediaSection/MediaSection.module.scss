@@ -1,0 +1,40 @@
+@use '/src/sass/utilities/mixins/' as *;
+@use '/src/sass/utilities/functions/' as *;
+
+.media-section {
+  padding: toRem(190) 0 toRem(138) 0;
+
+  &__heading-wrapper {
+    position: relative;
+  }
+
+  &__heading {
+    // border: 1px solid var(--color-grey-200); // TODO: remove border (only for testing)
+    margin: 0;
+    @include h1-h2;
+  }
+
+  &__path {
+    // border: 1px solid var(--color-grey-200); // TODO: remove border (only for testing)
+    left: -4rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: toRem(352);
+  }
+
+  &__particles {
+    // border: 1px solid var(--color-grey-200); // TODO: remove border (only for testing)
+    position: absolute;
+    right: 6.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: toRem(800);
+  }
+
+  &__gallery {
+    // border: 1px solid var(--color-grey-200); // TODO: remove border (only for testing)
+    height: toRem(500);
+    margin-top: var(--spacer-3xl);
+  }
+}

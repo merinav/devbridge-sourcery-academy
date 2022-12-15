@@ -2,6 +2,7 @@ import React from 'react';
 import useTheme from '../../hooks/useTheme';
 import PromoSection from './PromoSection';
 import AcademiesSection from './AcademiesSection';
+import MediaSection from './MediaSection';
 
 const Home = () => {
   useTheme();
@@ -10,6 +11,7 @@ const Home = () => {
     <>
       <PromoSection />
       <AcademiesSection />
+      <MediaSection />
     </>
   );
 };
