@@ -37,10 +37,17 @@
     white-space: pre-line;
   }
 
-  &__par {
+  &__paragraph {
     @include paragraph;
 
     margin-bottom: var(--spacer-6xl);
     margin-top: var(--spacer-4xl);
+
+    &--apply {
+      font-size: var(--font-size-l);
+      font-weight: var(--font-weight-bold);
+      line-height: var(--line-height-xl);
+      margin-top: toRem(70);
+    }
   }
 }
