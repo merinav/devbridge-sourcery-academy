@@ -11,6 +11,7 @@ const AcademiesSection = () => {
     <section
       className={cn('academies-section')}
       style={{ backgroundImage: `url(${backgroundParticles})` }}
+      id="academies-section"
     >
       <h2 className={cn('academies-section__heading')}>Academies</h2>
       <p className={cn('academies-section__paragraph')}>
