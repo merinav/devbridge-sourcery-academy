@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 export function useTestimonialData() {
   const [testimonials, setTestimonials] = useState([]);
+  const testimonialData = 'https://www.jurele.lt/testimonials.json';
 
   useEffect(() => {
     fetchData();
@@ -9,7 +10,7 @@ export function useTestimonialData() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('https://www.jurele.lt/testimonials.json');
+      const response = await fetch(testimonialData);
       const data = await response.json();
       setTestimonials(data);
     } catch (error) {

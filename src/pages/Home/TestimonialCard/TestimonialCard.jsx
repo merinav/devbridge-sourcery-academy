@@ -21,7 +21,7 @@ const TestimonialCard = ({ photo, message, name, academy, openModal }) => {
             'testimonial__quotation-before'
           )}
         >
-          <QuotationBefore alt="Quotation mark" />
+          <QuotationBefore alt="" />
         </figure>
         <div className={cn('testimonial__message')}>
           {message.length > MAX_TESTIMONIALS_MESSAGE_LENGTH ? (
@@ -44,7 +44,7 @@ const TestimonialCard = ({ photo, message, name, academy, openModal }) => {
             'testimonial__quotation-after'
           )}
         >
-          <QuotationAfter alt="Quotation mark" />
+          <QuotationAfter alt="" />
         </figure>
         <div className={cn('testimonial__graduate-info')}>
           <h2 className={cn('testimonial__graduate-name')}>{name}</h2>
@@ -56,7 +56,7 @@ const TestimonialCard = ({ photo, message, name, academy, openModal }) => {
 };
 
 TestimonialCard.propTypes = {
-  photo: PropTypes.string,
+  photo: PropTypes.string.isRequired,
   message: PropTypes.string,
   name: PropTypes.string,
   academy: PropTypes.string,
