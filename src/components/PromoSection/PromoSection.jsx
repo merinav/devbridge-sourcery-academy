@@ -41,11 +41,11 @@ const PromoSection = ({ data, children }) => {
 
 PromoSection.propTypes = {
   data: PropTypes.shape({
-    headingData: PropTypes.string,
-    paragraphData: PropTypes.string,
-    buttonText: PropTypes.string,
-    buttonProps: PropTypes.object,
-    isApplyPromo: PropTypes.bool,
+    headingData: PropTypes.string.isRequired,
+    paragraphData: PropTypes.string.isRequired,
+    buttonText: PropTypes.string.isRequired,
+    buttonProps: PropTypes.object.isRequired,
+    isApplyPromo: PropTypes.bool.isRequired,
   }).isRequired,
   children: PropTypes.node,
 };
