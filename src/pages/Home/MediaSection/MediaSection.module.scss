@@ -9,32 +9,53 @@
   }
 
   &__heading {
-    // border: 1px solid var(--color-grey-200); // TODO: remove border (only for testing)
+    // border: 1px solid var(--color-grey-200); // TODO: remove (only for testing)
     margin: 0;
     @include h1-h2;
   }
 
   &__path {
-    // border: 1px solid var(--color-grey-200); // TODO: remove border (only for testing)
+    // border: 1px solid var(--color-grey-200); // TODO: remove (only for testing)
     left: -4rem;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     width: toRem(352);
+    width: 27%;
+    z-index: -10;
   }
 
   &__particles {
-    // border: 1px solid var(--color-grey-200); // TODO: remove border (only for testing)
+    // border: 1px solid var(--color-grey-200); // TODO: remove (only for testing)
     position: absolute;
     right: 6.2rem;
     top: 50%;
     transform: translateY(-50%);
     width: toRem(800);
+    width: 63%;
+    z-index: -11;
   }
 
   &__gallery {
-    // border: 1px solid var(--color-grey-200); // TODO: remove border (only for testing)
-    height: toRem(500);
+    display: flex;
+    flex-wrap: wrap;
+    gap: toRem(42);
     margin-top: var(--spacer-3xl);
+    // border: 1px solid var(--color-grey-200); // TODO: remove (only for testing)
+    // height: toRem(500);
+    // justify-content: space-between;
+    // overflow-x: hidden; // TODO: remove (only for testing)
+    // overflow-y: scroll; // TODO: remove (only for testing)
+  }
+
+  .media-image,
+  .media-video {
+    border: var(--border-width-m) solid var(--primary-color);
+    border-radius: var(--border-radius-s);
+    box-shadow: toRem(-20) toRem(20) 0 0 var(--color-grey-100);
+    flex: 1 1 0;
+    height: toRem(218);
+    min-width: toRem(264);
+    object-fit: cover;
   }
 }

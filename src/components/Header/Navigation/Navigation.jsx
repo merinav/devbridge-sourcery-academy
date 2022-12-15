@@ -71,9 +71,13 @@ const Navigation = ({ fullScreenOverlay, setShowOverlayNav }) => {
               />
             )}
           </li>
-          <NavigationLink to={'#'} onClick={() => setShowOverlayNav(false)}>
+          <a
+            className={cn('nav__link')}
+            href={'#media-section'}
+            onClick={() => setShowOverlayNav(false)}
+          >
             Media
-          </NavigationLink>
+          </a>
           <NavigationLink
             to={routes.register}
             onClick={() => setShowOverlayNav(false)}
