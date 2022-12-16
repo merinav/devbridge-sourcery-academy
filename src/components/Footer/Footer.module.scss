@@ -1,4 +1,5 @@
 @use '/src/sass/utilities/functions/' as *;
+@use '/src/sass/utilities/mixins/' as *;
 
 .footer-wrapper {
   align-items: center;
@@ -6,6 +7,12 @@
   display: flex;
   justify-content: space-between;
   padding: var(--spacer-xxl) var(--spacer-5xl);
+
+  @include mobile-only {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: var(--spacer-l);
+  }
 }
 
 .icons-wrapper {
