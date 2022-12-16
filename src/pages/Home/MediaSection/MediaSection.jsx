@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import Path_Media from '/src/assets/images/Path_Media.svg';
 import Particles_Media from '/src/assets/images/Background_particles_Media.svg';
+import Icon_play from '/src/assets/icons/Icon_play.svg';
 import styles from './MediaSection.module';
 
 const cn = classNames.bind(styles);
@@ -27,6 +28,16 @@ const MediaSection = () => {
 
   console.log(mediaData); // TODO: remove (only for testing)
 
+  const videoPlay = () => {
+    const video = document.getElementById('video');
+
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  };
+
   return (
     <section className={cn('media-section')} id="media-section">
       <div className={cn('media-section__heading-wrapper')}>
@@ -47,16 +58,31 @@ const MediaSection = () => {
                 className={cn('media-image')}
                 src={item.thumbnail}
                 key={index}
+                onClick={() => console.log('media-image clicked')}
               />
             ) : (
-              <video
-                className={cn('media-video')}
-                src={item.src}
-                key={index}
-                width="auto"
-                height="218"
-                controls
-              ></video>
+              <div className={cn('media-video-container')}>
+                <video
+                  className={cn('media-video')}
+                  src={item.src}
+                  key={index}
+                  width="auto"
+                  height="218"
+                  id="video"
+                  poster={item.thumbnail}
+                  // controls
+                ></video>
+                <div className={cn('video-controls')}>
+                  <button
+                    id="play-button"
+                    type="button"
+                    className={cn('play-button')}
+                    onClick={videoPlay}
+                  >
+                    <Icon_play className={cn('play-icon')} />
+                  </button>
+                </div>
+              </div>
             )
           )}
       </div>
