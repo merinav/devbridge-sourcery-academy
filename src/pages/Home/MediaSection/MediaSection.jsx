@@ -31,7 +31,7 @@ const MediaSection = () => {
   const videoPlay = () => {
     const video = document.getElementById('video');
 
-    if (video.paused) {
+    if (video.paused || video.ended) {
       video.play();
     } else {
       video.pause();
@@ -59,19 +59,27 @@ const MediaSection = () => {
                 src={item.thumbnail}
                 key={index}
                 onClick={() => console.log('media-image clicked')}
+                alt="Sourcery academy gallery image"
               />
             ) : (
-              <div className={cn('media-video-container')}>
+              <div className={cn('media-video-container')} key={index}>
                 <video
                   className={cn('media-video')}
-                  src={item.src}
-                  key={index}
                   width="auto"
                   height="218"
                   id="video"
                   poster={item.thumbnail}
-                  // controls
-                ></video>
+                  // controls // TODO: remove (only for testing)
+                >
+                  <source
+                    src={item.src}
+                    type={'video/' + item.src.split('.').pop()}
+                  />
+                  <p>
+                    Your browser doesn&quot;t support HTML video. Here is a{' '}
+                    <a href={item.src}>link to the video</a> instead.
+                  </p>
+                </video>
                 <div className={cn('video-controls')}>
                   <button
                     id="play-button"

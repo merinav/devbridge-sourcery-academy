@@ -2,6 +2,8 @@
 @use '/src/sass/utilities/functions/' as *;
 
 .media-section {
+  --media-item: 22%;
+
   padding: toRem(190) 0 toRem(138) 0;
 
   &__heading-wrapper {
@@ -9,13 +11,12 @@
   }
 
   &__heading {
-    // border: 1px solid var(--color-grey-200); // TODO: remove (only for testing)
     margin: 0;
     @include h1-h2;
+    // border: 1px solid var(--color-grey-200); // TODO: remove (only for testing)
   }
 
   &__path {
-    // border: 1px solid var(--color-grey-200); // TODO: remove (only for testing)
     left: -4rem;
     position: absolute;
     top: 50%;
@@ -23,10 +24,10 @@
     width: toRem(352);
     width: 27%;
     z-index: -10;
+    // border: 1px solid var(--color-grey-200); // TODO: remove (only for testing)
   }
 
   &__particles {
-    // border: 1px solid var(--color-grey-200); // TODO: remove (only for testing)
     position: absolute;
     right: 6.2rem;
     top: 50%;
@@ -34,6 +35,7 @@
     width: toRem(800);
     width: 63%;
     z-index: -11;
+    // border: 1px solid var(--color-grey-200); // TODO: remove (only for testing)
   }
 
   &__gallery {
@@ -54,11 +56,11 @@
     border-radius: var(--border-radius-s);
     box-shadow: toRem(-20) toRem(20) 0 0 var(--color-grey-100);
     cursor: pointer;
-    flex: 1 1 0;
+    flex: 1 1 auto;
     height: toRem(218);
-    min-width: toRem(264);
     object-fit: cover;
     overflow: hidden;
+    width: var(--media-item);
   }
 
   .media-video-container {
@@ -70,6 +72,7 @@
   }
 
   .media-video {
+    display: block;
     height: 100%;
     object-fit: cover;
     width: 100%;
@@ -85,10 +88,6 @@
     position: absolute;
     width: toRem(90);
     // border: 1px solid red; // TODO: remove (only for testing)
-    // left: 50%;
-    // top: 50%;
-    // transform: translateX(-50%);
-    // transform: translateY(-50%);
   }
 
   .play-button {
@@ -103,7 +102,7 @@
     width: 100%;
 
     &:hover {
-      opacity: 0.85;
+      opacity: 0.8;
     }
     // border: 2px solid green; // TODO: remove (only for testing)
   }
@@ -116,7 +115,60 @@
   .media-video-container:nth-child(2),
   .media-image:nth-child(6),
   .media-video-container:nth-child(6) {
-    min-width: toRem(264 * 2);
-    // border: var(--border-width-m) solid red; // TODO: remove (only for testing)
+    outline: 7px solid #f00; // TODO: remove (only for testing)
+    width: clamp(var(--media-item), calc(22% * 1.5), calc(22% * 2));
+  }
+
+  @include desktop {
+    .media-image:nth-child(2),
+    .media-video-container:nth-child(2),
+    .media-image:nth-child(6),
+    .media-video-container:nth-child(6) {
+      outline: 7px solid #daa520; // TODO: remove (only for testing)
+      width: var(--media-item);
+    }
+  }
+
+  @include tablet-landscape {
+    --media-item: 44%;
+
+    .media-image,
+    .media-video-container {
+      width: var(--media-item);
+    }
+
+    .media-image:nth-child(2),
+    .media-video-container:nth-child(2),
+    .media-image:nth-child(6),
+    .media-video-container:nth-child(6) {
+      outline: 7px solid #adff2f; // TODO: remove (only for testing)
+      width: var(--media-item);
+    }
+  }
+
+  @include tablet-portrait {
+    --media-item: 100%;
+
+    .media-image,
+    .media-video-container {
+      width: var(--media-item);
+    }
+
+    .media-image:nth-child(2),
+    .media-video-container:nth-child(2),
+    .media-image:nth-child(6),
+    .media-video-container:nth-child(6) {
+      outline: 7px solid #20b2aa; // TODO: remove (only for testing)
+      width: var(--media-item);
+    }
+  }
+
+  @include mobile-only {
+    .media-image:nth-child(2),
+    .media-video-container:nth-child(2),
+    .media-image:nth-child(6),
+    .media-video-container:nth-child(6) {
+      outline: 7px solid #87cefa; // TODO: remove (only for testing)
+    }
   }
 }
