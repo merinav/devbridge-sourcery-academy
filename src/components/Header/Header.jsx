@@ -26,10 +26,10 @@ const Header = () => {
   }, [isMobile]);
 
   useEffect(() => {
-    if (isMobile && showOverlayNav) {
+    if (showOverlayNav) {
       document.body.classList.add('no-scroll');
     } else document.body.classList.remove('no-scroll');
-  }, [isMobile, showOverlayNav]);
+  }, [showOverlayNav]);
 
   return (
     <header className={cn('header')} id="header">
