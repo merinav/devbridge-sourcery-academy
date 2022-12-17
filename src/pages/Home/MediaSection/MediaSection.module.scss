@@ -13,7 +13,6 @@
   &__heading {
     margin: 0;
     @include h1-h2;
-    // border: 1px solid var(--color-grey-200); // TODO: remove (only for testing)
   }
 
   &__path {
@@ -24,7 +23,6 @@
     width: toRem(352);
     width: 27%;
     z-index: -10;
-    // border: 1px solid var(--color-grey-200); // TODO: remove (only for testing)
   }
 
   &__particles {
@@ -35,7 +33,6 @@
     width: toRem(800);
     width: 63%;
     z-index: -11;
-    // border: 1px solid var(--color-grey-200); // TODO: remove (only for testing)
   }
 
   &__gallery {
@@ -43,11 +40,7 @@
     flex-wrap: wrap;
     gap: toRem(42);
     margin-top: var(--spacer-3xl);
-    // border: 1px solid var(--color-grey-200); // TODO: remove (only for testing)
-    // height: toRem(500);
-    // justify-content: space-between;
-    // overflow-x: hidden; // TODO: remove (only for testing)
-    // overflow-y: scroll; // TODO: remove (only for testing)
+    place-content: flex-start center;
   }
 
   .media-image,
@@ -65,7 +58,6 @@
 
   .media-video-container {
     align-items: center;
-    cursor: default;
     display: flex;
     justify-content: center;
     position: relative;
@@ -87,7 +79,6 @@
     padding: 0;
     position: absolute;
     width: toRem(90);
-    // border: 1px solid red; // TODO: remove (only for testing)
   }
 
   .play-button {
@@ -104,11 +95,6 @@
     &:hover {
       opacity: 0.8;
     }
-    // border: 2px solid green; // TODO: remove (only for testing)
-  }
-
-  .play-icon {
-    // border: 1px solid red; // TODO: remove (only for testing)
   }
 
   .media-image:nth-child(2),
@@ -170,5 +156,88 @@
     .media-video-container:nth-child(6) {
       outline: 7px solid #87cefa; // TODO: remove (only for testing)
     }
+  }
+}
+
+.modal {
+  align-items: center;
+  background-color: var(--modal);
+  display: flex;
+  height: 100%;
+  inset: 0;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+
+  .modal-button {
+    align-items: center;
+    background-color: var(--color-white);
+    border: 2px solid var(--color-purple-400);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    height: toRem(40);
+    justify-content: center;
+    transition: background-color 0.3s;
+    width: toRem(40);
+
+    &:hover {
+      background-color: var(--modal-button-hover);
+    }
+
+    &--close {
+      position: absolute;
+      right: var(--spacer-5xl);
+      top: var(--spacer-5xl);
+    }
+
+    &--prev {
+      left: var(--spacer-5xl);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &--next {
+      position: absolute;
+      right: var(--spacer-5xl);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .icon-image {
+    height: 95%;
+    width: 95%;
+
+    &--close {
+      height: 80%;
+      width: 80%;
+    }
+
+    &--prev {
+      margin-right: 2px;
+      transform: rotate(90deg);
+    }
+
+    &--next {
+      margin-left: 2px;
+      transform: rotate(-90deg);
+    }
+  }
+
+  .full-screen-image-container {
+    align-items: center;
+    display: flex;
+    height: 85%;
+    justify-content: center;
+    width: 85%;
+  }
+
+  .full-screen-image,
+  .full-screen-video {
+    max-height: 100%;
+    max-width: 100%;
   }
 }
