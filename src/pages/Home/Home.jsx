@@ -8,7 +8,7 @@ import TestimonialModal from '~/pages/Home/TestimonialCard/TestimonialModal';
 
 const Home = () => {
   useTheme();
-  const testimonialData = useTestimonialData();
+  const testimonialUrl = useTestimonialData();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
@@ -27,23 +27,23 @@ const Home = () => {
     <>
       <PromoSection />
       <AcademiesSection />
-      {testimonialData.length > 0 && (
+      {testimonialUrl.length > 0 && (
         <>
           <TestimonialCard
-            photo={testimonialData[0].photo}
+            photo={testimonialUrl[0].photo}
             // TODO: This is to only simulate what happens when message too long. Remove after testing
-            message={testimonialData[0].message.repeat(4)}
-            name={testimonialData[0].name}
-            academy={testimonialData[0].academy}
+            message={testimonialUrl[0].message.repeat(4)}
+            name={testimonialUrl[0].name}
+            academy={testimonialUrl[0].academy}
             openModal={handleOpenModal}
           />
           {isModalOpen && (
             <TestimonialModal
-              photo={testimonialData[0].photo}
+              photo={testimonialUrl[0].photo}
               // TODO: This is to only simulate what happens when message too long. Remove after testing
-              message={testimonialData[0].message.repeat(4)}
-              name={testimonialData[0].name}
-              academy={testimonialData[0].academy}
+              message={testimonialUrl[0].message.repeat(4)}
+              name={testimonialUrl[0].name}
+              academy={testimonialUrl[0].academy}
               closeModal={handleCloseModal}
             />
           )}
