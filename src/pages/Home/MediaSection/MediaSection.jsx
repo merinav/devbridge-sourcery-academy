@@ -89,6 +89,7 @@ const MediaSection = () => {
                 height="100%"
                 poster={mediaData[mediaNumber].thumbnail}
                 controls
+                autoPlay
               >
                 <source
                   src={mediaData[mediaNumber].src}
