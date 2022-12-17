@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import Modal from '~/components/Modal';
@@ -8,6 +8,15 @@ import styles from './TestimonialModal.module.scss';
 const cn = classNames.bind(styles);
 
 const TestimonialModal = ({ photo, message, name, academy, closeModal }) => {
+  const handleKeyDown = useCallback(
+    (e) => {
+      if (e.key === 'Enter') {
+        closeModal();
+      }
+    },
+    [closeModal]
+  );
+
   return (
     <Modal closeModal={closeModal}>
       <div className={cn('testimonial-modal')}>
@@ -26,7 +35,8 @@ const TestimonialModal = ({ photo, message, name, academy, closeModal }) => {
           <div
             className={cn('testimonial-modal__close-button')}
             onClick={closeModal}
-            tabIndex={1}
+            tabIndex="0"
+            onKeyDown={handleKeyDown}
           >
             <IconClose alt="close" />
           </div>
