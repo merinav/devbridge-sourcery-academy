@@ -11,9 +11,9 @@ const Home = () => {
   return (
     <>
       <Date_Item
-        itemSize={'small'}
-        month={['Oct']}
-        day={['10']}
+        itemSize={'big'}
+        month={['Oct', 'Dec']}
+        day={['10', '12']}
         text={'Kaunas'}
       />
       <PromoSection />

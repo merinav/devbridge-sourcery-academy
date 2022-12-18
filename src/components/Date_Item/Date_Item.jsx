@@ -7,11 +7,6 @@ import styles from './Date_Item.module.scss';
 const cn = classNames.bind(styles);
 
 const Date_Item = ({ itemSize, month, day, text }) => {
-  // if (month.length > 2) {
-  //   console.log('month needs to be an array of maximum two strings')
-  //   return new Error('month needs to be an array of maximum two strings');
-  // }
-
   const size = itemSize === 'small' ? true : false;
 
   const month1 = month.length > 1 ? month[0] : '';
@@ -59,13 +54,6 @@ const Date_Item = ({ itemSize, month, day, text }) => {
     </div>
   );
 };
-
-{
-  /* <div className={cn({'icon': size})}>
-<div><Icon_location_on/></div>
- <div className={cn('date-item__text', {'date-item__text--small': size})}>{text}</div>
- </div> */
-}
 
 Date_Item.propTypes = {
   month: PropTypes.arrayOf(PropTypes.string).isRequired,
