@@ -27,28 +27,6 @@ const Home = () => {
     <>
       <PromoSection />
       <AcademiesSection />
-      {testimonialUrl.length > 0 && (
-        <>
-          <TestimonialCard
-            photo={testimonialUrl[0].photo}
-            // TODO: This is to only simulate what happens when message too long. Remove after testing
-            message={testimonialUrl[0].message.repeat(4)}
-            name={testimonialUrl[0].name}
-            academy={testimonialUrl[0].academy}
-            openModal={handleOpenModal}
-          />
-          {isModalOpen && (
-            <TestimonialModal
-              photo={testimonialUrl[0].photo}
-              // TODO: This is to only simulate what happens when message too long. Remove after testing
-              message={testimonialUrl[0].message.repeat(4)}
-              name={testimonialUrl[0].name}
-              academy={testimonialUrl[0].academy}
-              closeModal={handleCloseModal}
-            />
-          )}
-        </>
-      )}
     </>
   );
 };

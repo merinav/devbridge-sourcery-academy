@@ -14,7 +14,7 @@ export function useTestimonialData() {
       const data = await response.json();
       setTestimonials(data);
     } catch (error) {
-      // TODO: more complete error handling will be implemented with ticket XXX
+      // TODO: more complete error handling will be implemented with ticket SR22S-65
       console.error(error);
     }
   };
