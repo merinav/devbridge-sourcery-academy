@@ -1,0 +1,44 @@
+@use '/src/sass/utilities/functions/' as *;
+
+.date-item {
+  align-content: center;
+  align-items: center;
+  background-color: var(--color-white);
+  border: var(--border-width-m) solid var(--primary-color);
+  border-radius: var(--border-radius-xs);
+  display: flex;
+  height: toRem(50);
+  justify-content: center;
+  line-height: var(--line-height-l);
+  //margin: 0; //????????????????????s
+  width: toRem(300);
+
+  &__date {
+    border-right: 2px solid #0048c1;
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-regular);
+    justify-content: center;
+    width: 33%;
+
+    &--month {
+      display: flex;
+      justify-content: center;
+    }
+
+    &--day {
+      display: flex;
+      font-size: var(--font-size-m);
+      font-weight: var(--font-weight-bold);
+      justify-content: center;
+    }
+  }
+
+  &__text {
+    color: var(--primary-color);
+    padding-left: var(--spacer-m);
+    width: 67%;
+  }
+}
