@@ -100,49 +100,72 @@
 
   .media-container:nth-child(2),
   .media-container:nth-child(6) {
+    min-width: calc(var(--media-item) * 2);
     outline: 7px solid #f00; // TODO: remove (only for testing)
-    width: clamp(var(--media-item), calc(22% * 1.5), calc(22% * 2));
   }
 
   @include desktop {
+    &__path {
+      width: 30%;
+    }
+
+    --media-item: 25%;
+
     .media-container:nth-child(2),
     .media-container:nth-child(6) {
+      min-width: var(--media-item);
       outline: 7px solid #daa520; // TODO: remove (only for testing)
-      width: var(--media-item);
     }
   }
 
   @include tablet-landscape {
-    --media-item: 44%;
-
-    .media-container {
-      width: var(--media-item);
+    &__path {
+      width: 35%;
     }
+
+    &__particles {
+      right: 4rem;
+      width: 60%;
+    }
+
+    --media-item: 35%;
 
     .media-container:nth-child(2),
     .media-container:nth-child(6) {
+      min-width: var(--media-item);
       outline: 7px solid #adff2f; // TODO: remove (only for testing)
-      width: var(--media-item);
     }
   }
 
   @include tablet-portrait {
-    --media-item: 100%;
+    &__path {
+      display: none;
+    }
+
+    &__particles {
+      display: none;
+    }
+
+    &__gallery {
+      gap: toRem(32);
+    }
 
     .media-container {
-      width: var(--media-item);
+      box-shadow: toRem(-15) toRem(15) 0 0 var(--color-grey-100);
     }
 
     .media-container:nth-child(2),
     .media-container:nth-child(6) {
       outline: 7px solid #20b2aa; // TODO: remove (only for testing)
-      width: var(--media-item);
     }
   }
 
   @include mobile-only {
+    --media-item: 50%;
+
     .media-container:nth-child(2),
     .media-container:nth-child(6) {
+      min-width: var(--media-item);
       outline: 7px solid #87cefa; // TODO: remove (only for testing)
     }
   }

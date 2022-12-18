@@ -13,6 +13,7 @@ const MediaSection = () => {
   const [mediaData, setMediaData] = useState([]);
   const [mediaNumber, setMediaNumber] = useState(0);
   const [openModal, setOpenModal] = useState(false);
+  const MAX_MEDIA_ITEMS = 6;
 
   const fetchMediaData = async () => {
     try {
@@ -122,7 +123,9 @@ const MediaSection = () => {
         {mediaData && (
           <div className={cn('media-section__gallery')}>
             {mediaData
-              .filter((itemFilter, indexFilter) => indexFilter < 6)
+              .filter(
+                (itemFilter, indexFilter) => indexFilter < MAX_MEDIA_ITEMS
+              )
               .map((itemMap, indexMap) =>
                 itemMap.type === 'image' ? (
                   <div className={cn('media-container')} key={indexMap}>
