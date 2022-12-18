@@ -3,16 +3,15 @@ import classNames from 'classnames/bind';
 import Path_Media from '/src/assets/images/Path_Media.svg';
 import Particles_Media from '/src/assets/images/Background_particles_Media.svg';
 import Icon_play from '/src/assets/icons/Icon_play.svg';
-import Icon_arrow from '/src/assets/icons/Icon_arrow_down.svg';
-import Icon_close from '/src/assets/icons/Icon_close_x.svg';
 import styles from './MediaSection.module';
 
 const cn = classNames.bind(styles);
 
 const MediaSection = () => {
   const [mediaData, setMediaData] = useState([]);
-  const [mediaNumber, setMediaNumber] = useState(0);
-  const [openModal, setOpenModal] = useState(false);
+  const [mediaDevelopers, setMediaDevelopers] = useState([]);
+  const [mediaTesters, setMediaTesters] = useState([]);
+  const [mediaFrontEnd, setMediaFrontEnd] = useState([]);
   const MAX_MEDIA_ITEMS = 6;
 
   const fetchMediaData = async () => {
@@ -22,6 +21,15 @@ const MediaSection = () => {
       );
       const data = await response.json();
       setMediaData(data);
+
+      const developers = data.filter((item) => item.academy === 'developers');
+      setMediaDevelopers(developers);
+
+      const testers = data.filter((item) => item.academy === 'testers');
+      setMediaTesters(testers);
+
+      const frontEnd = data.filter((item) => item.academy === 'frontend');
+      setMediaFrontEnd(frontEnd);
     } catch (error) {
       console.error(error);
     }
@@ -31,146 +39,67 @@ const MediaSection = () => {
     fetchMediaData();
   }, []);
 
-  const handleOpenModal = (index) => {
-    setMediaNumber(index);
-    setOpenModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setOpenModal(false);
-  };
-
-  const handlePrevMedia = () => {
-    return mediaNumber === 0
-      ? // setMediaNumber(mediaData.filter((item, index) => index < 6).length - 1)
-        setMediaNumber(mediaData.length - 1)
-      : setMediaNumber(mediaNumber - 1);
-  };
-
-  const handleNextMedia = () => {
-    return mediaNumber + 1 === mediaData.length
-      ? // mediaData.filter((item, index) => index < 6).length
-        setMediaNumber(0)
-      : setMediaNumber(mediaNumber + 1);
-  };
-
   return (
-    <>
-      {openModal && (
-        <div className={cn('modal')}>
-          <button
-            className={cn('modal-button', 'modal-button--prev')}
-            onClick={handlePrevMedia}
-          >
-            <Icon_arrow className={cn('icon-image', 'icon-image--prev')} />
-          </button>
-          <button
-            className={cn('modal-button', 'modal-button--next')}
-            onClick={handleNextMedia}
-          >
-            <Icon_arrow className={cn('icon-image', 'icon-image--next')} />
-          </button>
-          <button
-            className={cn('modal-button', 'modal-button--close')}
-            onClick={handleCloseModal}
-          >
-            <Icon_close className={cn('icon-image', 'icon-image--close')} />
-          </button>
-          <div className={cn('full-screen-media-container')}>
-            {mediaData[mediaNumber].type === 'image' ? (
-              <img
-                className={cn('full-screen-media-item', 'full-screen-image')}
-                src={mediaData[mediaNumber].src}
-                alt="Sourcery academy gallery image"
-              />
-            ) : (
-              <video
-                className={cn('full-screen-media-item', 'full-screen-video')}
-                width="100%"
-                height="100%"
-                poster={mediaData[mediaNumber].thumbnail}
-                controls
-                autoPlay
-              >
-                <source
-                  src={mediaData[mediaNumber].src}
-                  type={'video/' + mediaData[mediaNumber].src.split('.').pop()}
-                />
-                <p>
-                  Your browser doesn&quot;t support HTML video. Here is a{' '}
-                  <a href={mediaData[mediaNumber].src}>link to the video</a>{' '}
-                  instead.
-                </p>
-              </video>
+    <section className={cn('media-section')} id="media-section">
+      <div className={cn('media-section__heading-wrapper')}>
+        <h1 className={cn('media-section__heading')}>Media</h1>
+        <Path_Media className={cn('media-section__path')} aria-hidden="true" />
+        <Particles_Media
+          className={cn('media-section__particles')}
+          aria-hidden="true"
+        />
+      </div>
+
+      {mediaData && (
+        <div className={cn('media-section__gallery')}>
+          {mediaData
+            .filter((item, index) => index < MAX_MEDIA_ITEMS)
+            .map((item, index) =>
+              item.type === 'image' ? (
+                <div className={cn('media-container')} key={index}>
+                  <img
+                    className={cn('media-item')}
+                    src={item.thumbnail}
+                    onClick={() => console.log(`Image-${index} clicked`)}
+                    alt="Sourcery academy gallery image"
+                  />
+                </div>
+              ) : (
+                <div className={cn('media-container')} key={index}>
+                  <video
+                    className={cn('media-item')}
+                    width="auto"
+                    height="218"
+                    id={`video-${index}`}
+                    poster={item.thumbnail}
+                    onClick={() => console.log(`Video-${index} clicked`)}
+                  >
+                    <source
+                      src={item.src}
+                      type={'video/' + item.src.split('.').pop()}
+                    />
+                    <p>
+                      Your browser doesn&quot;t support HTML video. Here is a{' '}
+                      <a href={item.src}>link to the video</a> instead.
+                    </p>
+                  </video>
+                  <div className={cn('video-controls')}>
+                    <button
+                      type="button"
+                      className={cn('play-button')}
+                      onClick={() =>
+                        console.log(`Video-${index} play button clicked`)
+                      }
+                    >
+                      <Icon_play />
+                    </button>
+                  </div>
+                </div>
+              )
             )}
-          </div>
         </div>
       )}
-
-      <section className={cn('media-section')} id="media-section">
-        <div className={cn('media-section__heading-wrapper')}>
-          <h1 className={cn('media-section__heading')}>Media</h1>
-          <Path_Media
-            className={cn('media-section__path')}
-            aria-hidden="true"
-          />
-          <Particles_Media
-            className={cn('media-section__particles')}
-            aria-hidden="true"
-          />
-        </div>
-
-        {mediaData && (
-          <div className={cn('media-section__gallery')}>
-            {mediaData
-              .filter(
-                (itemFilter, indexFilter) => indexFilter < MAX_MEDIA_ITEMS
-              )
-              .map((itemMap, indexMap) =>
-                itemMap.type === 'image' ? (
-                  <div className={cn('media-container')} key={indexMap}>
-                    <img
-                      className={cn('media-item')}
-                      src={itemMap.thumbnail}
-                      onClick={() => handleOpenModal(indexMap)}
-                      alt="Sourcery academy gallery image"
-                    />
-                  </div>
-                ) : (
-                  <div className={cn('media-container')} key={indexMap}>
-                    <video
-                      className={cn('media-item')}
-                      width="auto"
-                      height="218"
-                      id={`video-${indexMap}`}
-                      poster={itemMap.thumbnail}
-                      onClick={() => handleOpenModal(indexMap)}
-                    >
-                      <source
-                        src={itemMap.src}
-                        type={'video/' + itemMap.src.split('.').pop()}
-                      />
-                      <p>
-                        Your browser doesn&quot;t support HTML video. Here is a{' '}
-                        <a href={itemMap.src}>link to the video</a> instead.
-                      </p>
-                    </video>
-                    <div className={cn('video-controls')}>
-                      <button
-                        type="button"
-                        className={cn('play-button')}
-                        onClick={() => handleOpenModal(indexMap)}
-                      >
-                        <Icon_play />
-                      </button>
-                    </div>
-                  </div>
-                )
-              )}
-          </div>
-        )}
-      </section>
-    </>
+    </section>
   );
 };
 
