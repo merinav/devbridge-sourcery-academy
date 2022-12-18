@@ -6,39 +6,62 @@
   background-color: var(--color-white);
   border: var(--border-width-m) solid var(--primary-color);
   border-radius: var(--border-radius-xs);
+  color: var(--primary-color);
   display: flex;
   height: toRem(50);
   justify-content: center;
   line-height: var(--line-height-l);
-  //margin: 0; //????????????????????s
   width: toRem(300);
 
   &__date {
-    border-right: 2px solid #0048c1;
-    color: var(--primary-color);
+    border-right: var(--border-width-m) solid var(--primary-color);
     display: flex;
-    flex-direction: column;
     font-size: var(--font-size-s);
     font-weight: var(--font-weight-regular);
     justify-content: center;
     width: 33%;
 
-    &--month {
-      display: flex;
-      justify-content: center;
-    }
-
-    &--day {
-      display: flex;
-      font-size: var(--font-size-m);
-      font-weight: var(--font-weight-bold);
-      justify-content: center;
+    &--small {
+      width: 25%;
     }
   }
 
   &__text {
-    color: var(--primary-color);
+    display: flex;
+    gap: var(--spacer-s);
     padding-left: var(--spacer-m);
     width: 67%;
+
+    &--small {
+      width: 75%;
+    }
   }
+
+  &--small {
+    width: toRem(225);
+  }
+}
+
+.date-block {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+
+  &__item {
+    align-items: flex-end;
+    display: flex;
+    height: 50%;
+  }
+
+  &__day {
+    display: flex;
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-bold);
+  }
+}
+
+.icon {
+  height: toRem(20);
+  width: toRem(14);
 }

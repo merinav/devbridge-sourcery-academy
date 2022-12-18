@@ -10,7 +10,12 @@ const Home = () => {
 
   return (
     <>
-      <Date_Item month={'Dec   Jan'} day={'9 - 12'} text={'Entry Exam'} />
+      <Date_Item
+        itemSize={'small'}
+        month={['Oct']}
+        day={['10']}
+        text={'Kaunas'}
+      />
       <PromoSection />
       <AcademiesSection />
     </>
