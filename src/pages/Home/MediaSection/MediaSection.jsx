@@ -75,16 +75,16 @@ const MediaSection = () => {
           >
             <Icon_close className={cn('icon-image', 'icon-image--close')} />
           </button>
-          <div className={cn('full-screen-image-container')}>
+          <div className={cn('full-screen-media-container')}>
             {mediaData[mediaNumber].type === 'image' ? (
               <img
-                className={cn('full-screen-image')}
+                className={cn('full-screen-media-item', 'full-screen-image')}
                 src={mediaData[mediaNumber].src}
                 alt="Sourcery academy gallery image"
               />
             ) : (
               <video
-                className={cn('full-screen-video')}
+                className={cn('full-screen-media-item', 'full-screen-video')}
                 width="100%"
                 height="100%"
                 poster={mediaData[mediaNumber].thumbnail}
@@ -125,17 +125,18 @@ const MediaSection = () => {
               .filter((itemFilter, indexFilter) => indexFilter < 6)
               .map((itemMap, indexMap) =>
                 itemMap.type === 'image' ? (
-                  <img
-                    className={cn('media-image')}
-                    src={itemMap.thumbnail}
-                    key={indexMap}
-                    onClick={() => handleOpenModal(indexMap)}
-                    alt="Sourcery academy gallery image"
-                  />
+                  <div className={cn('media-container')} key={indexMap}>
+                    <img
+                      className={cn('media-item')}
+                      src={itemMap.thumbnail}
+                      onClick={() => handleOpenModal(indexMap)}
+                      alt="Sourcery academy gallery image"
+                    />
+                  </div>
                 ) : (
-                  <div className={cn('media-video-container')} key={indexMap}>
+                  <div className={cn('media-container')} key={indexMap}>
                     <video
-                      className={cn('media-video')}
+                      className={cn('media-item')}
                       width="auto"
                       height="218"
                       id={`video-${indexMap}`}
