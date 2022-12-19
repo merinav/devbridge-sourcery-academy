@@ -58,7 +58,7 @@ const MediaSection = () => {
               item.type === 'image' ? (
                 <div className={cn('media-container')} key={index}>
                   <img
-                    className={cn('media-item')}
+                    className={cn('media-item', `image-${index + 1}`)}
                     src={item.thumbnail}
                     onClick={() => console.log(`Image-${index} clicked`)}
                     alt="Sourcery academy gallery image"
@@ -67,7 +67,7 @@ const MediaSection = () => {
               ) : (
                 <div className={cn('media-container')} key={index}>
                   <video
-                    className={cn('media-item')}
+                    className={cn('media-item', `video-${index + 1}`)}
                     width="auto"
                     height="218"
                     id={`video-${index}`}
