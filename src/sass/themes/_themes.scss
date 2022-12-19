@@ -6,10 +6,6 @@
   --button-active-color: var(--color-light-purple-300);
   --button-focus-tab-color: var(--color-accent-orange-400);
   --button-focus-border-color: var(--color-light-purple-500);
-
-  .only-for-testing {
-    color: var(--primary-color);
-  }
 }
 
 [data-theme='blue'] {
@@ -19,10 +15,6 @@
   --button-active-color: var(--color-blue-100);
   --button-focus-tab-color: var(--color-accent-orange-400);
   --button-focus-border-color: var(--color-blue-300);
-
-  .only-for-testing {
-    color: var(--primary-color);
-  }
 }
 
 [data-theme='green'] {
@@ -32,10 +24,6 @@
   --button-active-color: var(--color-green-300);
   --button-focus-tab-color: var(--color-accent-orange-400);
   --button-focus-border-color: var(--color-green-100);
-
-  .only-for-testing {
-    color: var(--primary-color);
-  }
 }
 
 [data-theme='red'] {
@@ -45,10 +33,6 @@
   --button-active-color: var(--color-red-300);
   --button-focus-tab-color: var(--color-accent-orange-400);
   --button-focus-border-color: var(--color-red-100);
-
-  .only-for-testing {
-    color: var(--primary-color);
-  }
 }
 
 [data-theme='kids'] {
@@ -58,8 +42,4 @@
   --button-active-color: var(--color-accent-green-300);
   --button-focus-tab-color: var(--color-accent-green-300);
   --button-focus-border-color: var(--color-accent-green-300);
-
-  .only-for-testing {
-    color: var(--primary-color);
-  }
 }
