@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import Path_Media from '/src/assets/images/Path_Media.svg';
 import Particles_Media from '/src/assets/images/Background_particles_Media.svg';
 import Icon_play from '/src/assets/icons/Icon_play.svg';
+import { dataLocal } from './dataLocal.js';
 import styles from './MediaSection.module';
 
 const cn = classNames.bind(styles);
@@ -12,7 +13,47 @@ const MediaSection = () => {
   const [mediaDevelopers, setMediaDevelopers] = useState([]);
   const [mediaTesters, setMediaTesters] = useState([]);
   const [mediaFrontEnd, setMediaFrontEnd] = useState([]);
-  const MAX_MEDIA_ITEMS = 6;
+
+  console.log({ mediaData }); // TODO: remove (only for testing)
+
+  let MAX_MEDIA_ITEMS;
+
+  switch (true) {
+    case mediaData.length < 1:
+      console.log('TEST 0'); // TODO: remove (only for testing)
+      MAX_MEDIA_ITEMS = 0;
+      break;
+
+    case mediaData.length < 2:
+      console.log('TEST 1'); // TODO: remove (only for testing)
+      MAX_MEDIA_ITEMS = 1;
+      break;
+
+    case mediaData.length < 3:
+      console.log('TEST 2'); // TODO: remove (only for testing)
+      MAX_MEDIA_ITEMS = 2;
+      break;
+
+    case mediaData.length < 4:
+      console.log('TEST 3'); // TODO: remove (only for testing)
+      MAX_MEDIA_ITEMS = 3;
+      break;
+
+    case mediaData.length < 5:
+      console.log('TEST 4'); // TODO: remove (only for testing)
+      MAX_MEDIA_ITEMS = 4;
+      break;
+
+    case mediaData.length < 6:
+      console.log('TEST 5'); // TODO: remove (only for testing)
+      MAX_MEDIA_ITEMS = 5;
+      break;
+
+    default:
+      MAX_MEDIA_ITEMS = 6;
+      console.log('TEST 6 default'); // TODO: remove (only for testing)
+      break;
+  }
 
   const fetchMediaData = async () => {
     try {
@@ -36,7 +77,8 @@ const MediaSection = () => {
   };
 
   useEffect(() => {
-    fetchMediaData();
+    // fetchMediaData();
+    setMediaData(dataLocal); // TODO: remove (only for testing)
   }, []);
 
   return (
@@ -51,28 +93,49 @@ const MediaSection = () => {
       </div>
 
       {mediaData && (
-        <div className={cn('media-section__gallery')}>
+        <div
+          className={cn(
+            'media-section__gallery',
+            `${MAX_MEDIA_ITEMS === 1 ? 'one-item' : ''}`,
+            `${MAX_MEDIA_ITEMS === 2 ? 'two-items' : ''}`,
+            `${MAX_MEDIA_ITEMS === 3 ? 'three-items' : ''}`,
+            `${MAX_MEDIA_ITEMS === 4 ? 'four-items' : ''}`,
+            `${MAX_MEDIA_ITEMS === 5 ? 'five-items' : ''}`
+          )}
+        >
           {mediaData
             .filter((item, index) => index < MAX_MEDIA_ITEMS)
             .map((item, index) =>
               item.type === 'image' ? (
-                <div className={cn('media-container')} key={index}>
+                <div
+                  className={cn(
+                    'media-container',
+                    `media-container-${index + 1}`
+                  )}
+                  key={index}
+                >
                   <img
                     className={cn('media-item', `image-${index + 1}`)}
                     src={item.thumbnail}
-                    onClick={() => console.log(`Image-${index} clicked`)}
+                    onClick={() => console.log(`Image-${index + 1} clicked`)} // TODO: remove (only for testing)
                     alt="Sourcery academy gallery image"
                   />
                 </div>
               ) : (
-                <div className={cn('media-container')} key={index}>
+                <div
+                  className={cn(
+                    'media-container',
+                    `media-container-${index + 1}`
+                  )}
+                  key={index}
+                >
                   <video
                     className={cn('media-item', `video-${index + 1}`)}
                     width="auto"
                     height="218"
                     id={`video-${index}`}
                     poster={item.thumbnail}
-                    onClick={() => console.log(`Video-${index} clicked`)}
+                    onClick={() => console.log(`Video-${index + 1} clicked`)} // TODO: remove (only for testing)
                   >
                     <source
                       src={item.src}
@@ -87,8 +150,9 @@ const MediaSection = () => {
                     <button
                       type="button"
                       className={cn('play-button')}
-                      onClick={() =>
-                        console.log(`Video-${index} play button clicked`)
+                      onClick={
+                        () =>
+                          console.log(`Video-${index + 1} play button clicked`) // TODO: remove (only for testing)
                       }
                     >
                       <Icon_play />
