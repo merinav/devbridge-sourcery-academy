@@ -2,11 +2,11 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import Icon_location_on from '../../assets/icons/Icon_location_on.svg';
-import styles from './Date_Item.module.scss';
+import styles from './DateItem.module.scss';
 
 const cn = classNames.bind(styles);
 
-const Date_Item = ({ date1, date2, showLocationIcon, text }) => {
+const DateItem = ({ date1, date2, showLocationIcon, text }) => {
   const oneDate = date1 && !date2 ? true : false;
   const twoDates = date1 && date2 ? true : false;
 
@@ -57,11 +57,11 @@ const Date_Item = ({ date1, date2, showLocationIcon, text }) => {
   );
 };
 
-Date_Item.propTypes = {
+DateItem.propTypes = {
   date1: PropTypes.instanceOf(Date).isRequired,
   date2: PropTypes.instanceOf(Date),
   showLocationIcon: PropTypes.bool,
   text: PropTypes.string.isRequired,
 };
 
-export default Date_Item;
+export default DateItem;
