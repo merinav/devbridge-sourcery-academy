@@ -5,6 +5,7 @@ import AcademiesSection from './AcademiesSection';
 import TestimonialCard from '~/pages/Home/TestimonialCard';
 import { useTestimonialData } from '~/hooks/useTestimonialData';
 import TestimonialModal from '~/pages/Home/TestimonialCard/TestimonialModal';
+import TestimonialsSection from '~/components/TestimonialsSection';
 
 const Home = () => {
   useTheme();
@@ -27,6 +28,7 @@ const Home = () => {
     <>
       <PromoSection />
       <AcademiesSection />
+      <TestimonialsSection />
     </>
   );
 };
