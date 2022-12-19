@@ -6,48 +6,44 @@ import styles from './Date_Item.module.scss';
 
 const cn = classNames.bind(styles);
 
-const Date_Item = ({ itemSize, month, day, text }) => {
-  const size = itemSize === 'small' ? true : false;
+const Date_Item = ({ date1, date2, showLocationIcon, text }) => {
+  const monthName =
+    date1 && !date2 ? date1.toLocaleString('en-GB', { month: 'short' }) : '';
+  const dayNumber = date1 && !date2 ? date1.getDate() : '-';
 
-  const month1 = month.length > 1 ? month[0] : '';
-  const month2 = month.length == 1 ? month[0] : '';
-  const month3 = month.length > 1 ? month[1] : '';
+  const monthName1 =
+    date1 && date2 ? date1.toLocaleString('en-GB', { month: 'short' }) : '';
+  const monthName2 =
+    date1 && date2 ? date2.toLocaleString('en-GB', { month: 'short' }) : '';
 
-  const day1 = day.length > 1 ? day[0] : '';
-  const day2 = day.length == 1 ? day[0] : '-';
-  const day3 = day.length > 1 ? day[1] : '';
+  const dayNumber1 = date1 && date2 ? date1.getDate() : '';
+  const dayNumber2 = date1 && date2 ? date2.getDate() : '';
 
   return (
-    <div className={cn('date-item', { 'date-item--small': size })}>
-      <div
-        className={cn('date-item__date', { 'date-item__date--small': size })}
-      >
-        <div className={cn('date-block')}></div>
+    <div className={cn('date-item')}>
+      <div className={cn('date-item__date')}>
         <div className={cn('date-block')}>
-          <div className={cn('date-block__item')}>{month1}</div>
+          <div className={cn('date-block__item')}>{monthName1}</div>
           <div className={cn('date-block__item', 'date-block__day')}>
-            {day1}
+            {dayNumber1}
           </div>
         </div>
         <div className={cn('date-block')}>
-          <div className={cn('date-block__item')}>{month2}</div>
+          <div className={cn('date-block__item')}>{monthName}</div>
           <div className={cn('date-block__item', 'date-block__day')}>
-            {day2}
+            {dayNumber}
           </div>
         </div>
         <div className={cn('date-block')}>
-          <div className={cn('date-block__item')}>{month3}</div>
+          <div className={cn('date-block__item')}>{monthName2}</div>
           <div className={cn('date-block__item', 'date-block__day')}>
-            {day3}
+            {dayNumber2}
           </div>
         </div>
-        <div className={cn('date-block')}></div>
       </div>
-      <div
-        className={cn('date-item__text', { 'date-item__text--small': size })}
-      >
-        <div className={cn({ icon: size })}>
-          {size ? <Icon_location_on /> : ''}
+      <div className={cn('date-item__text')}>
+        <div className={cn({ icon: showLocationIcon })}>
+          {showLocationIcon ? <Icon_location_on /> : ''}
         </div>
         <div>{text}</div>
       </div>
@@ -56,10 +52,10 @@ const Date_Item = ({ itemSize, month, day, text }) => {
 };
 
 Date_Item.propTypes = {
-  month: PropTypes.arrayOf(PropTypes.string).isRequired,
-  day: PropTypes.arrayOf(PropTypes.string).isRequired,
+  date1: PropTypes.instanceOf(Date).isRequired,
+  date2: PropTypes.instanceOf(Date),
+  showLocationIcon: PropTypes.bool,
   text: PropTypes.string.isRequired,
-  itemSize: PropTypes.oneOf(['small', 'big']).isRequired,
 };
 
 export default Date_Item;

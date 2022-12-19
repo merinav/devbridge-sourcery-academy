@@ -9,7 +9,7 @@
   color: var(--primary-color);
   display: flex;
   height: toRem(50);
-  justify-content: center;
+  justify-content: flex-start;
   line-height: var(--line-height-l);
 
   &__date {
@@ -18,22 +18,15 @@
     font-size: var(--font-size-s);
     font-weight: var(--font-weight-regular);
     justify-content: center;
-    width: 33%;
-
-    &--small {
-      width: 25%;
-    }
+    padding-left: var(--spacer-m);
+    padding-right: var(--spacer-m);
   }
 
   &__text {
     display: flex;
     gap: var(--spacer-s);
     padding-left: var(--spacer-m);
-    width: 67%;
-
-    &--small {
-      width: 75%;
-    }
+    //padding-right: var(--spacer-s);
   }
 }
 
@@ -41,7 +34,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  width: 20%;
+  //padding-right: var(--spacer-s);
 
   &__item {
     align-items: flex-end;
