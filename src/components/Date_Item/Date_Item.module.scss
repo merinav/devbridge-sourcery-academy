@@ -1,7 +1,6 @@
 @use '/src/sass/utilities/functions/' as *;
 
 .date-item {
-  align-content: center;
   align-items: center;
   background-color: var(--color-white);
   border: var(--border-width-m) solid var(--primary-color);
@@ -9,32 +8,35 @@
   color: var(--primary-color);
   display: flex;
   height: toRem(50);
-  justify-content: flex-start;
   line-height: var(--line-height-l);
 
   &__date {
     border-right: var(--border-width-m) solid var(--primary-color);
     display: flex;
+    flex-grow: 1;
     font-size: var(--font-size-s);
     font-weight: var(--font-weight-regular);
-    justify-content: center;
-    padding-left: var(--spacer-m);
-    padding-right: var(--spacer-m);
+    justify-content: space-between;
+    padding: 0 var(--spacer-m);
   }
 
   &__text {
     display: flex;
-    gap: var(--spacer-s);
+    flex-grow: 2;
     padding-left: var(--spacer-m);
-    //padding-right: var(--spacer-s);
+
+    &--icon {
+      height: toRem(20);
+      margin-right: var(--spacer-s);
+      width: toRem(14);
+    }
   }
 }
 
-.date-block {
+.date-container {
   align-items: center;
   display: flex;
   flex-direction: column;
-  //padding-right: var(--spacer-s);
 
   &__item {
     align-items: flex-end;
@@ -43,13 +45,7 @@
   }
 
   &__day {
-    display: flex;
     font-size: var(--font-size-m);
     font-weight: var(--font-weight-bold);
   }
-}
-
-.icon {
-  height: toRem(20);
-  width: toRem(14);
 }
