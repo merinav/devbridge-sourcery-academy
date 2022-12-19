@@ -18,6 +18,8 @@
   &__path {
     left: -4rem;
     position: absolute;
+    stroke: var(--primary-color);
+    stroke-width: 2px;
     top: 50%;
     transform: translateY(-50%);
     width: toRem(352);
@@ -43,6 +45,14 @@
     place-content: flex-start center;
   }
 
+  .media-item {
+    cursor: pointer;
+    height: 100%;
+    object-fit: cover;
+    transition: all 1s;
+    width: 100%;
+  }
+
   .media-container {
     align-items: center;
     background: var(--color-white);
@@ -56,16 +66,8 @@
     overflow: hidden;
     position: relative;
     width: var(--media-item);
-  }
 
-  .media-item {
-    cursor: pointer;
-    height: 100%;
-    object-fit: cover;
-    transition: all 1s;
-    width: 100%;
-
-    &:hover {
+    &:hover .media-item {
       opacity: 0.9;
       transform: scale(1.1);
     }
@@ -99,11 +101,12 @@
   }
 
   .media-container:nth-child(2),
-  .media-container:nth-child(6) {
+  .media-container:last-child {
     min-width: calc(var(--media-item) * 2);
     outline: 7px solid #f00; // TODO: remove (only for testing)
   }
 
+  // max-width: 1200px
   @include desktop {
     &__path {
       width: 30%;
@@ -112,12 +115,13 @@
     --media-item: 25%;
 
     .media-container:nth-child(2),
-    .media-container:nth-child(6) {
+    .media-container:last-child {
       min-width: var(--media-item);
       outline: 7px solid #daa520; // TODO: remove (only for testing)
     }
   }
 
+  // max-width: 880px
   @include tablet-landscape {
     &__path {
       width: 35%;
@@ -131,12 +135,13 @@
     --media-item: 35%;
 
     .media-container:nth-child(2),
-    .media-container:nth-child(6) {
+    .media-container:last-child {
       min-width: var(--media-item);
       outline: 7px solid #adff2f; // TODO: remove (only for testing)
     }
   }
 
+  // max-width: 768px
   @include tablet-portrait {
     &__path {
       display: none;
@@ -155,16 +160,17 @@
     }
 
     .media-container:nth-child(2),
-    .media-container:nth-child(6) {
+    .media-container:last-child {
       outline: 7px solid #20b2aa; // TODO: remove (only for testing)
     }
   }
 
+  // max-width: 480px
   @include mobile-only {
     --media-item: 50%;
 
     .media-container:nth-child(2),
-    .media-container:nth-child(6) {
+    .media-container:last-child {
       min-width: var(--media-item);
       outline: 7px solid #87cefa; // TODO: remove (only for testing)
     }
