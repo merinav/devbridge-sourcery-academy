@@ -364,16 +364,15 @@
 
   .loading-spinner {
     align-items: center;
-    // border: 2px solid red;
     display: flex;
     height: 4rem;
     justify-content: center;
-    margin-top: var(--spacer-3xl);
+    margin: var(--spacer-3xl) auto 0 auto;
     width: 4rem;
 
     &::after {
       animation: loading 0.75s ease infinite;
-      border: 6px solid var(--color-grey-150);
+      border: 6px solid var(--color-purple-150);
       border-radius: 50%;
       border-top-color: var(--primary-color);
       content: '';
@@ -398,6 +397,7 @@
         color: var(--primary-color);
         content: 'Loading...';
         font-size: toRem(24);
+        transform: translateX(-50%);
       }
     }
   }

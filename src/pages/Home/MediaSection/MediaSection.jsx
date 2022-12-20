@@ -1,51 +1,55 @@
 import React, { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
+import useFetch from '/src/hooks/useFetch';
 import Path_Media from '/src/assets/images/Path_Media.svg';
 import Particles_Media from '/src/assets/images/Background_particles_Media.svg';
 import Icon_play from '/src/assets/icons/Icon_play.svg';
-import { dataLocal } from './dataLocal.js'; // TODO: remove (only for testing) and remove file dataLocal.js
+// import mediaSectionData from './dataLocal.js'; // TODO: remove (only for testing) and remove file dataLocal.js
 import styles from './MediaSection.module';
 
 const cn = classNames.bind(styles);
 
 const MediaSection = () => {
-  const [mediaData, setMediaData] = useState([]);
-  const [mediaDevelopers, setMediaDevelopers] = useState([]);
-  const [mediaTesters, setMediaTesters] = useState([]);
-  const [mediaFrontEnd, setMediaFrontEnd] = useState([]);
+  const mediaSectionFetchUrl =
+    'https://sfe-2022-data.netlify.app/static/media.json';
+  const mediaSectionData = useFetch(mediaSectionFetchUrl);
+  console.log({ mediaSectionData }); // TODO: remove (only for testing)
   const [loading, setLoading] = useState(true);
 
-  console.log({ mediaData }); // TODO: remove (only for testing)
+  useEffect(() => {
+    if (mediaSectionData) {
+      setLoading(false);
+    }
+  }, [mediaSectionData]);
 
   let MAX_MEDIA_ITEMS;
-
   switch (true) {
-    case mediaData.length < 1:
+    case mediaSectionData.length < 1:
       console.log('TEST 0'); // TODO: remove (only for testing)
       MAX_MEDIA_ITEMS = 0;
       break;
 
-    case mediaData.length < 2:
+    case mediaSectionData.length < 2:
       console.log('TEST 1'); // TODO: remove (only for testing)
       MAX_MEDIA_ITEMS = 1;
       break;
 
-    case mediaData.length < 3:
+    case mediaSectionData.length < 3:
       console.log('TEST 2'); // TODO: remove (only for testing)
       MAX_MEDIA_ITEMS = 2;
       break;
 
-    case mediaData.length < 4:
+    case mediaSectionData.length < 4:
       console.log('TEST 3'); // TODO: remove (only for testing)
       MAX_MEDIA_ITEMS = 3;
       break;
 
-    case mediaData.length < 5:
+    case mediaSectionData.length < 5:
       console.log('TEST 4'); // TODO: remove (only for testing)
       MAX_MEDIA_ITEMS = 4;
       break;
 
-    case mediaData.length < 6:
+    case mediaSectionData.length < 6:
       console.log('TEST 5'); // TODO: remove (only for testing)
       MAX_MEDIA_ITEMS = 5;
       break;
@@ -55,33 +59,6 @@ const MediaSection = () => {
       console.log('TEST 6 default'); // TODO: remove (only for testing)
       break;
   }
-
-  const fetchMediaData = async () => {
-    try {
-      const response = await fetch(
-        'https://sfe-2022-data.netlify.app/static/media.json'
-      );
-      const data = await response.json();
-      setMediaData(data);
-      setLoading(false);
-
-      const developers = data.filter((item) => item.academy === 'developers');
-      setMediaDevelopers(developers);
-
-      const testers = data.filter((item) => item.academy === 'testers');
-      setMediaTesters(testers);
-
-      const frontEnd = data.filter((item) => item.academy === 'frontend');
-      setMediaFrontEnd(frontEnd);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchMediaData();
-    // setMediaData(dataLocal); // TODO: remove (only for testing)
-  }, []);
 
   return (
     <section className={cn('media-section')} id="media-section">
@@ -108,7 +85,7 @@ const MediaSection = () => {
               `${MAX_MEDIA_ITEMS === 5 ? 'five-items' : ''}`
             )}
           >
-            {mediaData
+            {mediaSectionData
               .filter((item, index) => index < MAX_MEDIA_ITEMS)
               .map((item, index) =>
                 item.type === 'image' ? (

@@ -1,4 +1,4 @@
-export const dataLocal = [
+const dataLocal = [
   {
     academy: 'developers',
     type: 'image',
@@ -229,3 +229,5 @@ export const dataLocal = [
   //     'https://sfe-2022-data.netlify.app/static/images/frontend/33987358588_9e40682c81_k.jpg',
   // },
 ];
+
+export default dataLocal;
