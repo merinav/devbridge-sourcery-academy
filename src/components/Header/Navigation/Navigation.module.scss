@@ -60,6 +60,10 @@
       position: relative;
       text-decoration: none;
 
+      &--active {
+        text-decoration: line-through;
+      }
+
       &::after {
         background-color: var(--color-purple-400);
         content: '';
