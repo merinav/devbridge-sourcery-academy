@@ -1,0 +1,66 @@
+@use '/src/sass/utilities/functions/' as *;
+
+.testimonial {
+  align-items: center;
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  padding: toRem(35) toRem(30);
+  text-align: center;
+  width: toRem(341);
+
+  &__photo {
+    border-radius: 50%;
+    height: toRem(78);
+    margin: 0 0 toRem(2);
+    width: toRem(78);
+  }
+
+  &__quotation {
+    fill: var(--primary-color);
+    height: toRem(17);
+    margin: 0;
+    width: toRem(20);
+
+    &--before {
+      align-self: start;
+    }
+
+    &--after {
+      align-self: end;
+    }
+  }
+
+  &__message {
+    font-size: var(--font-size-m);
+    line-height: var(--line-height-xl);
+    margin: toRem(18) 0;
+    text-align: left;
+  }
+
+  &__read-more {
+    background-color: var(--color-white);
+    border: var(--color-white);
+    color: var(--primary-color);
+    cursor: pointer;
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-l);
+    padding: 0;
+  }
+
+  &__graduate-info {
+    line-height: var(--line-height-m);
+  }
+
+  &__graduate-name {
+    font-size: toRem(20);
+    font-weight: var(--font-weight-bold);
+    margin: toRem(10) 0 toRem(7);
+  }
+
+  &__academy {
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-regular);
+    margin: 0;
+  }
+}
