@@ -46,29 +46,29 @@
     margin-top: var(--spacer-3xl);
   }
 
-  &__gallery.one-item {
+  .one-item {
     grid-template-areas: '. cell-1  cell-1 .';
     grid-template-columns: repeat(4, 1fr);
   }
 
-  &__gallery.two-items {
+  .two-items {
     grid-template-areas: 'cell-1  cell-2';
     grid-template-columns: repeat(2, 1fr);
   }
 
-  &__gallery.three-items {
+  .three-items {
     grid-template-areas: 'cell-1  cell-2  cell-3';
     grid-template-columns: repeat(3, 1fr);
   }
 
-  &__gallery.four-items {
+  .four-items {
     grid-template-areas:
       'cell-1  cell-1  cell-2  cell-2'
       'cell-3  cell-3  cell-4  cell-4';
     grid-template-columns: repeat(4, 1fr);
   }
 
-  &__gallery.five-items {
+  .five-items {
     grid-template-areas:
       'cell-1  cell-2  cell-2  cell-3'
       'cell-4  cell-4  cell-5  cell-5';
@@ -98,6 +98,12 @@
       opacity: 0.9;
       transform: scale(1.1);
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      &:hover .media-item {
+        transform: scale(1);
+      }
+    }
   }
 
   .media-container-1 {
@@ -106,7 +112,7 @@
 
   .media-container-2 {
     grid-area: cell-2;
-    outline: 7px solid #f00; // TODO: remove (only for testing)
+    outline: 7px solid hsl(0, 100%, 50%, 0.5); // TODO: remove (only for testing)
   }
 
   .media-container-3 {
@@ -123,7 +129,7 @@
 
   .media-container-6 {
     grid-area: cell-6;
-    outline: 7px solid #f00; // TODO: remove (only for testing)
+    outline: 7px solid hsl(0, 100%, 50%, 0.5); // TODO: remove (only for testing)
   }
 
   .video-controls {
@@ -168,27 +174,27 @@
     }
 
     .one-item .media-container-1 {
-      outline: 7px solid #c9a6a6; // TODO: remove (only for testing)
+      outline: 7px solid hsl(0, 25%, 50%, 0.5); // TODO: remove (only for testing)
     }
 
-    &__gallery.one-item {
+    .one-item {
       grid-template-areas: '. cell-1  cell-1 .';
       grid-template-columns: repeat(4, 1fr);
     }
 
-    &__gallery.three-items {
+    .three-items {
       grid-template-areas: 'cell-1  cell-2  cell-3';
       grid-template-columns: repeat(3, 1fr);
     }
 
-    &__gallery.four-items {
+    .four-items {
       grid-template-areas:
         'cell-1  cell-2'
         'cell-3  cell-4';
       grid-template-columns: repeat(2, 1fr);
     }
 
-    &__gallery.five-items {
+    .five-items {
       grid-template-areas:
         'cell-1  cell-2  cell-3'
         'cell-4  cell-5  cell-5';
@@ -197,12 +203,12 @@
 
     .media-container-2 {
       grid-area: cell-2;
-      outline: 7px solid #daa520; // TODO: remove (only for testing)
+      outline: 7px solid hsl(43, 74%, 50%, 0.5); // TODO: remove (only for testing)
     }
 
     .media-container-6 {
       grid-area: cell-6;
-      outline: 7px solid #daa520; // TODO: remove (only for testing)
+      outline: 7px solid hsl(43, 74%, 50%, 0.5); // TODO: remove (only for testing)
     }
   }
 
@@ -218,24 +224,24 @@
     }
 
     .one-item .media-container-1 {
-      outline: 7px solid #bac9a6; // TODO: remove (only for testing)
+      outline: 7px solid hsl(86, 24%, 50%, 0.5); // TODO: remove (only for testing)
     }
 
-    &__gallery.three-items {
+    .three-items {
       grid-template-areas:
         'cell-1  cell-2'
         'cell-3  cell-3';
       grid-template-columns: repeat(2, 1fr);
     }
 
-    &__gallery.four-items {
+    .four-items {
       grid-template-areas:
         'cell-1  cell-2'
         'cell-3  cell-4';
       grid-template-columns: repeat(2, 1fr);
     }
 
-    &__gallery.five-items {
+    .five-items {
       grid-template-areas:
         'cell-1  cell-2'
         'cell-3  cell-4'
@@ -245,12 +251,12 @@
 
     .media-container-2 {
       grid-area: cell-2;
-      outline: 7px solid #adff2f; // TODO: remove (only for testing)
+      outline: 7px solid hsl(84, 100%, 50%, 0.5); // TODO: remove (only for testing)
     }
 
     .media-container-6 {
       grid-area: cell-6;
-      outline: 7px solid #adff2f; // TODO: remove (only for testing)
+      outline: 7px solid hsl(84, 100%, 50%, 0.5); // TODO: remove (only for testing)
     }
   }
 
@@ -273,22 +279,22 @@
     }
 
     .one-item .media-container-1 {
-      outline: 7px solid #a6afc9; // TODO: remove (only for testing)
+      outline: 7px solid hsl(225, 24%, 50%, 0.5); // TODO: remove (only for testing)
     }
 
-    &__gallery.one-item {
+    .one-item {
       grid-template-areas: '. cell-1 cell-1 cell-1 .';
       grid-template-columns: repeat(5, 1fr);
     }
 
     .media-container-2 {
       grid-area: cell-2;
-      outline: 7px solid #20b2aa; // TODO: remove (only for testing)
+      outline: 7px solid hsl(177, 70%, 50%, 0.5); // TODO: remove (only for testing)
     }
 
     .media-container-6 {
       grid-area: cell-6;
-      outline: 7px solid #20b2aa; // TODO: remove (only for testing)
+      outline: 7px solid hsl(177, 70%, 50%, 0.5); // TODO: remove (only for testing)
     }
   }
 
@@ -305,19 +311,19 @@
       grid-template-columns: 1fr;
     }
 
-    &__gallery.one-item {
+    .one-item {
       grid-template-areas: 'cell-1';
       grid-template-columns: 1fr;
     }
 
-    &__gallery.two-items {
+    .two-items {
       grid-template-areas:
         'cell-1'
         'cell-2';
       grid-template-columns: 1fr;
     }
 
-    &__gallery.three-items {
+    .three-items {
       grid-template-areas:
         'cell-1'
         'cell-2'
@@ -325,7 +331,7 @@
       grid-template-columns: 1fr;
     }
 
-    &__gallery.four-items {
+    .four-items {
       grid-template-areas:
         'cell-1'
         'cell-2'
@@ -334,7 +340,7 @@
       grid-template-columns: 1fr;
     }
 
-    &__gallery.five-items {
+    .five-items {
       grid-template-areas:
         'cell-1'
         'cell-2'
@@ -347,12 +353,52 @@
 
     .media-container-2 {
       grid-area: cell-2;
-      outline: 7px solid #87cefa; // TODO: remove (only for testing)
+      outline: 7px solid hsl(203, 92%, 50%, 0.5); // TODO: remove (only for testing)
     }
 
     .media-container-6 {
       grid-area: cell-6;
-      outline: 7px solid #87cefa; // TODO: remove (only for testing)
+      outline: 7px solid hsl(203, 92%, 50%, 0.5); // TODO: remove (only for testing)
+    }
+  }
+
+  .loading-spinner {
+    align-items: center;
+    // border: 2px solid red;
+    display: flex;
+    height: 4rem;
+    justify-content: center;
+    margin-top: var(--spacer-3xl);
+    width: 4rem;
+
+    &::after {
+      animation: loading 0.75s ease infinite;
+      border: 6px solid var(--color-grey-150);
+      border-radius: 50%;
+      border-top-color: var(--primary-color);
+      content: '';
+      height: 100%;
+      width: 100%;
+    }
+
+    @keyframes loading {
+      from {
+        transform: rotate(0turn);
+      }
+
+      to {
+        transform: rotate(1turn);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      &::after {
+        animation: none;
+        border: 0;
+        color: var(--primary-color);
+        content: 'Loading...';
+        font-size: toRem(24);
+      }
     }
   }
 }
