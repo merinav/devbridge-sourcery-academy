@@ -1,0 +1,308 @@
+@use '/src/sass/utilities/mixins/' as *;
+@use '/src/sass/utilities/functions/' as *;
+
+.gallery {
+  display: grid;
+  gap: toRem(42);
+  grid-auto-rows: toRem(218);
+  grid-template-areas:
+    'cell-1  cell-2  cell-2  cell-3'
+    'cell-4  cell-5  cell-6  cell-6';
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: var(--spacer-3xl);
+}
+
+.one-item {
+  grid-template-areas: '. cell-1  cell-1 .';
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.two-items {
+  grid-template-areas: 'cell-1  cell-2';
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.three-items {
+  grid-template-areas: 'cell-1  cell-2  cell-3';
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.four-items {
+  grid-template-areas:
+    'cell-1  cell-1  cell-2  cell-2'
+    'cell-3  cell-3  cell-4  cell-4';
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.five-items {
+  grid-template-areas:
+    'cell-1  cell-2  cell-2  cell-3'
+    'cell-4  cell-4  cell-5  cell-5';
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.media-item {
+  cursor: pointer;
+  height: 100%;
+  object-fit: cover;
+  transition: all 1s;
+  width: 100%;
+}
+
+.media-container {
+  align-items: center;
+  background: var(--color-white);
+  border: var(--border-width-m) solid var(--primary-color);
+  border-radius: var(--border-radius-s);
+  box-shadow: toRem(-20) toRem(20) 0 0 var(--color-grey-100);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+
+  &:hover .media-item {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &:hover .media-item {
+      transform: scale(1);
+    }
+  }
+}
+
+.media-container-1 {
+  grid-area: cell-1;
+}
+
+.media-container-2 {
+  grid-area: cell-2;
+  outline: 7px solid hsl(0, 100%, 50%, 0.5); // TODO: remove (only for testing)
+}
+
+.media-container-3 {
+  grid-area: cell-3;
+}
+
+.media-container-4 {
+  grid-area: cell-4;
+}
+
+.media-container-5 {
+  grid-area: cell-5;
+}
+
+.media-container-6 {
+  grid-area: cell-6;
+  outline: 7px solid hsl(0, 100%, 50%, 0.5); // TODO: remove (only for testing)
+}
+
+.video-controls {
+  align-items: center;
+  display: flex;
+  height: toRem(90);
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: toRem(90);
+}
+
+.play-button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  transition: opacity 0.3s;
+  width: 100%;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// max-width: 1200px
+@include desktop {
+  .gallery {
+    grid-template-areas:
+      'cell-1  cell-2'
+      'cell-3  cell-4'
+      'cell-5  cell-6';
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .one-item .media-container-1 {
+    outline: 7px solid hsl(0, 25%, 50%, 0.5); // TODO: remove (only for testing)
+  }
+
+  .one-item {
+    grid-template-areas: '. cell-1  cell-1 .';
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .three-items {
+    grid-template-areas: 'cell-1  cell-2  cell-3';
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .four-items {
+    grid-template-areas:
+      'cell-1  cell-2'
+      'cell-3  cell-4';
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .five-items {
+    grid-template-areas:
+      'cell-1  cell-2  cell-3'
+      'cell-4  cell-5  cell-5';
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .media-container-2 {
+    grid-area: cell-2;
+    outline: 7px solid hsl(43, 74%, 50%, 0.5); // TODO: remove (only for testing)
+  }
+
+  .media-container-6 {
+    grid-area: cell-6;
+    outline: 7px solid hsl(43, 74%, 50%, 0.5); // TODO: remove (only for testing)
+  }
+}
+
+// max-width: 880px
+@include tablet-landscape {
+  .one-item .media-container-1 {
+    outline: 7px solid hsl(86, 24%, 50%, 0.5); // TODO: remove (only for testing)
+  }
+
+  .three-items {
+    grid-template-areas:
+      'cell-1  cell-2'
+      'cell-3  cell-3';
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .four-items {
+    grid-template-areas:
+      'cell-1  cell-2'
+      'cell-3  cell-4';
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .five-items {
+    grid-template-areas:
+      'cell-1  cell-2'
+      'cell-3  cell-4'
+      'cell-5  cell-5';
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .media-container-2 {
+    grid-area: cell-2;
+    outline: 7px solid hsl(84, 100%, 50%, 0.5); // TODO: remove (only for testing)
+  }
+
+  .media-container-6 {
+    grid-area: cell-6;
+    outline: 7px solid hsl(84, 100%, 50%, 0.5); // TODO: remove (only for testing)
+  }
+}
+
+// max-width: 768px
+@include tablet-portrait {
+  .gallery {
+    gap: toRem(32);
+  }
+
+  .media-container {
+    box-shadow: toRem(-15) toRem(15) 0 0 var(--color-grey-100);
+  }
+
+  .one-item .media-container-1 {
+    outline: 7px solid hsl(225, 24%, 50%, 0.5); // TODO: remove (only for testing)
+  }
+
+  .one-item {
+    grid-template-areas: '. cell-1 cell-1 cell-1 .';
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .media-container-2 {
+    grid-area: cell-2;
+    outline: 7px solid hsl(177, 70%, 50%, 0.5); // TODO: remove (only for testing)
+  }
+
+  .media-container-6 {
+    grid-area: cell-6;
+    outline: 7px solid hsl(177, 70%, 50%, 0.5); // TODO: remove (only for testing)
+  }
+}
+
+// max-width: 480px
+@include mobile-only {
+  .gallery {
+    grid-template-areas:
+      'cell-1'
+      'cell-2'
+      'cell-3'
+      'cell-4'
+      'cell-5'
+      'cell-6';
+    grid-template-columns: 1fr;
+  }
+
+  .one-item {
+    grid-template-areas: 'cell-1';
+    grid-template-columns: 1fr;
+  }
+
+  .two-items {
+    grid-template-areas:
+      'cell-1'
+      'cell-2';
+    grid-template-columns: 1fr;
+  }
+
+  .three-items {
+    grid-template-areas:
+      'cell-1'
+      'cell-2'
+      'cell-3';
+    grid-template-columns: 1fr;
+  }
+
+  .four-items {
+    grid-template-areas:
+      'cell-1'
+      'cell-2'
+      'cell-3'
+      'cell-4';
+    grid-template-columns: 1fr;
+  }
+
+  .five-items {
+    grid-template-areas:
+      'cell-1'
+      'cell-2'
+      'cell-3'
+      'cell-4'
+      'cell-5'
+      'cell-6';
+    grid-template-columns: 1fr;
+  }
+
+  .media-container-2 {
+    grid-area: cell-2;
+    outline: 7px solid hsl(203, 92%, 50%, 0.5); // TODO: remove (only for testing)
+  }
+
+  .media-container-6 {
+    grid-area: cell-6;
+    outline: 7px solid hsl(203, 92%, 50%, 0.5); // TODO: remove (only for testing)
+  }
+}
