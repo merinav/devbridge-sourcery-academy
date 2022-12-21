@@ -5,6 +5,7 @@ import TestimonialModal from '~/pages/Home/TestimonialCard/TestimonialModal';
 import useTheme from '~/hooks/useTheme';
 import PropTypes from 'prop-types';
 import styles from './TestimonialsSection.module.scss';
+import TestimonialsCarousel from '~/components/TestimonialsSection/TestimonialsCarousel';
 
 const cn = classNames.bind(styles);
 
@@ -29,22 +30,25 @@ const TestimonialsSection = ({ testimonials, academy }) => {
   return (
     <section className={cn('testimonials-section')}>
       <h1 className={cn('testimonials-section__title')}>Testimonials</h1>
+
       <div className={cn('testimonials-section__cards')}>
         <>
-          {testimonials.length > 0 &&
-            testimonials.map(
-              (testimonial) =>
-                testimonial.academy === academy && (
-                  <TestimonialCard
-                    key={testimonial.id}
-                    photo={testimonial.photo}
-                    message={testimonial.message}
-                    name={testimonial.name}
-                    academy={testimonial.academy}
-                    openModal={() => handleOpenModal(testimonial)}
-                  />
-                )
-            )}
+          <TestimonialsCarousel>
+            {testimonials.length > 0 &&
+              testimonials.map(
+                (testimonial) =>
+                  testimonial.academy === academy && (
+                    <TestimonialCard
+                      key={testimonial.id}
+                      photo={testimonial.photo}
+                      message={testimonial.message}
+                      name={testimonial.name}
+                      academy={testimonial.academy}
+                      openModal={() => handleOpenModal(testimonial)}
+                    />
+                  )
+              )}
+          </TestimonialsCarousel>
         </>
         {isModalOpen && selectedTestimonial && (
           <TestimonialModal
