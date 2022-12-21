@@ -7,7 +7,7 @@ function Testers() {
 
   return (
     <>
-      <h1 className="only-for-testing">/academy/testers</h1>
+      <h1 style={{ color: 'var(--primary-color)' }}>/academy/testers</h1>
     </>
   );
 }

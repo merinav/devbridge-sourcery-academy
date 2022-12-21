@@ -6,7 +6,7 @@ function Register() {
 
   return (
     <>
-      <h1 className="only-for-testing">/register</h1>
+      <h1 style={{ color: 'var(--primary-color)' }}>/register</h1>
     </>
   );
 }

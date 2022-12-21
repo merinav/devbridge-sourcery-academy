@@ -35,61 +35,55 @@ const Navigation = ({ fullScreenOverlay, setShowOverlayNav }) => {
   }, []);
 
   return (
-    <div
-      className={cn('nav-wrapper', {
-        'nav-wrapper__overlay': fullScreenOverlay,
+    <nav
+      className={cn('nav', {
+        'nav-overlay': fullScreenOverlay,
       })}
     >
-      <nav className={cn('nav')}>
-        <ul
-          className={cn('nav__list', {
-            'nav__list-overlay': fullScreenOverlay,
-          })}
-        >
-          <NavigationLink to={'#'} onClick={() => setShowOverlayNav(false)}>
-            About us
-          </NavigationLink>
-          <li className={cn('nav__list-item', 'nav__list-item--have-dropdown')}>
-            <button
-              className={cn('nav__link')}
-              onClick={() => setIsOpen((prevState) => !prevState)}
-              ref={academiesRef}
-            >
-              Academies
-              {isOpen ? (
-                <Icon_arrow_up className={cn('dropdown-icon')} />
-              ) : (
-                <Icon_arrow_down className={cn('dropdown-icon')} />
-              )}
-            </button>
-            {isOpen && (
-              <NavDropdown
-                ref={dropdownRef}
-                fullScreenOverlay={fullScreenOverlay}
-                setIsOpen={setIsOpen}
-                setShowOverlayNav={setShowOverlayNav}
-              />
-            )}
-          </li>
-          <a
+      <ul
+        className={cn('nav__list', {
+          'nav-list-overlay': fullScreenOverlay,
+        })}
+      >
+        <NavigationLink to={'#'} onClick={() => setShowOverlayNav(false)}>
+          About us
+        </NavigationLink>
+        <li className={cn('nav__list-item', 'nav__list-item--have-dropdown')}>
+          <button
             className={cn('nav__link')}
-            href={'#media-section'}
-            onClick={() => setShowOverlayNav(false)}
+            onClick={() => setIsOpen((prevState) => !prevState)}
+            ref={academiesRef}
           >
-            Media
-          </a>
-          <NavigationLink
-            to={routes.register}
-            onClick={() => setShowOverlayNav(false)}
-          >
-            Register
-          </NavigationLink>
-          <NavigationLink to={'#'} onClick={() => setShowOverlayNav(false)}>
-            Questions
-          </NavigationLink>
-        </ul>
-      </nav>
-    </div>
+            Academies
+            {isOpen ? (
+              <Icon_arrow_up className={cn('dropdown-icon')} />
+            ) : (
+              <Icon_arrow_down className={cn('dropdown-icon')} />
+            )}
+          </button>
+          {isOpen && (
+            <NavDropdown
+              ref={dropdownRef}
+              fullScreenOverlay={fullScreenOverlay}
+              setIsOpen={setIsOpen}
+              setShowOverlayNav={setShowOverlayNav}
+            />
+          )}
+        </li>
+        <NavigationLink to={'#'} onClick={() => setShowOverlayNav(false)}>
+          Media
+        </NavigationLink>
+        <NavigationLink
+          to={routes.register}
+          onClick={() => setShowOverlayNav(false)}
+        >
+          Register
+        </NavigationLink>
+        <NavigationLink to={'#'} onClick={() => setShowOverlayNav(false)}>
+          Questions
+        </NavigationLink>
+      </ul>
+    </nav>
   );
 };
 
