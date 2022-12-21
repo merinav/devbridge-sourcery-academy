@@ -3,7 +3,6 @@ import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import useFetch from '/src/hooks/useFetch';
 import ParticlesMedia from '/src/assets/images/Background_particles_Media.svg';
-import fetchData from './dataLocal.js'; // TODO: remove (only for testing) and remove file dataLocal.js
 import PathMedia from './PathMedia/PathMedia';
 import GalleryMedia from './GalleryMedia/GalleryMedia';
 import styles from './MediaSection.module';
@@ -12,9 +11,7 @@ const cn = classNames.bind(styles);
 
 const MediaSection = ({ academy = 'home' }) => {
   const fetchUrl = 'https://sfe-2022-data.netlify.app/static/media.json';
-
-  // const fetchData = useFetch(fetchUrl);
-
+  const fetchData = useFetch(fetchUrl);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

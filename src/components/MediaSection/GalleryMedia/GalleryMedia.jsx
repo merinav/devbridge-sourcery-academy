@@ -66,7 +66,6 @@ const GalleryMedia = ({ data }) => {
                   <img
                     className={cn('media-item', `image-${index + 1}`)}
                     src={item.thumbnail}
-                    onClick={() => console.log(`Image-${index + 1} clicked`)} // TODO: remove (only for testing)
                     alt="Sourcery academy gallery image"
                   />
                 </div>
@@ -82,9 +81,7 @@ const GalleryMedia = ({ data }) => {
                     className={cn('media-item', `video-${index + 1}`)}
                     width="auto"
                     height="218"
-                    id={`video-${index}`}
                     poster={item.thumbnail}
-                    onClick={() => console.log(`Video-${index + 1} clicked`)} // TODO: remove (only for testing)
                   >
                     <source
                       src={item.src}
@@ -96,14 +93,7 @@ const GalleryMedia = ({ data }) => {
                     </p>
                   </video>
                   <div className={cn('video-controls')}>
-                    <button
-                      type="button"
-                      className={cn('play-button')}
-                      onClick={
-                        () =>
-                          console.log(`Video-${index + 1} play button clicked`) // TODO: remove (only for testing)
-                      }
-                    >
+                    <button type="button" className={cn('play-button')}>
                       <Icon_play />
                     </button>
                   </div>

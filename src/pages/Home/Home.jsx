@@ -12,11 +12,8 @@ const Home = () => {
       <PromoSection />
       <AcademiesSection />
       <MediaSection />
-      {/* <MediaSection academy={'developers'} /> */}
     </>
   );
 };
 
 export default Home;
-
-// 'home', 'developers', 'testers', 'frontend' // TODO: remove (only for testing)
