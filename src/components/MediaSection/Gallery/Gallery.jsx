@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 import Icon_play from '/src/assets/icons/Icon_play.svg';
 import PropTypes from 'prop-types';
@@ -7,44 +7,35 @@ import styles from './Gallery.module';
 const cn = classNames.bind(styles);
 
 const Gallery = ({ data }) => {
-  console.log(data);
-
   let MAX_MEDIA_ITEMS;
 
   switch (true) {
     case data.length < 1:
-      console.log('TEST 0'); // TODO: remove (only for testing)
       MAX_MEDIA_ITEMS = 0;
       break;
 
     case data.length < 2:
-      console.log('TEST 1'); // TODO: remove (only for testing)
       MAX_MEDIA_ITEMS = 1;
       break;
 
     case data.length < 3:
-      console.log('TEST 2'); // TODO: remove (only for testing)
       MAX_MEDIA_ITEMS = 2;
       break;
 
     case data.length < 4:
-      console.log('TEST 3'); // TODO: remove (only for testing)
       MAX_MEDIA_ITEMS = 3;
       break;
 
     case data.length < 5:
-      console.log('TEST 4'); // TODO: remove (only for testing)
       MAX_MEDIA_ITEMS = 4;
       break;
 
     case data.length < 6:
-      console.log('TEST 5'); // TODO: remove (only for testing)
       MAX_MEDIA_ITEMS = 5;
       break;
 
     default:
       MAX_MEDIA_ITEMS = 6;
-      console.log('TEST 6 default'); // TODO: remove (only for testing)
       break;
   }
 
