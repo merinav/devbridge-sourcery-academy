@@ -15,20 +15,26 @@ const DateItem = ({ date1, date2, showLocationIcon, text }) => {
       <div className={cn('date-item__date')}>
         <div className={cn('date-container')}>
           <div className={cn('date-container__item')}>
-            <div> {data.hasSecondDate ? data.month1 : ''}</div>
-            <div> {data.hasSecondDate ? '   ' : data.month1}</div>
-            <div>{data.hasSecondDate ? data.month2 : ''} </div>
+            {data.hasSecondDate ? data.month1 : ''}
           </div>
+          <div className={cn('date-container__item', 'date-container__day')}>
+            {data.hasSecondDate ? data.day1 : ''}
+          </div>
+        </div>
+        <div className={cn('date-container')}>
           <div className={cn('date-container__item')}>
-            <div className={cn('date-container__day')}>
-              {data.hasSecondDate ? data.day1 : ''}
-            </div>
-            <div className={cn('date-container__day')}>
-              {data.hasSecondDate ? ' - ' : data.day1}
-            </div>
-            <div className={cn('date-container__day')}>
-              {data.hasSecondDate ? data.day2 : ''}{' '}
-            </div>
+            {data.hasSecondDate ? '' : data.month1}
+          </div>
+          <div className={cn('date-container__item', 'date-container__day')}>
+            {data.hasSecondDate ? '-' : data.day1}
+          </div>
+        </div>
+        <div className={cn('date-container')}>
+          <div className={cn('date-container__item')}>
+            {data.hasSecondDate ? data.month2 : ''}
+          </div>
+          <div className={cn('date-container__item', 'date-container__day')}>
+            {data.hasSecondDate ? data.day2 : ''}
           </div>
         </div>
       </div>

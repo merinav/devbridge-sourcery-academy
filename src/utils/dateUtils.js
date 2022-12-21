@@ -1,6 +1,6 @@
 const returnDate = (date1, date2) => {
   const hasSecondDate = date1 && date2 ? true : false;
-  var result;
+  let result;
 
   const month1 = date1.toLocaleString('en-GB', { month: 'short' });
   const day1 = date1.getDate();

@@ -16,9 +16,8 @@
     flex: 1;
     font-size: var(--font-size-s);
     font-weight: var(--font-weight-regular);
-    justify-content: center;
+    justify-content: space-between;
     padding: 0 var(--spacer-m);
-    white-space: pre;
   }
 
   &__text {
@@ -46,7 +45,6 @@
   }
 
   &__day {
-    display: flex;
     font-size: var(--font-size-m);
     font-weight: var(--font-weight-bold);
   }
