@@ -11,6 +11,10 @@ const cn = classNames.bind(styles);
 
 const TestimonialsSection = ({ testimonials, academy }) => {
   useTheme();
+
+  const academyTestimonials = testimonials.filter(
+    (testimonial) => testimonial.academy === academy
+  );
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedTestimonial, setSelectedTestimonial] = useState(null);
 
@@ -32,24 +36,10 @@ const TestimonialsSection = ({ testimonials, academy }) => {
       <h1 className={cn('testimonials-section__title')}>Testimonials</h1>
 
       <div className={cn('testimonials-section__cards')}>
-        <>
-          <TestimonialsCarousel>
-            {testimonials.length > 0 &&
-              testimonials.map(
-                (testimonial) =>
-                  testimonial.academy === academy && (
-                    <TestimonialCard
-                      key={testimonial.id}
-                      photo={testimonial.photo}
-                      message={testimonial.message}
-                      name={testimonial.name}
-                      academy={testimonial.academy}
-                      openModal={() => handleOpenModal(testimonial)}
-                    />
-                  )
-              )}
-          </TestimonialsCarousel>
-        </>
+        <TestimonialsCarousel
+          testimonials={academyTestimonials}
+          handleOpenModal={handleOpenModal}
+        />
         {isModalOpen && selectedTestimonial && (
           <TestimonialModal
             photo={selectedTestimonial.photo}
