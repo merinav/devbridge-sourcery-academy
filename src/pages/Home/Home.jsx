@@ -11,8 +11,8 @@ const Home = () => {
     <>
       <PromoSection />
       <AcademiesSection />
-      {/* <MediaSection /> */}
-      <MediaSection academy={'frontend'} />
+      <MediaSection />
+      {/* <MediaSection academy={'developers'} /> */}
     </>
   );
 };

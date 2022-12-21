@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import useFetch from '/src/hooks/useFetch';
-import Particles_Media from '/src/assets/images/Background_particles_Media.svg';
-// import fetchData from './dataLocal.js'; // TODO: remove (only for testing) and remove file dataLocal.js
-import Path from './Path/Path';
-import Gallery from './Gallery/Gallery';
+import ParticlesMedia from '/src/assets/images/Background_particles_Media.svg';
+import fetchData from './dataLocal.js'; // TODO: remove (only for testing) and remove file dataLocal.js
+import PathMedia from './PathMedia/PathMedia';
+import GalleryMedia from './GalleryMedia/GalleryMedia';
 import styles from './MediaSection.module';
 
 const cn = classNames.bind(styles);
@@ -13,7 +13,7 @@ const cn = classNames.bind(styles);
 const MediaSection = ({ academy = 'home' }) => {
   const fetchUrl = 'https://sfe-2022-data.netlify.app/static/media.json';
 
-  const fetchData = useFetch(fetchUrl);
+  // const fetchData = useFetch(fetchUrl);
 
   const [loading, setLoading] = useState(true);
 
@@ -48,9 +48,9 @@ const MediaSection = ({ academy = 'home' }) => {
       <div className={cn('media-section__heading-wrapper')}>
         <h1 className={cn('media-section__heading')}>Media</h1>
 
-        <Path academy={academy} />
+        <PathMedia academy={academy} />
 
-        <Particles_Media
+        <ParticlesMedia
           className={cn('media-section__particles')}
           aria-hidden="true"
         />
@@ -59,7 +59,7 @@ const MediaSection = ({ academy = 'home' }) => {
       {loading ? (
         <div className={cn('loading-spinner')}></div>
       ) : (
-        <Gallery data={data} />
+        <GalleryMedia data={data} />
       )}
     </section>
   );

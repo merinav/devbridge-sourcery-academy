@@ -13,7 +13,7 @@
     @include h1-h2;
   }
 
-  &__home-path {
+  &__path-home {
     left: -4rem;
     position: absolute;
     stroke: var(--primary-color);
@@ -25,7 +25,7 @@
     z-index: -10;
   }
 
-  &__academies-path {
+  &__path-academies {
     left: -6rem;
     position: absolute;
     stroke: var(--primary-color);
@@ -49,14 +49,14 @@
 
   // max-width: 1200px
   @include desktop {
-    &__home-path {
+    &__path-home {
       width: 30%;
     }
   }
 
   // max-width: 880px
   @include tablet-landscape {
-    &__home-path {
+    &__path-home {
       width: 35%;
     }
 
@@ -68,7 +68,8 @@
 
   // max-width: 768px
   @include tablet-portrait {
-    &__home-path {
+    &__path-home,
+    &__path-academies {
       display: none;
     }
 
@@ -76,10 +77,6 @@
       display: none;
     }
   }
-
-  // max-width: 480px
-  // @include mobile-only {
-  // }
 
   .loading-spinner {
     align-items: center;

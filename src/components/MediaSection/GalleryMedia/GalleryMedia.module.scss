@@ -10,35 +10,35 @@
     'cell-4  cell-5  cell-6  cell-6';
   grid-template-columns: repeat(4, 1fr);
   margin-top: var(--spacer-3xl);
-}
 
-.one-item {
-  grid-template-areas: '. cell-1  cell-1 .';
-  grid-template-columns: repeat(4, 1fr);
-}
+  &--1-item {
+    grid-template-areas: '. cell-1  cell-1 .';
+    grid-template-columns: repeat(4, 1fr);
+  }
 
-.two-items {
-  grid-template-areas: 'cell-1  cell-2';
-  grid-template-columns: repeat(2, 1fr);
-}
+  &--2-items {
+    grid-template-areas: 'cell-1  cell-2';
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-.three-items {
-  grid-template-areas: 'cell-1  cell-2  cell-3';
-  grid-template-columns: repeat(3, 1fr);
-}
+  &--3-items {
+    grid-template-areas: 'cell-1  cell-2  cell-3';
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-.four-items {
-  grid-template-areas:
-    'cell-1  cell-1  cell-2  cell-2'
-    'cell-3  cell-3  cell-4  cell-4';
-  grid-template-columns: repeat(4, 1fr);
-}
+  &--4-items {
+    grid-template-areas:
+      'cell-1  cell-2'
+      'cell-3  cell-4';
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-.five-items {
-  grid-template-areas:
-    'cell-1  cell-2  cell-2  cell-3'
-    'cell-4  cell-4  cell-5  cell-5';
-  grid-template-columns: repeat(4, 1fr);
+  &--5-items {
+    grid-template-areas:
+      'cell-1  cell-2  cell-2  cell-3'
+      'cell-4  cell-4  cell-5  cell-5';
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .media-item {
@@ -135,34 +135,39 @@
       'cell-3  cell-4'
       'cell-5  cell-6';
     grid-template-columns: repeat(2, 1fr);
-  }
 
-  .one-item .media-container-1 {
-    outline: 7px solid hsl(0, 25%, 50%, 0.5); // TODO: remove (only for testing)
-  }
+    &--1-item .media-container-1 {
+      outline: 7px solid hsl(0, 25%, 50%, 0.5); // TODO: remove (only for testing)
+    }
 
-  .one-item {
-    grid-template-areas: '. cell-1  cell-1 .';
-    grid-template-columns: repeat(4, 1fr);
-  }
+    &--1-item {
+      grid-template-areas: '. cell-1  cell-1 .';
+      grid-template-columns: repeat(4, 1fr);
+    }
 
-  .three-items {
-    grid-template-areas: 'cell-1  cell-2  cell-3';
-    grid-template-columns: repeat(3, 1fr);
-  }
+    &--2-item {
+      grid-template-areas: 'cell-1  cell-2';
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-  .four-items {
-    grid-template-areas:
-      'cell-1  cell-2'
-      'cell-3  cell-4';
-    grid-template-columns: repeat(2, 1fr);
-  }
+    &--3-items {
+      grid-template-areas: 'cell-1  cell-2  cell-3';
+      grid-template-columns: repeat(3, 1fr);
+    }
 
-  .five-items {
-    grid-template-areas:
-      'cell-1  cell-2  cell-3'
-      'cell-4  cell-5  cell-5';
-    grid-template-columns: repeat(3, 1fr);
+    &--4-items {
+      grid-template-areas:
+        'cell-1  cell-2'
+        'cell-3  cell-4';
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &--5-items {
+      grid-template-areas:
+        'cell-1  cell-2  cell-3'
+        'cell-4  cell-5  cell-5';
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   .media-container-2 {
@@ -178,30 +183,32 @@
 
 // max-width: 880px
 @include tablet-landscape {
-  .one-item .media-container-1 {
-    outline: 7px solid hsl(86, 24%, 50%, 0.5); // TODO: remove (only for testing)
-  }
+  .gallery {
+    &--1-item .media-container-1 {
+      outline: 7px solid hsl(86, 24%, 50%, 0.5); // TODO: remove (only for testing)
+    }
 
-  .three-items {
-    grid-template-areas:
-      'cell-1  cell-2'
-      'cell-3  cell-3';
-    grid-template-columns: repeat(2, 1fr);
-  }
+    &--3-items {
+      grid-template-areas:
+        'cell-1  cell-2'
+        'cell-3  cell-3';
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-  .four-items {
-    grid-template-areas:
-      'cell-1  cell-2'
-      'cell-3  cell-4';
-    grid-template-columns: repeat(2, 1fr);
-  }
+    &--4-items {
+      grid-template-areas:
+        'cell-1  cell-2'
+        'cell-3  cell-4';
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-  .five-items {
-    grid-template-areas:
-      'cell-1  cell-2'
-      'cell-3  cell-4'
-      'cell-5  cell-5';
-    grid-template-columns: repeat(2, 1fr);
+    &--5-items {
+      grid-template-areas:
+        'cell-1  cell-2'
+        'cell-3  cell-4'
+        'cell-5  cell-5';
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   .media-container-2 {
@@ -219,19 +226,19 @@
 @include tablet-portrait {
   .gallery {
     gap: toRem(32);
-  }
 
-  .media-container {
-    box-shadow: toRem(-15) toRem(15) 0 0 var(--color-grey-100);
-  }
+    .media-container {
+      box-shadow: toRem(-15) toRem(15) 0 0 var(--color-grey-100);
+    }
 
-  .one-item .media-container-1 {
-    outline: 7px solid hsl(225, 24%, 50%, 0.5); // TODO: remove (only for testing)
-  }
+    &--1-item .media-container-1 {
+      outline: 7px solid hsl(225, 24%, 50%, 0.5); // TODO: remove (only for testing)
+    }
 
-  .one-item {
-    grid-template-areas: '. cell-1 cell-1 cell-1 .';
-    grid-template-columns: repeat(5, 1fr);
+    &--1-item {
+      grid-template-areas: '. cell-1 cell-1 cell-1 .';
+      grid-template-columns: repeat(5, 1fr);
+    }
   }
 
   .media-container-2 {
@@ -256,46 +263,46 @@
       'cell-5'
       'cell-6';
     grid-template-columns: 1fr;
-  }
 
-  .one-item {
-    grid-template-areas: 'cell-1';
-    grid-template-columns: 1fr;
-  }
+    &--1-item {
+      grid-template-areas: 'cell-1';
+      grid-template-columns: 1fr;
+    }
 
-  .two-items {
-    grid-template-areas:
-      'cell-1'
-      'cell-2';
-    grid-template-columns: 1fr;
-  }
+    &--2-items {
+      grid-template-areas:
+        'cell-1'
+        'cell-2';
+      grid-template-columns: 1fr;
+    }
 
-  .three-items {
-    grid-template-areas:
-      'cell-1'
-      'cell-2'
-      'cell-3';
-    grid-template-columns: 1fr;
-  }
+    &--3-items {
+      grid-template-areas:
+        'cell-1'
+        'cell-2'
+        'cell-3';
+      grid-template-columns: 1fr;
+    }
 
-  .four-items {
-    grid-template-areas:
-      'cell-1'
-      'cell-2'
-      'cell-3'
-      'cell-4';
-    grid-template-columns: 1fr;
-  }
+    &--4-items {
+      grid-template-areas:
+        'cell-1'
+        'cell-2'
+        'cell-3'
+        'cell-4';
+      grid-template-columns: 1fr;
+    }
 
-  .five-items {
-    grid-template-areas:
-      'cell-1'
-      'cell-2'
-      'cell-3'
-      'cell-4'
-      'cell-5'
-      'cell-6';
-    grid-template-columns: 1fr;
+    &--5-items {
+      grid-template-areas:
+        'cell-1'
+        'cell-2'
+        'cell-3'
+        'cell-4'
+        'cell-5'
+        'cell-6';
+      grid-template-columns: 1fr;
+    }
   }
 
   .media-container-2 {

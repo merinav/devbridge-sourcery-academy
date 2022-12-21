@@ -1,23 +1,23 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import Path_Media_Home from '/src/assets/images/Path_Media_Home.svg';
-import Path_Media_Academies from '/src/assets/images/Path_Media_Academies.svg';
+import PathMediaHome from '/src/assets/images/Path_Media_Home.svg';
+import PathMediaAcademies from '/src/assets/images/Path_Media_Academies.svg';
 import PropTypes from 'prop-types';
 import styles from '../MediaSection.module';
 
 const cn = classNames.bind(styles);
 
-const Path = ({ academy = 'home' }) => {
+const PathMedia = ({ academy = 'home' }) => {
   return (
     <>
       {academy === 'home' ? (
-        <Path_Media_Home
-          className={cn('media-section__home-path')}
+        <PathMediaHome
+          className={cn('media-section__path-home')}
           aria-hidden="true"
         />
       ) : (
-        <Path_Media_Academies
-          className={cn('media-section__academies-path')}
+        <PathMediaAcademies
+          className={cn('media-section__path-academies')}
           aria-hidden="true"
         />
       )}
@@ -25,9 +25,9 @@ const Path = ({ academy = 'home' }) => {
   );
 };
 
-Path.propTypes = {
+PathMedia.propTypes = {
   academy: PropTypes.oneOf(['home', 'developers', 'testers', 'frontend'])
     .isRequired,
 };
 
-export default Path;
+export default PathMedia;

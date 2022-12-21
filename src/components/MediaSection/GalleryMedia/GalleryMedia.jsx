@@ -2,11 +2,11 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import Icon_play from '/src/assets/icons/Icon_play.svg';
 import PropTypes from 'prop-types';
-import styles from './Gallery.module';
+import styles from './GalleryMedia.module';
 
 const cn = classNames.bind(styles);
 
-const Gallery = ({ data }) => {
+const GalleryMedia = ({ data }) => {
   let MAX_MEDIA_ITEMS;
 
   switch (true) {
@@ -45,11 +45,11 @@ const Gallery = ({ data }) => {
         <div
           className={cn(
             'gallery',
-            `${MAX_MEDIA_ITEMS === 1 ? 'one-item' : ''}`,
-            `${MAX_MEDIA_ITEMS === 2 ? 'two-items' : ''}`,
-            `${MAX_MEDIA_ITEMS === 3 ? 'three-items' : ''}`,
-            `${MAX_MEDIA_ITEMS === 4 ? 'four-items' : ''}`,
-            `${MAX_MEDIA_ITEMS === 5 ? 'five-items' : ''}`
+            `${MAX_MEDIA_ITEMS === 1 ? 'gallery--1-item' : ''}`,
+            `${MAX_MEDIA_ITEMS === 2 ? 'gallery--2-items' : ''}`,
+            `${MAX_MEDIA_ITEMS === 3 ? 'gallery--3-items' : ''}`,
+            `${MAX_MEDIA_ITEMS === 4 ? 'gallery--4-items' : ''}`,
+            `${MAX_MEDIA_ITEMS === 5 ? 'gallery--5-items' : ''}`
           )}
         >
           {data
@@ -116,8 +116,8 @@ const Gallery = ({ data }) => {
   );
 };
 
-Gallery.propTypes = {
+GalleryMedia.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-export default Gallery;
+export default GalleryMedia;
