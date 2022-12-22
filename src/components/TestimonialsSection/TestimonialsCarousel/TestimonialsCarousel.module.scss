@@ -3,26 +3,35 @@
   display: flex;
   width: 100%;
 
-  &__nav-prev {
+  //TODO: optimize scss
+  &__nav {
     cursor: pointer;
     height: 20px;
-    transform: rotate(90deg);
     width: 20px;
+
+    &-prev {
+      cursor: pointer;
+      height: 20px;
+      margin-right: 20px;
+      transform: rotate(90deg);
+      width: 20px;
+    }
+
+    &-next {
+      cursor: pointer;
+      height: 20px;
+      margin-left: 20px;
+      transform: rotate(-90deg);
+      width: 20px;
+    }
   }
 
   &__testimonials {
-    align-items: start;
+    align-items: flex-start;
     display: flex;
-    gap: 50px;
     height: 550px;
+    justify-content: space-between;
     margin: 0 20px;
     width: 100%;
-  }
-
-  &__nav-next {
-    cursor: pointer;
-    height: 20px;
-    transform: rotate(-90deg);
-    width: 20px;
   }
 }

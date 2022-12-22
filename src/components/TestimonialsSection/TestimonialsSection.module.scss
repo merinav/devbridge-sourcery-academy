@@ -9,13 +9,6 @@
     font-size: var(--font-size-xxl);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-xl);
-    margin: 0;
-  }
-
-  &__cards {
-    align-items: flex-start;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 66px;
+    margin: 0 0 66px;
   }
 }

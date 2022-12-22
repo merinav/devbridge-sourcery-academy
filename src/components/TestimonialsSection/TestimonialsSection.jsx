@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
-import TestimonialCard from '~/pages/Home/TestimonialCard';
 import TestimonialModal from '~/pages/Home/TestimonialCard/TestimonialModal';
 import useTheme from '~/hooks/useTheme';
 import PropTypes from 'prop-types';
-import styles from './TestimonialsSection.module.scss';
 import TestimonialsCarousel from '~/components/TestimonialsSection/TestimonialsCarousel';
+import styles from './TestimonialsSection.module.scss';
 
 const cn = classNames.bind(styles);
 
@@ -31,11 +30,14 @@ const TestimonialsSection = ({ testimonials, academy }) => {
     setIsModalOpen(false);
   };
 
-  return (
-    <section className={cn('testimonials-section')}>
-      <h1 className={cn('testimonials-section__title')}>Testimonials</h1>
+  if (!academyTestimonials.length) {
+    return null;
+  }
 
-      <div className={cn('testimonials-section__cards')}>
+  if (academyTestimonials.length > 3) {
+    return (
+      <section className={cn('testimonials-section')}>
+        <h1 className={cn('testimonials-section__title')}>Testimonials</h1>
         <TestimonialsCarousel
           testimonials={academyTestimonials}
           handleOpenModal={handleOpenModal}
@@ -49,7 +51,24 @@ const TestimonialsSection = ({ testimonials, academy }) => {
             closeModal={handleCloseModal}
           />
         )}
-      </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className={cn('testimonials-section')}>
+      <h1 className={cn('testimonials-section__title')}>Testimonials</h1>
+      testimonials={academyTestimonials}
+      handleOpenModal={handleOpenModal}
+      {isModalOpen && selectedTestimonial && (
+        <TestimonialModal
+          photo={selectedTestimonial.photo}
+          message={selectedTestimonial.message}
+          name={selectedTestimonial.name}
+          academy={selectedTestimonial.academy}
+          closeModal={handleCloseModal}
+        />
+      )}
     </section>
   );
 };

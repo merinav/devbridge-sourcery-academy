@@ -10,13 +10,15 @@ const TestimonialsCarousel = ({ testimonials, handleOpenModal }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
-    setCurrentIndex((currentIndex + 1) % testimonials.length);
+    if (currentIndex + 3 < testimonials.length) {
+      setCurrentIndex(currentIndex + 1);
+    }
   };
 
   const handlePrev = () => {
-    setCurrentIndex(
-      (currentIndex - 3 + testimonials.length) % testimonials.length
-    );
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
   };
 
   return (
