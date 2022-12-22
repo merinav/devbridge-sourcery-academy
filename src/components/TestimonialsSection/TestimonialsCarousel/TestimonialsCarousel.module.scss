@@ -10,9 +10,11 @@
     width: 20px;
   }
 
-  &__grid {
+  &__testimonials {
+    align-items: start;
     display: flex;
-    justify-content: space-between;
+    gap: 50px;
+    height: 550px;
     margin: 0 20px;
     width: 100%;
   }
