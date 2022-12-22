@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconArrow from '~/assets/icons/Icon_arrow_down.svg';
-import styles from './TestimonialsCarousel.module.scss';
 import TestimonialCard from '~/pages/Home/TestimonialCard';
+import styles from './TestimonialsCarousel.module.scss';
 
 const cn = classNames.bind(styles);
 const TestimonialsCarousel = ({ testimonials, handleOpenModal }) => {
@@ -21,10 +21,21 @@ const TestimonialsCarousel = ({ testimonials, handleOpenModal }) => {
 
   return (
     <div className={cn('carousel')}>
-      <div className={cn('carousel__nav-prev')} onClick={handlePrev}>
+      <div
+        className={cn('carousel__nav-prev')}
+        onClick={handlePrev}
+        tabIndex={0}
+        role="button"
+        aria-label="previous"
+        onKeyDown={(event) => {
+          if (event.key === 'Enter') {
+            handlePrev();
+          }
+        }}
+      >
         <IconArrow alt="previous" />
       </div>
-      <div className={cn('carousel__grid')}>
+      <div className={cn('carousel__testimonials')}>
         {testimonials.length > 0 &&
           testimonials
             .slice(currentIndex, currentIndex + 3)
@@ -39,7 +50,18 @@ const TestimonialsCarousel = ({ testimonials, handleOpenModal }) => {
               />
             ))}
       </div>
-      <div className={cn('carousel__nav-next')} onClick={handleNext}>
+      <div
+        className={cn('carousel__nav-next')}
+        tabIndex={0}
+        role="button"
+        aria-label="next"
+        onClick={handleNext}
+        onKeyDown={(event) => {
+          if (event.key === 'Enter') {
+            handleNext();
+          }
+        }}
+      >
         <IconArrow alt="next" />
       </div>
     </div>
