@@ -1,27 +1,18 @@
 const returnDate = (date1, date2) => {
-  const hasSecondDate = date1 && date2 ? true : false;
-  let result;
-
-  const month1 = date1.toLocaleString('en-GB', { month: 'short' });
-  const day1 = date1.getDate();
-
-  if (hasSecondDate) {
-    const month2 = date2.toLocaleString('en-GB', { month: 'short' });
-    const day2 = date2.getDate();
-    result = {
-      hasSecondDate: true,
-      month1: month1,
-      day1: day1,
-      month2: month2,
-      day2: day2,
-    };
-  } else {
-    result = {
-      hasSecondDate: false,
-      month1: month1,
-      day1: day1,
+  let result = {
+    startDate: {
+      day: date1.getDate(),
+      month: date1.toLocaleString('en-GB', { month: 'short' }),
+    },
+  };
+  console.log(result);
+  if (date2 !== undefined) {
+    result.endDate = {
+      day: date2.getDate(),
+      month: date2.toLocaleString('en-GB', { month: 'short' }),
     };
   }
+  console.log(result);
   return result;
 };
 
