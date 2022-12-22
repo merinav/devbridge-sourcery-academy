@@ -4,10 +4,9 @@ import classNames from 'classnames/bind';
 import IconArrow from '~/assets/icons/Icon_arrow_down.svg';
 import TestimonialCard from '~/pages/Home/TestimonialCard';
 import styles from './TestimonialsCarousel.module.scss';
+import { NUMBER_OF_TESTIMONIALS_TO_DISPLAY } from '~/components/TestimonialsSection/TestimonialsSection';
 
 const cn = classNames.bind(styles);
-
-const NUMBER_OF_TESTIMONIALS_TO_DISPLAY = 3;
 
 const TestimonialsCarousel = ({ testimonials, handleOpenModal }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

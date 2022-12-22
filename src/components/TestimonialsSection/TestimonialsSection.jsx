@@ -10,6 +10,7 @@ import TestimonialCard from '~/pages/Home/TestimonialCard';
 const cn = classNames.bind(styles);
 
 const MAX_NUMBER_OF_TESTIMONIALS_TO_DISPLAY = 10;
+export const NUMBER_OF_TESTIMONIALS_TO_DISPLAY = 3;
 
 const TestimonialsSection = ({ testimonials, academy }) => {
   useTheme();
@@ -40,7 +41,8 @@ const TestimonialsSection = ({ testimonials, academy }) => {
   return (
     <section className={cn('testimonials-section')}>
       <h1 className={cn('testimonials-section__title')}>Testimonials</h1>
-      {firstTenAcademyTestimonials.length > 3 ? (
+      {firstTenAcademyTestimonials.length >
+      NUMBER_OF_TESTIMONIALS_TO_DISPLAY ? (
         <TestimonialsCarousel
           testimonials={firstTenAcademyTestimonials}
           handleOpenModal={handleOpenModal}
