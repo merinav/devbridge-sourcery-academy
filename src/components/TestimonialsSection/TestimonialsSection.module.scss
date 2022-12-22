@@ -11,4 +11,11 @@
     line-height: var(--line-height-xl);
     margin: 0 0 66px;
   }
+
+  &__cards {
+    align-items: flex-start;
+    display: flex;
+    gap: 80px;
+    height: 550px;
+  }
 }
