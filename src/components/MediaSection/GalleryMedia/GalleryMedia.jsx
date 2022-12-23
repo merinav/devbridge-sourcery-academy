@@ -7,8 +7,7 @@ import styles from './GalleryMedia.module';
 const cn = classNames.bind(styles);
 
 const GalleryMedia = ({ data }) => {
-  let maxMediaItems;
-  maxMediaItems = Math.min(data.length, 6);
+  const maxMediaItems = Math.min(data.length, 6);
 
   return (
     <>

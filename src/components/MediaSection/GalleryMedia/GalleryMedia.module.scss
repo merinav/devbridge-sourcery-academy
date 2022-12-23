@@ -126,7 +126,6 @@
   }
 }
 
-// max-width: 1200px // TODO: remove
 @include desktop {
   .gallery {
     grid-template-areas:
@@ -166,7 +165,6 @@
   }
 }
 
-// max-width: 880px // TODO: remove
 @include tablet-landscape {
   .gallery {
     &--3-items {
@@ -193,7 +191,6 @@
   }
 }
 
-// max-width: 768px // TODO: remove
 @include tablet-portrait {
   .gallery {
     gap: toRem(32);
@@ -209,7 +206,6 @@
   }
 }
 
-// max-width: 480px // TODO: remove
 @include mobile-only {
   .gallery {
     grid-template-areas:

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import useFetch from '/src/hooks/useFetch';
@@ -20,25 +20,21 @@ const MediaSection = ({ academy = 'home' }) => {
     }
   }, [fetchData]);
 
-  let data;
+  const data = useMemo(() => {
+    switch (true) {
+      case academy === 'developers':
+        return fetchData.filter((item) => item.academy === 'developers');
 
-  switch (true) {
-    case academy === 'developers':
-      data = fetchData.filter((item) => item.academy === 'developers');
-      break;
+      case academy === 'testers':
+        return fetchData.filter((item) => item.academy === 'testers');
 
-    case academy === 'testers':
-      data = fetchData.filter((item) => item.academy === 'testers');
-      break;
+      case academy === 'frontend':
+        return fetchData.filter((item) => item.academy === 'frontend');
 
-    case academy === 'frontend':
-      data = fetchData.filter((item) => item.academy === 'frontend');
-      break;
-
-    default:
-      data = fetchData;
-      break;
-  }
+      default:
+        return fetchData;
+    }
+  }, [fetchData]);
 
   return (
     <section className={cn('media-section')} id="media-section">
