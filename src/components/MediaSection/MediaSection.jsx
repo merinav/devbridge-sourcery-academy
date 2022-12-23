@@ -5,56 +5,61 @@ import useFetch from '/src/hooks/useFetch';
 import ParticlesMedia from '/src/assets/images/Background_particles_Media.svg';
 import PathMedia from './PathMedia/PathMedia';
 import GalleryMedia from './GalleryMedia/GalleryMedia';
+import LoadingSpinner from '/src/components/LoadingSpinner/LoadingSpinner';
 import styles from './MediaSection.module';
 
 const cn = classNames.bind(styles);
 
 const MediaSection = ({ academy = 'home' }) => {
-  const fetchUrl = 'https://sfe-2022-data.netlify.app/static/media.json';
-  const fetchData = useFetch(fetchUrl);
+  const fetchMediaUrl = 'https://sfe-2022-data.netlify.app/static/media.json';
+  const fetchMediaData = useFetch(fetchMediaUrl);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (fetchData) {
+    if (fetchMediaData) {
       setLoading(false);
     }
-  }, [fetchData]);
+  }, [fetchMediaData]);
 
   const data = useMemo(() => {
     switch (true) {
       case academy === 'developers':
-        return fetchData.filter((item) => item.academy === 'developers');
+        return fetchMediaData.filter((item) => item.academy === 'developers');
 
       case academy === 'testers':
-        return fetchData.filter((item) => item.academy === 'testers');
+        return fetchMediaData.filter((item) => item.academy === 'testers');
 
       case academy === 'frontend':
-        return fetchData.filter((item) => item.academy === 'frontend');
+        return fetchMediaData.filter((item) => item.academy === 'frontend');
 
       default:
-        return fetchData;
+        return fetchMediaData;
     }
-  }, [fetchData]);
+  }, [fetchMediaData]);
 
   return (
-    <section className={cn('media-section')} id="media-section">
-      <div className={cn('media-section__heading-wrapper')}>
-        <h1 className={cn('media-section__heading')}>Media</h1>
+    <>
+      {fetchMediaData.length > 0 && (
+        <section className={cn('media-section')} id="media-section">
+          <div className={cn('media-section__heading-wrapper')}>
+            <h2 className={cn('media-section__heading')}>Media</h2>
 
-        <PathMedia academy={academy} />
+            <PathMedia academy={academy} />
 
-        <ParticlesMedia
-          className={cn('media-section__particles')}
-          aria-hidden="true"
-        />
-      </div>
+            <ParticlesMedia
+              className={cn('media-section__particles')}
+              aria-hidden="true"
+            />
+          </div>
 
-      {loading ? (
-        <div className={cn('loading-spinner')}></div>
-      ) : (
-        <GalleryMedia data={data} />
+          {loading ? (
+            <LoadingSpinner style={{ margin: 'var(--spacer-3xl) auto 0' }} />
+          ) : (
+            <GalleryMedia data={data} />
+          )}
+        </section>
       )}
-    </section>
+    </>
   );
 };
 
