@@ -1,14 +1,14 @@
-const returnDate = (date1, date2) => {
-  let result = {
+const returnDate = (startDate, endDate) => {
+  const result = {
     startDate: {
-      day: date1.getDate(),
-      month: date1.toLocaleString('en-GB', { month: 'short' }),
+      day: startDate.getDate(),
+      month: startDate.toLocaleString('en-GB', { month: 'short' }),
     },
   };
-  if (date2 !== undefined) {
+  if (endDate) {
     result.endDate = {
-      day: date2.getDate(),
-      month: date2.toLocaleString('en-GB', { month: 'short' }),
+      day: endDate.getDate(),
+      month: endDate.toLocaleString('en-GB', { month: 'short' }),
     };
   }
   return result;
