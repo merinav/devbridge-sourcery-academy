@@ -12,6 +12,7 @@
     &-prev {
       cursor: pointer;
       height: 20px;
+      margin-left: -40px;
       margin-right: 20px;
       transform: rotate(90deg);
       width: 20px;
@@ -21,6 +22,7 @@
       cursor: pointer;
       height: 20px;
       margin-left: 20px;
+      margin-right: -40px;
       transform: rotate(-90deg);
       width: 20px;
     }
@@ -29,7 +31,6 @@
   &__testimonials {
     align-items: flex-start;
     display: flex;
-    gap: 80px;
     height: 550px;
     justify-content: space-between;
     width: 100%;
