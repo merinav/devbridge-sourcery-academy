@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
-import TestimonialModal from '~/pages/Home/TestimonialCard/TestimonialModal';
 import useTheme from '~/hooks/useTheme';
 import PropTypes from 'prop-types';
 import TestimonialsCarousel from '~/components/TestimonialsSection/TestimonialsCarousel';
-import styles from './TestimonialsSection.module.scss';
+import BackgroundParticles from '~/assets/images/Background_particles_Testimonials.svg';
 import TestimonialCard from '~/pages/Home/TestimonialCard';
+import TestimonialModal from '~/pages/Home/TestimonialCard/TestimonialModal';
+import styles from './TestimonialsSection.module.scss';
 
 const cn = classNames.bind(styles);
 
@@ -70,6 +71,10 @@ const TestimonialsSection = ({ testimonials, academy }) => {
           closeModal={handleCloseModal}
         />
       )}
+      <BackgroundParticles
+        className={cn('testimonials-section__particles')}
+        aria-hidden="true"
+      />
     </section>
   );
 };

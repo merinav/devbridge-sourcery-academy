@@ -1,3 +1,6 @@
+@use '/src/sass/utilities/mixins/' as *;
+@use '/src/sass/utilities/functions/' as *;
+
 .testimonials-section {
   display: flex;
   flex-direction: column;
@@ -17,5 +20,14 @@
     display: flex;
     gap: 80px;
     height: 550px;
+  }
+
+  &__particles {
+    //right: 6.2rem;
+    //bottom: 50%;
+    //position: absolute;
+    //transform: translateY(-50%);
+    //width: 63%;
+    z-index: -11;
   }
 }

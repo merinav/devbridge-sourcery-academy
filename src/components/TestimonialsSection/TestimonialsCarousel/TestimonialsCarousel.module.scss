@@ -1,3 +1,6 @@
+@use '/src/sass/utilities/mixins/' as *;
+@use '/src/sass/utilities/functions/' as *;
+
 .carousel {
   align-items: center;
   display: flex;

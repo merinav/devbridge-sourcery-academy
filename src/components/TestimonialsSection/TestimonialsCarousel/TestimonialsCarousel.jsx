@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconArrow from '~/assets/icons/Icon_arrow_down.svg';
 import TestimonialCard from '~/pages/Home/TestimonialCard';
-import styles from './TestimonialsCarousel.module.scss';
 import { NUMBER_OF_TESTIMONIALS_TO_DISPLAY } from '~/components/TestimonialsSection/TestimonialsSection';
+import styles from './TestimonialsCarousel.module.scss';
 
 const cn = classNames.bind(styles);
 
