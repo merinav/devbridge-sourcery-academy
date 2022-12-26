@@ -32,8 +32,8 @@
   }
 
   &__message {
-    font-size: var(--font-size-m);
-    line-height: var(--line-height-xl);
+    font-size: var(--font-size-s);
+    line-height: var(--line-height-l);
     margin: toRem(18) 0;
     text-align: left;
   }
@@ -59,7 +59,7 @@
   }
 
   &__academy {
-    font-size: var(--font-size-m);
+    font-size: var(--font-size-s);
     font-weight: var(--font-weight-regular);
     margin: 0;
   }
