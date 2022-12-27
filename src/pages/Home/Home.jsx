@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import useTheme from '../../hooks/useTheme';
 import PromoSection from './PromoSection';
 import AcademiesSection from './AcademiesSection';
-import TestimonialCard from '~/pages/Home/TestimonialCard';
 import { useTestimonialData } from '~/hooks/useTestimonialData';
-import TestimonialModal from '~/pages/Home/TestimonialCard/TestimonialModal';
+import TestimonialModal from '../../components/TestimonialCard/TestimonialModal/TestimonialModal';
+import TestimonialCard from '../../components/TestimonialCard';
 import MediaSection from '/src/components/MediaSection';
 
 const Home = () => {
