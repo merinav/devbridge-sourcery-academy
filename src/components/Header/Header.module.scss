@@ -4,6 +4,8 @@
 .header {
   align-items: center;
   background-color: var(--color-white);
+  box-shadow: 0 0 toRem(15) var(--shadow);
+  clip-path: inset(0 1px -100vh 1px);
   display: flex;
   justify-content: space-between;
   padding: var(--spacer-xxl) var(--spacer-5xl);
@@ -35,5 +37,18 @@
       outline: 0.2rem solid var(--color-purple-400);
       outline-offset: var(--spacer-s);
     }
+  }
+
+  @include tablet-landscape {
+    .header {
+      clip-path: none;
+    }
+  }
+}
+
+@include big-desktop-up {
+  .header {
+    // outline: 4px solid red; // TODO: remove
+    // width: 100vw;
   }
 }
