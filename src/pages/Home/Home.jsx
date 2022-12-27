@@ -7,16 +7,17 @@ import TestimonialsSection from '~/components/TestimonialsSection';
 
 const Home = () => {
   useTheme();
-  const testimonials = useFetch('https://www.jurele.lt/testimonials.json');
+  const testimonials = useFetch(
+    'https://www.jurele.lt/testimonials.json'
+  ).filter(
+    (testimonial) => testimonial.academy === 'Sourcery for Front-End Graduate'
+  );
 
   return (
     <>
       <PromoSection />
       <AcademiesSection />
-      <TestimonialsSection
-        testimonials={testimonials}
-        academy={'Sourcery for Front-End Graduate'}
-      />
+      <TestimonialsSection testimonials={testimonials} />
     </>
   );
 };

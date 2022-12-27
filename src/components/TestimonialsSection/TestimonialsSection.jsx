@@ -3,10 +3,10 @@ import classNames from 'classnames/bind';
 import useTheme from '~/hooks/useTheme';
 import PropTypes from 'prop-types';
 import BackgroundParticles from '~/assets/images/Background_particles_Testimonials.svg';
-import TestimonialCard from '~/components/TestimonialCard';
+import TestimonialCard from '~/components/TestimonialsSection/TestimonialCard';
 import TestimonialsCarousel from '~/components/TestimonialsSection/TestimonialsCarousel';
 import styles from './TestimonialsSection.module.scss';
-import TestimonialModal from '~/components/TestimonialCard/TestimonialModal';
+import TestimonialModal from '~/components/TestimonialsSection/TestimonialModal';
 import useBreakpointKey from '~/hooks/useBreakpointKey';
 
 const cn = classNames.bind(styles);
@@ -21,7 +21,7 @@ export const NUMBER_OF_TESTIMONIALS_TO_DISPLAY = {
   'big-desktop-up': 3,
 };
 
-const TestimonialsSection = ({ testimonials, academy }) => {
+const TestimonialsSection = ({ testimonials }) => {
   useTheme();
   const breakpointKey = useBreakpointKey();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,9 +31,10 @@ const TestimonialsSection = ({ testimonials, academy }) => {
     setNumberOfTestimonialsToDisplay,
   ] = useState(3);
 
-  const firstTenAcademyTestimonials = testimonials
-    .filter((testimonial) => testimonial.academy === academy)
-    .slice(0, MAX_NUMBER_OF_TESTIMONIALS_TO_DISPLAY);
+  const firstXAcademyTestimonials = testimonials.slice(
+    0,
+    MAX_NUMBER_OF_TESTIMONIALS_TO_DISPLAY
+  );
 
   useEffect(() => {
     setNumberOfTestimonialsToDisplay(
@@ -57,16 +58,16 @@ const TestimonialsSection = ({ testimonials, academy }) => {
     setIsModalOpen(false);
   };
 
-  if (!firstTenAcademyTestimonials.length) {
+  if (!firstXAcademyTestimonials.length) {
     return null;
   }
 
   return (
     <section className={cn('testimonials-section')}>
       <h1 className={cn('testimonials-section__title')}>Testimonials</h1>
-      {firstTenAcademyTestimonials.length > numberOfTestimonialsToDisplay ? (
+      {firstXAcademyTestimonials.length > numberOfTestimonialsToDisplay ? (
         <TestimonialsCarousel
-          testimonials={firstTenAcademyTestimonials}
+          testimonials={firstXAcademyTestimonials}
           numberOfTestimonialsToDisplay={numberOfTestimonialsToDisplay}
           handleOpenModal={handleOpenModal}
         />
@@ -77,7 +78,7 @@ const TestimonialsSection = ({ testimonials, academy }) => {
             `testimonials-section__cards-${numberOfTestimonialsToDisplay}`
           )}
         >
-          {firstTenAcademyTestimonials.map((testimonial) => (
+          {firstXAcademyTestimonials.map((testimonial) => (
             <TestimonialCard
               key={testimonial.id}
               photo={testimonial.photo}
@@ -105,7 +106,6 @@ const TestimonialsSection = ({ testimonials, academy }) => {
 
 TestimonialsSection.propTypes = {
   testimonials: PropTypes.array,
-  academy: PropTypes.string.isRequired,
 };
 
 export default TestimonialsSection;

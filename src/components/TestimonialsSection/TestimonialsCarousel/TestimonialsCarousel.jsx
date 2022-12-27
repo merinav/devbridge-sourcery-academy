@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconArrow from '~/assets/icons/Icon_arrow_down.svg';
-import TestimonialCard from '~/components/TestimonialCard';
+import TestimonialCard from '~/components/TestimonialsSection/TestimonialCard';
 import styles from './TestimonialsCarousel.module.scss';
 
 const cn = classNames.bind(styles);
