@@ -9,7 +9,7 @@
   position: absolute;
   top: 4.8rem;
   transform: translateX(-25%);
-  z-index: var(--z-normal);
+  z-index: var(--z-dropdown);
 
   &::before {
     border: var(--spacer-m) solid transparent;
@@ -53,7 +53,7 @@
   padding: 0;
   position: static;
   transform: none;
-  z-index: var(--z-normal);
+  z-index: var(--z-dropdown);
 
   &::before {
     border: 0;
