@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconArrow from '~/assets/icons/Icon_arrow_down.svg';
-import TestimonialCard from '~/components/TestimonialsSection/TestimonialCard';
 import styles from './TestimonialsCarousel.module.scss';
+import TestimonialCards from '~/components/TestimonialsSection/TestimonialCards';
 
 const cn = classNames.bind(styles);
 
@@ -38,7 +38,7 @@ const TestimonialsCarousel = ({
     <div className={cn('carousel')}>
       {shouldShowPrevArrow && (
         <div
-          className={cn('carousel__nav-prev')}
+          className={cn('carousel__nav', 'carousel__nav-prev')}
           onClick={handlePrevArrowClick}
           tabIndex={0}
           role="button"
@@ -52,28 +52,16 @@ const TestimonialsCarousel = ({
           <IconArrow alt="previous" />
         </div>
       )}
-      <div
-        className={cn(
-          'carousel__testimonials',
-          `carousel__testimonials-${numberOfTestimonialsToDisplay}`
+      <TestimonialCards
+        testimonials={testimonials.slice(
+          currentIndex,
+          currentIndex + numberOfTestimonialsToDisplay
         )}
-      >
-        {testimonials
-          .slice(currentIndex, currentIndex + numberOfTestimonialsToDisplay)
-          .map((testimonial) => (
-            <TestimonialCard
-              key={testimonial.id}
-              photo={testimonial.photo}
-              message={testimonial.message}
-              name={testimonial.name}
-              academy={testimonial.academy}
-              openModal={() => handleOpenModal(testimonial)}
-            />
-          ))}
-      </div>
+        handleOpenModal={handleOpenModal}
+      />
       {shouldShowNextArrow && (
         <div
-          className={cn('carousel__nav-next')}
+          className={cn('carousel__nav', 'carousel__nav-next')}
           tabIndex={0}
           role="button"
           aria-label="next"

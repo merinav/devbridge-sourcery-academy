@@ -1,0 +1,21 @@
+@use '/src/sass/utilities/functions' as *;
+
+.cards {
+  align-items: flex-start;
+  display: flex;
+  margin-left: var(--spacer-l);
+  width: 100%;
+}
+
+.cards-1 {
+  justify-content: center;
+}
+
+.cards-2 {
+  gap: toRem(80);
+  justify-content: center;
+}
+
+.cards-3 {
+  justify-content: space-between;
+}
