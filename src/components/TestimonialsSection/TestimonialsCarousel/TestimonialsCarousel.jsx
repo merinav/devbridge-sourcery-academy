@@ -2,18 +2,21 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconArrow from '~/assets/icons/Icon_arrow_down.svg';
-import TestimonialCard from '~/pages/Home/TestimonialCard';
-import { NUMBER_OF_TESTIMONIALS_TO_DISPLAY } from '~/components/TestimonialsSection/TestimonialsSection';
+import TestimonialCard from '~/components/TestimonialCard';
 import styles from './TestimonialsCarousel.module.scss';
 
 const cn = classNames.bind(styles);
 
-const TestimonialsCarousel = ({ testimonials, handleOpenModal }) => {
+const TestimonialsCarousel = ({
+  testimonials,
+  numberOfTestimonialsToDisplay,
+  handleOpenModal,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const shouldShowPrevArrow = currentIndex > 0;
   const shouldShowNextArrow =
-    currentIndex + NUMBER_OF_TESTIMONIALS_TO_DISPLAY < testimonials.length;
+    currentIndex + numberOfTestimonialsToDisplay < testimonials.length;
 
   const handlePrevArrowClick = () => {
     if (currentIndex > 0) {
@@ -22,10 +25,7 @@ const TestimonialsCarousel = ({ testimonials, handleOpenModal }) => {
   };
 
   const handleNextArrowClick = () => {
-    if (
-      currentIndex + NUMBER_OF_TESTIMONIALS_TO_DISPLAY <
-      testimonials.length
-    ) {
+    if (currentIndex + numberOfTestimonialsToDisplay < testimonials.length) {
       setCurrentIndex(currentIndex + 1);
     }
   };
@@ -52,9 +52,14 @@ const TestimonialsCarousel = ({ testimonials, handleOpenModal }) => {
           <IconArrow alt="previous" />
         </div>
       )}
-      <div className={cn('carousel__testimonials')}>
+      <div
+        className={cn(
+          'carousel__testimonials',
+          `carousel__testimonials-${numberOfTestimonialsToDisplay}`
+        )}
+      >
         {testimonials
-          .slice(currentIndex, currentIndex + NUMBER_OF_TESTIMONIALS_TO_DISPLAY)
+          .slice(currentIndex, currentIndex + numberOfTestimonialsToDisplay)
           .map((testimonial) => (
             <TestimonialCard
               key={testimonial.id}
@@ -88,6 +93,7 @@ const TestimonialsCarousel = ({ testimonials, handleOpenModal }) => {
 
 TestimonialsCarousel.propTypes = {
   testimonials: PropTypes.arrayOf(PropTypes.object).isRequired,
+  numberOfTestimonialsToDisplay: PropTypes.number.isRequired,
   handleOpenModal: PropTypes.func.isRequired,
 };
 

@@ -18,16 +18,19 @@
   &__cards {
     align-items: flex-start;
     display: flex;
-    gap: 80px;
-    height: 550px;
+    margin-left: 20px;
   }
 
-  &__particles {
-    //right: 6.2rem;
-    //bottom: 50%;
-    //position: absolute;
-    //transform: translateY(-50%);
-    //width: 63%;
-    z-index: -11;
+  &__cards-1 {
+    justify-content: center;
+  }
+
+  &__cards-2 {
+    gap: 80px;
+    justify-content: center;
+  }
+
+  &__cards-3 {
+    justify-content: space-between;
   }
 }
