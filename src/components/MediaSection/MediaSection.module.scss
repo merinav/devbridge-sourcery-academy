@@ -51,7 +51,7 @@
 
   @include tablet-landscape {
     &__path-home {
-      width: 35%;
+      display: none;
     }
 
     &__particles {
@@ -67,7 +67,8 @@
     }
 
     &__particles {
-      display: none;
+      right: 0;
+      width: 50%;
     }
   }
 }

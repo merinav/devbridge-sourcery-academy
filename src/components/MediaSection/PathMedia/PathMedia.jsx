@@ -3,14 +3,15 @@ import classNames from 'classnames/bind';
 import PathMediaHome from '/src/assets/images/Path_Media_Home.svg';
 import PathMediaAcademies from '/src/assets/images/Path_Media_Academies.svg';
 import PropTypes from 'prop-types';
+import { ACADEMIES } from '/src/constants/constants.js';
 import styles from '../MediaSection.module';
 
 const cn = classNames.bind(styles);
 
-const PathMedia = ({ academy = 'home' }) => {
+const PathMedia = ({ academy = ACADEMIES.home }) => {
   return (
     <>
-      {academy === 'home' ? (
+      {academy === ACADEMIES.home ? (
         <PathMediaHome
           className={cn('media-section__path-home')}
           aria-hidden="true"
@@ -26,8 +27,7 @@ const PathMedia = ({ academy = 'home' }) => {
 };
 
 PathMedia.propTypes = {
-  academy: PropTypes.oneOf(['home', 'developers', 'testers', 'frontend'])
-    .isRequired,
+  academy: PropTypes.oneOf(Object.values(ACADEMIES)).isRequired,
 };
 
 export default PathMedia;

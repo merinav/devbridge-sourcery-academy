@@ -6,11 +6,12 @@ import ParticlesMedia from '/src/assets/images/Background_particles_Media.svg';
 import PathMedia from './PathMedia/PathMedia';
 import GalleryMedia from './GalleryMedia/GalleryMedia';
 import LoadingSpinner from '/src/components/LoadingSpinner/LoadingSpinner';
+import { ACADEMIES } from '/src/constants/constants.js';
 import styles from './MediaSection.module';
 
 const cn = classNames.bind(styles);
 
-const MediaSection = ({ academy = 'home' }) => {
+const MediaSection = ({ academy = ACADEMIES.home }) => {
   const fetchMediaUrl = 'https://sfe-2022-data.netlify.app/static/media.json';
   const fetchMediaData = useFetch(fetchMediaUrl);
   const [loading, setLoading] = useState(true);
@@ -23,13 +24,13 @@ const MediaSection = ({ academy = 'home' }) => {
 
   const data = useMemo(() => {
     switch (true) {
-      case academy === 'developers':
+      case academy === ACADEMIES.developers:
         return fetchMediaData.filter((item) => item.academy === 'developers');
 
-      case academy === 'testers':
+      case academy === ACADEMIES.testers:
         return fetchMediaData.filter((item) => item.academy === 'testers');
 
-      case academy === 'frontend':
+      case academy === ACADEMIES.frontend:
         return fetchMediaData.filter((item) => item.academy === 'frontend');
 
       default:
@@ -64,7 +65,7 @@ const MediaSection = ({ academy = 'home' }) => {
 };
 
 MediaSection.propTypes = {
-  academy: PropTypes.oneOf(['home', 'developers', 'testers', 'frontend']),
+  academy: PropTypes.oneOf(Object.values(ACADEMIES)),
 };
 
 export default MediaSection;
