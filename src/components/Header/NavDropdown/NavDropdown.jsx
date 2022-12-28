@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import { routes } from '../../../routes/routeConfig';
-import NavigationLink from '../NavigationLink/NavigationLink';
 import styles from './NavDropdown.module';
 
 const cn = classNames.bind(styles);

@@ -52,7 +52,7 @@ const Navigation = ({ fullScreenOverlay, setShowOverlayNav }) => {
           About us
         </NavigationLink>
         <li className={cn('nav__list-item', 'nav__list-item--have-dropdown')}>
-          <button
+          <NavigationLink
             className={cn('nav__link')}
             onClick={() => setIsOpen((prevState) => !prevState)}
             ref={academiesRef}
@@ -63,7 +63,7 @@ const Navigation = ({ fullScreenOverlay, setShowOverlayNav }) => {
             ) : (
               <Icon_arrow_down className={cn('dropdown-icon')} />
             )}
-          </button>
+          </NavigationLink>
           {isOpen && (
             <NavDropdown
               ref={dropdownRef}
