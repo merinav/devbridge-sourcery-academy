@@ -46,7 +46,7 @@ const Navigation = ({ fullScreenOverlay, setShowOverlayNav }) => {
         })}
       >
         <NavigationLink
-          to={routes.notFound}
+          to={routes.aboutUs}
           onClick={() => setShowOverlayNav(false)}
         >
           About us
@@ -74,7 +74,7 @@ const Navigation = ({ fullScreenOverlay, setShowOverlayNav }) => {
           )}
         </li>
         <NavigationLink
-          to={routes.notFound}
+          to={routes.media}
           onClick={() => setShowOverlayNav(false)}
         >
           Media
@@ -86,7 +86,7 @@ const Navigation = ({ fullScreenOverlay, setShowOverlayNav }) => {
           Register
         </NavigationLink>
         <NavigationLink
-          to={routes.notFound}
+          to={routes.questions}
           onClick={() => setShowOverlayNav(false)}
         >
           Questions

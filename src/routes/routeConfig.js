@@ -7,6 +7,9 @@ const FrontEnd = lazy(() => import('../pages/academy/FrontEnd'));
 const Kids = lazy(() => import('../pages/academy/Kids'));
 const Register = lazy(() => import('../pages/Register'));
 const NotFound = lazy(() => import('../pages/NotFound'));
+const Questions = lazy(() => import('../pages/Questions'));
+const Media = lazy(() => import('../pages/Media'));
+const AboutUs = lazy(() => import('../pages/AboutUs'));
 
 export const routes = {
   home: '/',
@@ -16,6 +19,9 @@ export const routes = {
   kids: '/academy/kids',
   register: '/register',
   notFound: '*',
+  questions: '/questions',
+  media: '/media',
+  aboutUs: '/aboutus',
 };
 
 export const routeConfig = {
@@ -46,5 +52,17 @@ export const routeConfig = {
   notFound: {
     path: routes.notFound,
     component: NotFound,
+  },
+  questions: {
+    path: routes.questions,
+    component: Questions,
+  },
+  media: {
+    path: routes.media,
+    component: Media,
+  },
+  aboutUs: {
+    path: routes.aboutUs,
+    component: AboutUs,
   },
 };
