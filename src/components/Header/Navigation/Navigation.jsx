@@ -45,7 +45,10 @@ const Navigation = ({ fullScreenOverlay, setShowOverlayNav }) => {
           'nav-list-overlay': fullScreenOverlay,
         })}
       >
-        <NavigationLink to={'#'} onClick={() => setShowOverlayNav(false)}>
+        <NavigationLink
+          to={routes.notFound}
+          onClick={() => setShowOverlayNav(false)}
+        >
           About us
         </NavigationLink>
         <li className={cn('nav__list-item', 'nav__list-item--have-dropdown')}>
@@ -70,7 +73,10 @@ const Navigation = ({ fullScreenOverlay, setShowOverlayNav }) => {
             />
           )}
         </li>
-        <NavigationLink to={'#'} onClick={() => setShowOverlayNav(false)}>
+        <NavigationLink
+          to={routes.notFound}
+          onClick={() => setShowOverlayNav(false)}
+        >
           Media
         </NavigationLink>
         <NavigationLink
@@ -79,7 +85,10 @@ const Navigation = ({ fullScreenOverlay, setShowOverlayNav }) => {
         >
           Register
         </NavigationLink>
-        <NavigationLink to={'#'} onClick={() => setShowOverlayNav(false)}>
+        <NavigationLink
+          to={routes.notFound}
+          onClick={() => setShowOverlayNav(false)}
+        >
           Questions
         </NavigationLink>
       </ul>

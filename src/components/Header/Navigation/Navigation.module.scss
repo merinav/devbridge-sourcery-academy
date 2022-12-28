@@ -46,10 +46,6 @@
     position: relative;
     text-decoration: none;
 
-    &--active {
-      text-decoration: line-through;
-    }
-
     &::after {
       background-color: var(--color-purple-400);
       content: '';
@@ -65,6 +61,11 @@
 
     &:hover::after {
       opacity: 1;
+    }
+
+    &--active {
+      opacity: 1;
+      text-decoration: none;
     }
 
     &:focus-visible {
