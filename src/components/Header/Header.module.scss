@@ -48,7 +48,7 @@
 
 @include big-desktop-up {
   .header {
-    // outline: 4px solid red; // TODO: remove
-    // width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
   }
 }
