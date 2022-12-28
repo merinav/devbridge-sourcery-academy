@@ -64,7 +64,8 @@
     }
 
     &--active {
-      opacity: 1;
+      background-color: var(--color-purple-400);
+      color: var(--color-white);
       text-decoration: none;
     }
 
