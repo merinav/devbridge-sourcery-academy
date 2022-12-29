@@ -1,16 +1,95 @@
 .academy-section {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+  &__developers {
+    align-items: center;
+    display: flex;
+    gap: toRem(50);
+    justify-content: space-between;
+    width: 100%;
 
-  @include tablet-landscape {
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
+    @include tablet-landscape {
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
 
-    &:not(.academy-section--dev) {
-      gap: 8rem;
+  &__testers {
+    align-items: center;
+    display: flex;
+    gap: toRem(50);
+    justify-content: space-between;
+    margin-top: toRem(141);
+    width: 100%;
+
+    @include tablet-landscape {
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: toRem(80);
+      justify-content: center;
+      width: 100%;
+    }
+
+    &--inverted {
+      align-items: flex-start;
+      flex-direction: row-reverse;
+      text-align: right;
+
+      @include tablet-landscape {
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  }
+
+  &__front-end {
+    align-items: center;
+    display: flex;
+    gap: toRem(50);
+    justify-content: space-between;
+    margin-top: toRem(175);
+    width: 100%;
+
+    @include desktop {
+      margin-top: toRem(150);
+    }
+
+    @include tablet-landscape {
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: toRem(80);
+      justify-content: center;
+    }
+
+    &--inverted {
+      align-items: flex-start;
+      flex-direction: row-reverse;
+      text-align: right;
+
+      @include tablet-landscape {
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  }
+
+  &__kids {
+    align-items: center;
+    align-self: flex-start;
+    display: flex;
+    gap: toRem(50);
+    justify-content: space-between;
+    margin-top: toRem(120);
+    width: 100%;
+
+    @include tablet-landscape {
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: toRem(80);
+      justify-content: center;
     }
   }
 
@@ -22,8 +101,19 @@
       flex-basis: 100%;
     }
   }
+}
 
-  &__img {
+.developers {
+  &__description {
+    flex-basis: 50%;
+    min-width: toRem(380);
+
+    @include tablet-landscape {
+      flex-basis: 100%;
+    }
+  }
+
+  &__section-images {
     align-items: center;
     display: flex;
     flex-basis: 50%;
@@ -31,180 +121,208 @@
     position: relative;
 
     @include tablet-landscape {
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @include tablet-landscape {
       flex-basis: 50%;
       width: 100%;
     }
-  }
 
-  &--inv {
-    align-items: flex-start;
-    flex-direction: row-reverse;
-    text-align: right;
-
-    @include tablet-landscape {
-      align-items: center;
-      flex-direction: row;
-      justify-content: center;
-      text-align: center;
-    }
-  }
-
-  &--dev {
-    gap: 5rem;
-    margin-top: 20rem;
-  }
-
-  &--test {
-    margin-top: 14.1rem;
-
-    @include tablet-landscape {
+    .section-images__path {
+      left: toRem(70);
+      position: absolute;
+      top: toRem(-260);
       width: 100%;
+
+      @include desktop {
+        left: toRem(50);
+        width: 120%;
+      }
+
+      @include desktop-small {
+        left: toRem(50);
+        top: toRem(-200);
+        width: 130%;
+      }
     }
-  }
 
-  &--front {
-    margin-top: toRem(175);
+    .section-images__illustration {
+      bottom: toRem(30);
+      left: toRem(100);
+      position: relative;
+      width: 67.5%;
 
-    @include desktop {
-      margin-top: toRem(150);
+      @include desktop {
+        min-width: toRem(330);
+      }
+
+      @include tablet-landscape {
+        position: static;
+      }
+
+      @include mobile-only {
+        display: none;
+      }
     }
-  }
-
-  &--kids {
-    align-self: flex-start;
-    display: flex;
-    margin-top: toRem(120);
   }
 }
 
-.img {
-  &__dev {
-    bottom: 3rem;
-    left: 10rem;
-    position: relative;
-    width: 67.5%;
-
-    @include desktop {
-      min-width: toRem(330);
-    }
+.testers {
+  &__description {
+    flex-basis: 50%;
+    min-width: toRem(380);
 
     @include tablet-landscape {
-      position: static;
-    }
-
-    @include mobile-only {
-      display: none;
+      flex-basis: 100%;
     }
   }
 
-  &__dev--path {
-    left: 7rem;
-    position: absolute;
-    top: -26rem;
-    width: 100%;
-
-    @include desktop {
-      left: 5rem;
-      width: 120%;
-    }
-
-    @include desktop-small {
-      left: 5rem;
-      top: -20rem;
-      width: 130%;
-    }
-  }
-
-  &__test {
-    align-self: flex-start;
+  &__section-images {
+    align-items: center;
     display: flex;
-    width: 55%;
-
-    @include desktop {
-      min-width: toRem(250);
-    }
+    flex-basis: 50%;
+    justify-content: center;
+    position: relative;
 
     @include tablet-landscape {
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: toRem(80);
+      justify-content: center;
+    }
+
+    .section-images__path {
+      position: absolute;
+      right: toRem(70);
+      top: toRem(-100);
       width: 100%;
+
+      @include desktop {
+        right: toRem(30);
+        width: 120%;
+      }
+
+      @include desktop-small {
+        right: toRem(10);
+        top: toRem(-85);
+        width: 130%;
+      }
     }
 
-    @include mobile-only {
-      display: none;
-    }
-  }
+    .section-images__illustration {
+      align-self: flex-start;
+      display: flex;
+      width: 55%;
 
-  &__test--path {
-    position: absolute;
-    right: 7rem;
-    top: -10rem;
-    width: 100%;
+      @include desktop {
+        min-width: toRem(250);
+      }
 
-    @include desktop {
-      right: 3rem;
-      width: 120%;
-    }
+      @include tablet-landscape {
+        width: 100%;
+      }
 
-    @include desktop-small {
-      right: 1rem;
-      top: -8.5rem;
-      width: 130%;
-    }
-  }
-
-  &__front {
-    min-width: toRem(300);
-    width: 71%;
-
-    @include desktop {
-      min-width: toRem(324);
-    }
-
-    @include mobile-only {
-      display: none;
+      @include mobile-only {
+        display: none;
+      }
     }
   }
+}
 
-  &__kids {
-    align-self: flex-start;
-    display: flex;
-    left: toRem(55);
-    position: relative;
-    top: 2.5rem;
-    width: 71.6%;
-
-    @include desktop {
-      min-width: toRem(325);
-      top: -2rem;
-    }
-
-    @include desktop-small {
-      top: -6rem;
-    }
+.front-end {
+  &__description {
+    flex-basis: 50%;
+    min-width: toRem(380);
 
     @include tablet-landscape {
-      position: static;
-    }
-
-    @include mobile-only {
-      display: none;
+      flex-basis: 100%;
     }
   }
 
-  &__kids--path {
-    left: toRem(55);
-    position: absolute;
-    top: -4rem;
-    width: 102.7%;
+  &__section-images {
+    align-items: center;
+    display: flex;
+    flex-basis: 50%;
+    justify-content: center;
+    position: relative;
 
-    @include desktop {
-      top: -10rem;
-      width: 120%;
+    .section-images__illustration {
+      min-width: toRem(300);
+      width: 71%;
+
+      @include desktop {
+        min-width: toRem(324);
+      }
+
+      @include mobile-only {
+        display: none;
+      }
+    }
+  }
+}
+
+.kids {
+  &__description {
+    flex-basis: 50%;
+    min-width: toRem(380);
+
+    @include tablet-landscape {
+      flex-basis: 100%;
+    }
+  }
+
+  &__section-images {
+    align-items: center;
+    display: flex;
+    flex-basis: 50%;
+    justify-content: center;
+    position: relative;
+
+    .section-images__path {
+      left: toRem(55);
+      position: absolute;
+      top: toRem(-40);
+      width: 102.7%;
+
+      @include desktop {
+        top: toRem(-100);
+        width: 120%;
+      }
+
+      @include desktop-small {
+        left: toRem(40);
+        top: toRem(-140);
+        width: 130%;
+      }
     }
 
-    @include desktop-small {
-      left: toRem(40);
-      top: -14rem;
-      width: 130%;
+    .section-images__illustration {
+      align-self: flex-start;
+      display: flex;
+      left: toRem(55);
+      position: relative;
+      top: toRem(25);
+      width: 71.6%;
+
+      @include desktop {
+        min-width: toRem(325);
+        top: toRem(-20);
+      }
+
+      @include desktop-small {
+        top: toRem(-60);
+      }
+
+      @include tablet-landscape {
+        position: static;
+      }
+
+      @include mobile-only {
+        display: none;
+      }
     }
   }
 }

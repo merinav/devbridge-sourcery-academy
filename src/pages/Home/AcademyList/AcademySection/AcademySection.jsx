@@ -11,35 +11,43 @@ function AcademySection({ data }) {
   const isDesktop = useMediaQuery('(min-width: 880px)');
 
   const {
-    id,
+    type,
     title,
     paragraph,
     buttonProps,
     img: Img,
     svgPath: SvgPath,
-    invert: isInverted,
+    isInverted,
   } = data;
 
-  const invert = isInverted ? 'academy-section--inv' : '';
+  const invertedClassName =
+    isDesktop && isInverted ? `academy-section__${type}--inverted` : '';
 
   return (
-    <section
-      className={cn(['academy-section', `academy-section--${id}`, `${invert}`])}
-    >
-      <div className={cn('academy-section__description')}>
-        <AcademyDescription
-          title={title}
-          paragraph={paragraph}
-          isInverted={isInverted}
-          buttonProps={buttonProps}
-        />
-      </div>
+    <section className={cn('academy-section')}>
+      <div className={cn(`academy-section__${type}`, invertedClassName)}>
+        <div className={cn(`${type}__description`)}>
+          <AcademyDescription
+            title={title}
+            paragraph={paragraph}
+            isInverted={isInverted}
+            buttonProps={buttonProps}
+            isDesktop={isDesktop}
+          />
+        </div>
 
-      <div className={cn('academy-section__img')}>
-        {SvgPath && isDesktop && (
-          <SvgPath className={cn(`img__${id}--path`)} aria-hidden="true" />
-        )}
-        <Img className={cn(`img__${id}`)} aria-hidden="true" />
+        <div className={cn(`${type}__section-images`)}>
+          {SvgPath && isDesktop && (
+            <SvgPath
+              className={cn('section-images__path')}
+              aria-hidden="true"
+            />
+          )}
+          <Img
+            className={cn('section-images__illustration')}
+            aria-hidden="true"
+          />
+        </div>
       </div>
     </section>
   );
@@ -47,13 +55,13 @@ function AcademySection({ data }) {
 
 AcademySection.propTypes = {
   data: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     paragraph: PropTypes.string.isRequired,
     buttonProps: PropTypes.object.isRequired,
     img: PropTypes.func.isRequired,
     svgPath: PropTypes.func,
-    invert: PropTypes.bool.isRequired,
+    isInverted: PropTypes.bool.isRequired,
   }).isRequired,
 };
 
