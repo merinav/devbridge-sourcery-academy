@@ -15,18 +15,9 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
   scroll-behavior: smooth;
-
-  @include big-desktop-up {
-    overflow-x: hidden;
-  }
 }
 
 body {
-  @include big-desktop-up {
-    margin: auto;
-    max-width: 1440px;
-  }
-
   font-family: var(--font-family-base);
   font-size: var(--font-size-m);
   line-height: var(--line-height-m);
