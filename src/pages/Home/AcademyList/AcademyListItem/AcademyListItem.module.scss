@@ -3,13 +3,16 @@
 }
 
 .academy-particles {
+  .particle-position {
+    position: absolute;
+    z-index: var(--svg-particles);
+  }
+
   &__developers-top {
     height: toRem(40);
     left: 0;
-    position: absolute;
     top: toRem(-60);
     width: toRem(127);
-    z-index: var(--svg-particles);
 
     @include tablet-landscape {
       top: toRem(-40);
@@ -32,9 +35,7 @@
     bottom: toRem(0);
     height: toRem(85);
     left: toRem(240);
-    position: absolute;
     width: toRem(191);
-    z-index: var(--svg-particles);
 
     @include tablet-landscape {
       bottom: toRem(300);
@@ -57,11 +58,9 @@
 
   &__testers-top {
     height: topRem(60.83);
-    position: absolute;
     right: toRem(40);
     top: toRem(75);
     width: toRem(124.48);
-    z-index: var(--svg-particles);
 
     @include tablet-landscape {
       bottom: toRem(330);
@@ -84,10 +83,8 @@
   &__testers-bottom {
     bottom: 0;
     height: toRem(86);
-    position: absolute;
     right: toRem(280);
     width: toRem(229.42);
-    z-index: var(--svg-particles);
 
     @include desktop-small {
       right: toRem(210);
@@ -108,11 +105,9 @@
 
   &__front-end-top {
     height: toRem(34.31);
-    position: absolute;
     right: toRem(39);
     top: toRem(140);
     width: toRem(98.65);
-    z-index: var(--svg-particles);
 
     @include desktop {
       top: toRem(115);
@@ -139,10 +134,8 @@
   &__front-end-bottom {
     bottom: toRem(-40);
     height: toRem(67.76);
-    position: absolute;
     right: toRem(220.58);
     width: toRem(284.76);
-    z-index: var(--svg-particles);
 
     @include tablet-landscape {
       bottom: unset;
@@ -167,10 +160,8 @@
   &__kids-top {
     height: toRem(100.76);
     left: toRem(378.94);
-    position: absolute;
     top: toRem(50);
     width: toRem(139.48);
-    z-index: var(--svg-particles);
 
     @include tablet-landscape {
       left: unset;
@@ -189,10 +180,8 @@
   &__kids-bottom {
     height: toRem(354.56);
     left: toRem(106.78);
-    position: absolute;
     top: toRem(350);
     width: toRem(441.72);
-    z-index: var(--svg-particles);
 
     @include desktop {
       left: toRem(35);
