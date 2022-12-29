@@ -36,7 +36,7 @@ const Footer = () => {
           >
             <Logo_Twitter
               alt="Devbridge Twitter page"
-              className={cn('image')}
+              className={cn('image', 'twitter')}
             />
           </a>
         </div>
