@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Icon_arrow_down from '../../../assets/icons/Icon_arrow_down.svg';
@@ -53,8 +54,10 @@ const Navigation = ({ fullScreenOverlay, setShowOverlayNav }) => {
         </NavigationLink>
         <li className={cn('nav__list-item', 'nav__list-item--have-dropdown')}>
           <button
-            className={cn('nav__link', {
-              'nav__link--active': location.pathname.includes('academy'),
+            className={cn('nav__button', 'nav__link', {
+              'nav__link--active': useLocation().pathname.startsWith(
+                '/academy'
+              ),
             })}
             onClick={() => setIsOpen((prevState) => !prevState)}
             ref={academiesRef}
