@@ -34,11 +34,6 @@
   &__dropdown-icon {
     fill: var(--color-purple-400);
     width: var(--spacer-m);
-
-    &--active {
-      text-decoration: underline var(--color-purple-400) solid 0.2rem;
-      text-underline-offset: 0.65rem;
-    }
   }
 
   &__link {
@@ -68,10 +63,18 @@
     }
 
     &--active {
-      //background-color: var(--color-purple-400);
-      //color: var(--color-white);
-      text-decoration: underline var(--color-purple-400) solid 0.2rem;
-      text-underline-offset: 0.65rem;
+      &::after {
+        background-color: var(--color-purple-400);
+        content: '';
+        height: 0.2rem;
+        left: 0;
+        margin-top: 0.2rem;
+        opacity: 1;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        transition: all 0.3s;
+      }
     }
 
     &:focus-visible {
@@ -107,4 +110,9 @@
   position: fixed;
   right: 0;
   top: 9.6rem;
+}
+
+.active {
+  text-decoration: underline var(--color-purple-400) solid 0.2rem;
+  text-underline-offset: 0.65rem;
 }

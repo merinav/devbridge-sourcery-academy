@@ -64,21 +64,9 @@ const Navigation = ({ fullScreenOverlay, setShowOverlayNav }) => {
           >
             Academies
             {isOpen ? (
-              <Icon_arrow_up
-                className={cn('nav__dropdown-icon', {
-                  'nav__dropdown-icon--active': useLocation().pathname.startsWith(
-                    '/academy'
-                  ),
-                })}
-              />
+              <Icon_arrow_up className={cn('nav__dropdown-icon')} />
             ) : (
-              <Icon_arrow_down
-                className={cn('nav__dropdown-icon', {
-                  'nav__dropdown-icon--active': useLocation().pathname.startsWith(
-                    '/academy'
-                  ),
-                })}
-              />
+              <Icon_arrow_down className={cn('nav__dropdown-icon')} />
             )}
           </button>
           {isOpen && (
