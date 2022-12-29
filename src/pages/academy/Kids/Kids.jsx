@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '../../../components/Button/Button';
 import useTheme from '/src/hooks/useTheme';
 
 function Kids() {
@@ -7,7 +6,7 @@ function Kids() {
 
   return (
     <>
-      <h1 className="only-for-testing">/academy/kids</h1>
+      <h1 style={{ color: 'var(--primary-color)' }}>/academy/kids</h1>
     </>
   );
 }

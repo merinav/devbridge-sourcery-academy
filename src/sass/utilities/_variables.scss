@@ -1,5 +1,7 @@
 :root {
   /* Colors */
+  --color-purple-100: hsla(244, 67%, 95%);
+  --color-purple-150: hsla(244, 67%, 88%);
   --color-purple-400: hsl(245, 46%, 39%);
   --color-light-purple-300: hsl(243, 97%, 72%);
   --color-light-purple-400: hsl(244, 97%, 65%);
@@ -18,12 +20,14 @@
   --color-red-300: hsl(344, 79%, 42%);
   --color-red-400: hsl(344, 100%, 35%);
   --color-grey-100: hsl(270, 11%, 96%);
+  --color-grey-150: hsl(0, 0%, 80%);
   --color-grey-200: hsl(0, 0%, 53%);
   --color-grey-300: hsl(0, 0%, 36%);
   --color-grey-400: hsl(247, 13%, 27%);
   --color-accent-orange-400: hsl(29, 93%, 63%);
   --color-accent-green-300: hsl(164, 79%, 50%);
   --color-accent-green-400: hsl(141, 59%, 51%);
+  --color-transparent-black: hsla(0, 0%, 0%, 0.4);
   --color-white: hsl(0, 0%, 100%);
 
   /* Shadows */
@@ -78,6 +82,9 @@
   --spacer: var(--spacer-m); /* alias for --spacer-m */
 
   /* Z-indexes */
+  --z-particles: -5;
+  --z-dropdown: 1;
   --z-header: 10;
-  --svg-particles: -5;
+  --z-overlay: 1000;
+  --z-modal: 100;
 }

@@ -4,6 +4,12 @@
   display: flex;
   justify-content: space-between;
   padding: var(--spacer-xxl) var(--spacer-5xl);
+
+  @include mobile-only {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: var(--spacer-l);
+  }
 }
 
 .icons-wrapper {
@@ -15,24 +21,42 @@
   display: flex;
 }
 
+.image {
+  height: toRem(24);
+  stroke: var(--primary-color);
+  stroke-width: 2px;
+  transition: all 0.3s;
+  width: toRem(24);
+}
+
 .icon-eclipse {
   align-items: center;
-  border-radius: var(--border-radius-normal);
+  background-color: var(--color-purple-100);
+  border-radius: 50%;
   display: flex;
   height: toRem(40);
   justify-content: center;
+  transition: all 0.3s;
   width: toRem(40);
+
+  &:hover {
+    background-color: var(--color-purple-400);
+  }
+
+  &:hover .image {
+    stroke: var(--color-white);
+  }
 }
 
 .text {
   color: var(--color-purple-400);
   font-size: var(--font-size-s);
   font-weight: var(--font-weight-regular);
+  text-align: center;
 }
 
-.image {
-  height: toRem(40);
-  width: toRem(40);
+.twitter {
+  stroke-linejoin: round;
 }
 
 a {
