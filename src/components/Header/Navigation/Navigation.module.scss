@@ -13,7 +13,13 @@
     gap: var(--spacer-xl);
   }
 
-  &__list--have-dropdown {
+  &__list-item {
+    .dropdown-icon {
+      width: var(--spacer-m);
+    }
+  }
+
+  &__list-item--have-dropdown {
     position: relative;
   }
 
@@ -29,11 +35,6 @@
     text-decoration: none;
     text-transform: none;
     white-space: nowrap;
-  }
-
-  &__dropdown-icon {
-    fill: var(--color-purple-400);
-    width: var(--spacer-m);
   }
 
   &__link {

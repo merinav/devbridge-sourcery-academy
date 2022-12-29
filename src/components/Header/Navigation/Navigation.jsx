@@ -52,7 +52,7 @@ const Navigation = ({ fullScreenOverlay, setShowOverlayNav }) => {
         >
           About us
         </NavigationLink>
-        <li className={cn('nav__list-item', 'nav__list--have-dropdown')}>
+        <li className={cn('nav__list-item', 'nav__list-item--have-dropdown')}>
           <button
             className={cn('nav__button', 'nav__link', {
               'nav__link--active': useLocation().pathname.startsWith(
@@ -64,9 +64,9 @@ const Navigation = ({ fullScreenOverlay, setShowOverlayNav }) => {
           >
             Academies
             {isOpen ? (
-              <Icon_arrow_up className={cn('nav__dropdown-icon')} />
+              <Icon_arrow_up className={cn('dropdown-icon')} />
             ) : (
-              <Icon_arrow_down className={cn('nav__dropdown-icon')} />
+              <Icon_arrow_down className={cn('dropdown-icon')} />
             )}
           </button>
           {isOpen && (
