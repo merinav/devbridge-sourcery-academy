@@ -6,10 +6,10 @@ const Testers = lazy(() => import('../pages/academy/Testers'));
 const FrontEnd = lazy(() => import('../pages/academy/FrontEnd'));
 const Kids = lazy(() => import('../pages/academy/Kids'));
 const Register = lazy(() => import('../pages/Register'));
-const NotFound = lazy(() => import('../pages/NotFound'));
 const Questions = lazy(() => import('../pages/Questions'));
 const Media = lazy(() => import('../pages/Media'));
 const AboutUs = lazy(() => import('../pages/AboutUs'));
+const NotFound = lazy(() => import('../pages/NotFound'));
 
 export const routes = {
   home: '/',
@@ -18,10 +18,10 @@ export const routes = {
   frontEnd: '/academy/front-end',
   kids: '/academy/kids',
   register: '/register',
-  notFound: '*',
   questions: '/questions',
   media: '/media',
   aboutUs: '/aboutus',
+  notFound: '*',
 };
 
 export const routeConfig = {
@@ -49,10 +49,6 @@ export const routeConfig = {
     path: routes.register,
     component: Register,
   },
-  notFound: {
-    path: routes.notFound,
-    component: NotFound,
-  },
   questions: {
     path: routes.questions,
     component: Questions,
@@ -64,5 +60,9 @@ export const routeConfig = {
   aboutUs: {
     path: routes.aboutUs,
     component: AboutUs,
+  },
+  notFound: {
+    path: routes.notFound,
+    component: NotFound,
   },
 };
