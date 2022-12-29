@@ -19,7 +19,7 @@ const promoHomeData = {
   isApplyPromo: false,
 };
 
-const PromoHome = () => {
+function PromoHome() {
   return (
     <PromoSection data={promoHomeData}>
       <figure className={cn('promo-home__img')}>
@@ -27,6 +27,6 @@ const PromoHome = () => {
       </figure>
     </PromoSection>
   );
-};
+}
 
 export default PromoHome;

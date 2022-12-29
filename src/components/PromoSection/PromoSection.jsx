@@ -6,7 +6,7 @@ import styles from './PromoSection.module';
 
 const cn = classNames.bind(styles);
 
-const PromoSection = ({ data, children }) => {
+function PromoSection({ data, children }) {
   const {
     headingData,
     paragraphData,
@@ -37,7 +37,7 @@ const PromoSection = ({ data, children }) => {
       {children}
     </section>
   );
-};
+}
 
 PromoSection.propTypes = {
   data: PropTypes.shape({
