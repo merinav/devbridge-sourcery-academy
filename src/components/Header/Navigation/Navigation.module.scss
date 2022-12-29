@@ -36,7 +36,8 @@
     width: var(--spacer-m);
 
     &--active {
-      fill: var(--color-white);
+      text-decoration: underline var(--color-purple-400) solid 0.2rem;
+      text-underline-offset: 0.65rem;
     }
   }
 
@@ -67,9 +68,10 @@
     }
 
     &--active {
-      background-color: var(--color-purple-400);
-      color: var(--color-white);
-      text-decoration: none;
+      //background-color: var(--color-purple-400);
+      //color: var(--color-white);
+      text-decoration: underline var(--color-purple-400) solid 0.2rem;
+      text-underline-offset: 0.65rem;
     }
 
     &:focus-visible {
