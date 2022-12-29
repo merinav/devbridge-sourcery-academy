@@ -20,11 +20,6 @@
   }
 
   @include mobile-only {
-    // gap: var(--spacer-7xl);
     scroll-margin-top: toRem(280);
   }
-}
-
-.demo-container {
-  height: toRem(500);
 }
