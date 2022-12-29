@@ -19,6 +19,7 @@
     @include heading-3;
 
     margin: 0 0 var(--spacer-4xl);
+    white-space: nowrap;
   }
 
   &__text {

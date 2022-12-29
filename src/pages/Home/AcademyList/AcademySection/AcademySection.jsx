@@ -8,7 +8,7 @@ import styles from './AcademySection.module';
 const cn = classNames.bind(styles);
 
 function AcademySection({ data }) {
-  const isDesktop = useMediaQuery('(min-width: 880px)');
+  const isDesktop = useMediaQuery('(min-width: 881px)');
 
   const {
     type,
@@ -26,7 +26,7 @@ function AcademySection({ data }) {
   return (
     <section className={cn('academy-section')}>
       <div className={cn(`academy-section__${type}`, invertedClassName)}>
-        <div className={cn(`${type}__description`)}>
+        <div className={cn(`${type}__description`, 'description-shared')}>
           <AcademyDescription
             title={title}
             paragraph={paragraph}
@@ -36,7 +36,7 @@ function AcademySection({ data }) {
           />
         </div>
 
-        <div className={cn(`${type}__section-images`)}>
+        <div className={cn(`${type}__section-images`, 'section-images-shared')}>
           {SvgPath && isDesktop && (
             <SvgPath
               className={cn('section-images__path')}

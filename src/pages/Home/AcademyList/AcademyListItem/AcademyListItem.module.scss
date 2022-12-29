@@ -3,7 +3,7 @@
 }
 
 .academy-particles {
-  .particles-position {
+  .particles-position-shared {
     position: absolute;
     z-index: var(--svg-particles);
   }
@@ -38,13 +38,13 @@
     width: toRem(191);
 
     @include tablet-landscape {
-      bottom: toRem(300);
-      left: toRem(450);
+      bottom: toRem(230);
+      left: unset;
+      right: toRem(0);
     }
 
     @include tablet-portrait {
       bottom: toRem(280);
-      left: unset;
       right: toRem(-40);
       transform: rotate(-25deg);
     }

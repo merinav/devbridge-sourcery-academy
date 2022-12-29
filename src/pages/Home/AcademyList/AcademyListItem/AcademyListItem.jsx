@@ -19,12 +19,18 @@ function AcademyListItem({ data }) {
   const renderKidsSectionParticles = () => {
     return isDesktop ? (
       <Particles_2
-        className={cn('academy-particles__kids-bottom', 'particles-position')}
+        className={cn(
+          'academy-particles__kids-bottom',
+          'particles-position-shared'
+        )}
         aria-hidden="true"
       />
     ) : (
       <Particles_3
-        className={cn('academy-particles__kids-bottom', 'particles-position')}
+        className={cn(
+          'academy-particles__kids-bottom',
+          'particles-position-shared'
+        )}
         aria-hidden="true"
       />
     );
@@ -36,7 +42,7 @@ function AcademyListItem({ data }) {
         <Particles_1
           className={cn(
             `academy-particles__${data.type}-top`,
-            'particles-position'
+            'particles-position-shared'
           )}
           aria-hidden="true"
         />
@@ -46,7 +52,7 @@ function AcademyListItem({ data }) {
           <Particles_2
             className={cn(
               `academy-particles__${data.type}-bottom`,
-              'particles-position'
+              'particles-position-shared'
             )}
             aria-hidden="true"
           />

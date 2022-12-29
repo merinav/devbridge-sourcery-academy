@@ -94,34 +94,37 @@
   }
 }
 
-.developers {
-  &__description {
-    flex-basis: 50%;
-    min-width: toRem(380);
+.description-shared {
+  flex-basis: 50%;
+  min-width: toRem(380);
 
-    @include tablet-landscape {
-      flex-basis: 100%;
-    }
+  @include tablet-landscape {
+    flex-basis: 100%;
+  }
+}
+
+.section-images-shared {
+  align-items: center;
+  display: flex;
+  flex-basis: 50%;
+  justify-content: center;
+  position: relative;
+
+  @include tablet-landscape {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
+  .section-images__path {
+    @include tablet-landscape {
+      display: none;
+    }
+  }
+}
+
+.developers {
   &__section-images {
-    align-items: center;
-    display: flex;
-    flex-basis: 50%;
-    justify-content: center;
-    position: relative;
-
-    @include tablet-landscape {
-      flex-direction: column;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    @include tablet-landscape {
-      flex-basis: 50%;
-      width: 100%;
-    }
-
     .section-images__path {
       left: toRem(70);
       position: absolute;
@@ -162,29 +165,7 @@
 }
 
 .testers {
-  &__description {
-    flex-basis: 50%;
-    min-width: toRem(380);
-
-    @include tablet-landscape {
-      flex-basis: 100%;
-    }
-  }
-
   &__section-images {
-    align-items: center;
-    display: flex;
-    flex-basis: 50%;
-    justify-content: center;
-    position: relative;
-
-    @include tablet-landscape {
-      flex-direction: column;
-      flex-wrap: wrap;
-      gap: toRem(80);
-      justify-content: center;
-    }
-
     .section-images__path {
       position: absolute;
       right: toRem(70);
@@ -224,22 +205,7 @@
 }
 
 .front-end {
-  &__description {
-    flex-basis: 50%;
-    min-width: toRem(380);
-
-    @include tablet-landscape {
-      flex-basis: 100%;
-    }
-  }
-
   &__section-images {
-    align-items: center;
-    display: flex;
-    flex-basis: 50%;
-    justify-content: center;
-    position: relative;
-
     .section-images__illustration {
       min-width: toRem(300);
       width: 71%;
@@ -256,22 +222,7 @@
 }
 
 .kids {
-  &__description {
-    flex-basis: 50%;
-    min-width: toRem(380);
-
-    @include tablet-landscape {
-      flex-basis: 100%;
-    }
-  }
-
   &__section-images {
-    align-items: center;
-    display: flex;
-    flex-basis: 50%;
-    justify-content: center;
-    position: relative;
-
     .section-images__path {
       left: toRem(55);
       position: absolute;
