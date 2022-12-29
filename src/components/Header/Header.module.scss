@@ -37,10 +37,4 @@
       outline-offset: var(--spacer-s);
     }
   }
-
-  @include tablet-landscape {
-    .header {
-      clip-path: none;
-    }
-  }
 }
