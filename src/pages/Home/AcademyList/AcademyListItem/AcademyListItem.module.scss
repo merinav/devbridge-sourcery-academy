@@ -1,0 +1,224 @@
+.academy-item-wrapper {
+  position: relative;
+}
+
+.academy-particles {
+  &__developers-top {
+    height: toRem(40);
+    left: 0;
+    position: absolute;
+    top: toRem(-60);
+    width: toRem(127);
+    z-index: var(--svg-particles);
+
+    @include tablet-landscape {
+      top: toRem(-40);
+      transform: rotate(-45deg);
+    }
+
+    @include tablet-portrait {
+      left: toRem(-50);
+      top: toRem(-20);
+      transform: rotate(-45deg);
+    }
+
+    @include mobile-only {
+      left: toRem(20);
+      transform: rotate(-65deg);
+    }
+  }
+
+  &__developers-bottom {
+    bottom: toRem(0);
+    height: toRem(85);
+    left: toRem(240);
+    position: absolute;
+    width: toRem(191);
+    z-index: var(--svg-particles);
+
+    @include tablet-landscape {
+      bottom: toRem(300);
+      left: toRem(450);
+    }
+
+    @include tablet-portrait {
+      bottom: toRem(280);
+      left: unset;
+      right: toRem(-40);
+      transform: rotate(-25deg);
+    }
+
+    @include mobile-only {
+      bottom: toRem(85);
+      right: toRem(20);
+      transform: rotate(-15deg);
+    }
+  }
+
+  &__testers-top {
+    height: topRem(60.83);
+    position: absolute;
+    right: toRem(40);
+    top: toRem(75);
+    width: toRem(124.48);
+    z-index: var(--svg-particles);
+
+    @include tablet-landscape {
+      bottom: toRem(330);
+      left: toRem(-20);
+      right: unset;
+      top: unset;
+    }
+
+    @include tablet-portrait {
+      bottom: toRem(360);
+    }
+
+    @include mobile-only {
+      bottom: toRem(160);
+      left: toRem(30);
+      transform: rotate(25deg);
+    }
+  }
+
+  &__testers-bottom {
+    bottom: 0;
+    height: toRem(86);
+    position: absolute;
+    right: toRem(280);
+    width: toRem(229.42);
+    z-index: var(--svg-particles);
+
+    @include desktop-small {
+      right: toRem(210);
+    }
+
+    @include tablet-landscape {
+      bottom: unset;
+      right: toRem(10);
+      top: toRem(70);
+      transform: rotate(20deg);
+    }
+
+    @include tablet-portrait {
+      right: toRem(-30);
+      top: toRem(90);
+    }
+  }
+
+  &__front-end-top {
+    height: toRem(34.31);
+    position: absolute;
+    right: toRem(39);
+    top: toRem(140);
+    width: toRem(98.65);
+    z-index: var(--svg-particles);
+
+    @include desktop {
+      top: toRem(115);
+    }
+
+    @include tablet-landscape {
+      right: toRem(-20);
+      top: toRem(370);
+      transform: rotate(-35deg);
+    }
+
+    @include tablet-portrait {
+      right: toRem(-32);
+      top: toRem(410);
+    }
+
+    @include mobile-only {
+      right: toRem(20);
+      top: toRem(460);
+      transform: rotate(-75deg);
+    }
+  }
+
+  &__front-end-bottom {
+    bottom: toRem(-40);
+    height: toRem(67.76);
+    position: absolute;
+    right: toRem(220.58);
+    width: toRem(284.76);
+    z-index: var(--svg-particles);
+
+    @include tablet-landscape {
+      bottom: unset;
+      left: toRem(-40);
+      right: unset;
+      top: toRem(120);
+      transform: rotate(-30deg);
+    }
+
+    @include tablet-portrait {
+      left: toRem(-60);
+      top: toRem(110);
+    }
+
+    @include mobile-only {
+      left: toRem(-40);
+      top: toRem(200);
+      transform: rotate(-56deg);
+    }
+  }
+
+  &__kids-top {
+    height: toRem(100.76);
+    left: toRem(378.94);
+    position: absolute;
+    top: toRem(50);
+    width: toRem(139.48);
+    z-index: var(--svg-particles);
+
+    @include tablet-landscape {
+      left: unset;
+      right: toRem(-30);
+      top: toRem(80);
+      transform: rotate(65deg);
+    }
+
+    @include mobile-only {
+      right: toRem(15);
+      top: toRem(80);
+      transform: rotate(95deg);
+    }
+  }
+
+  &__kids-bottom {
+    height: toRem(354.56);
+    left: toRem(106.78);
+    position: absolute;
+    top: toRem(350);
+    width: toRem(441.72);
+    z-index: var(--svg-particles);
+
+    @include desktop {
+      left: toRem(35);
+    }
+
+    @include desktop-small {
+      top: toRem(330);
+      width: toRem(350);
+    }
+
+    @include tablet-landscape {
+      height: toRem(84.83);
+      left: toRem(-120);
+      top: toRem(260);
+      transform: rotate(90deg);
+      width: toRem(298);
+    }
+
+    @include tablet-portrait {
+      left: toRem(-140);
+    }
+
+    @include mobile-only {
+      left: toRem(-80);
+      top: toRem(350);
+      transform: rotate(72deg);
+    }
+  }
+}
