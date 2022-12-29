@@ -92,15 +92,6 @@
       justify-content: center;
     }
   }
-
-  &__description {
-    flex-basis: 50%;
-    min-width: toRem(380);
-
-    @include tablet-landscape {
-      flex-basis: 100%;
-    }
-  }
 }
 
 .developers {
