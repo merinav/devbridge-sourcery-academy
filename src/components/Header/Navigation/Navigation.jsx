@@ -53,7 +53,7 @@ const Navigation = ({ fullScreenOverlay, setShowOverlayNav }) => {
         >
           About us
         </NavigationLink>
-        <li className={cn('nav__list', 'nav__list--have-dropdown')}>
+        <li className={cn('dropdown-list')}>
           <button
             className={cn('nav__button', 'nav__link', {
               'nav__link--active': isAcademyPageOpen,

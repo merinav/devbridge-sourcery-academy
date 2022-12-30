@@ -13,10 +13,6 @@
     gap: var(--spacer-xl);
   }
 
-  &__list--have-dropdown {
-    position: relative;
-  }
-
   &__button {
     appearance: none;
     background: none;
@@ -34,6 +30,10 @@
   &__link {
     @include nav-link;
   }
+}
+
+.dropdown-list {
+  position: relative;
 }
 
 .dropdown-icon {
