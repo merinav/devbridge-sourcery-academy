@@ -13,6 +13,7 @@ const cn = classNames.bind(styles);
 
 const Navigation = ({ fullScreenOverlay, setShowOverlayNav }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const isAcademyPageOpen = useLocation().pathname.startsWith('/academy');
 
   const dropdownRef = useRef();
   const academiesRef = useRef();
@@ -52,12 +53,10 @@ const Navigation = ({ fullScreenOverlay, setShowOverlayNav }) => {
         >
           About us
         </NavigationLink>
-        <li className={cn('nav__list-item', 'nav__list-item--have-dropdown')}>
+        <li className={cn('nav__list', 'nav__list--have-dropdown')}>
           <button
             className={cn('nav__button', 'nav__link', {
-              'nav__link--active': useLocation().pathname.startsWith(
-                '/academy'
-              ),
+              'nav__link--active': isAcademyPageOpen,
             })}
             onClick={() => setIsOpen((prevState) => !prevState)}
             ref={academiesRef}

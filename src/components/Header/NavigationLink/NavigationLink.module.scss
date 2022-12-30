@@ -1,0 +1,10 @@
+@use '/src/sass/utilities/mixins/' as *;
+
+.nav-link {
+  @include nav-link;
+}
+
+.active {
+  text-decoration: underline var(--color-purple-400) solid 0.2rem;
+  text-underline-offset: 0.65rem;
+}
