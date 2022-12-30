@@ -10,7 +10,9 @@ function NavigationLink({ to, children, onClick }) {
   return (
     <li>
       <NavLink
-        className={({ isActive }) => cn(isActive ? 'active' : 'nav-link')}
+        className={({ isActive }) =>
+          cn(isActive ? 'nav-link--active' : 'nav-link')
+        }
         to={to}
         onClick={onClick}
       >
