@@ -10,6 +10,7 @@
 
   &__heading {
     @include h1-h2;
+    @include word-wrap;
   }
 
   &__path-home {

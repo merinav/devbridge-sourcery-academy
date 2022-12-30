@@ -11,3 +11,10 @@
   color: var(--color-grey-400);
   font-weight: var(--font-weight-regular);
 }
+
+@mixin word-wrap {
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  word-wrap: break-word;
+}
