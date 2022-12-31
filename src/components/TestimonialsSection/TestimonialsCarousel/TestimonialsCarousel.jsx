@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconArrow from '~/assets/icons/Icon_arrow_down.svg';
-import styles from './TestimonialsCarousel.module.scss';
 import TestimonialCards from '~/components/TestimonialsSection/TestimonialCards';
+import styles from './TestimonialsCarousel.module.scss';
 
 const cn = classNames.bind(styles);
 
@@ -18,16 +18,17 @@ const TestimonialsCarousel = ({
   const shouldShowNextArrow =
     currentIndex + numberOfTestimonialsToDisplay < testimonials.length;
 
+  const testimonialsRow = testimonials.slice(
+    currentIndex,
+    currentIndex + numberOfTestimonialsToDisplay
+  );
+
   const handlePrevArrowClick = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
+    setCurrentIndex(currentIndex - 1);
   };
 
   const handleNextArrowClick = () => {
-    if (currentIndex + numberOfTestimonialsToDisplay < testimonials.length) {
-      setCurrentIndex(currentIndex + 1);
-    }
+    setCurrentIndex(currentIndex + 1);
   };
 
   useEffect(() => {
@@ -53,10 +54,7 @@ const TestimonialsCarousel = ({
         </div>
       )}
       <TestimonialCards
-        testimonials={testimonials.slice(
-          currentIndex,
-          currentIndex + numberOfTestimonialsToDisplay
-        )}
+        testimonials={testimonialsRow}
         handleOpenModal={handleOpenModal}
       />
       {shouldShowNextArrow && (

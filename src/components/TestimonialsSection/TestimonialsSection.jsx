@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
-import useTheme from '~/hooks/useTheme';
 import PropTypes from 'prop-types';
+import useTheme from '~/hooks/useTheme';
+import useBreakpointKey from '~/hooks/useBreakpointKey';
 import BackgroundParticles from '~/assets/images/Background_particles_Testimonials.svg';
 import TestimonialsCarousel from '~/components/TestimonialsSection/TestimonialsCarousel';
-import styles from './TestimonialsSection.module.scss';
 import TestimonialModal from '~/components/TestimonialsSection/TestimonialModal';
-import useBreakpointKey from '~/hooks/useBreakpointKey';
 import TestimonialCards from '~/components/TestimonialsSection/TestimonialCards';
+import styles from './TestimonialsSection.module.scss';
 
 const cn = classNames.bind(styles);
 
 const MAX_NUMBER_OF_TESTIMONIALS_TO_DISPLAY = 10;
-export const NUMBER_OF_TESTIMONIALS_TO_DISPLAY = {
+const NUMBER_OF_TESTIMONIALS_TO_DISPLAY = {
   'mobile-only': 1,
   'tablet-portrait': 1,
   'tablet-landscape': 2,
-  desktop: 2,
+  desktop: 3,
   'big-desktop': 3,
   'big-desktop-up': 3,
 };
@@ -64,7 +64,7 @@ const TestimonialsSection = ({ testimonials }) => {
 
   return (
     <section className={cn('testimonials-section')}>
-      <h1 className={cn('testimonials-section__title')}>Testimonials</h1>
+      <h2 className={cn('testimonials-section__title')}>Testimonials</h2>
       {firstXAcademyTestimonials.length > numberOfTestimonialsToDisplay ? (
         <TestimonialsCarousel
           testimonials={firstXAcademyTestimonials}

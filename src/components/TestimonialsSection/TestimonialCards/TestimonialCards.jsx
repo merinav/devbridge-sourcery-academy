@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
-import styles from './TestimonialCards.module.scss';
 import TestimonialCard from '~/components/TestimonialsSection/TestimonialCards/TestimonialCard';
+import styles from './TestimonialCards.module.scss';
 
 const cn = classNames.bind(styles);
 

@@ -13,7 +13,7 @@ const getDeviceConfig = (width) => {
   // Find the largest width value in the lookup table that is less than or equal to the given width
   const [breakpointKey, _] = Object.entries(breakpoints)
     .reverse()
-    .find(([_, value]) => value <= width);
+    .find(([_, value]) => value <= width) ?? ['mobile-only'];
   return breakpointKey;
 };
 
