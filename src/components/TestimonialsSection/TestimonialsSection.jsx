@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import useTheme from '~/hooks/useTheme';
@@ -8,9 +8,12 @@ import TestimonialsCarousel from '~/components/TestimonialsSection/TestimonialsC
 import TestimonialModal from '~/components/TestimonialsSection/TestimonialModal';
 import TestimonialCards from '~/components/TestimonialsSection/TestimonialCards';
 import styles from './TestimonialsSection.module.scss';
+import useFetch from '~/hooks/useFetch';
+import { ACADEMIES } from '~/constants/constants';
 
 const cn = classNames.bind(styles);
 
+const TESTIMONIALS_ENDPOINT = 'https://www.jurele.lt/testimonials.json';
 const MAX_NUMBER_OF_TESTIMONIALS_TO_DISPLAY = 10;
 const NUMBER_OF_TESTIMONIALS_TO_DISPLAY = {
   'mobile-only': 1,
@@ -21,15 +24,35 @@ const NUMBER_OF_TESTIMONIALS_TO_DISPLAY = {
   'big-desktop-up': 3,
 };
 
-const TestimonialsSection = ({ testimonials }) => {
+const TestimonialsSection = ({ academy }) => {
   useTheme();
   const breakpointKey = useBreakpointKey();
+  const testimonialsData = useFetch(TESTIMONIALS_ENDPOINT);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedTestimonial, setSelectedTestimonial] = useState(null);
   const [
     numberOfTestimonialsToDisplay,
     setNumberOfTestimonialsToDisplay,
   ] = useState(3);
+
+  const testimonials = useMemo(() => {
+    switch (academy) {
+      case ACADEMIES.developers:
+        return testimonialsData.filter(
+          (item) => item.academy === 'Sourcery for Developers Graduate'
+        );
+      case ACADEMIES.testers:
+        return testimonialsData.filter(
+          (item) => item.academy === 'Sourcery for Testers Graduate'
+        );
+      case ACADEMIES.frontend:
+        return testimonialsData.filter(
+          (item) => item.academy === 'Sourcery for Front-End Graduate'
+        );
+      default:
+        return testimonialsData;
+    }
+  }, [testimonialsData]);
 
   const firstXAcademyTestimonials = testimonials.slice(
     0,
@@ -58,7 +81,7 @@ const TestimonialsSection = ({ testimonials }) => {
     setIsModalOpen(false);
   };
 
-  if (!firstXAcademyTestimonials.length) {
+  if (!testimonials.length) {
     return null;
   }
 
@@ -92,7 +115,7 @@ const TestimonialsSection = ({ testimonials }) => {
 };
 
 TestimonialsSection.propTypes = {
-  testimonials: PropTypes.array,
+  academy: PropTypes.oneOf(Object.values(ACADEMIES)),
 };
 
 export default TestimonialsSection;

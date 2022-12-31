@@ -9,9 +9,9 @@ const cn = classNames.bind(styles);
 const TestimonialCards = ({ testimonials, handleOpenModal }) => {
   return (
     <div className={cn('cards', `cards-${testimonials.length}`)}>
-      {testimonials.map((testimonial, index) => (
+      {testimonials.map((testimonial) => (
         <TestimonialCard
-          key={index}
+          key={JSON.stringify(testimonial)}
           photo={testimonial.photo}
           message={testimonial.message}
           name={testimonial.name}
