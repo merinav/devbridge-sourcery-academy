@@ -19,18 +19,16 @@
   }
 
   @include tablet-portrait {
-    padding: toRem(120) toRem(40);
+    padding: toRem(120) 0;
   }
 
   @include mobile-only {
     margin-top: toRem(210);
-    padding: toRem(120) 0;
   }
 
   &__heading {
     @include h1-h2;
-
-    margin: 0;
+    @include word-wrap;
   }
 
   &__paragraph {

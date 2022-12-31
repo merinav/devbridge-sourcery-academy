@@ -1,0 +1,6 @@
+@use '/src/sass/utilities/mixins/' as *;
+
+.nav-link,
+.nav-link--active {
+  @include nav-link;
+}

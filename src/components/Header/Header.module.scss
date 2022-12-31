@@ -4,6 +4,7 @@
 .header {
   align-items: center;
   background-color: var(--color-white);
+  box-shadow: 0 0 toRem(15) var(--shadow);
   display: flex;
   justify-content: space-between;
   padding: var(--spacer-xxl) var(--spacer-5xl);

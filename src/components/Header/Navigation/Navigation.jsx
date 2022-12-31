@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Icon_arrow_down from '../../../assets/icons/Icon_arrow_down.svg';
@@ -12,6 +13,7 @@ const cn = classNames.bind(styles);
 
 const Navigation = ({ fullScreenOverlay, setShowOverlayNav }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const isAcademyPageOpen = useLocation().pathname.startsWith('/academy');
 
   const dropdownRef = useRef();
   const academiesRef = useRef();
@@ -45,12 +47,17 @@ const Navigation = ({ fullScreenOverlay, setShowOverlayNav }) => {
           'nav-list-overlay': fullScreenOverlay,
         })}
       >
-        <NavigationLink to={'#'} onClick={() => setShowOverlayNav(false)}>
+        <NavigationLink
+          to={routes.aboutUs}
+          onClick={() => setShowOverlayNav(false)}
+        >
           About us
         </NavigationLink>
-        <li className={cn('nav__list-item', 'nav__list-item--have-dropdown')}>
+        <li className={cn('nav__list', 'nav__list--have-dropdown')}>
           <button
-            className={cn('nav__link')}
+            className={cn('nav__button', 'nav__link', {
+              'nav__link--active': isAcademyPageOpen,
+            })}
             onClick={() => setIsOpen((prevState) => !prevState)}
             ref={academiesRef}
           >
@@ -70,7 +77,10 @@ const Navigation = ({ fullScreenOverlay, setShowOverlayNav }) => {
             />
           )}
         </li>
-        <NavigationLink to={'#'} onClick={() => setShowOverlayNav(false)}>
+        <NavigationLink
+          to={routes.media}
+          onClick={() => setShowOverlayNav(false)}
+        >
           Media
         </NavigationLink>
         <NavigationLink
@@ -79,7 +89,10 @@ const Navigation = ({ fullScreenOverlay, setShowOverlayNav }) => {
         >
           Register
         </NavigationLink>
-        <NavigationLink to={'#'} onClick={() => setShowOverlayNav(false)}>
+        <NavigationLink
+          to={routes.questions}
+          onClick={() => setShowOverlayNav(false)}
+        >
           Questions
         </NavigationLink>
       </ul>

@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import useTheme from '../../hooks/useTheme';
 import PromoSection from './PromoSection';
 import AcademiesSection from './AcademiesSection';
 import useFetch from '~/hooks/useFetch';
 import TestimonialsSection from '~/components/TestimonialsSection';
+import MediaSection from '/src/components/MediaSection';
 
 const Home = () => {
   useTheme();
@@ -18,6 +19,7 @@ const Home = () => {
       <PromoSection />
       <AcademiesSection />
       <TestimonialsSection testimonials={testimonials} />
+      <MediaSection />
     </>
   );
 };
