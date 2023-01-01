@@ -69,7 +69,11 @@ const TestimonialsSection = ({ academy }) => {
   }, [breakpointKey]);
 
   useEffect(() => {
-    document.body.style.overflow = isModalOpen ? 'hidden' : 'unset';
+    if (isModalOpen) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
   }, [isModalOpen]);
 
   const handleOpenModal = (testimonial) => {
@@ -87,7 +91,7 @@ const TestimonialsSection = ({ academy }) => {
 
   return (
     <section className={cn('testimonials-section')}>
-      <h2 className={cn('testimonials-section__title')}>Testimonials</h2>
+      <h2 className={cn('testimonials-section__heading')}>Testimonials</h2>
       {firstXAcademyTestimonials.length > numberOfTestimonialsToDisplay ? (
         <TestimonialsCarousel
           testimonials={firstXAcademyTestimonials}
