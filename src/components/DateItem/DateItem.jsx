@@ -7,12 +7,22 @@ import styles from './DateItem.module.scss';
 
 const cn = classNames.bind(styles);
 
-const DateItem = ({ startDate, endDate, showLocationIcon, text }) => {
+const DateItem = ({
+  startDate,
+  endDate,
+  showLocationIcon,
+  text,
+  doubleDateWidth,
+}) => {
   const data = returnDate(startDate, endDate);
 
   return (
     <div className={cn('date-item')}>
-      <div className={cn('date-item__date')}>
+      <div
+        className={cn('date-item__date', {
+          'date-item__date--double-date-width': doubleDateWidth,
+        })}
+      >
         <div className={cn('date-container')}>
           <div className={cn('date-container__item')}>
             <div
@@ -94,6 +104,7 @@ DateItem.propTypes = {
   endDate: PropTypes.instanceOf(Date),
   showLocationIcon: PropTypes.bool,
   text: PropTypes.string.isRequired,
+  doubleDateWidth: PropTypes.bool.isRequired,
 };
 
 export default DateItem;
