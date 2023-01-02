@@ -1,22 +1,23 @@
 @use '/src/sass/utilities/functions' as *;
+@use '/src/sass/utilities/mixins' as *;
 
 .cards {
   align-items: flex-start;
   display: flex;
+  gap: toRem(40);
   margin-left: var(--spacer-l);
   width: 100%;
-}
 
-.cards-1 {
-  justify-content: center;
-}
+  @include tablet-portrait {
+    gap: toRem(35);
+    margin-left: toRem(15);
+  }
 
-.cards-2 {
-  gap: toRem(80);
-  justify-content: center;
-}
+  &--center {
+    justify-content: center;
+  }
 
-.cards-3 {
-  gap: toRem(40);
-  justify-content: space-between;
+  &--space-between {
+    justify-content: space-between;
+  }
 }

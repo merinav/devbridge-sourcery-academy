@@ -8,7 +8,12 @@ const cn = classNames.bind(styles);
 
 const TestimonialCards = ({ testimonials, handleOpenModal }) => {
   return (
-    <div className={cn('cards', `cards-${testimonials.length}`)}>
+    <div
+      className={cn(
+        'cards',
+        testimonials.length > 2 ? 'cards--space-between' : 'cards--center'
+      )}
+    >
       {testimonials.map((testimonial) => (
         <TestimonialCard
           key={JSON.stringify(testimonial)}
