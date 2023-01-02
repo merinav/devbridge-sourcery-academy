@@ -1,17 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import classNames from 'classnames/bind';
-import styles from '../Navigation/Navigation.module';
+import styles from '../NavigationLink/NavigationLink.module';
 
 const cn = classNames.bind(styles);
 
 function NavigationLink({ to, children, onClick }) {
   return (
-    <li className={cn('nav__list-item')}>
-      <Link className={cn('nav__link')} to={to} onClick={onClick}>
+    <li>
+      <NavLink
+        className={({ isActive }) =>
+          cn('nav-link', { 'nav-link--active': isActive })
+        }
+        to={to}
+        onClick={onClick}
+      >
         {children}
-      </Link>
+      </NavLink>
     </li>
   );
 }

@@ -16,10 +16,8 @@
 .promo-text {
   display: flex;
   flex-direction: column;
-  overflow-wrap: break-word;
   padding: var(--spacer-xxl) 0 0 0;
   width: 36%;
-  word-break: break-word;
 
   @include tablet-landscape {
     padding: 0;
@@ -35,6 +33,7 @@
 
     margin: 0;
     white-space: pre-line;
+    @include word-wrap;
   }
 
   &__paragraph {
