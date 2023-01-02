@@ -3,7 +3,7 @@
 
 .gallery {
   display: grid;
-  gap: toRem(42);
+  gap: toRem(40);
   grid-auto-rows: toRem(218);
   grid-template-areas:
     'cell-1  cell-2  cell-2  cell-3'
@@ -43,10 +43,10 @@
 
 .media-item {
   cursor: pointer;
-  height: 100%;
+  min-height: calc(100% + var(--border-width-m));
+  min-width: calc(100% + var(--border-width-m));
   object-fit: cover;
   transition: all 1s;
-  width: 100%;
 }
 
 .media-container {
@@ -193,7 +193,7 @@
 
 @include tablet-portrait {
   .gallery {
-    gap: toRem(32);
+    gap: toRem(35);
 
     .media-container {
       box-shadow: 0 0 0 var(--border-width-m) var(--primary-color),
