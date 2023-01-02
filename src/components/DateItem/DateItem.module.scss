@@ -13,11 +13,15 @@
   &__date {
     border-right: var(--border-width-m) solid var(--primary-color);
     display: flex;
-    flex: 0 1 auto;
     font-size: var(--font-size-s);
     font-weight: var(--font-weight-regular);
     justify-content: center;
     padding: 0 var(--spacer-m);
+    width: toRem(60);
+
+    &--double {
+      width: toRem(100);
+    }
   }
 
   &__text {
