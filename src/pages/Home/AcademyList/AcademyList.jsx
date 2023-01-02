@@ -10,8 +10,9 @@ const cn = classNames.bind(styles);
 function AcademyList() {
   return (
     <div id="academy-list" className={cn('academy-list')}>
-      {academyData.map((academy) => {
-        return <AcademyListItem key={academy.type} data={academy} />;
+      {academyData.map((data) => {
+        const { type } = data;
+        return <AcademyListItem key={type} academy={data} />;
       })}
     </div>
   );

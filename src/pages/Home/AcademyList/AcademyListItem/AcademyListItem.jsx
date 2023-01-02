@@ -7,14 +7,14 @@ import styles from './AcademyListItem.module';
 
 const cn = classNames.bind(styles);
 
-function AcademyListItem({ data }) {
+function AcademyListItem({ academy }) {
   const {
     particleSvgs: [Particles_1, Particles_2, Particles_3],
     ...rest
-  } = data;
+  } = academy;
 
   const isDesktop = useMediaQuery('(min-width: 880px)');
-  const isKids = data.type === 'kids';
+  const isKids = academy.type === 'kids';
 
   const renderKidsSectionParticles = () => {
     return isDesktop ? (
@@ -41,7 +41,7 @@ function AcademyListItem({ data }) {
       <div className={cn('academy-particles')}>
         <Particles_1
           className={cn(
-            `academy-particles__${data.type}-top`,
+            `academy-particles__${academy.type}-top`,
             'particles-position-shared'
           )}
           aria-hidden="true"
@@ -51,7 +51,7 @@ function AcademyListItem({ data }) {
         ) : (
           <Particles_2
             className={cn(
-              `academy-particles__${data.type}-bottom`,
+              `academy-particles__${academy.type}-bottom`,
               'particles-position-shared'
             )}
             aria-hidden="true"
@@ -65,7 +65,7 @@ function AcademyListItem({ data }) {
 }
 
 AcademyListItem.propTypes = {
-  data: PropTypes.shape({
+  academy: PropTypes.shape({
     type: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     paragraph: PropTypes.string.isRequired,
