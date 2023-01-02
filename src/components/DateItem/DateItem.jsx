@@ -12,7 +12,7 @@ const DateItem = ({
   endDate,
   showLocationIcon,
   text,
-  doubleDateWidth,
+  doubleDate,
 }) => {
   const data = returnDate(startDate, endDate);
 
@@ -20,7 +20,7 @@ const DateItem = ({
     <div className={cn('date-item')}>
       <div
         className={cn('date-item__date', {
-          'date-item__date--double-date-width': doubleDateWidth,
+          'date-item__date--double': doubleDate,
         })}
       >
         <div className={cn('date-container')}>
@@ -104,7 +104,7 @@ DateItem.propTypes = {
   endDate: PropTypes.instanceOf(Date),
   showLocationIcon: PropTypes.bool,
   text: PropTypes.string.isRequired,
-  doubleDateWidth: PropTypes.bool.isRequired,
+  doubleDate: PropTypes.bool.isRequired,
 };
 
 export default DateItem;
