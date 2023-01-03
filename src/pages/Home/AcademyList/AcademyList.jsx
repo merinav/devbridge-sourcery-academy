@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import AcademyListItem from './AcademyListItem/AcademyListItem';
 import academyData from './academyData';
-
 import styles from './AcademyList.module';
 
 const cn = classNames.bind(styles);
