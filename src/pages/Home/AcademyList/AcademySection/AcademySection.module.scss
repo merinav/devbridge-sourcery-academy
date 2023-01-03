@@ -197,6 +197,7 @@
       position: absolute;
       top: toRem(-40);
       width: 100%;
+      z-index: var(--z-illustrations);
 
       @include desktop {
         top: toRem(-100);
