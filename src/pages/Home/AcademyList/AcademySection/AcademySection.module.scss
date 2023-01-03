@@ -100,6 +100,7 @@
 
   @include tablet-landscape {
     flex-basis: 100%;
+    min-width: unset;
   }
 }
 
@@ -113,7 +114,6 @@
   @include tablet-landscape {
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
   }
 
   .section-images__path {
@@ -133,13 +133,13 @@
 
       @include desktop {
         left: toRem(50);
-        width: 120%;
+        top: toRem(-180);
       }
 
       @include desktop-small {
-        left: toRem(50);
-        top: toRem(-200);
-        width: 130%;
+        left: toRem(0);
+        top: toRem(-170);
+        width: 110%;
       }
     }
 
@@ -150,11 +150,21 @@
       width: 67.5%;
 
       @include desktop {
+        bottom: toRem(30);
+        left: toRem(50);
         min-width: toRem(330);
       }
 
+      @include desktop-small {
+        bottom: toRem(50);
+        left: toRem(30);
+        min-width: toRem(250);
+      }
+
       @include tablet-landscape {
+        min-width: unset;
         position: static;
+        width: 100%;
       }
 
       @include mobile-only {
@@ -178,8 +188,8 @@
       }
 
       @include desktop-small {
-        right: toRem(10);
-        top: toRem(-85);
+        right: 0;
+        top: toRem(-70);
         width: 130%;
       }
     }
@@ -191,6 +201,10 @@
 
       @include desktop {
         min-width: toRem(250);
+      }
+
+      @include desktop-small {
+        min-width: toRem(220);
       }
 
       @include tablet-landscape {
@@ -211,7 +225,7 @@
       width: 71%;
 
       @include desktop {
-        min-width: toRem(324);
+        min-width: toRem(280);
       }
 
       @include mobile-only {
@@ -227,7 +241,7 @@
       left: toRem(55);
       position: absolute;
       top: toRem(-40);
-      width: 102.7%;
+      width: 100%;
 
       @include desktop {
         top: toRem(-100);
@@ -255,7 +269,8 @@
       }
 
       @include desktop-small {
-        top: toRem(-60);
+        min-width: toRem(280);
+        top: toRem(-80);
       }
 
       @include tablet-landscape {

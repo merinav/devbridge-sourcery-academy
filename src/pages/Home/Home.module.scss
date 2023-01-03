@@ -1,3 +1,7 @@
 .academy-list-wrapper {
   padding: toRem(300) 0;
+
+  @include mobile-only {
+    padding: 0;
+  }
 }

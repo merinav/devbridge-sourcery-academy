@@ -11,7 +11,7 @@
   }
 
   @include tablet-landscape {
-    gap: var(--spacer-6xl);
+    gap: toRem(100);
     scroll-margin-top: toRem(220);
   }
 

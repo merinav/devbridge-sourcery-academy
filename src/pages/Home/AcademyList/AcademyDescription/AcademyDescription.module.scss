@@ -7,10 +7,6 @@
     text-align: center;
   }
 
-  @include mobile-only {
-    padding: 0 6rem;
-  }
-
   &--inverted {
     align-items: flex-end;
   }
@@ -20,6 +16,10 @@
 
     margin: 0 0 var(--spacer-4xl);
     white-space: nowrap;
+
+    @include tablet-portrait {
+      white-space: unset;
+    }
   }
 
   &__text {
