@@ -11,7 +11,7 @@ import styles from './MediaSection.module';
 
 const cn = classNames.bind(styles);
 
-const MediaSection = ({ academy = ACADEMIES.home }) => {
+const MediaSection = ({ academy }) => {
   const fetchMediaUrl = 'https://sfe-2022-data.netlify.app/static/media.json';
   const fetchMediaData = useFetch(fetchMediaUrl);
   const [loading, setLoading] = useState(true);
@@ -23,16 +23,13 @@ const MediaSection = ({ academy = ACADEMIES.home }) => {
   }, [fetchMediaData]);
 
   const data = useMemo(() => {
-    switch (true) {
-      case academy === ACADEMIES.developers:
+    switch (academy) {
+      case ACADEMIES.developers:
         return fetchMediaData.filter((item) => item.academy === 'developers');
-
-      case academy === ACADEMIES.testers:
+      case ACADEMIES.testers:
         return fetchMediaData.filter((item) => item.academy === 'testers');
-
-      case academy === ACADEMIES.frontend:
+      case ACADEMIES.frontend:
         return fetchMediaData.filter((item) => item.academy === 'frontend');
-
       default:
         return fetchMediaData;
     }
