@@ -4,6 +4,7 @@ import AcademyList from './AcademyList';
 import useTheme from '../../hooks/useTheme';
 import PromoHome from './PromoHome';
 import AcademiesSection from './AcademiesSection';
+import TestimonialsSection from '~/components/TestimonialsSection';
 import MediaSection from '/src/components/MediaSection';
 import styles from './Home.module';
 
@@ -19,6 +20,7 @@ const Home = () => {
       <div className={cn('academy-list-wrapper')}>
         <AcademyList />
       </div>
+      <TestimonialsSection />
       <MediaSection />
     </>
   );

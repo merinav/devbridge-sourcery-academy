@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
-import { routes } from '../../routes/routeConfig';
+import { routes } from '~/routes';
 import Logo_SA from '../../assets/logos/Logo_SA.svg';
 import Navigation from './Navigation';
 import HamburgerButton from './Hamburger/HamburgerButton';
@@ -28,7 +28,9 @@ const Header = () => {
   useEffect(() => {
     if (showOverlayNav) {
       document.body.classList.add('no-scroll');
-    } else document.body.classList.remove('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
   }, [showOverlayNav]);
 
   return (

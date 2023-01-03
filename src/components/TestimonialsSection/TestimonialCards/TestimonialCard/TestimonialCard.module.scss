@@ -1,13 +1,14 @@
-@use '/src/sass/utilities/functions/' as *;
+@use '/src/sass/utilities/functions/index' as *;
+@use '/src/sass/utilities/mixins/' as *;
 
 .testimonial {
   align-items: center;
   color: var(--primary-color);
   display: flex;
   flex-direction: column;
+  max-width: toRem(321);
   padding: toRem(35) toRem(30);
   text-align: center;
-  width: toRem(341);
 
   &__photo {
     border-radius: 50%;

@@ -1,0 +1,15 @@
+@use '/src/sass/utilities/mixins/' as *;
+@use '/src/sass/utilities/functions/' as *;
+
+.testimonials-section {
+  display: flex;
+  flex-direction: column;
+
+  &__heading {
+    @include h1-h2;
+    @include word-wrap;
+
+    align-self: flex-end;
+    margin: 0 0 toRem(66);
+  }
+}

@@ -4,4 +4,8 @@
   border-radius: var(--border-radius-s);
   box-shadow: toRem(-20) toRem(20) 0 0 var(--color-grey-100);
   width: fit-content;
+
+  @include tablet-portrait {
+    box-shadow: toRem(-15) toRem(15) 0 0 var(--color-grey-100);
+  }
 }
