@@ -3,7 +3,7 @@
 
 .gallery {
   display: grid;
-  gap: toRem(42);
+  gap: toRem(40);
   grid-auto-rows: toRem(218);
   grid-template-areas:
     'cell-1  cell-2  cell-2  cell-3'
@@ -193,7 +193,7 @@
 
 @include tablet-portrait {
   .gallery {
-    gap: toRem(32);
+    gap: toRem(35);
 
     .media-container {
       box-shadow: 0 0 0 var(--border-width-m) var(--primary-color),
