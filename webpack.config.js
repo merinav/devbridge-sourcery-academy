@@ -84,6 +84,11 @@ const config = {
             loader: 'sass-loader',
             options: {
               sourceMap: devMode,
+              additionalData: `@use '/src/sass/utilities/mixins' as *;
+              @use '/src/sass/utilities/functions' as *;`,
+              sassOptions: {
+                includePaths: [`${__dirname}/src/sass`],
+              },
             },
           },
           {
@@ -112,7 +117,7 @@ const config = {
         test: /\.svg$/i,
         issuer: /\.(js|jsx)$/,
         resourceQuery: { not: [/url/] }, // exclude react component if *.svg?url
-        use: ['@svgr/webpack'],
+        use: [{ loader: '@svgr/webpack', options: { dimensions: false } }],
       },
     ],
   },
