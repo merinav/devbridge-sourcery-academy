@@ -180,7 +180,7 @@
       width: 71%;
 
       @include desktop {
-        min-width: toRem(280);
+        min-width: toRem(270);
       }
 
       @include mobile-only {
@@ -201,13 +201,11 @@
 
       @include desktop {
         top: toRem(-100);
-        width: 120%;
       }
 
       @include desktop-small {
-        left: toRem(40);
-        top: toRem(-140);
-        width: 130%;
+        left: toRem(20);
+        top: toRem(-120);
       }
     }
 
@@ -220,12 +218,14 @@
       width: 71.6%;
 
       @include desktop {
+        left: toRem(25);
         min-width: toRem(325);
         top: toRem(-20);
       }
 
       @include desktop-small {
-        min-width: toRem(280);
+        left: toRem(20);
+        min-width: toRem(270);
         top: toRem(-80);
       }
 
