@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { routeConfig } from './routeConfig';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 export const RouteManager = React.memo(() => {
   return (
@@ -12,7 +13,7 @@ export const RouteManager = React.memo(() => {
             key={key}
             path={path}
             element={
-              <Suspense fallback={<>Loading...</>}>
+              <Suspense fallback={<LoadingSpinner />}>
                 <Component />
               </Suspense>
             }
