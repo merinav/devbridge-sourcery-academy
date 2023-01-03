@@ -3,9 +3,14 @@ import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import ParticlesAdmission from '/src/assets/images/Background_particles_Admission.svg';
 import PathAdmission from '/src/assets/images/Path_Admission.svg';
+import { ACADEMIES } from '/src/constants/constants.js';
+import { admissionData } from './admissionData';
 import styles from './AdmissionSection.module';
 
 const cn = classNames.bind(styles);
+
+console.log(ACADEMIES);
+console.log(admissionData);
 
 const AdmissionSection = () => {
   return (
