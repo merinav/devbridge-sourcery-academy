@@ -24,8 +24,12 @@ function AcademySection({ data }) {
     isDesktop && isInverted && `academy-section__${type}--inverted`;
 
   return (
-    <section className={cn('academy-section')}>
-      <div className={cn(`academy-section__${type}`, invertedClassName)}>
+    <section>
+      <div
+        className={cn('academy', `academy--${type}`, {
+          'academy-inverted': isDesktop && isInverted,
+        })}
+      >
         <div className={cn(`${type}__description`, 'description-shared')}>
           <AcademyDescription
             title={title}

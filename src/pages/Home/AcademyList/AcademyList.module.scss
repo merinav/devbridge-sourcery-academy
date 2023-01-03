@@ -20,6 +20,7 @@
   }
 
   @include mobile-only {
-    scroll-margin-top: toRem(280);
+    gap: 0;
+    scroll-margin-top: toRem(200);
   }
 }

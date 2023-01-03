@@ -21,7 +21,7 @@ function AcademyListItem({ academy }) {
       <Particles_2
         className={cn(
           'academy-particles__kids-bottom',
-          'particles-position-shared'
+          'academy-particles-shared'
         )}
         aria-hidden="true"
       />
@@ -29,7 +29,7 @@ function AcademyListItem({ academy }) {
       <Particles_3
         className={cn(
           'academy-particles__kids-bottom',
-          'particles-position-shared'
+          'academy-particles-shared'
         )}
         aria-hidden="true"
       />
@@ -42,7 +42,7 @@ function AcademyListItem({ academy }) {
         <Particles_1
           className={cn(
             `academy-particles__${academy.type}-top`,
-            'particles-position-shared'
+            'academy-particles-shared'
           )}
           aria-hidden="true"
         />
@@ -52,7 +52,7 @@ function AcademyListItem({ academy }) {
           <Particles_2
             className={cn(
               `academy-particles__${academy.type}-bottom`,
-              'particles-position-shared'
+              'academy-particles-shared'
             )}
             aria-hidden="true"
           />

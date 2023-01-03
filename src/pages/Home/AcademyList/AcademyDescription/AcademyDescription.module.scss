@@ -17,7 +17,7 @@
     margin: 0 0 var(--spacer-4xl);
     white-space: nowrap;
 
-    @include tablet-portrait {
+    @include tablet-landscape {
       white-space: unset;
     }
   }

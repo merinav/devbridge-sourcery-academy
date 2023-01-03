@@ -1,96 +1,51 @@
-.academy-section {
-  &__developers {
-    align-items: center;
-    display: flex;
-    gap: toRem(50);
-    justify-content: space-between;
-    width: 100%;
+.academy {
+  align-items: center;
+  display: flex;
+  gap: toRem(50);
+  justify-content: space-between;
+  width: 100%;
 
+  @include tablet-landscape {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: toRem(80);
+    justify-content: center;
+  }
+
+  &--developers {
     @include tablet-landscape {
-      flex-direction: column;
-      flex-wrap: wrap;
-      justify-content: center;
+      gap: toRem(50);
     }
   }
 
-  &__testers {
-    align-items: center;
-    display: flex;
-    gap: toRem(50);
-    justify-content: space-between;
+  &--testers {
     margin-top: toRem(141);
-    width: 100%;
-
-    @include tablet-landscape {
-      flex-direction: column;
-      flex-wrap: wrap;
-      gap: toRem(80);
-      justify-content: center;
-      width: 100%;
-    }
-
-    &--inverted {
-      align-items: flex-start;
-      flex-direction: row-reverse;
-      text-align: right;
-
-      @include tablet-landscape {
-        align-items: center;
-        flex-direction: row;
-        justify-content: center;
-        text-align: center;
-      }
-    }
   }
 
-  &__front-end {
-    align-items: center;
-    display: flex;
-    gap: toRem(50);
-    justify-content: space-between;
+  &--front-end {
     margin-top: toRem(175);
-    width: 100%;
 
     @include desktop {
       margin-top: toRem(150);
     }
-
-    @include tablet-landscape {
-      flex-direction: column;
-      flex-wrap: wrap;
-      gap: toRem(80);
-      justify-content: center;
-    }
-
-    &--inverted {
-      align-items: flex-start;
-      flex-direction: row-reverse;
-      text-align: right;
-
-      @include tablet-landscape {
-        align-items: center;
-        flex-direction: row;
-        justify-content: center;
-        text-align: center;
-      }
-    }
   }
 
-  &__kids {
-    align-items: center;
+  &--kids {
     align-self: flex-start;
-    display: flex;
-    gap: toRem(50);
-    justify-content: space-between;
     margin-top: toRem(120);
-    width: 100%;
+  }
+}
 
-    @include tablet-landscape {
-      flex-direction: column;
-      flex-wrap: wrap;
-      gap: toRem(80);
-      justify-content: center;
-    }
+.academy-inverted {
+  align-items: flex-start;
+  flex-direction: row-reverse;
+  text-align: right;
+
+  @include tablet-landscape {
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
   }
 }
 

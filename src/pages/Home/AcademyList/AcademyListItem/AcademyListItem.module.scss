@@ -3,7 +3,7 @@
 }
 
 .academy-particles {
-  .particles-position-shared {
+  .academy-particles-shared {
     position: absolute;
     z-index: var(--z-particles);
   }
@@ -51,7 +51,7 @@
 
     @include mobile-only {
       bottom: toRem(85);
-      right: toRem(-40);
+      right: toRem(-15);
       transform: rotate(-15deg);
     }
   }
@@ -76,7 +76,7 @@
 
     @include mobile-only {
       bottom: toRem(160);
-      left: toRem(-30);
+      left: toRem(-25);
       transform: rotate(25deg);
     }
   }
@@ -101,6 +101,10 @@
     @include tablet-portrait {
       right: toRem(-30);
       top: toRem(90);
+    }
+
+    @include mobile-only {
+      top: toRem(110);
     }
   }
 
