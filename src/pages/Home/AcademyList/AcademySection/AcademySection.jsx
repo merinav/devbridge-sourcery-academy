@@ -21,7 +21,7 @@ function AcademySection({ data }) {
   } = data;
 
   const invertedClassName =
-    isDesktop && isInverted ? `academy-section__${type}--inverted` : '';
+    isDesktop && isInverted && `academy-section__${type}--inverted`;
 
   return (
     <section className={cn('academy-section')}>
