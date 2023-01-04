@@ -6,7 +6,7 @@ function AboutUs() {
 
   return (
     <>
-      <h1 style={{ color: 'var(--primary-color)' }}>/about us</h1>
+      <h1 style={{ color: 'var(--primary-color)' }}>/about-us</h1>
     </>
   );
 }
