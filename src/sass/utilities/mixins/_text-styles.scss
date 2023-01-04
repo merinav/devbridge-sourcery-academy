@@ -5,6 +5,14 @@
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-xl);
   margin: 0;
+
+  @media (max-width: 480px) {
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 }
 
 @mixin heading-3 {
@@ -18,6 +26,13 @@
 @mixin paragraph {
   color: var(--color-grey-400);
   font-weight: var(--font-weight-regular);
+
+  @media (max-width: 480px) {
+    text-align: center;
+  }
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 }
 
 @mixin nav-link {

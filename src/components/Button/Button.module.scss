@@ -29,4 +29,12 @@
     outline: toRem(4) dashed var(--button-focus-tab-color);
     outline-offset: 0;
   }
+
+  @include mobile-only {
+    align-self: center;
+  }
+
+  @media (max-width: 768px) {
+    align-self: center;
+  }
 }

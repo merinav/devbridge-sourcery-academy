@@ -7,6 +7,15 @@
     @include word-wrap;
 
     align-self: flex-end;
+    display: inline-block;
     margin: 0 0 toRem(66);
+
+    @media (max-width: 480px) {
+      align-self: initial;
+    }
+
+    @media (max-width: 768px) {
+      align-self: initial;
+    }
   }
 }
