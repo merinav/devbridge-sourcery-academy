@@ -15,6 +15,7 @@
   --button-active-color: var(--color-blue-100);
   --button-focus-tab-color: var(--color-accent-orange-400);
   --button-focus-border-color: var(--color-blue-300);
+  --admission-image-location: var(--color-blue-150);
 }
 
 [data-theme='green'] {
@@ -24,6 +25,7 @@
   --button-active-color: var(--color-green-300);
   --button-focus-tab-color: var(--color-accent-orange-400);
   --button-focus-border-color: var(--color-green-100);
+  --admission-image-location: var(--color-accent-green-300);
 }
 
 [data-theme='red'] {
@@ -33,6 +35,7 @@
   --button-active-color: var(--color-red-300);
   --button-focus-tab-color: var(--color-accent-orange-400);
   --button-focus-border-color: var(--color-red-100);
+  --admission-image-location: var(--color-red-200);
 }
 
 [data-theme='kids'] {

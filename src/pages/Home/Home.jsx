@@ -1,24 +1,30 @@
 import React from 'react';
+// import PropTypes from 'prop-types';
 import useTheme from '../../hooks/useTheme';
+// import { ACADEMIES } from '/src/constants/constants.js';
 import PromoSection from './PromoSection';
 import AcademiesSection from './AcademiesSection';
-import TestimonialsSection from '~/components/TestimonialsSection';
 import MediaSection from '/src/components/MediaSection';
-import AdmissionSection from '../../components/AdmissionSection/AdmissionSection';
+// import AdmissionSection from '../../components/AdmissionSection/AdmissionSection';
 
 const Home = () => {
   useTheme();
 
   return (
     <>
-      <AdmissionSection />
+      {/* <AdmissionSection academy={ACADEMIES.developers} /> */}
+      {/* <AdmissionSection academy={ACADEMIES.testers} /> */}
+      {/* <AdmissionSection academy={ACADEMIES.frontend} /> */}
 
       <PromoSection />
       <AcademiesSection />
-      <TestimonialsSection />
       <MediaSection />
     </>
   );
 };
+
+// Home.propTypes = {
+//   academy: PropTypes.oneOf(Object.values(ACADEMIES)),
+// };
 
 export default Home;

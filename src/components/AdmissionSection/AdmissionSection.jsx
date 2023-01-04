@@ -3,59 +3,93 @@ import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import ParticlesAdmission from '/src/assets/images/Background_particles_Admission.svg';
 import PathAdmission from '/src/assets/images/Path_Admission.svg';
+import ImageAdmission from '/src/assets/images/Image_Admission.svg';
 import { ACADEMIES } from '/src/constants/constants.js';
 import { admissionData } from './admissionData';
+import DateItem from '../DateItem/DateItem';
 import styles from './AdmissionSection.module';
 
 const cn = classNames.bind(styles);
 
-console.log(ACADEMIES);
-console.log(admissionData);
+const AdmissionSection = ({ academy }) => {
+  const data = useMemo(() => {
+    switch (academy) {
+      case ACADEMIES.developers:
+        return admissionData.developers;
+      case ACADEMIES.testers:
+        return admissionData.testers;
+      case ACADEMIES.frontend:
+        return admissionData.frontend;
+      default:
+        return admissionData;
+    }
+  }, [admissionData]);
 
-const AdmissionSection = () => {
   return (
-    <section className={cn('admission-section')} id="admission-section">
+    <section className={cn('admission-section')}>
       <div className={cn('admission-section__text-wrapper')}>
         <h2 className={cn('admission-section__heading')}>The Admission</h2>
-        <h3>Introduction</h3>
-        <p>
-          During your first lecture we will introduce the Sourcery academy, tell
-          you more about what we do as developers, get to know your fellow team
-          members, lecturers and mentors.
-        </p>
-        <h3>You will learn:</h3>
-        <ul>
-          <li>React</li>
-          <li>JPA</li>
-          <li>Spring Boot</li>
+        <h3 className={cn('admission-section__sub-heading')}>
+          {data.introductionTitle}
+        </h3>
+        <p className={cn('admission-section__text')}>{data.introduction}</p>
+        <h3 className={cn('admission-section__sub-heading')}>
+          {data.learnTitle}
+        </h3>
+        <ul className={cn('admission-section__list')}>
+          {data.learn.map((item, index) => (
+            <li className={cn('admission-section__list-text')} key={index}>
+              {item}
+            </li>
+          ))}
         </ul>
-        <h3>An interview</h3>
-        <p>
-          Only the top candidates after the final exam are invited to a job
-          interview which will challenge your technical skills and English
-          knowledge.
-        </p>
+        <h3 className={cn('admission-section__sub-heading')}>
+          {data.interviewTitle}
+        </h3>
+        <p className={cn('admission-section__text')}>{data.interview}</p>
       </div>
+
       <div className={cn('admission-section__calendar-wrapper')}>
-        <h3>Dates</h3>
+        <h3 className={cn('admission-section__sub-heading')}>Dates</h3>
 
-        <div>date1</div>
-        <div>date2</div>
-        <div>date3</div>
+        <div className={cn('admission-section__dates-wrapper')}>
+          <DateItem
+            startDate={data.date1.startDate}
+            endDate={data.date1?.endDate}
+            text={data.date1.text}
+            doubleDate={data.date1.doubleDate}
+          />
+          <DateItem
+            startDate={data.date2.startDate}
+            endDate={data.date2?.endDate}
+            text={data.date2.text}
+            doubleDate={data.date2.doubleDate}
+          />
+          <DateItem
+            startDate={data.date3.startDate}
+            endDate={data.date3?.endDate}
+            text={data.date3.text}
+            doubleDate={data.date3.doubleDate}
+          />
 
-        <PathAdmission />
+          <PathAdmission className={cn('admission-section__path')} />
+        </div>
 
         <ParticlesAdmission
           className={cn('admission-section__particles')}
           aria-hidden="true"
         />
+
+        <figure className={cn('admission-section__image')}>
+          <ImageAdmission alt="" />
+        </figure>
       </div>
     </section>
   );
 };
 
-// AdmissionSection.propTypes = {
-//   prop: PropTypes.string.isRequired,
-// };
+AdmissionSection.propTypes = {
+  academy: PropTypes.oneOf(Object.values(ACADEMIES)),
+};
 
 export default AdmissionSection;
