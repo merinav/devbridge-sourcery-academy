@@ -38,7 +38,10 @@ const AdmissionSection = ({ academy }) => {
         </h3>
         <ul className={cn('admission-section__list')}>
           {data.learn.map((item, index) => (
-            <li className={cn('admission-section__list-text')} key={index}>
+            <li
+              className={cn('admission-section__list-text')}
+              key={index + item}
+            >
               {item}
             </li>
           ))}
@@ -53,24 +56,15 @@ const AdmissionSection = ({ academy }) => {
         <h3 className={cn('admission-section__sub-heading')}>Dates</h3>
 
         <div className={cn('admission-section__dates-wrapper')}>
-          <DateItem
-            startDate={data.date1.startDate}
-            endDate={data.date1?.endDate}
-            text={data.date1.text}
-            doubleDate={data.date1.doubleDate}
-          />
-          <DateItem
-            startDate={data.date2.startDate}
-            endDate={data.date2?.endDate}
-            text={data.date2.text}
-            doubleDate={data.date2.doubleDate}
-          />
-          <DateItem
-            startDate={data.date3.startDate}
-            endDate={data.date3?.endDate}
-            text={data.date3.text}
-            doubleDate={data.date3.doubleDate}
-          />
+          {data.dates.map((item) => (
+            <DateItem
+              key={item.id}
+              startDate={item.startDate}
+              endDate={item?.endDate}
+              text={item.text}
+              doubleDate={item.doubleDate}
+            />
+          ))}
 
           <PathAdmission className={cn('admission-section__path')} />
         </div>
