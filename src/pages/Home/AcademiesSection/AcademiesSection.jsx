@@ -24,7 +24,7 @@ const AcademiesSection = () => {
         entries.
       </p>
       <div className={cn('academies-section__vertical-line')}></div>
-      <a href="#">
+      <a href="#academy-list" aria-label="Scroll to academy descriptions">
         <ArrowButton className={cn('academies-section__button')} />
       </a>
     </section>

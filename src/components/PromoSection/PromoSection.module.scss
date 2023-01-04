@@ -1,5 +1,3 @@
-@use '/src/sass/utilities/mixins/' as *;
-
 .promo-section {
   align-items: center;
   display: flex;
@@ -15,7 +13,7 @@
   }
 }
 
-.section-text {
+.promo-text {
   display: flex;
   flex-direction: column;
   padding: var(--spacer-xxl) 0 0 0;
@@ -32,32 +30,23 @@
 
   &__heading {
     @include h1-h2;
+
+    margin: 0;
+    white-space: pre-line;
     @include word-wrap;
   }
 
-  &__text {
+  &__paragraph {
     @include paragraph;
 
     margin-bottom: var(--spacer-6xl);
     margin-top: var(--spacer-4xl);
-  }
-}
 
-.section-image {
-  margin: 0;
-  padding: 0;
-  width: 50%;
-
-  @include tablet-landscape {
-    width: 35%;
-  }
-
-  @include tablet-portrait {
-    margin-top: var(--spacer-m);
-    width: 60%;
-  }
-
-  @include mobile-only {
-    display: none;
+    &--apply {
+      font-size: var(--font-size-l);
+      font-weight: var(--font-weight-bold);
+      line-height: var(--line-height-xl);
+      margin-top: toRem(70);
+    }
   }
 }

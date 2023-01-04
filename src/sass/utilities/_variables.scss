@@ -83,6 +83,8 @@
   --spacer: var(--spacer-m); /* alias for --spacer-m */
 
   /* Z-indexes */
+  --z-particles: -5;
+  --z-illustrations: -4;
   --z-dropdown: 1;
   --z-header: 10;
   --z-overlay: 1000;
