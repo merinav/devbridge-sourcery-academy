@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Icon_close_x from '../../../assets/icons/Icon_close_x.svg';
@@ -10,8 +10,21 @@ const cn = classNames.bind(styles);
 const HamburgerButton = ({ active, onClick }) => {
   const icon = active ? <Icon_close_x /> : <Icon_open />;
 
+  const handleKeyDown = useCallback(
+    (e) => {
+      if (e.key === 'Escape') {
+        active && onClick();
+      }
+    },
+    [active, onClick]
+  );
+
   return (
-    <button onClick={onClick} className={cn('hamburger')}>
+    <button
+      onKeyDown={handleKeyDown}
+      onClick={onClick}
+      className={cn('hamburger')}
+    >
       {icon}
     </button>
   );

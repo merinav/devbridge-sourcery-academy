@@ -8,17 +8,17 @@ import styles from '../MediaSection.module';
 
 const cn = classNames.bind(styles);
 
-const PathMedia = ({ academy = ACADEMIES.home }) => {
+const PathMedia = ({ academy }) => {
   return (
     <>
-      {academy === ACADEMIES.home ? (
-        <PathMediaHome
-          className={cn('media-section__path-home')}
+      {academy ? (
+        <PathMediaAcademies
+          className={cn('media-section__path-academies')}
           aria-hidden="true"
         />
       ) : (
-        <PathMediaAcademies
-          className={cn('media-section__path-academies')}
+        <PathMediaHome
+          className={cn('media-section__path-home')}
           aria-hidden="true"
         />
       )}
@@ -27,7 +27,7 @@ const PathMedia = ({ academy = ACADEMIES.home }) => {
 };
 
 PathMedia.propTypes = {
-  academy: PropTypes.oneOf(Object.values(ACADEMIES)).isRequired,
+  academy: PropTypes.oneOf(Object.values(ACADEMIES)),
 };
 
 export default PathMedia;

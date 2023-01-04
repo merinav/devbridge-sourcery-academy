@@ -1,6 +1,3 @@
-@use '/src/sass/utilities/mixins/' as *;
-@use '/src/sass/utilities/functions/' as *;
-
 .gallery {
   display: grid;
   gap: toRem(40);
