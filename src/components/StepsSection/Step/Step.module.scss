@@ -1,18 +1,45 @@
 .step {
   display: flex;
+  height: 240px;
+  width: 50%;
+}
+
+.content-text {
+  display: flex;
   flex-direction: column;
-  width: 40%;
+  padding-right: var(--spacer-m);
+  padding-top: toRem(12);
+  width: 70%;
 
   &__title {
     @include heading-3;
-  }
 
-  &__image {
-    height: 130px;
-    width: 200px;
+    border-bottom: 2px solid var(--primary-color);
+    margin: 0;
+    padding-bottom: var(--spacer-m);
   }
 
   &__paragraph {
     @include paragraph;
+
+    margin: 0;
+    padding-top: var(--spacer-xl);
+  }
+}
+
+.content-image {
+  display: flex;
+  width: 30%;
+
+  &__ellipse {
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    height: 160px;
+    width: 160px;
+  }
+
+  &__image {
+    height: 160px;
+    width: 160px;
   }
 }

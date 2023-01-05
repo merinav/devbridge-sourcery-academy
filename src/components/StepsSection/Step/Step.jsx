@@ -26,9 +26,17 @@ const Step = ({ step, text }) => {
 
   return (
     <div className={cn('step')}>
-      <h3 className={cn('step__title')}>{data.title}</h3>
-      <figure className={cn('step__image')}>{<data.image />}</figure>
-      <p className={cn('step__paragraph')}> {text}</p>
+      <div className={cn('content-text')}>
+        <h3 className={cn('content-text__title')}>{data.title}</h3>
+        <p className={cn('content-text__paragraph')}> {text}</p>
+      </div>
+
+      <div className={cn('content-image')}>
+        <div className={cn('content-image__ellipse')}></div>
+        {/* <div className={cn('content-image__image')} aria-hidden="true">
+            {<data.image />}
+        </div>  */}
+      </div>
     </div>
   );
 };

@@ -27,7 +27,7 @@ const StepsSection = ({ academy }) => {
   return (
     <section className={cn('section-wrapper')}>
       <Step step={1} text={data.apply} />
-      <Step step={2} text={data.pass} />
+      {/* <Step step={2} text={data.pass} /> */}
     </section>
   );
 };

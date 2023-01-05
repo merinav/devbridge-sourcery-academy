@@ -10,7 +10,7 @@ function Developers() {
   return (
     <>
       <h1 style={{ color: 'var(--primary-color)' }}>/academy/developers</h1>
-      <StepsSection academy={ACADEMIES.frontend} />
+      <StepsSection academy={ACADEMIES.developers} />
     </>
   );
 }
