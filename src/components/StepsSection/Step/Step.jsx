@@ -10,16 +10,19 @@ const cn = classNames.bind(styles);
 
 const Step = ({ step, text }) => {
   const data = useMemo(() => {
-    if (step == 1) {
-      return stepsData.step1;
-    } else if (step == 2) {
-      return stepsData.step2;
-    } else if (step == 3) {
-      return stepsData.step3;
-    } else if (step == 4) {
-      return stepsData.step4;
-    } else return stepsData;
-  });
+    switch (step) {
+      case 1:
+        return stepsData.step1;
+      case 2:
+        return stepsData.step2;
+      case 3:
+        return stepsData.step3;
+      case 4:
+        return stepsData.step4;
+      default:
+        return stepsData;
+    }
+  }, [stepsData]);
 
   return (
     <div className={cn('step')}>
