@@ -30,11 +30,7 @@
     outline-offset: 0;
   }
 
-  @include mobile-only {
-    align-self: center;
-  }
-
-  @media (max-width: 768px) {
+  @include tablet-portrait {
     align-self: center;
   }
 }
