@@ -1,5 +1,6 @@
 .carousel {
   display: flex;
+  height: toRem(450);
 
   &__nav {
     cursor: pointer;
