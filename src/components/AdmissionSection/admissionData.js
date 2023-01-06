@@ -14,23 +14,20 @@ export const admissionData = {
 
     dates: [
       {
-        id: 'date1',
+        id: 'developers-entrance-exam',
         startDate: new Date(2022, 9, 2),
         text: 'Entrance exam',
-        doubleDate: true,
       },
       {
-        id: 'date2',
+        id: 'developers-academy-duration',
         startDate: new Date(2022, 9, 9),
         endDate: new Date(2022, 11, 12),
         text: 'Academy duration',
-        doubleDate: true,
       },
       {
-        id: 'date3',
+        id: 'developers-final-exam',
         startDate: new Date(2022, 11, 16),
         text: 'Final exam',
-        doubleDate: true,
       },
     ],
   },
@@ -55,24 +52,21 @@ export const admissionData = {
 
     dates: [
       {
-        id: 'date1',
+        id: 'testers-application-deadline',
         startDate: new Date(2022, 4, 17),
         text: 'Application deadline',
-        doubleDate: true,
       },
       {
-        id: 'date2',
+        id: 'testers-admission',
         startDate: new Date(2022, 4, 28),
         endDate: new Date(2022, 4, 29),
         text: 'Admission',
-        doubleDate: true,
       },
       {
-        id: 'date3',
+        id: 'testers-academy-duration',
         startDate: new Date(2022, 5, 26),
         endDate: new Date(2022, 7, 30),
         text: 'Academy duration',
-        doubleDate: true,
       },
     ],
   },
@@ -98,24 +92,21 @@ export const admissionData = {
 
     dates: [
       {
-        id: 'date1',
+        id: 'frontend-entrance-exam',
         startDate: new Date(2022, 8, 26),
         endDate: new Date(2022, 8, 28),
         text: 'Entrance exam',
-        doubleDate: true,
       },
       {
-        id: 'date2',
+        id: 'frontend-academy-duration',
         startDate: new Date(2022, 9, 30),
         endDate: new Date(2022, 11, 18),
         text: 'Academy duration',
-        doubleDate: true,
       },
       {
-        id: 'date3',
+        id: 'frontend-final-exam',
         startDate: new Date(2023, 0, 8),
         text: 'Final exam',
-        doubleDate: true,
       },
     ],
   },

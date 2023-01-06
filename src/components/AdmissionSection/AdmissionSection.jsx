@@ -62,11 +62,14 @@ const AdmissionSection = ({ academy }) => {
               startDate={item.startDate}
               endDate={item?.endDate}
               text={item.text}
-              doubleDate={item.doubleDate}
+              doubleDate={'endDate' in item}
             />
           ))}
 
-          <PathAdmission className={cn('admission-section__path')} />
+          <PathAdmission
+            className={cn('admission-section__path')}
+            aria-hidden="true"
+          />
         </div>
 
         <ParticlesAdmission
@@ -75,7 +78,7 @@ const AdmissionSection = ({ academy }) => {
         />
 
         <figure className={cn('admission-section__image')}>
-          <ImageAdmission alt="" />
+          <ImageAdmission alt="" aria-hidden="true" />
         </figure>
       </div>
     </section>

@@ -24,8 +24,7 @@
 
   &__text {
     display: flex;
-    padding-left: var(--spacer-m);
-    padding-right: var(--spacer-m);
+    padding: 0 var(--spacer-m);
   }
 }
 
