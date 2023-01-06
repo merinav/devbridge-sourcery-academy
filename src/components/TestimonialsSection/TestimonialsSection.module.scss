@@ -10,11 +10,7 @@
     display: inline-block;
     margin: 0 0 toRem(66);
 
-    @media (max-width: 480px) {
-      align-self: initial;
-    }
-
-    @media (max-width: 768px) {
+    @include tablet-portrait {
       align-self: initial;
     }
   }
