@@ -44,18 +44,19 @@
     text-indent: calc(var(--spacer-l) * -1);
 
     @include tablet-portrait {
-      margin: 0 auto;
-      max-width: 65%;
-    }
-
-    @include mobile-only {
-      margin-left: var(--spacer-l);
-      max-width: 100%;
-      text-indent: calc(var(--spacer-l) * -1);
+      column-gap: 4rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-left: 0;
+      text-align: center;
+      text-indent: 0;
     }
   }
 
   &__list-text {
+    @include paragraph;
+
     margin: 0 0 1rem;
 
     &:last-child {
