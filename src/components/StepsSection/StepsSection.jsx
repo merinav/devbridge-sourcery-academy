@@ -26,8 +26,12 @@ const StepsSection = ({ academy }) => {
 
   return (
     <section className={cn('section-wrapper')}>
-      <Step step={1} text={data.apply} />
-      {/* <Step step={2} text={data.pass} /> */}
+      <div className={cn('steps-container')}>
+        <Step step={1} text={data.apply} isInverted={false} />
+        <Step step={2} text={data.pass} isInverted={true} />
+        <Step step={3} text={data.learn} isInverted={false} />
+        <Step step={4} text={data.join} isInverted={true} />
+      </div>
     </section>
   );
 };

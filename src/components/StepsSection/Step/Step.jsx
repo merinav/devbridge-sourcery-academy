@@ -8,7 +8,7 @@ import styles from './Step.module';
 
 const cn = classNames.bind(styles);
 
-const Step = ({ step, text }) => {
+const Step = ({ step, text, isInverted }) => {
   const data = useMemo(() => {
     switch (step) {
       case 1:
@@ -25,17 +25,24 @@ const Step = ({ step, text }) => {
   }, [stepsData]);
 
   return (
-    <div className={cn('step')}>
-      <div className={cn('content-text')}>
+    <div className={cn('step', { 'step--inverted': isInverted })}>
+      <div
+        className={cn('content-text', { 'content-text--inverted': isInverted })}
+      >
         <h3 className={cn('content-text__title')}>{data.title}</h3>
         <p className={cn('content-text__paragraph')}> {text}</p>
       </div>
 
-      <div className={cn('content-image')}>
-        <div className={cn('content-image__ellipse')}></div>
-        {/* <div className={cn('content-image__image')} aria-hidden="true">
+      <div
+        className={cn('content-image', {
+          'content-image--inverted': isInverted,
+        })}
+      >
+        <div className={cn('content-image__ellipse')}>
+          <div className={cn('content-image__image')} aria-hidden="true">
             {<data.image />}
-        </div>  */}
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -44,6 +51,7 @@ const Step = ({ step, text }) => {
 Step.propTypes = {
   step: PropTypes.number.isRequired,
   text: PropTypes.string.isRequired,
+  isInverted: PropTypes.bool.isRequired,
 };
 
 export default Step;
