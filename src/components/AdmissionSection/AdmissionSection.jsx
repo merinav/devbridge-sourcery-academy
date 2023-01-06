@@ -25,6 +25,8 @@ const AdmissionSection = ({ academy }) => {
     }
   }, [admissionData]);
 
+  const isDoubleDate = data.dates.some((item) => 'endDate' in item);
+
   return (
     <section className={cn('admission-section')}>
       <div className={cn('admission-section__text-wrapper')}>
@@ -62,7 +64,7 @@ const AdmissionSection = ({ academy }) => {
               startDate={item.startDate}
               endDate={item?.endDate}
               text={item.text}
-              doubleDate={'endDate' in item}
+              doubleDate={isDoubleDate}
             />
           ))}
 
