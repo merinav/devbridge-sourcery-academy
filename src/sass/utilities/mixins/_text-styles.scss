@@ -1,3 +1,5 @@
+@use './media-query' as *;
+
 @mixin h1-h2 {
   color: var(--primary-color);
   font-family: var(--font-family-headline);
@@ -6,11 +8,7 @@
   line-height: var(--line-height-xl);
   margin: 0;
 
-  @media (max-width: 480px) {
-    text-align: center;
-  }
-
-  @media (max-width: 768px) {
+  @include tablet-portrait {
     text-align: center;
   }
 }
@@ -27,10 +25,7 @@
   color: var(--color-grey-400);
   font-weight: var(--font-weight-regular);
 
-  @media (max-width: 480px) {
-    text-align: center;
-  }
-  @media (max-width: 768px) {
+  @include tablet-portrait {
     text-align: center;
   }
 }
