@@ -5,7 +5,6 @@
   display: flex;
   gap: var(--spacer-5xl);
   justify-content: space-between;
-  padding: toRem(190) 0;
 
   @include tablet-landscape {
     flex-direction: column;
