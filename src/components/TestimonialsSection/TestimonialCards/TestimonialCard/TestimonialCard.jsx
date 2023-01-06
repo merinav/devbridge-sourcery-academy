@@ -11,6 +11,7 @@ const cn = classNames.bind(styles);
 const MAX_TESTIMONIALS_MESSAGE_LENGTH = 330;
 
 const TestimonialCard = ({ photo, message, name, academy, openModal }) => {
+  const longMessage = message.repeat(5);
   return (
     <Card>
       <div className={cn('testimonial')}>
@@ -24,9 +25,12 @@ const TestimonialCard = ({ photo, message, name, academy, openModal }) => {
           <QuotationBefore alt="" />
         </figure>
         <div className={cn('testimonial__message')}>
-          {message.length > MAX_TESTIMONIALS_MESSAGE_LENGTH ? (
+          {longMessage.length > MAX_TESTIMONIALS_MESSAGE_LENGTH ? (
             <>
-              {`${message.substring(0, MAX_TESTIMONIALS_MESSAGE_LENGTH)}...`}
+              {`${longMessage.substring(
+                0,
+                MAX_TESTIMONIALS_MESSAGE_LENGTH
+              )}...  `}
               <button
                 className={cn('testimonial__read-more')}
                 onClick={openModal}
@@ -35,7 +39,7 @@ const TestimonialCard = ({ photo, message, name, academy, openModal }) => {
               </button>
             </>
           ) : (
-            <>{message}</>
+            <>{longMessage}</>
           )}
         </div>
         <figure
