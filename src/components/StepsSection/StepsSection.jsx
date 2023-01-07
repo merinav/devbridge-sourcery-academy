@@ -31,7 +31,7 @@ const StepsSection = ({ academy }) => {
             className={cn('steps-section__path')}
             aria-hidden="true"
           /> */}
-      <div className={cn('steps-section__steps')}>
+      <div className={cn('steps-section__steps-container')}>
         <Step step={1} text={data.apply} isInverted={false} />
         <Step step={2} text={data.pass} isInverted={true} />
         <Step step={3} text={data.learn} isInverted={false} />

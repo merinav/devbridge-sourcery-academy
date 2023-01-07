@@ -1,15 +1,10 @@
 .step {
-  align-self: flex-start;
+  //align-self: flex-start;
   display: flex;
   gap: var(--spacer-m);
   //padding-bottom: var(--spacer-xl);
   //height: 240px;
-  width: 47%;
-
-  &--inverted {
-    align-self: flex-end;
-    margin-top: -50px;
-  }
+  //width: 47%;
 }
 
 .content-text {

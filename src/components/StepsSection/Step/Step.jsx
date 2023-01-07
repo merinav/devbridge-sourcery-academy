@@ -25,7 +25,7 @@ const Step = ({ step, text, isInverted }) => {
   }, [stepsData]);
 
   return (
-    <div className={cn('step', { 'step--inverted': isInverted })}>
+    <div className={cn('step')}>
       <div
         className={cn('content-text', { 'content-text--inverted': isInverted })}
       >

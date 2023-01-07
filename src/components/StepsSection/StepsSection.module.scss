@@ -1,11 +1,12 @@
 .steps-section {
-  //display: flex;
+  //display: grid;
   //flex-direction: column;
   width: 100%;
 
-  &__steps {
-    display: flex;
-    flex-direction: column;
+  &__steps-container {
+    display: grid;
+    grid-column-gap: toRem(75);
+    grid-template-columns: 47% 47%;
     padding: 0 var(--spacer-6xl);
   }
 
