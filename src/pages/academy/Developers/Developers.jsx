@@ -1,12 +1,16 @@
 import React from 'react';
 import useTheme from '/src/hooks/useTheme';
+import TestimonialsSection from '~/components/TestimonialsSection';
+import MediaSection from '~/components/MediaSection';
+import { ACADEMIES } from '~/constants/constants';
 
 function Developers() {
   useTheme('blue');
 
   return (
     <>
-      <h1 style={{ color: 'var(--primary-color)' }}>/academy/developers</h1>
+      <TestimonialsSection academy={ACADEMIES.developers} />
+      <MediaSection academy={ACADEMIES.developers} />
     </>
   );
 }

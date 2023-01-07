@@ -1,12 +1,16 @@
 import React from 'react';
 import useTheme from '/src/hooks/useTheme';
+import { ACADEMIES } from '~/constants/constants';
+import TestimonialsSection from '~/components/TestimonialsSection';
+import MediaSection from '~/components/MediaSection';
 
 function FrontEnd() {
   useTheme('red');
 
   return (
     <>
-      <h1 style={{ color: 'var(--primary-color)' }}>/academy/front-end</h1>
+      <TestimonialsSection academy={ACADEMIES.frontend} />
+      <MediaSection academy={ACADEMIES.frontend} />
     </>
   );
 }
