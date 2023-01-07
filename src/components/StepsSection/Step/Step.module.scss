@@ -1,10 +1,28 @@
 .step {
   //align-self: flex-start;
   display: flex;
-  gap: var(--spacer-m);
+  gap: toRem(12);
   //padding-bottom: var(--spacer-xl);
   //height: 240px;
   //width: 47%;
+
+  &--1 {
+    grid-row-end: span 2;
+  }
+
+  &--2 {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  &--3 {
+    grid-row: 3;
+  }
+
+  &--4 {
+    grid-column: 2;
+    grid-row: 4;
+  }
 }
 
 .content-text {
@@ -41,12 +59,12 @@
 
 .content-image {
   display: flex;
-  //justify-content: flex-start;
+  justify-content: flex-start;
   order: 2;
   width: 30%;
 
   &--inverted {
-    //justify-content: flex-end;
+    justify-content: flex-end;
     order: 1;
   }
 

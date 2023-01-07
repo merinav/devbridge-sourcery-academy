@@ -5,9 +5,12 @@
 
   &__steps-container {
     display: grid;
-    grid-column-gap: toRem(75);
-    grid-template-columns: 47% 47%;
-    padding: 0 var(--spacer-6xl);
+    //grid-column-gap: toRem(140);
+    //grid-row-gap: var(--spacer-xl);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 20%);
+    //height: toRem(560);
+    //padding: 0 var(--spacer-6xl);
   }
 
   // &__path {
