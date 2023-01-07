@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import stepsSectionData from './stepsSectionData';
 import { ACADEMIES } from '/src/constants/constants.js';
 import Step from './Step/Step';
+import Path_Steps from '~/assets/images/Path_Steps.svg';
 import styles from './StepsSection.module';
 
 //image or figure???
@@ -25,8 +26,12 @@ const StepsSection = ({ academy }) => {
   }, [stepsSectionData]);
 
   return (
-    <section className={cn('section-wrapper')}>
-      <div className={cn('steps-container')}>
+    <section className={cn('steps-section')}>
+      {/* <Path_Steps
+            className={cn('steps-section__path')}
+            aria-hidden="true"
+          /> */}
+      <div className={cn('steps-section__steps')}>
         <Step step={1} text={data.apply} isInverted={false} />
         <Step step={2} text={data.pass} isInverted={true} />
         <Step step={3} text={data.learn} isInverted={false} />
