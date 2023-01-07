@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
+import truncate from 'lodash/truncate';
 import Card from '~/components/Card';
 import QuotationBefore from '~/assets/icons/Icon_quotation_before.svg';
 import QuotationAfter from '~/assets/icons/Icon_quotation_after.svg';
@@ -11,6 +12,11 @@ const cn = classNames.bind(styles);
 const MAX_TESTIMONIALS_MESSAGE_LENGTH = 330;
 
 const TestimonialCard = ({ photo, message, name, academy, openModal }) => {
+  const shortenedMessage = truncate(message, {
+    length: MAX_TESTIMONIALS_MESSAGE_LENGTH,
+    separator: /,?\.* +/,
+  });
+
   return (
     <Card>
       <div className={cn('testimonial')}>
@@ -26,7 +32,7 @@ const TestimonialCard = ({ photo, message, name, academy, openModal }) => {
         <div className={cn('testimonial__message')}>
           {message.length > MAX_TESTIMONIALS_MESSAGE_LENGTH ? (
             <>
-              {`${message.substring(0, MAX_TESTIMONIALS_MESSAGE_LENGTH)}...  `}
+              {`${shortenedMessage}  `}
               <button
                 className={cn('testimonial__read-more')}
                 onClick={openModal}
