@@ -26,7 +26,7 @@ const TestimonialCard = ({ photo, message, name, academy, openModal }) => {
         <div className={cn('testimonial__message')}>
           {message.length > MAX_TESTIMONIALS_MESSAGE_LENGTH ? (
             <>
-              {`${message.substring(0, MAX_TESTIMONIALS_MESSAGE_LENGTH)}...`}
+              {`${message.substring(0, MAX_TESTIMONIALS_MESSAGE_LENGTH)}...  `}
               <button
                 className={cn('testimonial__read-more')}
                 onClick={openModal}
