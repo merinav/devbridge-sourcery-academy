@@ -49,6 +49,7 @@
       flex-wrap: wrap;
       justify-content: center;
       margin-left: 0;
+      row-gap: 1rem;
       text-align: center;
       text-indent: 0;
     }
@@ -71,6 +72,10 @@
       height: 1rem;
       margin-right: 1rem;
       width: 1rem;
+    }
+
+    @include tablet-portrait {
+      margin: 0;
     }
   }
 
