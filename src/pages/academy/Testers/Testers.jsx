@@ -12,7 +12,7 @@ function Testers() {
   useTheme('green');
 
   return (
-    <div className={cn('academy-list-wrapper')}>
+    <div className={cn('admission-section-wrapper')}>
       <AdmissionSection academy={ACADEMIES.testers} />
     </div>
   );

@@ -12,7 +12,7 @@ function Developers() {
   useTheme('blue');
 
   return (
-    <div className={cn('academy-list-wrapper')}>
+    <div className={cn('admission-section-wrapper')}>
       <AdmissionSection academy={ACADEMIES.developers} />
     </div>
   );
