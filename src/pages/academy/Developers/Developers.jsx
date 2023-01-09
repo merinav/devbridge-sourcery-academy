@@ -1,17 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 import useTheme from '/src/hooks/useTheme';
+import { ACADEMIES } from '/src/constants/constants.js';
+import AdmissionSection from '~/components/AdmissionSection/AdmissionSection';
 import TestimonialsSection from '~/components/TestimonialsSection';
 import MediaSection from '~/components/MediaSection';
-import { ACADEMIES } from '~/constants/constants';
-import classNames from 'classnames/bind';
-import styles from '~/pages/Home/Home.module.scss';
+import styles from './Developers.module';
 
 const cn = classNames.bind(styles);
+
 function Developers() {
   useTheme('blue');
 
   return (
     <>
+      <div className={cn('admission-section-wrapper')}>
+        <AdmissionSection academy={ACADEMIES.developers} />
+      </div>
       <div className={cn('testimonials-wrapper')}>
         <TestimonialsSection academy={ACADEMIES.developers} />
       </div>

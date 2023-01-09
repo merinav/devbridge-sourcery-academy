@@ -1,6 +1,7 @@
 import React from 'react';
 import useTheme from '/src/hooks/useTheme';
 import { ACADEMIES } from '~/constants/constants';
+import AdmissionSection from '~/components/AdmissionSection/AdmissionSection';
 import TestimonialsSection from '~/components/TestimonialsSection';
 import MediaSection from '~/components/MediaSection';
 import classNames from 'classnames/bind';
@@ -13,6 +14,9 @@ function Testers() {
 
   return (
     <>
+      <div className={cn('admission-section-wrapper')}>
+        <AdmissionSection academy={ACADEMIES.testers} />
+      </div>
       <div className={cn('testimonials-wrapper')}>
         <TestimonialsSection academy={ACADEMIES.testers} />
       </div>
