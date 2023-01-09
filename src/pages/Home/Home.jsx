@@ -20,8 +20,12 @@ const Home = () => {
       <div className={cn('academy-list-wrapper')}>
         <AcademyList />
       </div>
-      <TestimonialsSection />
-      <MediaSection />
+      <div className={cn('testimonials-wrapper')}>
+        <TestimonialsSection />
+      </div>
+      <div className={cn('media-wrapper')}>
+        <MediaSection />
+      </div>
     </>
   );
 };
