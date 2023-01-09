@@ -12,7 +12,7 @@ function FrontEnd() {
   useTheme('red');
 
   return (
-    <div className={cn('academy-list-wrapper')}>
+    <div className={cn('admission-section-wrapper')}>
       <AdmissionSection academy={ACADEMIES.frontend} />
     </div>
   );
