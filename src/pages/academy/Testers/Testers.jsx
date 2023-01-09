@@ -17,10 +17,10 @@ function Testers() {
       <div className={cn('admission-section-wrapper')}>
         <AdmissionSection academy={ACADEMIES.testers} />
       </div>
-      <div className={cn('testimonials-wrapper')}>
+      <div className={cn('testimonials-section-wrapper')}>
         <TestimonialsSection academy={ACADEMIES.testers} />
       </div>
-      <div className={cn('media-wrapper')}>
+      <div className={cn('media-section-wrapper')}>
         <MediaSection academy={ACADEMIES.testers} />
       </div>
     </>

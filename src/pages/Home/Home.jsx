@@ -20,10 +20,10 @@ const Home = () => {
       <div className={cn('academy-list-wrapper')}>
         <AcademyList />
       </div>
-      <div className={cn('testimonials-wrapper')}>
+      <div className={cn('testimonials-section-wrapper')}>
         <TestimonialsSection />
       </div>
-      <div className={cn('media-wrapper')}>
+      <div className={cn('media-section-wrapper')}>
         <MediaSection />
       </div>
     </>
