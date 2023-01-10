@@ -1,0 +1,46 @@
+.expandable-card {
+  align-items: flex-start;
+  background-color: var(--button-color);
+  border: var(--border-width-m) solid var(--button-color);
+  border-radius: var(--border-radius-s);
+  box-shadow: toRem(-20) toRem(20) 0 0 var(--color-grey-100);
+  color: var(--color-white);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-bold);
+  gap: var(--spacer-l);
+  justify-content: space-between;
+  line-height: var(--line-height-l);
+  padding: var(--spacer-l);
+  width: toRem(266);
+
+  &:hover {
+    background: var(--button-hover-color);
+    border-color: var(--button-hover-color);
+  }
+
+  &:active {
+    background: var(--button-active-color);
+    border-color: var(--button-active-color);
+  }
+
+  &__button {
+    appearance: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+  }
+
+  .button-icon {
+    fill: var(--color-white);
+    height: toRem(12);
+  }
+
+  @include tablet-portrait {
+    box-shadow: toRem(-15) toRem(15) 0 0 var(--color-grey-100);
+  }
+}
