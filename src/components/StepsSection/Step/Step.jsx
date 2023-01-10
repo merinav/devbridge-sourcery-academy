@@ -9,16 +9,18 @@ import styles from './Step.module';
 const cn = classNames.bind(styles);
 
 const Step = ({ step, text, isInverted }) => {
+  const { step1, step2, step3, step4 } = stepsData;
+
   const data = useMemo(() => {
     switch (step) {
       case 1:
-        return stepsData.step1;
+        return step1;
       case 2:
-        return stepsData.step2;
+        return step2;
       case 3:
-        return stepsData.step3;
+        return step3;
       case 4:
-        return stepsData.step4;
+        return step4;
       default:
         return stepsData;
     }
@@ -38,10 +40,14 @@ const Step = ({ step, text, isInverted }) => {
           'content-image--inverted': isInverted,
         })}
       >
-        <div className={cn('content-image__ellipse')}>
-          <div className={cn('content-image__image')} aria-hidden="true">
+        <div>
+          <fieldset className={cn('content-image__ellipse')}>
+            <legend>1</legend>
+          </fieldset>
+
+          {/* <div className={cn('content-image__image')} aria-hidden="true">
             {<data.image />}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

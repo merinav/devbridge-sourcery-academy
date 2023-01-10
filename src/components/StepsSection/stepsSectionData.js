@@ -1,5 +1,5 @@
 const stepsSectionData = {
-  developers: {
+  developersData: {
     apply: `Academy students are given an opportunity to be immersed in a professional 
     three-month course for the developer beginners, build their competence 
     through trainings and individual or group assignments. `,
@@ -12,7 +12,7 @@ const stepsSectionData = {
     join: `At the end of term all students will receive recognition for completing the course and
     top students may receive job offers from Devbridge.`,
   },
-  testers: {
+  testersData: {
     apply: `Academy students are given an opportunity to be immersed in a professional two-month
      course for the testing beginners, build their competence through trainings and individual
      or groups assignments.`,
@@ -26,7 +26,7 @@ const stepsSectionData = {
     academy for Testers. Top graduates will be invited for an interview to become a Junior
     Test Engineer.`,
   },
-  frontEnd: {
+  frontEndData: {
     apply: `Academy students are given an opportunity to be immersed in a professional two-month
     course for the front-end developers, build their competence through trainings and
     individual or groups assignments.`,

@@ -12,14 +12,18 @@ import styles from './StepsSection.module';
 const cn = classNames.bind(styles);
 
 const StepsSection = ({ academy }) => {
+  const { developers, testers, frontend } = ACADEMIES;
+
+  const { developersData, testersData, frontEndData } = stepsSectionData;
+
   const data = useMemo(() => {
     switch (academy) {
-      case ACADEMIES.developers:
-        return stepsSectionData.developers;
-      case ACADEMIES.testers:
-        return stepsSectionData.testers;
-      case ACADEMIES.frontend:
-        return stepsSectionData.frontEnd;
+      case developers:
+        return developersData;
+      case testers:
+        return testersData;
+      case frontend:
+        return frontEndData;
       default:
         return stepsSectionData;
     }

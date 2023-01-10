@@ -5,3 +5,11 @@
     padding: toRem(150) 0;
   }
 }
+
+.steps-section-wrapper {
+  padding: toRem(230) 0;
+
+  @include mobile-only {
+    padding: toRem(150) 0;
+  }
+}
