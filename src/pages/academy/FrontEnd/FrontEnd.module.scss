@@ -1,0 +1,7 @@
+.admission-section-wrapper {
+  padding: toRem(190) 0;
+
+  @include mobile-only {
+    padding: toRem(150) 0;
+  }
+}

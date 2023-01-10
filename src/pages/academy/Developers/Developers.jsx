@@ -1,18 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 import useTheme from '/src/hooks/useTheme';
+import { ACADEMIES } from '/src/constants/constants.js';
+import AdmissionSection from '../../../components/AdmissionSection/AdmissionSection';
+import styles from './Developers.module';
+
+const cn = classNames.bind(styles);
 
 import StepsSection from '../../../components/StepsSection';
-import { ACADEMIES } from '../../../constants/constants';
 
 function Developers() {
   useTheme('blue');
 
   return (
-    <>
-      <h1 style={{ color: 'var(--primary-color)' }}>/academy/developers</h1>
+    <div className={cn('admission-section-wrapper')}>
+      <AdmissionSection academy={ACADEMIES.developers} />
       <StepsSection academy={ACADEMIES.developers} />
-    </>
+    </div>
   );
 }
+
+Developers.propTypes = {
+  academy: PropTypes.oneOf(Object.values(ACADEMIES)),
+};
 
 export default Developers;

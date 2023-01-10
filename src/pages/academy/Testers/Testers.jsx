@@ -1,15 +1,25 @@
 import React from 'react';
-import Button from '../../../components/Button/Button';
+import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 import useTheme from '/src/hooks/useTheme';
+import { ACADEMIES } from '/src/constants/constants.js';
+import AdmissionSection from '../../../components/AdmissionSection/AdmissionSection';
+import styles from './Testers.module';
+
+const cn = classNames.bind(styles);
 
 function Testers() {
   useTheme('green');
 
   return (
-    <>
-      <h1 style={{ color: 'var(--primary-color)' }}>/academy/testers</h1>
-    </>
+    <div className={cn('admission-section-wrapper')}>
+      <AdmissionSection academy={ACADEMIES.testers} />
+    </div>
   );
 }
+
+Testers.propTypes = {
+  academy: PropTypes.oneOf(Object.values(ACADEMIES)),
+};
 
 export default Testers;
