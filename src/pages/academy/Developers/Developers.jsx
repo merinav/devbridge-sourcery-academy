@@ -14,10 +14,14 @@ function Developers() {
   useTheme('blue');
 
   return (
-    <div className={cn('admission-section-wrapper')}>
-      <AdmissionSection academy={ACADEMIES.developers} />
-      <StepsSection academy={ACADEMIES.developers} />
-    </div>
+    <>
+      <div className={cn('admission-section-wrapper')}>
+        <AdmissionSection academy={ACADEMIES.developers} />
+      </div>
+      <div className={cn('steps-section-wrapper')}>
+        <StepsSection academy={ACADEMIES.developers} />
+      </div>
+    </>
   );
 }
 

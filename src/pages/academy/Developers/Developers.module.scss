@@ -7,9 +7,5 @@
 }
 
 .steps-section-wrapper {
-  padding: toRem(230) 0;
-
-  @include mobile-only {
-    padding: toRem(150) 0;
-  }
+  padding-top: toRem(230);
 }

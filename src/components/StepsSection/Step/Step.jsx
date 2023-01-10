@@ -39,17 +39,7 @@ const Step = ({ step, text, isInverted }) => {
         className={cn('content-image', {
           'content-image--inverted': isInverted,
         })}
-      >
-        <div>
-          <fieldset className={cn('content-image__ellipse')}>
-            <legend>1</legend>
-          </fieldset>
-
-          {/* <div className={cn('content-image__image')} aria-hidden="true">
-            {<data.image />}
-          </div> */}
-        </div>
-      </div>
+      ></div>
     </div>
   );
 };
