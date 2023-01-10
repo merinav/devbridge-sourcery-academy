@@ -45,6 +45,7 @@
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-l);
     padding: 0;
+    text-decoration: underline;
 
     &:hover {
       color: var(--button-hover-color);
