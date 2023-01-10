@@ -8,16 +8,16 @@ import styles from './ExpandableCard.module.scss';
 const cn = classNames.bind(styles);
 
 const ExpandableCard = ({ text }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <div
       className={cn('expandable-card')}
-      onClick={() => setIsOpen((prevState) => !prevState)}
+      onClick={() => setIsExpanded((prevState) => !prevState)}
     >
       {text}
       <button className={cn('expandable-card__button')}>
-        {isOpen ? (
+        {isExpanded ? (
           <Icon_arrow_up className={cn('button-icon')} />
         ) : (
           <Icon_arrow_down className={cn('button-icon')} />
