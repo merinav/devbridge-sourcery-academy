@@ -11,7 +11,7 @@
   width: clamp(50%, toRem(600), 90%);
 
   @include mobile-only {
-    height: min(50%, toRem(400));
+    height: min(40%, toRem(450));
   }
 
   @include big-desktop-up {
