@@ -12,12 +12,14 @@
     "not op_mini all"
   ],
   "dependencies": {
+    "framer-motion": "8.4.2",
     "lodash": "4.17.20",
     "modern-normalize": "1.1.0",
     "prop-types": "15.8.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-router-dom": "6.4.3"
+    "react-router-dom": "6.4.3",
+    "swiper": "8.4.5"
   },
   "scripts": {
     "start": "npm run dev",
