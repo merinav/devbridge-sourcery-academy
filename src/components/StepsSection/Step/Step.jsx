@@ -2,19 +2,15 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind.js';
 import stepsData from './stepsData.js';
+import { ACADEMIES } from '/src/constants/constants.js';
 import styles from './Step.module';
-
-// import Step1 from '~/assets/images/StepsStep1.svg';
-// import Step2 from '~/assets/images/StepsStep2.svg';
-// import Step3 from '~/assets/images/StepsStep3.svg';
-// import Step4 from '~/assets/images/StepsStep4.svg';
-
-//image or figure???
 
 const cn = classNames.bind(styles);
 
-const Step = ({ step, text, isInverted }) => {
+const Step = ({ step, text, isInverted, academy }) => {
   const { step1, step2, step3, step4 } = stepsData;
+
+  const { developers, testers, frontend } = ACADEMIES;
 
   const data = useMemo(() => {
     switch (step) {
@@ -31,25 +27,31 @@ const Step = ({ step, text, isInverted }) => {
     }
   }, [stepsData]);
 
+  const image = useMemo(() => {
+    switch (academy) {
+      case developers:
+        return { svg: data.imageDevelopers };
+      case testers:
+        return { svg: data.imageTesters };
+      case frontend:
+        return { svg: data.imageFrontEnd };
+      default:
+        return data;
+    }
+  }, [data]);
+
   return (
     <div className={cn('step-container', `step-container--${step}`)}>
       <div className={cn('text', { 'text--inverted': isInverted })}>
         <h3 className={cn('text__title')}>{data.title}</h3>
         <p className={cn('text__paragraph')}> {text}</p>
       </div>
-
-      {/* <div className={cn('content-image-container', {
-          'content-image-container--inverted': isInverted,
-        })}>
-             <data.image className={cn('content-image-container__image')}/>
-      </div> */}
-
       <div
         className={cn('image', {
           'image--inverted': isInverted,
         })}
       >
-        <data.image
+        <image.svg
           className={cn('image__illustration', `image__illustration--${step}`)}
         />
         <div className={cn('image__circle-container')}>
@@ -66,6 +68,7 @@ Step.propTypes = {
   step: PropTypes.number.isRequired,
   text: PropTypes.string.isRequired,
   isInverted: PropTypes.bool.isRequired,
+  academy: PropTypes.oneOf(Object.values(ACADEMIES)).isRequired,
 };
 
 export default Step;

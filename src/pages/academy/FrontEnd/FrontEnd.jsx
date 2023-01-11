@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import useTheme from '/src/hooks/useTheme';
 import { ACADEMIES } from '/src/constants/constants.js';
+import StepsSection from '../../../components/StepsSection';
 import AdmissionSection from '~/components/AdmissionSection/AdmissionSection';
 import TestimonialsSection from '~/components/TestimonialsSection';
 import MediaSection from '~/components/MediaSection';
@@ -14,6 +15,9 @@ function FrontEnd() {
 
   return (
     <>
+      <div className={cn('steps-section-wrapper')}>
+        <StepsSection academy={ACADEMIES.frontend} />
+      </div>
       <div className={cn('admission-section-wrapper')}>
         <AdmissionSection academy={ACADEMIES.frontend} />
       </div>

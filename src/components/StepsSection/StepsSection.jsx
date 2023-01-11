@@ -36,10 +36,10 @@ const StepsSection = ({ academy }) => {
             aria-hidden="true"
           /> */}
       <div className={cn('steps-section__steps-container')}>
-        <Step step={1} text={data.apply} isInverted={false} />
-        <Step step={2} text={data.pass} isInverted={true} />
-        <Step step={3} text={data.learn} isInverted={false} />
-        <Step step={4} text={data.join} isInverted={true} />
+        <Step step={1} text={data.apply} isInverted={false} academy={academy} />
+        <Step step={2} text={data.pass} isInverted={true} academy={academy} />
+        <Step step={3} text={data.learn} isInverted={false} academy={academy} />
+        <Step step={4} text={data.join} isInverted={true} academy={academy} />
       </div>
     </section>
   );
