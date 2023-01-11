@@ -3,12 +3,14 @@
   color: var(--primary-color);
   display: flex;
   flex-direction: column;
-  height: toRem(500);
   max-height: toRem(500);
   overflow-y: auto;
   padding: toRem(35) toRem(30);
   text-align: center;
-  width: toRem(800);
+
+  @include mobile-only {
+    padding: toRem(25) toRem(10);
+  }
 
   .testimonial-modal__header {
     display: flex;
@@ -64,6 +66,10 @@
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-m);
     margin: 0 0 toRem(7);
+
+    @include mobile-only {
+      text-align: left;
+    }
   }
 
   &__academy {
@@ -71,5 +77,9 @@
     font-weight: var(--font-weight-regular);
     line-height: var(--line-height-m);
     margin: 0;
+
+    @include mobile-only {
+      text-align: left;
+    }
   }
 }
