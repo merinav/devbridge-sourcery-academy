@@ -49,11 +49,13 @@ const Step = ({ step, text, isInverted }) => {
           'image--inverted': isInverted,
         })}
       >
-        <div className={cn('image-container')}>
-          <div className={cn('image-container__number-container')}>
-            <div className={cn('number')}>{step}</div>
+        <data.image
+          className={cn('image__illustration', `image__illustration--${step}`)}
+        />
+        <div className={cn('image__circle-container')}>
+          <div className={cn('circle-number-container')}>
+            <div className={cn('circle-number-container__number')}>{step}</div>
           </div>
-          <data.image className={cn('image-container__illustration')} />
         </div>
       </div>
     </div>

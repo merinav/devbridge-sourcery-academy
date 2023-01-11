@@ -3,19 +3,21 @@ import classNames from 'classnames/bind';
 import useTheme from '/src/hooks/useTheme';
 import { ACADEMIES } from '/src/constants/constants.js';
 import AdmissionSection from '~/components/AdmissionSection/AdmissionSection';
+import StepsSection from '../../../components/StepsSection';
 import TestimonialsSection from '~/components/TestimonialsSection';
 import MediaSection from '~/components/MediaSection';
 import styles from './Developers.module';
 
 const cn = classNames.bind(styles);
 
-import StepsSection from '../../../components/StepsSection';
-
 function Developers() {
   useTheme('blue');
 
   return (
     <>
+      <div className={cn('steps-section-wrapper')}>
+        <StepsSection academy={ACADEMIES.developers} />
+      </div>
       <div className={cn('admission-section-wrapper')}>
         <AdmissionSection academy={ACADEMIES.developers} />
       </div>
