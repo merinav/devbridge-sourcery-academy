@@ -1,21 +1,54 @@
-import React, { createRef, useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
+import { motion, useInView } from 'framer-motion';
+import Overlay from '../Overlay';
 import styles from './Modal.module.scss';
 
 const cn = classNames.bind(styles);
 
+const MODAL_ANIMATION_DROP_IN = {
+  hidden: {
+    y: '-20vh',
+    opacity: 0,
+  },
+  visible: {
+    y: '0',
+    opacity: 1,
+    transition: {
+      duration: 0.1,
+      type: 'spring',
+      damping: 20,
+      stiffness: 500,
+      delay: 0.05,
+    },
+  },
+  exit: {
+    y: '20vh',
+    opacity: 0,
+    transition: {
+      duration: 0.2,
+      type: 'spring',
+      damping: 50,
+      stiffness: 800,
+    },
+  },
+};
+
 const Modal = ({ children, closeModal }) => {
   const modalRef = useRef(null);
+  const modalIsInView = useInView(modalRef);
 
   useEffect(() => {
-    if (modalRef.current) {
+    if (modalIsInView) {
       modalRef.current.focus();
     }
-  }, [modalRef.current]);
+  }, [modalIsInView]);
+  // TO DO: fix modal focus
 
   const handleKeyDown = useCallback(
+    //TO DO: fix keyDown execution
     (e) => {
       if (e.key === 'Escape') {
         closeModal();
@@ -25,19 +58,19 @@ const Modal = ({ children, closeModal }) => {
   );
 
   return ReactDOM.createPortal(
-    <div
-      ref={modalRef}
-      className={cn('modal')}
-      onClick={closeModal}
-      tabIndex="0"
-      onKeyDown={handleKeyDown}
-    >
-      <div
-        className={cn('modal__content')}
-        onClick={(e) => e.stopPropagation()}
-      >
-        {children}
-      </div>
+    <div onKeyDown={handleKeyDown} ref={modalRef}>
+      <Overlay onClick={closeModal}>
+        <motion.div
+          variants={MODAL_ANIMATION_DROP_IN}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          onClick={(e) => e.stopPropagation()}
+          className={cn('modal-content')}
+        >
+          <div>{children}</div>
+        </motion.div>
+      </Overlay>
     </div>,
     document.getElementById('modal-portal')
   );
