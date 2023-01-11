@@ -4,6 +4,11 @@ import classNames from 'classnames/bind.js';
 import stepsData from './stepsData.js';
 import styles from './Step.module';
 
+// import Step1 from '~/assets/images/StepsStep1.svg';
+// import Step2 from '~/assets/images/StepsStep2.svg';
+// import Step3 from '~/assets/images/StepsStep3.svg';
+// import Step4 from '~/assets/images/StepsStep4.svg';
+
 //image or figure???
 
 const cn = classNames.bind(styles);
@@ -27,19 +32,30 @@ const Step = ({ step, text, isInverted }) => {
   }, [stepsData]);
 
   return (
-    <div className={cn('step', `step--${step}`)}>
-      <div
-        className={cn('content-text', { 'content-text--inverted': isInverted })}
-      >
-        <h3 className={cn('content-text__title')}>{data.title}</h3>
-        <p className={cn('content-text__paragraph')}> {text}</p>
+    <div className={cn('step-container', `step-container--${step}`)}>
+      <div className={cn('text', { 'text--inverted': isInverted })}>
+        <h3 className={cn('text__title')}>{data.title}</h3>
+        <p className={cn('text__paragraph')}> {text}</p>
       </div>
 
+      {/* <div className={cn('content-image-container', {
+          'content-image-container--inverted': isInverted,
+        })}>
+             <data.image className={cn('content-image-container__image')}/>
+      </div> */}
+
       <div
-        className={cn('content-image', {
-          'content-image--inverted': isInverted,
+        className={cn('image', {
+          'image--inverted': isInverted,
         })}
-      ></div>
+      >
+        <div className={cn('image-container')}>
+          <div className={cn('image-container__number-container')}>
+            <div className={cn('number')}>{step}</div>
+          </div>
+          <data.image className={cn('image-container__illustration')} />
+        </div>
+      </div>
     </div>
   );
 };
