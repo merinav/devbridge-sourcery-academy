@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
+import { AnimatePresence } from 'framer-motion';
 import useTheme from '~/hooks/useTheme';
 import useBreakpointKey from '~/hooks/useBreakpointKey';
 import BackgroundParticles from '~/assets/images/Background_particles_Testimonials.svg';
@@ -104,15 +105,17 @@ const TestimonialsSection = ({ academy }) => {
           handleOpenModal={handleOpenModal}
         />
       )}
-      {isModalOpen && selectedTestimonial && (
-        <TestimonialModal
-          photo={selectedTestimonial.photo}
-          message={selectedTestimonial.message}
-          name={selectedTestimonial.name}
-          academy={selectedTestimonial.academy}
-          closeModal={handleCloseModal}
-        />
-      )}
+      <AnimatePresence initial="false" mode={'wait'}>
+        {isModalOpen && selectedTestimonial && (
+          <TestimonialModal
+            photo={selectedTestimonial.photo}
+            message={selectedTestimonial.message}
+            name={selectedTestimonial.name}
+            academy={selectedTestimonial.academy}
+            closeModal={handleCloseModal}
+          />
+        )}
+      </AnimatePresence>
       <BackgroundParticles aria-hidden="true" />
     </section>
   );

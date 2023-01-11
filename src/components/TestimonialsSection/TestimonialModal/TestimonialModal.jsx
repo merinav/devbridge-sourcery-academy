@@ -37,6 +37,7 @@ const TestimonialModal = ({ photo, message, name, academy, closeModal }) => {
             onClick={closeModal}
             tabIndex="0"
             onKeyDown={handleKeyDown}
+            role="button"
           >
             <IconClose alt="close" />
           </div>
