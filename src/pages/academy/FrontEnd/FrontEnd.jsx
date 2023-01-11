@@ -5,6 +5,7 @@ import { ACADEMIES } from '/src/constants/constants.js';
 import AdmissionSection from '~/components/AdmissionSection/AdmissionSection';
 import TestimonialsSection from '~/components/TestimonialsSection';
 import MediaSection from '~/components/MediaSection';
+import ExpandableCard from '~/components/ExpandableCard/ExpandableCard';
 import styles from './FrontEnd.module';
 
 const cn = classNames.bind(styles);
@@ -14,6 +15,8 @@ function FrontEnd() {
 
   return (
     <>
+      <ExpandableCard academy={ACADEMIES.frontend} />
+
       <div className={cn('admission-section-wrapper')}>
         <AdmissionSection academy={ACADEMIES.frontend} />
       </div>

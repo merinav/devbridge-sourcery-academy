@@ -15,11 +15,7 @@ function Developers() {
 
   return (
     <>
-      <ExpandableCard title={'Intro, Agile & Git'}></ExpandableCard>
-
-      <ExpandableCard title={'HTML Semantics & Accessibility basics'} />
-
-      <ExpandableCard title={'HTML Layouts'} />
+      <ExpandableCard academy={ACADEMIES.developers} />
 
       <div className={cn('admission-section-wrapper')}>
         <AdmissionSection academy={ACADEMIES.developers} />

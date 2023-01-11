@@ -1,80 +1,152 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import Icon_arrow_down from '/src/assets/icons/Icon_arrow_down.svg';
 import Icon_arrow_up from '/src/assets/icons/Icon_arrow_up.svg';
 import Icon_person from '/src/assets/icons/Icon_person.svg';
 import Icon_clock from '/src/assets/icons/Icon_clock.svg';
+import { ACADEMIES } from '/src/constants/constants.js';
 import { scheduleSectionsData } from './scheduleSectionsData';
-console.log(scheduleSectionsData);
 import DateItem from '../DateItem/DateItem';
 import styles from './ExpandableCard.module.scss';
 
 const cn = classNames.bind(styles);
 
-const ExpandableCard = ({ title }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  const date = new Date(2022, 9, 9);
-  const date2 = new Date(2023, 9, 10);
-
+const ExpandableCard = ({ lecture, isExpanded, handleExpand }) => {
   return (
-    <div
-      className={cn('expandable-card')}
-      onClick={() => setIsExpanded((prevState) => !prevState)}
-    >
-      <div className={cn('expandable-card__header')}>
-        <div className={cn('expandable-card__title')}>
-          <h4 className={cn('title')}>{title}</h4>
+    <>
+      <div className={cn('expandable-card')} onClick={handleExpand}>
+        <div className={cn('expandable-card__header')}>
+          <div className={cn('expandable-card__title')}>
+            <h4 className={cn('title')}>{lecture.title}</h4>
 
-          <button className={cn('button')}>
-            {isExpanded ? (
-              <Icon_arrow_up className={cn('button-icon')} />
-            ) : (
-              <Icon_arrow_down className={cn('button-icon')} />
-            )}
-          </button>
+            <button className={cn('button')}>
+              {isExpanded ? (
+                <Icon_arrow_up
+                  className={cn('button-icon')}
+                  aria-hidden="true"
+                />
+              ) : (
+                <Icon_arrow_down
+                  className={cn('button-icon')}
+                  aria-hidden="true"
+                />
+              )}
+            </button>
+          </div>
+
+          {isExpanded && (
+            <div className={cn('expandable-card__title--expanded')}>
+              {lecture.lecturer && (
+                <div className={cn('lectors')}>
+                  <Icon_person
+                    className={cn('title--expanded__icon')}
+                    aria-hidden="true"
+                  />
+                  {lecture.lecturer}
+                </div>
+              )}
+
+              <div className={cn('time')}>
+                <Icon_clock
+                  className={cn('title--expanded__icon')}
+                  aria-hidden="true"
+                />
+
+                {lecture.time && (
+                  <span className={cn('hour')}>{lecture.time}</span>
+                )}
+
+                {lecture.duration && (
+                  <span className={cn('duration')}>
+                    {lecture.duration} hours
+                  </span>
+                )}
+              </div>
+            </div>
+          )}
         </div>
 
         {isExpanded && (
-          <div className={cn('expandable-card__title--expanded')}>
-            <div className={cn('lectors')}>
-              <Icon_person className={cn('title--expanded__icon')} />
-              Audrius Navickas
-            </div>
-            <div className={cn('time')}>
-              <Icon_clock className={cn('title--expanded__icon')} />
-              <span className={cn('hour')}>4:00 pm</span>
-              <span className={cn('duration')}>3 hours</span>
-            </div>
+          <div className={cn('expandable-card__body')}>
+            <DateItem
+              startDate={
+                lecture.schedule.find((city) => city.location === 'Vilnius')
+                  .startDate
+              }
+              text={
+                lecture.schedule.find((city) => city.location === 'Vilnius')
+                  .location
+              }
+              showLocationIcon
+              doubleDate={false}
+            />
+
+            <DateItem
+              startDate={
+                lecture.schedule.find((city) => city.location === 'Kaunas')
+                  .startDate
+              }
+              text={
+                lecture.schedule.find((city) => city.location === 'Kaunas')
+                  .location
+              }
+              showLocationIcon
+              doubleDate={false}
+            />
           </div>
         )}
       </div>
+    </>
+  );
+};
 
-      {isExpanded && (
-        <div className={cn('expandable-card__body')}>
-          <DateItem
-            startDate={date}
-            text={'Vilnius'}
-            showLocationIcon
-            doubleDate={false}
-          />
+const AllExpandableCards = ({ academy }) => {
+  const data = useMemo(() => {
+    switch (academy) {
+      case ACADEMIES.developers:
+        return scheduleSectionsData.developers.lectures;
+      case ACADEMIES.testers:
+        return scheduleSectionsData.testers.lectures;
+      case ACADEMIES.frontend:
+        return scheduleSectionsData.frontend.lectures;
+      default:
+        return scheduleSectionsData;
+    }
+  }, [scheduleSectionsData]);
 
-          <DateItem
-            startDate={date2}
-            text={'Kaunas'}
-            showLocationIcon
-            doubleDate={false}
-          />
-        </div>
-      )}
-    </div>
+  const [expandedCardIds, setExpandedCardIds] = useState([]);
+
+  const handleCardExpand = (lectureId) => {
+    if (expandedCardIds.includes(lectureId)) {
+      setExpandedCardIds(expandedCardIds.filter((item) => item !== lectureId));
+    } else {
+      setExpandedCardIds([...expandedCardIds, lectureId]);
+    }
+  };
+
+  return (
+    <>
+      {data.map((lecture) => (
+        <ExpandableCard
+          key={lecture.id}
+          lecture={lecture}
+          isExpanded={expandedCardIds.includes(lecture.id)}
+          handleExpand={() => handleCardExpand(lecture.id)}
+        />
+      ))}
+    </>
   );
 };
 
 ExpandableCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  // children: PropTypes.node,
+  lecture: PropTypes.object,
+  isExpanded: PropTypes.bool,
+  handleExpand: PropTypes.func,
 };
 
-export default ExpandableCard;
+AllExpandableCards.propTypes = {
+  academy: PropTypes.oneOf(Object.values(ACADEMIES)),
+};
+
+export default AllExpandableCards;
