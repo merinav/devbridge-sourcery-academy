@@ -1,9 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import useTheme from '/src/hooks/useTheme';
 import { ACADEMIES } from '/src/constants/constants.js';
-import AdmissionSection from '../../../components/AdmissionSection/AdmissionSection';
+import AdmissionSection from '~/components/AdmissionSection/AdmissionSection';
+import TestimonialsSection from '~/components/TestimonialsSection';
+import MediaSection from '~/components/MediaSection';
 import styles from './Developers.module';
 
 const cn = classNames.bind(styles);
@@ -18,15 +19,14 @@ function Developers() {
       <div className={cn('admission-section-wrapper')}>
         <AdmissionSection academy={ACADEMIES.developers} />
       </div>
-      <div className={cn('steps-section-wrapper')}>
-        <StepsSection academy={ACADEMIES.developers} />
+      <div className={cn('testimonials-section-wrapper')}>
+        <TestimonialsSection academy={ACADEMIES.developers} />
+      </div>
+      <div className={cn('media-section-wrapper')}>
+        <MediaSection academy={ACADEMIES.developers} />
       </div>
     </>
   );
 }
-
-Developers.propTypes = {
-  academy: PropTypes.oneOf(Object.values(ACADEMIES)),
-};
 
 export default Developers;
