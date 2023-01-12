@@ -1,8 +1,5 @@
-@use '/src/sass/utilities/mixins/' as *;
-@use '/src/sass/utilities/functions/' as *;
-
 .apply-section {
-  padding: 182px 0 151px;
+  padding: toRem(182) 0 toRem(151);
   position: relative;
 
   &__img {
