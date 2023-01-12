@@ -31,10 +31,7 @@ const StepsSection = ({ academy }) => {
 
   return (
     <section className={cn('steps-section')}>
-      {/* <Path_Steps
-            className={cn('steps-section__path')}
-            aria-hidden="true"
-          /> */}
+      <Path_Steps className={cn('steps-section__path')} aria-hidden="true" />
       <div className={cn('steps-section__steps-container')}>
         <Step step={1} text={data.apply} isInverted={false} academy={academy} />
         <Step step={2} text={data.pass} isInverted={true} academy={academy} />
