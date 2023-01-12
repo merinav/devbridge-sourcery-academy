@@ -5,6 +5,8 @@ import stepsSectionData from './stepsSectionData';
 import { ACADEMIES } from '/src/constants/constants.js';
 import Step from './Step/Step';
 import Path_Steps from '~/assets/images/Path_Steps.svg';
+import Background_particles_Steps_top from '~/assets/images/Background_particles_Steps_top.svg';
+import Background_particles_Steps_bottom from '~/assets/images/Background_particles_Steps_bottom.svg';
 import styles from './StepsSection.module';
 
 //image or figure???
@@ -31,6 +33,9 @@ const StepsSection = ({ academy }) => {
 
   return (
     <section className={cn('steps-section')}>
+      <Background_particles_Steps_top
+        className={cn('steps-section__particles-top')}
+      />
       <Path_Steps className={cn('steps-section__path')} aria-hidden="true" />
       <div className={cn('steps-section__steps-container')}>
         <Step step={1} text={data.apply} isInverted={false} academy={academy} />
@@ -38,6 +43,9 @@ const StepsSection = ({ academy }) => {
         <Step step={3} text={data.learn} isInverted={false} academy={academy} />
         <Step step={4} text={data.join} isInverted={true} academy={academy} />
       </div>
+      <Background_particles_Steps_bottom
+        className={cn('steps-section__particles-bottom')}
+      />
     </section>
   );
 };

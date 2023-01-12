@@ -4,7 +4,7 @@
   justify-content: flex-start;
   padding-bottom: var(--spacer-xl);
 
-  @include desktop {
+  @include tablet-landscape {
     align-items: center;
     flex-direction: column;
     gap: toRem(50);
@@ -25,7 +25,7 @@
     grid-row-end: span 2;
     grid-row-start: 2;
 
-    @include desktop {
+    @include tablet-landscape {
       grid-column-start: 1;
       grid-row-end: span 2;
       grid-row-start: 3;
@@ -36,7 +36,7 @@
     grid-row-end: span 2;
     grid-row-start: 3;
 
-    @include desktop {
+    @include tablet-landscape {
       grid-row-end: span 2;
       grid-row-start: 5;
     }
@@ -47,7 +47,7 @@
     grid-row-end: span 2;
     grid-row-start: 4;
 
-    @include desktop {
+    @include tablet-landscape {
       grid-column-start: 1;
       grid-row-end: span 2;
       grid-row-start: 7;
@@ -65,7 +65,7 @@
     order: 2;
     text-align: right;
 
-    @include desktop {
+    @include tablet-landscape {
       order: 1;
     }
   }
@@ -79,7 +79,7 @@
     padding-bottom: var(--spacer-m);
     padding-top: calc(5.5vw - ((var(--spacer-m)) + (var(--font-size-l))));
 
-    @include desktop {
+    @include tablet-landscape {
       padding-top: 0;
       text-align: center;
     }
@@ -92,12 +92,12 @@
     margin: 0;
     padding-top: var(--spacer-xl);
 
-    @include desktop {
+    @include tablet-landscape {
       text-align: center;
     }
   }
 
-  @include desktop {
+  @include tablet-landscape {
     width: 100%;
   }
 }
@@ -113,13 +113,13 @@
     justify-content: flex-end;
     order: 1;
 
-    @include desktop {
+    @include tablet-landscape {
       justify-content: center;
       order: 2;
     }
   }
 
-  @include desktop {
+  @include tablet-landscape {
     justify-content: center;
     width: 100%;
   }
@@ -133,7 +133,7 @@
     position: absolute;
     width: 14vw;
 
-    @include desktop {
+    @include tablet-landscape {
       height: 20vw;
       width: 25vw;
     }
@@ -141,7 +141,7 @@
     &--1 {
       left: 0.1rem;
 
-      @include desktop {
+      @include tablet-landscape {
         left: auto;
       }
     }
@@ -149,7 +149,7 @@
     &--2 {
       right: -4.5rem;
 
-      @include desktop {
+      @include tablet-landscape {
         right: auto;
       }
     }
@@ -157,7 +157,7 @@
     &--3 {
       right: -2.5rem;
 
-      @include desktop {
+      @include tablet-landscape {
         right: auto;
       }
     }
@@ -166,7 +166,7 @@
       right: -2.5rem;
       top: -1rem;
 
-      @include desktop {
+      @include tablet-landscape {
         right: auto;
         top: auto;
       }
@@ -180,7 +180,7 @@
     height: 11vw;
     width: 11vw;
 
-    @include desktop {
+    @include tablet-landscape {
       height: 20vw;
       width: 20vw;
     }
@@ -198,7 +198,7 @@
   padding: 0 var(--spacer-s) var(--spacer-s) 0;
   width: 4vw;
 
-  @include desktop {
+  @include tablet-landscape {
     height: 7vw;
     width: 7vw;
   }
@@ -208,7 +208,7 @@
 
     font-size: 3vw;
 
-    @include desktop {
+    @include tablet-landscape {
       font-size: 5vw;
     }
   }
