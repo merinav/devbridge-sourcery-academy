@@ -1,29 +1,12 @@
 .steps-section {
-  //padding: 0 50px; //istrinti paskui
-  //display: grid;
-  //display: grid;
-  //flex-direction: column;
   width: 100%;
 
   &__steps-container {
-    //box-sizing: border-box;
     display: grid;
-    //height: toRem(560);
-    //padding: 0 var(--spacer-6xl);
-    // grid-template-areas:
-    //   'area-1  area-2'
-    //   'area-3  area-4';
-    // //grid-column-gap: toRem(140);
-    //grid-row-gap: var(--spacer-xl);
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(5, 20%);
 
     @include tablet-landscape {
-      // grid-template-areas:
-      //   'area-1'
-      //   'area-2'
-      //   'area-3'
-      //   'area-4';
       grid-template-columns: 100%;
       grid-template-rows: auto;
     }
