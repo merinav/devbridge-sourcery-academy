@@ -25,12 +25,12 @@
   }
 
   &__path {
-    height: 823px;
+    height: toRem(823);
     position: absolute;
-    right: 60px;
+    right: toRem(60);
     stroke: var(--primary-color);
     stroke-width: 2px;
-    width: 207px;
+    width: toRem(207);
     z-index: var(--z-paths);
 
     @include tablet-landscape {
