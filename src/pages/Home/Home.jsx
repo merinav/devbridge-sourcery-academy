@@ -7,6 +7,7 @@ import AcademiesSection from './AcademiesSection';
 import TestimonialsSection from '~/components/TestimonialsSection';
 import MediaSection from '/src/components/MediaSection';
 import styles from './Home.module';
+import Filter from '../../components/Filter/Filter';
 
 const cn = classNames.bind(styles);
 
@@ -15,6 +16,8 @@ const Home = () => {
 
   return (
     <>
+      <Filter />
+
       <PromoHome />
       <AcademiesSection />
       <div className={cn('academy-list-wrapper')}>
