@@ -38,4 +38,5 @@ const ApplySection = ({ academy }) => {
 ApplySection.propTypes = {
   academy: PropTypes.oneOf(Object.values(ACADEMIES)),
 };
+
 export default ApplySection;
