@@ -1,3 +1,20 @@
-.filter {
-  color: var(--primary-color);
+.filter-wrapper {
+  align-items: center;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius-l);
+  display: inline-flex;
+  gap: var(--spacer-s);
+  padding: var(--spacer-s);
+  transition: all 0.3s;
+  width: fit-content;
+
+  :not(:first-child) {
+    background: var(--color-white);
+    color: var(--color-grey-400);
+
+    &:hover {
+      background: var(--button-color);
+      color: var(--color-white);
+    }
+  }
 }
