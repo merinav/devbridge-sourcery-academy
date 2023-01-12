@@ -53,15 +53,23 @@
   }
 
   &__close-button {
-    align-items: flex-end;
+    background: none;
+    border: 0;
     cursor: pointer;
-    fill: var(--primary-color);
     height: 22px;
-    stroke: var(--primary-color);
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: toRem(2);
+    padding: 0;
     width: toRem(22);
+
+    .close-button__icon {
+      cursor: pointer;
+      fill: var(--primary-color);
+      height: 22px;
+      stroke: var(--primary-color);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: toRem(2);
+      width: toRem(22);
+    }
   }
 
   &__message {

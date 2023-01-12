@@ -8,15 +8,6 @@ import styles from './TestimonialModal.module.scss';
 const cn = classNames.bind(styles);
 
 const TestimonialModal = ({ photo, message, name, academy, closeModal }) => {
-  const handleKeyDown = useCallback(
-    (e) => {
-      if (e.key === 'Enter') {
-        closeModal();
-      }
-    },
-    [closeModal]
-  );
-
   return (
     <Modal closeModal={closeModal}>
       <div className={cn('testimonial-modal')}>
@@ -32,15 +23,13 @@ const TestimonialModal = ({ photo, message, name, academy, closeModal }) => {
               <h3 className={cn('testimonial-modal__academy')}>{academy}</h3>
             </div>
           </div>
-          <div
+          <button
             className={cn('testimonial-modal__close-button')}
             onClick={closeModal}
             tabIndex="0"
-            onKeyDown={handleKeyDown}
-            role="button"
           >
-            <IconClose alt="close" />
-          </div>
+            <IconClose className={cn('close-button__icon')} alt="close" />
+          </button>
         </header>
 
         <p className={cn('testimonial-modal__message')}>{message}</p>

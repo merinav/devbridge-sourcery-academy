@@ -38,40 +38,59 @@ const MODAL_ANIMATION_DROP_IN = {
 
 const Modal = ({ children, closeModal }) => {
   const modalRef = useRef(null);
-  const modalIsInView = useInView(modalRef);
 
   useEffect(() => {
-    if (modalIsInView) {
-      modalRef.current.focus();
-    }
-  }, [modalIsInView]);
-  // TO DO: fix modal focus
+    const keyListener = (e) => {
+      const listener = keyListenersMap.get(e.keyCode);
+      return listener && listener(e);
+    };
+    document.addEventListener('keydown', keyListener);
+    return () => document.removeEventListener('keydown', keyListener);
+  }, []);
 
-  const handleKeyDown = useCallback(
-    //TO DO: fix keyDown execution
-    (e) => {
-      if (e.key === 'Escape') {
-        closeModal();
-      }
-    },
-    [closeModal]
-  );
+  const handleTabKey = (e) => {
+    const focusableModalElements = modalRef?.current?.querySelectorAll(
+      'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select'
+    );
+    console.log(focusableModalElements);
+    if (!focusableModalElements || !focusableModalElements?.length) {
+      console.log(focusableModalElements);
+      return;
+    }
+    const firstElement = focusableModalElements[0];
+    const lastElement =
+      focusableModalElements[focusableModalElements.length - 1];
+
+    if (!e.shiftKey && document.activeElement !== firstElement) {
+      firstElement.focus();
+      return e.preventDefault();
+    }
+
+    if (e.shiftKey && document.activeElement !== lastElement) {
+      lastElement.focus();
+      e.preventDefault();
+    }
+  };
+
+  // eslint-disable-next-line no-undef
+  const keyListenersMap = new Map([
+    [27, closeModal],
+    [9, handleTabKey],
+  ]);
 
   return ReactDOM.createPortal(
-    <div onKeyDown={handleKeyDown} ref={modalRef}>
-      <Overlay onClick={closeModal}>
-        <motion.div
-          variants={MODAL_ANIMATION_DROP_IN}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-          onClick={(e) => e.stopPropagation()}
-          className={cn('modal-content')}
-        >
-          <div>{children}</div>
-        </motion.div>
-      </Overlay>
-    </div>,
+    <Overlay onClick={closeModal}>
+      <motion.div
+        variants={MODAL_ANIMATION_DROP_IN}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        onClick={(e) => e.stopPropagation()}
+        className={cn('modal-content')}
+      >
+        <div ref={modalRef}>{children}</div>
+      </motion.div>
+    </Overlay>,
     document.getElementById('modal-portal')
   );
 };
