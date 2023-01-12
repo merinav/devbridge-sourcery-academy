@@ -6,6 +6,7 @@ import AdmissionSection from '~/components/AdmissionSection/AdmissionSection';
 import TestimonialsSection from '~/components/TestimonialsSection';
 import MediaSection from '~/components/MediaSection';
 import styles from './Developers.module';
+import ApplySection from '~/components/ApplySection';
 
 const cn = classNames.bind(styles);
 
@@ -22,6 +23,9 @@ function Developers() {
       </div>
       <div className={cn('media-section-wrapper')}>
         <MediaSection academy={ACADEMIES.developers} />
+      </div>
+      <div className={cn('apply-section-wrapper')}>
+        <ApplySection academy={ACADEMIES.developers} />
       </div>
     </>
   );
