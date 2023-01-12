@@ -15,6 +15,7 @@ const cn = classNames.bind(styles);
 const ExpandableCard = ({ lecture, isExpanded, handleExpand }) => {
   const vilnius = lecture.schedule.find((city) => city.location === 'Vilnius');
   const kaunas = lecture.schedule.find((city) => city.location === 'Kaunas');
+  const isDoubleDate = lecture.schedule.some((item) => 'endDate' in item);
 
   return (
     <>
@@ -62,7 +63,9 @@ const ExpandableCard = ({ lecture, isExpanded, handleExpand }) => {
 
                 {lecture.duration && (
                   <span className={cn('duration')}>
-                    {lecture.duration} hours
+                    {lecture.duration > 1
+                      ? `${lecture.duration} hours`
+                      : `${lecture.duration} hour`}
                   </span>
                 )}
               </div>
@@ -76,14 +79,14 @@ const ExpandableCard = ({ lecture, isExpanded, handleExpand }) => {
               startDate={vilnius.startDate}
               text={vilnius.location}
               showLocationIcon
-              doubleDate={false}
+              doubleDate={isDoubleDate}
             />
 
             <DateItem
               startDate={kaunas.startDate}
               text={kaunas.location}
               showLocationIcon
-              doubleDate={false}
+              doubleDate={isDoubleDate}
             />
           </div>
         )}

@@ -16,7 +16,6 @@ function Developers() {
   return (
     <>
       <ExpandableCard academy={ACADEMIES.developers} />
-
       <div className={cn('admission-section-wrapper')}>
         <AdmissionSection academy={ACADEMIES.developers} />
       </div>

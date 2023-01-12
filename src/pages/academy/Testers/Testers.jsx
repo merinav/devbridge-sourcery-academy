@@ -16,7 +16,6 @@ function Testers() {
   return (
     <>
       <ExpandableCard academy={ACADEMIES.testers} />
-
       <div className={cn('admission-section-wrapper')}>
         <AdmissionSection academy={ACADEMIES.testers} />
       </div>

@@ -16,7 +16,6 @@ function FrontEnd() {
   return (
     <>
       <ExpandableCard academy={ACADEMIES.frontend} />
-
       <div className={cn('admission-section-wrapper')}>
         <AdmissionSection academy={ACADEMIES.frontend} />
       </div>

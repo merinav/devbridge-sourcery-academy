@@ -18,7 +18,7 @@
       transform: translateY(-100%);
       transition: all 0.3s;
       width: 2rem;
-      z-index: 11;
+      z-index: 9;
     }
 
     &::after {
@@ -30,7 +30,6 @@
       top: 0;
       transform: translateY(-100%);
       width: 2rem;
-      z-index: 10;
     }
   }
 
@@ -52,15 +51,10 @@
     }
   }
 
-  // &__header {
-  // }
-
   &__title {
     align-items: flex-start;
     color: var(--color-white);
     display: flex;
-    font-family: var(--font-family-base);
-    font-size: var(--font-size-m);
     font-weight: var(--font-weight-bold);
     gap: var(--spacer-l);
     justify-content: space-between;
@@ -111,9 +105,6 @@
       border-right: 2px solid var(--color-white);
       padding-right: 1rem;
     }
-
-    // .duration {
-    // }
 
     .title--expanded__icon {
       flex: 0 0 auto;
