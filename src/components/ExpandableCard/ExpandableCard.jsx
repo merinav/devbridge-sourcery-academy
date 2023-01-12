@@ -13,6 +13,9 @@ import styles from './ExpandableCard.module.scss';
 const cn = classNames.bind(styles);
 
 const ExpandableCard = ({ lecture, isExpanded, handleExpand }) => {
+  const vilnius = lecture.schedule.find((city) => city.location === 'Vilnius');
+  const kaunas = lecture.schedule.find((city) => city.location === 'Kaunas');
+
   return (
     <>
       <div className={cn('expandable-card')} onClick={handleExpand}>
@@ -70,27 +73,15 @@ const ExpandableCard = ({ lecture, isExpanded, handleExpand }) => {
         {isExpanded && (
           <div className={cn('expandable-card__body')}>
             <DateItem
-              startDate={
-                lecture.schedule.find((city) => city.location === 'Vilnius')
-                  .startDate
-              }
-              text={
-                lecture.schedule.find((city) => city.location === 'Vilnius')
-                  .location
-              }
+              startDate={vilnius.startDate}
+              text={vilnius.location}
               showLocationIcon
               doubleDate={false}
             />
 
             <DateItem
-              startDate={
-                lecture.schedule.find((city) => city.location === 'Kaunas')
-                  .startDate
-              }
-              text={
-                lecture.schedule.find((city) => city.location === 'Kaunas')
-                  .location
-              }
+              startDate={kaunas.startDate}
+              text={kaunas.location}
               showLocationIcon
               doubleDate={false}
             />
@@ -119,7 +110,9 @@ const AllExpandableCards = ({ academy }) => {
 
   const handleCardExpand = (lectureId) => {
     if (expandedCardIds.includes(lectureId)) {
-      setExpandedCardIds(expandedCardIds.filter((item) => item !== lectureId));
+      setExpandedCardIds(
+        expandedCardIds.filter((currentId) => currentId !== lectureId)
+      );
     } else {
       setExpandedCardIds([...expandedCardIds, lectureId]);
     }
