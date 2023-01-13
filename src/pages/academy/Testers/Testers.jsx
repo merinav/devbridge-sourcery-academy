@@ -6,7 +6,7 @@ import AdmissionSection from '~/components/AdmissionSection/AdmissionSection';
 import TestimonialsSection from '~/components/TestimonialsSection';
 import MediaSection from '~/components/MediaSection';
 import classNames from 'classnames/bind';
-import styles from '~/pages/Home/Home.module.scss';
+import styles from './Testers.module';
 
 const cn = classNames.bind(styles);
 

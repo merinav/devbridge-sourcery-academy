@@ -1,45 +1,41 @@
-// import Image_Steps_1_Developers from '/src/assets/images/Image_Steps_1_Developers.svg';
-// import Image_Steps_1_Testers from '/src/assets/images/Image_Steps_1_Testers.svg';
-// import Image_Steps_1_Front_End from '/src/assets/images/Image_Steps_1_Front_End.svg';
-// import Image_Steps_2_Developers from '/src/assets/images/Image_Steps_2_Developers.svg';
-// import Image_Steps_2_Testers from '/src/assets/images/Image_Steps_2_Testers.svg';
-// import Image_Steps_2_Front_End from '/src/assets/images/Image_Steps_2_Front_End.svg';
-// import Image_Steps_3_Developers from '/src/assets/images/Image_Steps_3_Developers.svg';
-// import Image_Steps_3_Testers from '/src/assets/images/Image_Steps_3_Testers.svg';
-// import Image_Steps_3_Front_End from '/src/assets/images/Image_Steps_3_Front_End.svg';
-// import Image_Steps_4_Developers from '/src/assets/images/Image_Steps_4_Developers.svg';
-// import Image_Steps_4_Testers from '/src/assets/images/Image_Steps_4_Testers.svg';
-// import Image_Steps_4_Front_End from '/src/assets/images/Image_Steps_4_Front_End.svg';
-import Step1_dev from '/src/assets/images/Step1-dev.svg';
-import Step2_dev from '/src/assets/images/Step2-dev.svg';
-import Step3_dev from '/src/assets/images/Step3-dev.svg';
-import Step4_dev from '/src/assets/images/Step4-dev.svg';
+import Step1_Developers from '/src/assets/images/Image_Steps_Developers_1.svg';
+import Step2_Developers from '/src/assets/images/Image_Steps_Developers_2.svg';
+import Step3_Developers from '/src/assets/images/Image_Steps_Developers_3.svg';
+import Step4_Developers from '/src/assets/images/Image_Steps_Developers_4.svg';
+import Step1_Testers from '/src/assets/images/Image_Steps_Testers_1.svg';
+import Step2_Testers from '/src/assets/images/Image_Steps_Testers_2.svg';
+import Step3_Testers from '/src/assets/images/Image_Steps_Testers_3.svg';
+import Step4_Testers from '/src/assets/images/Image_Steps_Testers_4.svg';
+import Step1_Front_End from '/src/assets/images/Image_Steps_Front_End_1.svg';
+import Step2_Front_End from '/src/assets/images/Image_Steps_Front_End_2.svg';
+import Step3_Front_End from '/src/assets/images/Image_Steps_Front_End_3.svg';
+import Step4_Front_End from '/src/assets/images/Image_Steps_Front_End_4.svg';
 
 const stepsData = {
   step1: {
     title: 'Apply',
-    imageDevelopers: Step1_dev,
-    imageTesters: Step1_dev,
-    imageFrontEnd: Step1_dev,
+    imageDevelopers: Step1_Developers,
+    imageTesters: Step1_Testers,
+    imageFrontEnd: Step1_Front_End,
   },
   step2: {
     title: 'Pass the admission',
-    imageDevelopers: Step2_dev,
-    imageTesters: Step2_dev,
-    imageFrontEnd: Step2_dev,
+    imageDevelopers: Step2_Developers,
+    imageTesters: Step2_Testers,
+    imageFrontEnd: Step2_Front_End,
   },
 
   step3: {
     title: 'Learn from the experts',
-    imageDevelopers: Step3_dev,
-    imageTesters: Step3_dev,
-    imageFrontEnd: Step3_dev,
+    imageDevelopers: Step3_Developers,
+    imageTesters: Step3_Testers,
+    imageFrontEnd: Step3_Front_End,
   },
   step4: {
     title: 'Join the company',
-    imageDevelopers: Step4_dev,
-    imageTesters: Step4_dev,
-    imageFrontEnd: Step4_dev,
+    imageDevelopers: Step4_Developers,
+    imageTesters: Step4_Testers,
+    imageFrontEnd: Step4_Front_End,
   },
 };
 
