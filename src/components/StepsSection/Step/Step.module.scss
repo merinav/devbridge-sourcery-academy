@@ -4,15 +4,8 @@
   justify-content: flex-start;
   padding-bottom: var(--spacer-xl);
 
-  @include desktop-small {
-    align-items: center;
-    flex-direction: column;
-    gap: toRem(50);
-    justify-content: center;
-    padding-bottom: toRem(80);
-  }
-
   &--inverted {
+    gap: 0;
     justify-content: flex-end;
   }
 
@@ -53,6 +46,14 @@
       grid-row-start: 7;
     }
   }
+
+  @include desktop-small {
+    align-items: center;
+    flex-direction: column;
+    gap: toRem(30);
+    justify-content: center;
+    padding-bottom: toRem(60);
+  }
 }
 
 .text-container {
@@ -77,7 +78,7 @@
     border-bottom: 2px solid var(--primary-color);
     margin: 0;
     padding-bottom: var(--spacer-m);
-    padding-top: calc(5.5vw - ((var(--spacer-m)) + (var(--font-size-l))));
+    padding-top: calc(80px - ((var(--spacer-m)) + (var(--font-size-l))));
 
     @include desktop-small {
       padding-top: 0;
@@ -85,19 +86,19 @@
     }
 
     &--2 {
-      @media screen and (max-width: 1152px) {
+      @media screen and (max-width: 1149px) {
         padding-top: 0;
       }
     }
 
     &--3 {
-      @media screen and (max-width: 1324px) {
+      @media screen and (max-width: 1349px) {
         padding-top: 0;
       }
     }
 
     &--4 {
-      @media screen and (max-width: 1088px) {
+      @media screen and (max-width: 1190px) {
         padding-top: 0;
       }
     }
@@ -124,37 +125,16 @@
   display: flex;
   height: fit-content;
   justify-content: flex-start;
-  left: 38rem;
   order: 2;
   width: fit-content;
 
   &--inverted {
     justify-content: flex-end;
-    left: auto;
     order: 1;
-    right: 36rem;
 
     @include desktop-small {
       justify-content: center;
       order: 2;
-    }
-  }
-
-  &--2 {
-    @media screen and (max-width: 1152px) {
-      padding-top: toRem(30);
-    }
-  }
-
-  &--3 {
-    @media screen and (max-width: 1324px) {
-      padding-top: toRem(20);
-    }
-  }
-
-  &--4 {
-    @media screen and (max-width: 1088px) {
-      padding-top: 3rem;
     }
   }
 
@@ -168,12 +148,10 @@
   }
 
   &__image {
-    height: 11vw;
-    width: 14vw;
+    height: toRem(160);
 
     @include desktop-small {
-      height: 15vw;
-      width: 25vw;
+      height: toRem(160);
     }
   }
 }

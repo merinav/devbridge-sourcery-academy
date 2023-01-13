@@ -39,12 +39,6 @@ const stepsSectionData = {
     join: `The Academy starts in the end of October and lasts until January.. Top graduates will be
     invited for an interview to become a Junior Front-End Software Engineer.`,
   },
-  // kids:{
-  //   apply:``,
-  //   pass: ``,
-  //   learn: ``,
-  //   join: ``,
-  // },
 };
 
 export default stepsSectionData;

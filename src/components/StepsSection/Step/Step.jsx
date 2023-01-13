@@ -62,25 +62,17 @@ const Step = ({ step, text, isInverted, academy }) => {
         <p className={cn('text-container__paragraph')}> {text}</p>
       </div>
       <div
-        className={cn(
-          'image-container',
-          {
-            'image-container--inverted': isInverted,
-          },
-          `image-container--${step}`
-        )}
+        className={cn('image-container', {
+          'image-container--inverted': isInverted,
+        })}
       >
-        {/* <div className={cn('image-circle')}> */}
         <image.svg
           className={cn(
             'image-container__image',
             `image-container__image--${step}`
           )}
+          alt=""
         />
-        {/* <div className={cn('image-circle__number-container')}>
-            <span className={cn('image-circle__number')}>{step}</span>
-          </div> */}
-        {/* </div> */}
       </div>
     </div>
   );
