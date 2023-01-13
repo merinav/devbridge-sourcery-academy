@@ -1,44 +1,42 @@
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
-import Button from '/src/components/Button/Button';
 import styles from './Filter.module';
 
 const cn = classNames.bind(styles);
 
 const Filter = ({ data, onClick }) => {
-  const [activeItem, setActiveItem] = useState(null);
+  if (!data) {
+    return null;
+  }
+  const [activeItem, setActiveItem] = useState(data[0]);
 
   const handleItemClick = (item) => {
     setActiveItem(item);
-    console.log(`select ${item}`); // TODO remove after testing
+    if (!onClick) {
+      return null;
+    }
     onClick(item);
   };
 
-  if (Array.isArray(data) && data.length && typeof data !== 'undefined') {
+  if (!data) {
+    return null;
+  }
+  {
     return (
       <div className={cn('filter-wrapper')}>
         {data.map((item, index) => (
-          // <Button
-          //   key={index}
-          //   onClick={() => handleItemClick(item)}
-          //   className={cn('button', `${activeItem === item ? 'active' : ''}`)}
-          // >
-          //   {item}
-          // </Button>
-
           <button
-            key={index}
+            key={index + item}
             onClick={() => handleItemClick(item)}
-            className={cn('button', `${activeItem === item ? 'active' : ''}`)}
+            className={cn('button', { 'button--active': activeItem === item })}
+            type="button"
           >
             {item}
           </button>
         ))}
       </div>
     );
-  } else {
-    return null;
   }
 };
 

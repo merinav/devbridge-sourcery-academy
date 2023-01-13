@@ -18,12 +18,9 @@ const Home = () => {
 
   return (
     <>
-      <Filter
-        data={testData}
-        onClick={(item) =>
-          console.log(`test function passed from parent in ${item}`)
-        }
-      />
+      {/* TODO remove after testing */}
+      <Filter data={testData} />
+      {/* TODO remove after testing */}
       <Filter />
 
       <PromoHome />
