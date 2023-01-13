@@ -14,15 +14,16 @@ const ScheduleSection = ({ academy }) => {
       case ACADEMIES.frontend:
         return scheduleSectionsData.frontend.lectures;
       default:
-        return scheduleSectionsData;
+        return null;
     }
   }, [scheduleSectionsData]);
 
   return (
     <>
-      {data.map((lecture) => (
-        <ExpandableCard lecture={lecture} key={lecture.id} />
-      ))}
+      {data &&
+        data.map((lecture) => (
+          <ExpandableCard lecture={lecture} key={lecture.id} />
+        ))}
     </>
   );
 };
