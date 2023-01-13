@@ -15,12 +15,21 @@ const MediaSection = ({ academy }) => {
   const fetchMediaUrl = 'https://sfe-2022-data.netlify.app/static/media.json';
   const fetchMediaData = useFetch(fetchMediaUrl);
   const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     if (fetchMediaData) {
       setLoading(false);
     }
   }, [fetchMediaData]);
+
+  const openModalHandler = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModalHandler = () => {
+    setIsModalOpen(false);
+  };
 
   const data = useMemo(() => {
     switch (academy) {
@@ -53,7 +62,12 @@ const MediaSection = ({ academy }) => {
           {loading ? (
             <LoadingSpinner style={{ margin: 'var(--spacer-3xl) auto 0' }} />
           ) : (
-            <GalleryMedia data={data} />
+            <GalleryMedia
+              data={data}
+              isModalOpen={isModalOpen}
+              openModalHandler={openModalHandler}
+              closeModalHandler={closeModalHandler}
+            />
           )}
         </section>
       )}

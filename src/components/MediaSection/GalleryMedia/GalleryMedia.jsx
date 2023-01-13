@@ -1,14 +1,20 @@
 import React from 'react';
-import classNames from 'classnames/bind';
-import Icon_play from '/src/assets/icons/Icon_play.svg';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
+import { AnimatePresence } from 'framer-motion';
+import Icon_play from '/src/assets/icons/Icon_play.svg';
 import styles from './GalleryMedia.module';
+import Modal from '~/components/Modal';
 
 const cn = classNames.bind(styles);
 
-const GalleryMedia = ({ data }) => {
+const GalleryMedia = ({
+  data,
+  isModalOpen,
+  openModalHandler,
+  closeModalHandler,
+}) => {
   const maxMediaItems = Math.min(data.length, 6);
-
   return (
     <div
       className={cn(
@@ -27,6 +33,7 @@ const GalleryMedia = ({ data }) => {
           <figure
             className={cn('media-container', `media-container-${index + 1}`)}
             key={index}
+            onClick={openModalHandler}
           >
             <img
               className={cn('media-item', `image-${index + 1}`)}
@@ -38,6 +45,7 @@ const GalleryMedia = ({ data }) => {
           <figure
             className={cn('media-container', `media-container-${index + 1}`)}
             key={index}
+            onClick={openModalHandler}
           >
             <video
               className={cn('media-item', `video-${index + 1}`)}
@@ -62,12 +70,22 @@ const GalleryMedia = ({ data }) => {
           </figure>
         )
       )}
+      <AnimatePresence initial="false" mode={'wait'}>
+        {isModalOpen && (
+          <Modal closeModal={closeModalHandler}>
+            <div></div>
+          </Modal>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
 
 GalleryMedia.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  isModalOpen: PropTypes.bool.isRequired,
+  openModalHandler: PropTypes.func.isRequired,
+  closeModalHandler: PropTypes.func.isRequired,
 };
 
 export default GalleryMedia;
