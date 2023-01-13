@@ -5,6 +5,7 @@ import { ACADEMIES } from '/src/constants/constants.js';
 import AdmissionSection from '~/components/AdmissionSection/AdmissionSection';
 import TestimonialsSection from '~/components/TestimonialsSection';
 import MediaSection from '~/components/MediaSection';
+import ApplySection from '~/components/ApplySection';
 import ScheduleSection from '~/components/ExpandableCard/ScheduleSection';
 import styles from './FrontEnd.module';
 
@@ -24,6 +25,9 @@ function FrontEnd() {
       </div>
       <div className={cn('media-section-wrapper')}>
         <MediaSection academy={ACADEMIES.frontend} />
+      </div>
+      <div className={cn('apply-section-wrapper')}>
+        <ApplySection academy={ACADEMIES.frontend} />
       </div>
     </>
   );
