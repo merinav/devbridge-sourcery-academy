@@ -10,6 +10,7 @@ import styles from './TestimonialCard.module.scss';
 const cn = classNames.bind(styles);
 
 const MAX_TESTIMONIALS_MESSAGE_LENGTH = 330;
+// TO DO: remove test message and add message to props
 const message =
   'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque totam in magni harum deserunt ratione corporis laboriosam tempore quaerat vel distinctio error, at nulla. Totam iure vel asperiores dolorem dolores! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque totam in magni harum deserunt ratione corporis laboriosam tempore quaerat vel distinctio error, at nulla. Totam iure vel asperiores dolorem dolores! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque totam in magni harum deserunt ratione corporis laboriosam tempore quaerat vel distinctio error, at nulla. Totam iure vel asperiores dolorem dolores!';
 
