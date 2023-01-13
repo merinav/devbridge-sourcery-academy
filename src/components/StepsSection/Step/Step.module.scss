@@ -55,7 +55,7 @@
   }
 }
 
-.text {
+.text-container {
   display: flex;
   flex-direction: column;
   order: 1;
@@ -77,7 +77,11 @@
     border-bottom: 2px solid var(--primary-color);
     margin: 0;
     padding-bottom: var(--spacer-m);
-    padding-top: calc(5.5vw - ((var(--spacer-m)) + (var(--font-size-l))));
+    //padding-top: calc(5.5vw - ((var(--spacer-m)) + (var(--font-size-l))));
+
+    // @media screen and (max-width: 1308px) {
+    //   padding-top: 0;
+    // }
 
     @include tablet-landscape {
       padding-top: 0;
@@ -102,7 +106,7 @@
   }
 }
 
-.image {
+.image-container {
   display: flex;
   justify-content: flex-start;
   order: 2;
@@ -127,11 +131,25 @@
   @include mobile-only {
     display: none;
   }
+}
+
+.image-circle {
+  background-color: var(--color-white);
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  height: 11vw;
+  position: relative;
+  width: 11vw;
+
+  @include tablet-landscape {
+    height: 20vw;
+    width: 20vw;
+  }
 
   &__illustration {
     height: 11vw;
     position: absolute;
-    width: 14vw;
+    width: 14.5vw;
 
     @include tablet-landscape {
       height: 20vw;
@@ -139,68 +157,56 @@
     }
 
     &--1 {
-      left: 0.1rem;
+      left: -0.8rem;
 
       @include tablet-landscape {
         left: auto;
+        top: -0.5rem;
       }
     }
 
     &--2 {
-      right: -4.5rem;
+      right: auto;
 
-      @include tablet-landscape {
-        right: auto;
-      }
+      // @include tablet-landscape {
+      //   right: auto;
+      // }
     }
 
     &--3 {
-      right: -2.5rem;
+      left: 1rem;
 
       @include tablet-landscape {
-        right: auto;
+        left: 1.5rem;
       }
     }
 
     &--4 {
-      right: -2.5rem;
+      right: -3.5rem;
       top: -1rem;
 
       @include tablet-landscape {
-        right: auto;
-        top: auto;
+        right: -2rem;
+        top: -1rem;
       }
     }
   }
 
-  &__circle-container {
+  &__number-container {
+    align-items: center;
     background-color: var(--color-white);
-    border: 2px solid var(--primary-color);
+    border: 2px solid transparent;
     border-radius: 50%;
-    height: 11vw;
-    width: 11vw;
+    display: flex;
+    height: 4vw;
+    justify-content: center;
+    padding: 0 var(--spacer-s) var(--spacer-s) 0;
+    width: 4vw;
 
     @include tablet-landscape {
-      height: 20vw;
-      width: 20vw;
+      height: 7vw;
+      width: 7vw;
     }
-  }
-}
-
-.circle-number-container {
-  align-items: center;
-  background-color: var(--color-white);
-  border: 2px solid transparent;
-  border-radius: 50%;
-  display: flex;
-  height: 4vw;
-  justify-content: center;
-  padding: 0 var(--spacer-s) var(--spacer-s) 0;
-  width: 4vw;
-
-  @include tablet-landscape {
-    height: 7vw;
-    width: 7vw;
   }
 
   &__number {

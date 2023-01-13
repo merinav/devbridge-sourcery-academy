@@ -46,23 +46,28 @@ const Step = ({ step, text, isInverted, academy }) => {
         'step-container--inverted': isInverted,
       })}
     >
-      <div className={cn('text', { 'text--inverted': isInverted })}>
-        <h3 className={cn('text__title')}>{data.title}</h3>
-        <p className={cn('text__paragraph')}> {text}</p>
-      </div>
       <div
-        className={cn('image', {
-          'image--inverted': isInverted,
+        className={cn('text-container', {
+          'text-container--inverted': isInverted,
         })}
       >
-        <image.svg
-          className={cn('image__illustration', `image__illustration--${step}`)}
-        />
-        <div className={cn('image__circle-container')}>
-          <div className={cn('circle-number-container')}>
-            <span className={cn('circle-number-container__number')}>
-              {step}
-            </span>
+        <h3 className={cn('text-container__title')}>{data.title}</h3>
+        <p className={cn('text-container__paragraph')}> {text}</p>
+      </div>
+      <div
+        className={cn('image-container', {
+          'image-container--inverted': isInverted,
+        })}
+      >
+        <div className={cn('image-circle')}>
+          <image.svg
+            className={cn(
+              'image-circle__illustration',
+              `image-circle__illustration--${step}`
+            )}
+          />
+          <div className={cn('image-circle__number-container')}>
+            <span className={cn('image-circle__number')}>{step}</span>
           </div>
         </div>
       </div>
