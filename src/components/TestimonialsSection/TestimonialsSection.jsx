@@ -13,7 +13,8 @@ import { ACADEMIES } from '~/constants/constants';
 
 const cn = classNames.bind(styles);
 
-const TESTIMONIALS_ENDPOINT = 'https://www.jurele.lt/testimonials.json';
+const TESTIMONIALS_ENDPOINT =
+  'https://raw.githubusercontent.com/aistegerd/testimonials-mock-data/main/testimonials.json';
 const MAX_NUMBER_OF_TESTIMONIALS_TO_DISPLAY = 10;
 const NUMBER_OF_TESTIMONIALS_TO_DISPLAY = {
   'mobile-only': 1,

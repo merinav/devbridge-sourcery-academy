@@ -6,6 +6,7 @@ import TestimonialsSection from '~/components/TestimonialsSection';
 import MediaSection from '~/components/MediaSection';
 import classNames from 'classnames/bind';
 import styles from '~/pages/Home/Home.module.scss';
+import ApplySection from '~/components/ApplySection';
 
 const cn = classNames.bind(styles);
 
@@ -22,6 +23,9 @@ function Testers() {
       </div>
       <div className={cn('media-section-wrapper')}>
         <MediaSection academy={ACADEMIES.testers} />
+      </div>
+      <div className={cn('apply-section-wrapper')}>
+        <ApplySection academy={ACADEMIES.testers} />
       </div>
     </>
   );
