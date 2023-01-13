@@ -40,7 +40,6 @@
   background-color: var(--color-white);
   border-radius: var(--border-radius-s);
   box-shadow: toRem(-20) toRem(20) 0 0 var(--color-grey-100);
-  box-sizing: border-box;
   overflow: hidden;
   width: toRem(266);
 
@@ -80,6 +79,12 @@
     cursor: pointer;
     margin: 0;
     padding: 0;
+
+    &:focus-visible {
+      border-radius: 0.1rem;
+      outline: 0.2rem solid var(--color-white);
+      outline-offset: 0.4rem;
+    }
   }
 
   .button-icon {

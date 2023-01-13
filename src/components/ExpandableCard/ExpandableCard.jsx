@@ -27,23 +27,28 @@ const ExpandableCard = ({ lecture }) => {
           <div className={cn('expandable-card__title')}>
             <h4 className={cn('title')}>{lecture.title}</h4>
 
-            <button className={cn('button')}>
+            <button
+              className={cn('button')}
+              aria-label={
+                isExpanded ? 'close expandable card' : 'open expandable card'
+              }
+              aria-controls="title-expanded"
+              aria-expanded={isExpanded ? 'true' : 'false'}
+            >
               {isExpanded ? (
-                <Icon_arrow_up
-                  className={cn('button-icon')}
-                  aria-hidden="true"
-                />
+                <Icon_arrow_up className={cn('button-icon')} />
               ) : (
-                <Icon_arrow_down
-                  className={cn('button-icon')}
-                  aria-hidden="true"
-                />
+                <Icon_arrow_down className={cn('button-icon')} />
               )}
             </button>
           </div>
 
           {isExpanded && (
-            <div className={cn('expandable-card__title-expanded')}>
+            <div
+              className={cn('expandable-card__title-expanded')}
+              id="title-expanded"
+              aria-hidden="false"
+            >
               {lecture.lecturer && (
                 <div className={cn('lectors')}>
                   <Icon_person className={cn('icon')} aria-hidden="true" />
