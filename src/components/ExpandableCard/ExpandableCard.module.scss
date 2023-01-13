@@ -8,6 +8,7 @@
     flex-direction: column;
     gap: 1rem;
     padding: var(--spacer-l);
+    pointer-events: none;
     position: relative;
 
     &::before {
@@ -50,7 +51,6 @@
 
     &:hover {
       background: var(--expandable-card-hover-color);
-      border-color: var(--expandable-card-hover-color);
 
       + .expandable-card__body::before {
         background: var(--expandable-card-hover-color);
