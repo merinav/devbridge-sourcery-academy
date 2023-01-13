@@ -19,8 +19,8 @@ const ExpandableCard = ({ lecture, isExpanded, handleExpand }) => {
 
   return (
     <>
-      <div className={cn('expandable-card')} onClick={handleExpand}>
-        <div className={cn('expandable-card__header')}>
+      <div className={cn('expandable-card')}>
+        <div className={cn('expandable-card__header')} onClick={handleExpand}>
           <div className={cn('expandable-card__title')}>
             <h4 className={cn('title')}>{lecture.title}</h4>
 
