@@ -5,7 +5,7 @@ import { ACADEMIES } from '~/constants/constants';
 import AdmissionSection from '~/components/AdmissionSection/AdmissionSection';
 import TestimonialsSection from '~/components/TestimonialsSection';
 import MediaSection from '~/components/MediaSection';
-import ExpandableCard from '~/components/ExpandableCard/ExpandableCard';
+import ScheduleSection from '~/components/ExpandableCard/ScheduleSection';
 import styles from './Testers.module.scss';
 
 const cn = classNames.bind(styles);
@@ -15,7 +15,7 @@ function Testers() {
 
   return (
     <>
-      <ExpandableCard academy={ACADEMIES.testers} />
+      <ScheduleSection academy={ACADEMIES.testers} />
       <div className={cn('admission-section-wrapper')}>
         <AdmissionSection academy={ACADEMIES.testers} />
       </div>
