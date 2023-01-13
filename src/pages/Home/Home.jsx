@@ -18,7 +18,12 @@ const Home = () => {
 
   return (
     <>
-      <Filter data={testData} />
+      <Filter
+        data={testData}
+        onClick={(item) =>
+          console.log(`test function passed from parent in ${item}`)
+        }
+      />
       <Filter />
 
       <PromoHome />
