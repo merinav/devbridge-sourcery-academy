@@ -4,7 +4,7 @@
   justify-content: flex-start;
   padding-bottom: var(--spacer-xl);
 
-  @include tablet-landscape {
+  @include desktop-small {
     align-items: center;
     flex-direction: column;
     gap: toRem(50);
@@ -25,7 +25,7 @@
     grid-row-end: span 2;
     grid-row-start: 2;
 
-    @include tablet-landscape {
+    @include desktop-small {
       grid-column-start: 1;
       grid-row-end: span 2;
       grid-row-start: 3;
@@ -36,7 +36,7 @@
     grid-row-end: span 2;
     grid-row-start: 3;
 
-    @include tablet-landscape {
+    @include desktop-small {
       grid-row-end: span 2;
       grid-row-start: 5;
     }
@@ -47,7 +47,7 @@
     grid-row-end: span 2;
     grid-row-start: 4;
 
-    @include tablet-landscape {
+    @include desktop-small {
       grid-column-start: 1;
       grid-row-end: span 2;
       grid-row-start: 7;
@@ -59,14 +59,13 @@
   display: flex;
   flex-direction: column;
   order: 1;
-  //position: relative;
   width: 67%;
 
   &--inverted {
     order: 2;
     text-align: right;
 
-    @include tablet-landscape {
+    @include desktop-small {
       order: 1;
     }
   }
@@ -80,13 +79,27 @@
     padding-bottom: var(--spacer-m);
     padding-top: calc(5.5vw - ((var(--spacer-m)) + (var(--font-size-l))));
 
-    // @media screen and (max-width: 1308px) {
-    //   padding-top: 0;
-    // }
-
-    @include tablet-landscape {
+    @include desktop-small {
       padding-top: 0;
       text-align: center;
+    }
+
+    &--2 {
+      @media screen and (max-width: 1152px) {
+        padding-top: 0;
+      }
+    }
+
+    &--3 {
+      @media screen and (max-width: 1324px) {
+        padding-top: 0;
+      }
+    }
+
+    &--4 {
+      @media screen and (max-width: 1088px) {
+        padding-top: 0;
+      }
     }
   }
 
@@ -97,23 +110,22 @@
     margin: 0;
     padding-top: var(--spacer-xl);
 
-    @include tablet-landscape {
+    @include desktop-small {
       text-align: center;
     }
   }
 
-  @include tablet-landscape {
+  @include desktop-small {
     width: 100%;
   }
 }
 
 .image-container {
   display: flex;
+  height: fit-content;
   justify-content: flex-start;
   left: 38rem;
   order: 2;
-  //position: absolute;
-  //top: -2rem;
   width: fit-content;
 
   &--inverted {
@@ -122,13 +134,31 @@
     order: 1;
     right: 36rem;
 
-    @include tablet-landscape {
+    @include desktop-small {
       justify-content: center;
       order: 2;
     }
   }
 
-  @include tablet-landscape {
+  &--2 {
+    @media screen and (max-width: 1152px) {
+      padding-top: toRem(30);
+    }
+  }
+
+  &--3 {
+    @media screen and (max-width: 1324px) {
+      padding-top: toRem(20);
+    }
+  }
+
+  &--4 {
+    @media screen and (max-width: 1088px) {
+      padding-top: 3rem;
+    }
+  }
+
+  @include desktop-small {
     justify-content: center;
     width: 100%;
   }
@@ -139,134 +169,11 @@
 
   &__image {
     height: 11vw;
-    //position: absolute;
     width: 14vw;
 
-    @include tablet-landscape {
-      height: 20vw;
+    @include desktop-small {
+      height: 15vw;
       width: 25vw;
     }
-
-    // &--1 {
-    //   left: -0.8rem;
-
-    //   @include tablet-landscape {
-    //     left: auto;
-    //     top: -0.5rem;
-    //   }
-    // }
-
-    // &--2 {
-    //   right: auto;
-
-    //   // @include tablet-landscape {
-    //   //   right: auto;
-    //   // }
-    // }
-
-    // &--3 {
-    //   left: 1rem;
-
-    //   @include tablet-landscape {
-    //     left: 1.5rem;
-    //   }
-    // }
-
-    // &--4 {
-    //   right: -3.5rem;
-    //   top: -1rem;
-
-    //   @include tablet-landscape {
-    //     right: -2rem;
-    //     top: -1rem;
-    //   }
-    // }
   }
 }
-
-// .image-circle {
-//   background-color: var(--color-white);
-//   border: 2px solid var(--primary-color);
-//   border-radius: 50%;
-//   height: 11vw;
-//   position: relative;
-//   width: 11vw;
-
-//   @include tablet-landscape {
-//     height: 20vw;
-//     width: 20vw;
-//   }
-
-//   &__illustration {
-//     height: 11vw;
-//     position: absolute;
-//     width: 14.5vw;
-
-//     @include tablet-landscape {
-//       height: 20vw;
-//       width: 25vw;
-//     }
-
-//     &--1 {
-//       left: -0.8rem;
-
-//       @include tablet-landscape {
-//         left: auto;
-//         top: -0.5rem;
-//       }
-//     }
-
-//     &--2 {
-//       right: auto;
-
-//       // @include tablet-landscape {
-//       //   right: auto;
-//       // }
-//     }
-
-//     &--3 {
-//       left: 1rem;
-
-//       @include tablet-landscape {
-//         left: 1.5rem;
-//       }
-//     }
-
-//     &--4 {
-//       right: -3.5rem;
-//       top: -1rem;
-
-//       @include tablet-landscape {
-//         right: -2rem;
-//         top: -1rem;
-//       }
-//     }
-//   }
-
-//   &__number-container {
-//     align-items: center;
-//     background-color: var(--color-white);
-//     border: 2px solid transparent;
-//     border-radius: 50%;
-//     display: flex;
-//     height: 4vw;
-//     justify-content: center;
-//     padding: 0 var(--spacer-s) var(--spacer-s) 0;
-//     width: 4vw;
-
-//     @include tablet-landscape {
-//       height: 7vw;
-//       width: 7vw;
-//     }
-//   }
-
-//   &__number {
-//     @include heading-3;
-
-//     font-size: 3vw;
-
-//     @include tablet-landscape {
-//       font-size: 5vw;
-//     }
-//   }
-// }

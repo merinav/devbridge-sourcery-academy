@@ -51,13 +51,24 @@ const Step = ({ step, text, isInverted, academy }) => {
           'text-container--inverted': isInverted,
         })}
       >
-        <h3 className={cn('text-container__title')}>{data.title}</h3>
+        <h3
+          className={cn(
+            'text-container__title',
+            `text-container__title--${step}`
+          )}
+        >
+          {data.title}
+        </h3>
         <p className={cn('text-container__paragraph')}> {text}</p>
       </div>
       <div
-        className={cn('image-container', {
-          'image-container--inverted': isInverted,
-        })}
+        className={cn(
+          'image-container',
+          {
+            'image-container--inverted': isInverted,
+          },
+          `image-container--${step}`
+        )}
       >
         {/* <div className={cn('image-circle')}> */}
         <image.svg
