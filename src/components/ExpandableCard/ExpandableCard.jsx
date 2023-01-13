@@ -40,22 +40,16 @@ const ExpandableCard = ({ lecture, isExpanded, handleExpand }) => {
           </div>
 
           {isExpanded && (
-            <div className={cn('expandable-card__title--expanded')}>
+            <div className={cn('expandable-card__title-expanded')}>
               {lecture.lecturer && (
                 <div className={cn('lectors')}>
-                  <Icon_person
-                    className={cn('title--expanded__icon')}
-                    aria-hidden="true"
-                  />
+                  <Icon_person className={cn('icon')} aria-hidden="true" />
                   {lecture.lecturer}
                 </div>
               )}
 
               <div className={cn('time')}>
-                <Icon_clock
-                  className={cn('title--expanded__icon')}
-                  aria-hidden="true"
-                />
+                <Icon_clock className={cn('icon')} aria-hidden="true" />
 
                 {lecture.time && (
                   <span className={cn('hour')}>{lecture.time}</span>

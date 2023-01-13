@@ -87,7 +87,7 @@
     height: toRem(12);
   }
 
-  .expandable-card__title--expanded {
+  &__title-expanded {
     color: var(--color-white);
     display: flex;
     flex-direction: column;
@@ -113,7 +113,7 @@
       padding-right: 1rem;
     }
 
-    .title--expanded__icon {
+    .icon {
       flex: 0 0 auto;
       height: toRem(14);
       width: toRem(14);
