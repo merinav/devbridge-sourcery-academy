@@ -8,7 +8,7 @@
   line-height: var(--line-height-xl);
   margin: 0;
 
-  @include tablet-portrait {
+  @include tablet-landscape {
     text-align: center;
   }
 }
@@ -25,7 +25,7 @@
   color: var(--color-grey-400);
   font-weight: var(--font-weight-regular);
 
-  @include tablet-portrait {
+  @include tablet-landscape {
     text-align: center;
   }
 }
