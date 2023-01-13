@@ -18,9 +18,7 @@ const Home = () => {
 
   return (
     <>
-      {/* // TODO remove after testing */}
       <Filter data={testData} />
-      {/* // TODO remove after testing */}
       <Filter />
 
       <PromoHome />

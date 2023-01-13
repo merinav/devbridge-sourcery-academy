@@ -11,12 +11,7 @@ const Filter = ({ data }) => {
     return (
       <div className={cn('filter-wrapper')}>
         {data.map((item, index) => (
-          <Button
-            key={index}
-            onClick={() => console.log('button click #' + Number(index + 1))} // TODO remove after testing
-          >
-            {item}
-          </Button>
+          <Button key={index}>{item}</Button>
         ))}
       </div>
     );
