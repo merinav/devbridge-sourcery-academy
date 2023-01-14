@@ -1,1 +1,74 @@
-// TODO: remove after starting ticket
+.schedule-section {
+  border: 1px solid hsl(120, 73%, 75%); // TODO remove after testing
+  position: relative;
+
+  &__heading {
+    @include h1-h2;
+    @include word-wrap;
+
+    text-align: center;
+  }
+
+  &__months-wrapper {
+    border: 1px solid hsl(195, 53%, 79%); // TODO remove after testing
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: var(--spacer-7xl) 0 toRem(46);
+  }
+
+  &__sub-heading {
+    border: 1px solid hsl(0, 79%, 72%); // TODO remove after testing
+    margin: 0;
+    text-align: center;
+
+    @include heading-3;
+    @include word-wrap;
+
+    @include tablet-portrait {
+      text-align: center;
+    }
+  }
+
+  &__lectures-wrapper {
+    border: 1px solid hsl(177, 70%, 41%); // TODO remove after testing
+  }
+
+  &__path {
+    position: absolute;
+    right: 0;
+    stroke: var(--primary-color);
+    stroke-width: 2px;
+    top: 0;
+    // transform: translateY(-50%);
+    width: toRem(40);
+    z-index: var(--z-paths);
+
+    @include tablet-landscape {
+      display: none;
+    }
+  }
+
+  &__particles-top {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 60%;
+    z-index: var(--z-particles);
+
+    @include tablet-landscape {
+      display: none;
+    }
+  }
+
+  &__particles-bottom {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 80%;
+    z-index: var(--z-particles);
+
+    @include tablet-landscape {
+      display: none;
+    }
+  }
+}
