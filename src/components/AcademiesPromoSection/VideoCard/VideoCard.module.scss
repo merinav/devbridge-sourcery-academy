@@ -1,0 +1,69 @@
+.video-card {
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
+
+  @include tablet-portrait {
+    justify-content: center;
+    margin: var(--spacer-6xl) 0 0;
+  }
+
+  &__container {
+    align-items: center;
+    border-radius: var(--border-radius-l);
+    //box-shadow: inset 0 0 0 2000px grey; Change color to var
+    display: flex;
+    justify-content: center;
+    margin: var(--spacer-6xl) 0 0;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      background: rgba(255, 255, 255, 0.4);
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: all 0.3s;
+    }
+
+    &:hover::before {
+      background: rgba(255, 255, 255, 0);
+    }
+
+    @include tablet-portrait {
+      margin-top: var(--spacer-m);
+    }
+  }
+}
+
+.video-controls {
+  align-items: center;
+  display: flex;
+  height: toRem(90);
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: toRem(90);
+}
+
+.play-button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  stroke: var(--primary-color);
+  stroke-width: 2px;
+  text-decoration: none;
+  transition: opacity 0.3s;
+  width: 100%;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
