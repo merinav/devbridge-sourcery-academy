@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { AnimatePresence } from 'framer-motion';
 import Icon_play from '/src/assets/icons/Icon_play.svg';
+import GalleryMediaModal from '~/components/MediaSection/GalleryMedia/GalleryMediaModal';
 import styles from './GalleryMedia.module';
-import Modal from '~/components/Modal';
 
 const cn = classNames.bind(styles);
 
@@ -15,6 +15,7 @@ const GalleryMedia = ({
   closeModalHandler,
 }) => {
   const maxMediaItems = Math.min(data.length, 6);
+  console.log(data);
   return (
     <div
       className={cn(
@@ -32,7 +33,7 @@ const GalleryMedia = ({
         item.type === 'image' ? (
           <figure
             className={cn('media-container', `media-container-${index + 1}`)}
-            key={index}
+            key={item.src}
             onClick={openModalHandler}
           >
             <img
@@ -44,7 +45,7 @@ const GalleryMedia = ({
         ) : (
           <figure
             className={cn('media-container', `media-container-${index + 1}`)}
-            key={index}
+            key={item.src}
             onClick={openModalHandler}
           >
             <video
@@ -72,9 +73,10 @@ const GalleryMedia = ({
       )}
       <AnimatePresence initial="false" mode={'wait'}>
         {isModalOpen && (
-          <Modal closeModal={closeModalHandler}>
-            <div></div>
-          </Modal>
+          <GalleryMediaModal
+            data={data}
+            closeModalHandler={closeModalHandler}
+          />
         )}
       </AnimatePresence>
     </div>
