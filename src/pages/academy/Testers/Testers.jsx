@@ -8,7 +8,7 @@ import TestimonialsSection from '~/components/TestimonialsSection';
 import MediaSection from '~/components/MediaSection';
 import ApplySection from '~/components/ApplySection';
 import ScheduleSection from '~/components/ScheduleSection/ScheduleSection';
-import styles from '~/pages/Home/Home.module.scss';
+import styles from './Testers.module';
 
 const cn = classNames.bind(styles);
 
