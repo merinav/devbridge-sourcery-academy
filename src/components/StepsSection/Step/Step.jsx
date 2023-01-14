@@ -31,7 +31,7 @@ const Step = ({ step, text, isInverted = false, academy }) => {
         >
           {data.title}
         </h3>
-        <p className={cn('text-container__paragraph')}> {text}</p>
+        <p className={cn('text-container__paragraph')}>{text}</p>
       </div>
       <div
         className={cn('image-container', {
