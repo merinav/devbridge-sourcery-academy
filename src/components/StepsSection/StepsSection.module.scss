@@ -15,7 +15,7 @@
 
   &__path {
     height: toRem(630);
-    left: -5rem;
+    left: toRem(-50);
     position: absolute;
     stroke: var(--primary-color);
     stroke-width: 2px;
@@ -31,14 +31,14 @@
   &__particles-top {
     height: toRem(300);
     position: absolute;
-    right: -1rem;
-    top: -14rem;
+    right: toRem(-10);
+    top: toRem(-140);
     width: 35%;
     z-index: var(--z-particles);
   }
 
   &__particles-bottom {
-    bottom: -15rem;
+    bottom: toRem(-150);
     height: toRem(300);
     left: toRem(20);
     position: absolute;

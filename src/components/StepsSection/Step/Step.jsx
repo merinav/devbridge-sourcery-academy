@@ -7,7 +7,7 @@ import styles from './Step.module';
 
 const cn = classNames.bind(styles);
 
-const Step = ({ step, text, isInverted, academy }) => {
+const Step = ({ step, text, isInverted = false, academy }) => {
   const { step1, step2, step3, step4 } = stepsData;
 
   const { developers, testers, frontend } = ACADEMIES;
@@ -81,7 +81,7 @@ const Step = ({ step, text, isInverted, academy }) => {
 Step.propTypes = {
   step: PropTypes.number.isRequired,
   text: PropTypes.string.isRequired,
-  isInverted: PropTypes.bool.isRequired,
+  isInverted: PropTypes.bool,
   academy: PropTypes.oneOf(Object.values(ACADEMIES)).isRequired,
 };
 

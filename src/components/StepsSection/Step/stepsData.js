@@ -24,7 +24,6 @@ const stepsData = {
     imageTesters: Step2_Testers,
     imageFrontEnd: Step2_Front_End,
   },
-
   step3: {
     title: 'Learn from the experts',
     imageDevelopers: Step3_Developers,
