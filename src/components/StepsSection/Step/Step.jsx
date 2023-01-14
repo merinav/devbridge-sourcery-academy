@@ -33,7 +33,7 @@ const Step = ({ step, text, isInverted = false, academy }) => {
         </h3>
         <p className={cn('text-container__paragraph')}>{text}</p>
       </div>
-      <div
+      <figure
         className={cn('image-container', {
           'image-container--inverted': isInverted,
         })}
@@ -45,7 +45,7 @@ const Step = ({ step, text, isInverted = false, academy }) => {
           )}
           alt=""
         />
-      </div>
+      </figure>
     </div>
   );
 };
