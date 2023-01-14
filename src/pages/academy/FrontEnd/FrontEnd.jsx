@@ -6,7 +6,7 @@ import AdmissionSection from '~/components/AdmissionSection/AdmissionSection';
 import TestimonialsSection from '~/components/TestimonialsSection';
 import MediaSection from '~/components/MediaSection';
 import ApplySection from '~/components/ApplySection';
-import ScheduleSection from '~/components/ExpandableCard/ScheduleSection';
+import ScheduleSection from '~/components/ScheduleSection/ScheduleSection';
 import styles from './FrontEnd.module';
 
 const cn = classNames.bind(styles);

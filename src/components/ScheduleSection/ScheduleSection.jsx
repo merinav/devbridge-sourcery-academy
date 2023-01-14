@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { ACADEMIES } from '/src/constants/constants.js';
-import { scheduleSectionsData } from '../scheduleSectionsData';
-import ExpandableCard from '../ExpandableCard';
+import { scheduleSectionsData } from './scheduleSectionsData';
+import ExpandableCard from './ExpandableCard/ExpandableCard';
 
 const ScheduleSection = ({ academy }) => {
   const data = useMemo(() => {

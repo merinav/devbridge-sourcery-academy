@@ -5,7 +5,7 @@ import Icon_arrow_down from '/src/assets/icons/Icon_arrow_down.svg';
 import Icon_arrow_up from '/src/assets/icons/Icon_arrow_up.svg';
 import Icon_person from '/src/assets/icons/Icon_person.svg';
 import Icon_clock from '/src/assets/icons/Icon_clock.svg';
-import DateItem from '../DateItem/DateItem';
+import DateItem from '../../DateItem/DateItem';
 import styles from './ExpandableCard.module.scss';
 
 const cn = classNames.bind(styles);
