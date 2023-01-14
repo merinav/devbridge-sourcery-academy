@@ -10,7 +10,7 @@ const cn = classNames.bind(styles);
 const Step = ({ step, text, isInverted = false, academy }) => {
   const data = stepsData[step];
 
-  const Image = { image: data.image[academy] };
+  const Image = data.image[academy];
 
   return (
     <div
@@ -38,7 +38,7 @@ const Step = ({ step, text, isInverted = false, academy }) => {
           'image-container--inverted': isInverted,
         })}
       >
-        <Image.image
+        <Image
           className={cn(
             'image-container__image',
             `image-container__image--${step}`
