@@ -8,37 +8,9 @@ import styles from './Step.module';
 const cn = classNames.bind(styles);
 
 const Step = ({ step, text, isInverted = false, academy }) => {
-  const { step1, step2, step3, step4 } = stepsData;
+  const data = stepsData[step];
 
-  const { developers, testers, frontend } = ACADEMIES;
-
-  const data = useMemo(() => {
-    switch (step) {
-      case 1:
-        return step1;
-      case 2:
-        return step2;
-      case 3:
-        return step3;
-      case 4:
-        return step4;
-      default:
-        return stepsData;
-    }
-  }, [stepsData]);
-
-  const image = useMemo(() => {
-    switch (academy) {
-      case developers:
-        return { svg: data.imageDevelopers };
-      case testers:
-        return { svg: data.imageTesters };
-      case frontend:
-        return { svg: data.imageFrontEnd };
-      default:
-        return data;
-    }
-  }, [data]);
+  const Image = { image: data.image[academy] };
 
   return (
     <div
@@ -66,7 +38,7 @@ const Step = ({ step, text, isInverted = false, academy }) => {
           'image-container--inverted': isInverted,
         })}
       >
-        <image.svg
+        <Image.image
           className={cn(
             'image-container__image',
             `image-container__image--${step}`

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import stepsSectionData from './stepsSectionData';
@@ -12,22 +12,7 @@ import styles from './StepsSection.module';
 const cn = classNames.bind(styles);
 
 const StepsSection = ({ academy }) => {
-  const { developers, testers, frontend } = ACADEMIES;
-
-  const { developersData, testersData, frontEndData } = stepsSectionData;
-
-  const data = useMemo(() => {
-    switch (academy) {
-      case developers:
-        return developersData;
-      case testers:
-        return testersData;
-      case frontend:
-        return frontEndData;
-      default:
-        return stepsSectionData;
-    }
-  }, [stepsSectionData]);
+  const data = stepsSectionData[academy];
 
   return (
     <section className={cn('steps-section')}>

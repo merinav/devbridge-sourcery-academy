@@ -12,29 +12,37 @@ import Step3_Front_End from '/src/assets/images/Image_Steps_Front_End_3.svg';
 import Step4_Front_End from '/src/assets/images/Image_Steps_Front_End_4.svg';
 
 const stepsData = {
-  step1: {
+  1: {
     title: 'Apply',
-    imageDevelopers: Step1_Developers,
-    imageTesters: Step1_Testers,
-    imageFrontEnd: Step1_Front_End,
+    image: {
+      DEVELOPERS: Step1_Developers,
+      TESTERS: Step1_Testers,
+      FRONTEND: Step1_Front_End,
+    },
   },
-  step2: {
+  2: {
     title: 'Pass the admission',
-    imageDevelopers: Step2_Developers,
-    imageTesters: Step2_Testers,
-    imageFrontEnd: Step2_Front_End,
+    image: {
+      DEVELOPERS: Step2_Developers,
+      TESTERS: Step2_Testers,
+      FRONTEND: Step2_Front_End,
+    },
   },
-  step3: {
+  3: {
     title: 'Learn from the experts',
-    imageDevelopers: Step3_Developers,
-    imageTesters: Step3_Testers,
-    imageFrontEnd: Step3_Front_End,
+    image: {
+      DEVELOPERS: Step3_Developers,
+      TESTERS: Step3_Testers,
+      FRONTEND: Step3_Front_End,
+    },
   },
-  step4: {
+  4: {
     title: 'Join the company',
-    imageDevelopers: Step4_Developers,
-    imageTesters: Step4_Testers,
-    imageFrontEnd: Step4_Front_End,
+    image: {
+      DEVELOPERS: Step4_Developers,
+      TESTERS: Step4_Testers,
+      FRONTEND: Step4_Front_End,
+    },
   },
 };
 
