@@ -30,7 +30,7 @@
     outline-offset: 0;
   }
 
-  @include tablet-portrait {
+  @include tablet-landscape {
     align-self: center;
   }
 }
