@@ -13,31 +13,23 @@ const Filter = ({ data, onClick }) => {
 
   const handleItemClick = (item) => {
     setActiveItem(item);
-    if (!onClick) {
-      return null;
-    }
-    onClick(item);
+    onClick && onClick(item);
   };
 
-  if (!data) {
-    return null;
-  }
-  {
-    return (
-      <div className={cn('filter-wrapper')}>
-        {data.map((item, index) => (
-          <button
-            key={index + item}
-            onClick={() => handleItemClick(item)}
-            className={cn('button', { 'button--active': activeItem === item })}
-            type="button"
-          >
-            {item}
-          </button>
-        ))}
-      </div>
-    );
-  }
+  return (
+    <div className={cn('filter-wrapper')}>
+      {data.map((item, index) => (
+        <button
+          key={index + item}
+          onClick={() => handleItemClick(item)}
+          className={cn('button', { 'button--active': activeItem === item })}
+          type="button"
+        >
+          {item}
+        </button>
+      ))}
+    </div>
+  );
 };
 
 Filter.propTypes = {
