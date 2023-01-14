@@ -6,8 +6,9 @@ import StepsSection from '../../../components/StepsSection';
 import AdmissionSection from '~/components/AdmissionSection/AdmissionSection';
 import TestimonialsSection from '~/components/TestimonialsSection';
 import MediaSection from '~/components/MediaSection';
-import styles from './Developers.module';
 import ApplySection from '~/components/ApplySection';
+import ScheduleSection from '~/components/ScheduleSection/ScheduleSection';
+import styles from './Developers.module';
 
 const cn = classNames.bind(styles);
 
@@ -19,6 +20,7 @@ function Developers() {
       <div className={cn('steps-section-wrapper')}>
         <StepsSection academy={ACADEMIES.developers} />
       </div>
+      <ScheduleSection academy={ACADEMIES.developers} />
       <div className={cn('admission-section-wrapper')}>
         <AdmissionSection academy={ACADEMIES.developers} />
       </div>
