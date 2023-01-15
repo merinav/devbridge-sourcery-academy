@@ -1,25 +1,26 @@
 import React from 'react';
-import { useFormik, Formik, Form, Field, Promise } from 'formik';
+import { useFormik, Formik, Form, Field } from 'formik';
 //import PropTypes from 'prop-types';
 import classNames from 'classnames/bind.js';
 import Filter from '/src/components/Filter';
 import Button from '/src/components/Button';
+import Icon_Upload from '~/assets/icons/Icon_Application_form_upload.svg';
 import styles from './Form.module';
 
 const cn = classNames.bind(styles);
 
 const RegisterForm = () => {
-  const formik = useFormik({
-    initialValues: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      resume: '',
-    },
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-    },
-  });
+  // const formik = useFormik({
+  //   initialValues: {
+  //     firstName: '',
+  //     lastName: '',
+  //     email: '',
+  //     resume: '',
+  //   },
+  //   onSubmit: (values) => {
+  //     alert(JSON.stringify(values, null, 2));
+  //   },
+  // });
 
   return (
     <Formik
@@ -30,9 +31,10 @@ const RegisterForm = () => {
         resume: '',
       }}
       onSubmit={async (values) => {
-        await new Promise((r) => setTimeout(r, 500));
+        await ((r) => setTimeout(r, 500));
         alert(JSON.stringify(values, null, 2));
       }}
+      //add handleSubmit instead of async
     >
       <Form>
         <h3 className={cn('form-section-header')}>Academy information</h3>
@@ -56,25 +58,33 @@ const RegisterForm = () => {
           </div>
           <h3 className={cn('form-section-header')}>Personal information</h3>
           <div className={cn('input-container')}>
-            <label htmlFor="firstName" className={cn('label--personal')}>
+            <label
+              htmlFor="firstName"
+              className={cn('label', 'label--personal')}
+            >
               First name
             </label>
             <Field
               id="firstName"
               name="firstName"
               placeholder="Enter your first name"
+              className={cn('input-container__input')}
             />
 
-            <label htmlFor="lastName" className={cn('label--personal')}>
+            <label
+              htmlFor="lastName"
+              className={cn('label', 'label--personal')}
+            >
               Last name
             </label>
             <Field
               id="lastName"
               name="lastName"
               placeholder="Enter your last name"
+              className={cn('input-container__input')}
             />
 
-            <label htmlFor="email" className={cn('label--personal')}>
+            <label htmlFor="email" className={cn('label', 'label--personal')}>
               Email
             </label>
             <Field
@@ -82,18 +92,41 @@ const RegisterForm = () => {
               name="email"
               placeholder="Enter your email"
               type="email"
+              className={cn('input-container__input')}
             />
 
-            <label htmlFor="resume" className={cn('label--personal')}>
+            <label htmlFor="resume" className={cn('label', 'label--personal')}>
               Resume
             </label>
+
             <Field
               id="resume"
               name="resume"
               placeholder="Upload your resume"
+              className={cn('input-container__input')}
+
               //   type="email"
             />
-            <Button type={'submit'}>{'Register'}</Button>
+
+            <label>
+              <div className={cn('checkbox-container')}>
+                <Field
+                  type="checkbox"
+                  name="checked"
+                  value="Agreed"
+                  className={cn('checkbox-container__checkbox')}
+                />
+                <p className={cn('checkbox-container__text')}>
+                  I have read, understand and accept the content of the Privacy
+                  Notice and consent to the processing of my data as part of
+                  this application.
+                </p>
+              </div>
+            </label>
+
+            <Button type={'submit'} className={cn('input-container__button')}>
+              {'Register'}
+            </Button>
           </div>
         </div>
       </Form>
