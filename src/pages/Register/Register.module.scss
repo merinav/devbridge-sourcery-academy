@@ -1,3 +1,56 @@
 .register-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   width: 100%;
+}
+
+.heading {
+  @include h1-h2;
+  @include word-wrap;
+}
+
+.content-container {
+  display: flex;
+  width: 100%;
+
+  &__register-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  &__image-container {
+    display: flex;
+    width: 50%;
+  }
+}
+
+.academy-info-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__sub-heading {
+    @include heading-3;
+    @include word-wrap;
+  }
+
+  // &__academy-filter{
+
+  // }
+
+  // &__city{
+
+  // }
+}
+
+.personal-info-container {
+  &__sub-heading {
+    @include heading-3;
+    @include word-wrap;
+  }
+  // &__form{
+
+  // }
 }
