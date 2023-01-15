@@ -31,6 +31,14 @@
 
   &__lectures-wrapper {
     border: 1px solid hsl(177, 70%, 41%); // TODO remove after testing
+    display: flex;
+    gap: var(--spacer-5xl);
+    justify-content: center;
+  }
+
+  .month {
+    outline: 2px dashed hsl(0, 100%, 50%); // TODO remove after testing
+    width: 100%;
   }
 
   &__path {
@@ -39,7 +47,7 @@
     stroke: var(--primary-color);
     stroke-width: 2px;
     top: 0;
-    // transform: translateY(-50%);
+    transform: translateX(100%);
     width: toRem(40);
     z-index: var(--z-paths);
 

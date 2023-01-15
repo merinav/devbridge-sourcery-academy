@@ -24,6 +24,39 @@ const ScheduleSection = ({ academy }) => {
         return null;
     }
   }, [scheduleSectionsData]);
+  // console.log(data);
+
+  const dataSortedByMonth = [...data];
+  dataSortedByMonth.sort(function (a, b) {
+    let monthA = new Date(a.schedule[0].startDate).getMonth();
+    let monthB = new Date(b.schedule[0].startDate).getMonth();
+    return monthA - monthB;
+  });
+  // console.log(dataSortedByMonth);
+  // console.log({ dataSortedByMonth });
+
+  const monthsInNumbers = [];
+  dataSortedByMonth.forEach((item) => {
+    if (!monthsInNumbers.includes(item.schedule[0].startDate.getMonth()))
+      monthsInNumbers.push(item.schedule[0].startDate.getMonth());
+  });
+  // console.log(monthsInNumbers);
+
+  const monthsInWords = monthsInNumbers.map((month) =>
+    new Date(2022, month, 1).toLocaleDateString('default', { month: 'long' })
+  );
+  // console.log(monthsInWords);
+
+  const sortedData = {};
+  dataSortedByMonth.forEach((item) => {
+    const month = item.schedule[0].startDate.getMonth();
+    if (!sortedData[month]) {
+      sortedData[month] = [];
+    }
+    sortedData[month].push(item);
+  });
+  // console.log(sortedData);
+  console.log({ sortedData });
 
   return (
     <>
@@ -36,10 +69,14 @@ const ScheduleSection = ({ academy }) => {
         </div>
 
         <div className={cn('schedule-section__lectures-wrapper')}>
-          {data &&
-            data.map((lecture) => (
-              <ExpandableCard lecture={lecture} key={lecture.id} />
-            ))}
+          {Object.keys(sortedData).map((month) => (
+            <div className={cn('month')} key={month}>
+              {/* {month} */}
+              {sortedData[month].map((lecture) => (
+                <ExpandableCard lecture={lecture} key={lecture.id} />
+              ))}
+            </div>
+          ))}
         </div>
 
         <PathSchedule
