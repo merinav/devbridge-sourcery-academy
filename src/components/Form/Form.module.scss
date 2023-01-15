@@ -1,0 +1,39 @@
+.form-section-header {
+  @include heading-3;
+  @include word-wrap;
+
+  margin: 0;
+}
+
+.label {
+  color: var(--color-light-purple-400);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-m);
+  padding-bottom: var(--spacer-m);
+
+  &--personal {
+    color: var(--color-grey-300);
+    padding-bottom: toRem(5);
+    padding-top: toRem(45);
+  }
+}
+
+.radio-container,
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--spacer-7xl);
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--spacer-7xl);
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  //gap: toRem(45);
+}

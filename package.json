@@ -12,6 +12,7 @@
     "not op_mini all"
   ],
   "dependencies": {
+    "formik": "2.2.9",
     "lodash": "4.17.20",
     "modern-normalize": "1.1.0",
     "prop-types": "15.8.1",
