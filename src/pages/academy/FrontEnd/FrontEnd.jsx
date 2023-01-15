@@ -17,10 +17,11 @@ function FrontEnd() {
 
   return (
     <>
+      <ScheduleSection academy={ACADEMIES.frontend} />
+
       <div className={cn('steps-section-wrapper')}>
         <StepsSection academy={ACADEMIES.frontend} />
       </div>
-      <ScheduleSection academy={ACADEMIES.frontend} />
       <div className={cn('admission-section-wrapper')}>
         <AdmissionSection academy={ACADEMIES.frontend} />
       </div>

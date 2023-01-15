@@ -17,10 +17,11 @@ function Developers() {
 
   return (
     <>
+      <ScheduleSection academy={ACADEMIES.developers} />
+
       <div className={cn('steps-section-wrapper')}>
         <StepsSection academy={ACADEMIES.developers} />
       </div>
-      <ScheduleSection academy={ACADEMIES.developers} />
       <div className={cn('admission-section-wrapper')}>
         <AdmissionSection academy={ACADEMIES.developers} />
       </div>
