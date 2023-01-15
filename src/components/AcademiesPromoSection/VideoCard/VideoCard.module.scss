@@ -1,22 +1,30 @@
 .video-card {
   display: flex;
   justify-content: flex-end;
-  width: 80%;
+  position: relative;
+  width: 50%;
 
   @include tablet-portrait {
     justify-content: center;
     margin: var(--spacer-6xl) 0 0;
+    width: 80%;
   }
 
   &__container {
     align-items: center;
-    border-radius: var(--border-radius-l);
-    //box-shadow: inset 0 0 0 2000px grey; Change color to var
+    border-radius: 25%;
     display: flex;
     justify-content: center;
     margin: var(--spacer-6xl) 0 0;
     overflow: hidden;
     position: relative;
+
+    // To make a perfect square
+    &::after {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
 
     &::before {
       background: rgba(255, 255, 255, 0.4);
@@ -35,6 +43,20 @@
 
     @include tablet-portrait {
       margin-top: var(--spacer-m);
+    }
+  }
+
+  &__path {
+    bottom: -4rem;
+    left: -5rem;
+    position: absolute;
+    stroke: var(--primary-color);
+    stroke-width: 2px;
+    width: toRem(500);
+    z-index: var(--z-paths);
+
+    @include tablet-landscape {
+      display: none;
     }
   }
 }
@@ -66,4 +88,11 @@
   &:hover {
     opacity: 0.8;
   }
+}
+
+img {
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  width: 100%;
 }

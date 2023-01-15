@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { ACADEMIES } from '~/constants/constants';
 import styles from './AcademiesPromoSection.module.scss';
 import VideoCard from '~/components/AcademiesPromoSection/VideoCard';
+import PathPromo from '~/assets/images/Path_Academy_1.svg';
 
 const cn = classNames.bind(styles);
 
@@ -23,6 +24,10 @@ const AcademiesPromoSection = ({ academy }) => {
           ...academiesPromoSectionData[academy],
         }}
       >
+        <PathPromo
+          className={cn('academies-promo-section__path')}
+          aria-hidden="true"
+        />
         <VideoCard imagePath={academiesPromoSectionData[academy].imagePath} />
       </PromoSection>
     </section>

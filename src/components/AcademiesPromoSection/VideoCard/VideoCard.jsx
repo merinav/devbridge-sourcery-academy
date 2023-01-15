@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import styles from './VideoCard.module.scss';
 import Icon_play from '~/assets/icons/Icon_play.svg';
+import PathVideo from '~/assets/images/Path_Academy_2.svg';
 
 const cn = classNames.bind(styles);
 
@@ -17,6 +18,7 @@ const VideoCard = ({ imagePath }) => {
           </button>
         </div>
       </figure>
+      <PathVideo className={cn('video-card__path')} aria-hidden="true" />
     </section>
   );
 };
