@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import useTheme from '/src/hooks/useTheme';
 import Image_Application_form from '~/assets/images/Image_Application_form.svg';
+import Filter from '/src/components/Filter';
 
 import styles from './Register.module';
 
@@ -21,10 +22,10 @@ const Register = () => {
                 Academy information
               </h3>
               <div className={cn('academy-info-container__academy-filter')}>
-                FILTER component
+                <Filter data={['Developers', 'Testers', 'Front-End']} />
               </div>
               <div className={cn('academy-info-container__city')}>
-                FILTER component
+                CITY option
               </div>
             </div>
             <div className={cn('personal-info-container')}>
