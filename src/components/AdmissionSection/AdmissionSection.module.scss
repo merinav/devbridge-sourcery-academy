@@ -1,6 +1,3 @@
-@use '/src/sass/utilities/mixins/' as *;
-@use '/src/sass/utilities/functions/' as *;
-
 .admission-section {
   display: flex;
   gap: var(--spacer-5xl);
@@ -26,7 +23,7 @@
 
     margin: var(--spacer-5xl) 0 var(--spacer-4xl);
 
-    @include tablet-portrait {
+    @include tablet-landscape {
       text-align: center;
     }
   }
@@ -43,7 +40,7 @@
     margin-left: var(--spacer-l);
     text-indent: calc(var(--spacer-l) * -1);
 
-    @include tablet-portrait {
+    @include tablet-landscape {
       column-gap: 4rem;
       display: flex;
       flex-wrap: wrap;
@@ -74,7 +71,7 @@
       width: 1rem;
     }
 
-    @include tablet-portrait {
+    @include tablet-landscape {
       margin: 0;
     }
   }
@@ -87,10 +84,6 @@
       text-align: right;
 
       @include tablet-landscape {
-        text-align: left;
-      }
-
-      @include tablet-portrait {
         text-align: center;
       }
     }
