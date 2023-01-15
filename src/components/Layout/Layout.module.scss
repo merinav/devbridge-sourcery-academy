@@ -5,16 +5,12 @@
   min-height: 100vh;
 
   &__main {
-    margin: 0;
+    margin: 0 auto;
     max-width: 1440px;
     padding: var(--spacer-5xl) toRem(80);
 
     @include mobile-only {
       padding: var(--spacer-5xl);
-    }
-
-    @media screen and (min-width: 1441px) {
-      margin: 0 auto;
     }
   }
 }
