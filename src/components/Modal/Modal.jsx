@@ -36,7 +36,7 @@ const MODAL_ANIMATION_DROP_IN = {
   },
 };
 
-const Modal = ({ children, closeModal }) => {
+const Modal = ({ children, closeModal, isGallery = false }) => {
   const modalRef = useRef(null);
 
   useEffect(() => {
@@ -78,6 +78,8 @@ const Modal = ({ children, closeModal }) => {
     [9, handleTabKey],
   ]);
 
+  console.log(isGallery);
+
   return ReactDOM.createPortal(
     <Overlay onClick={closeModal}>
       <motion.div
@@ -86,9 +88,11 @@ const Modal = ({ children, closeModal }) => {
         animate="visible"
         exit="exit"
         onClick={(e) => e.stopPropagation()}
-        className={cn('modal-content')}
+        className={cn('modal-content', { 'gallery-container': isGallery })}
       >
-        <div ref={modalRef}>{children}</div>
+        <div ref={modalRef} className={cn('modal-content__inner-content')}>
+          {children}
+        </div>
       </motion.div>
     </Overlay>,
     document.getElementById('modal-portal')
@@ -98,6 +102,7 @@ const Modal = ({ children, closeModal }) => {
 Modal.propTypes = {
   children: PropTypes.node.isRequired,
   closeModal: PropTypes.func.isRequired,
+  isGallery: PropTypes.bool,
 };
 
 export default Modal;
