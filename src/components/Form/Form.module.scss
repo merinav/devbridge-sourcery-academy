@@ -67,6 +67,23 @@
     border: 1px solid var(--color-grey-300);
     border-radius: toRem(10);
     padding: toRem(13);
+
+    &--file {
+      color: var(--color-grey-200);
+      display: flex;
+      font-family: inherit;
+      font-size: var(--font-size-m);
+      justify-content: space-between;
+      line-height: var(--line-height-m);
+      margin: 0;
+    }
+  }
+
+  &__icon {
+    align-self: center;
+    display: flex;
+    height: toRem(20);
+    width: toRem(20);
   }
 }
 
@@ -128,3 +145,14 @@
 .input-container label:first-child {
   padding-top: 0;
 }
+
+input[type='file'] {
+  display: none;
+}
+
+// .custom-file-upload {
+//   border: 1px solid #ccc;
+//   cursor: pointer;
+//   display: inline-block;
+//   padding: 6px 12px;
+// }

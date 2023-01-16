@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFormik, Formik, Form, Field } from 'formik';
 //import PropTypes from 'prop-types';
 import classNames from 'classnames/bind.js';
@@ -10,18 +10,6 @@ import styles from './Form.module';
 const cn = classNames.bind(styles);
 
 const RegisterForm = () => {
-  // const formik = useFormik({
-  //   initialValues: {
-  //     firstName: '',
-  //     lastName: '',
-  //     email: '',
-  //     resume: '',
-  //   },
-  //   onSubmit: (values) => {
-  //     alert(JSON.stringify(values, null, 2));
-  //   },
-  // });
-
   function validateFirstName(value) {
     let error;
     if (!value) {
@@ -52,6 +40,31 @@ const RegisterForm = () => {
     return error;
   }
 
+  // useEffect(() => {
+  //   if (showOverlayNav) {
+  //     document.body.classList.add('no-scroll');
+  //   } else {
+  //     document.body.classList.remove('no-scroll');
+  //   }
+  // }, [showOverlayNav]);
+  // const [buttonActive, setButtonActive] = useState(false);
+  // console.log(buttonActive);
+
+  // if (!errors.firstName && !touched.firstName
+  //   && !error.lastName && !touched.lastName
+  //   && !error.email && !touched.email
+  //   && !value.terms) {
+  //     setButtonActive(true);
+  //     console.log(buttonActive);
+  // };
+
+  // const disabled = buttonActive ? '' : 'disabled';
+
+  // (!errors.firstName && !touched.firstName
+  //   && !error.lastName && !touched.lastName
+  //   && !error.email && !touched.email
+  //   && !value.terms)
+
   return (
     <Formik
       initialValues={{
@@ -63,10 +76,8 @@ const RegisterForm = () => {
         terms: '',
       }}
       onSubmit={(values) => {
-        // same shape as initial values
         console.log(values);
       }}
-      //add handleSubmit instead of async
     >
       {({ errors, touched, isValidating }) => (
         <Form className={cn('form-container')}>
@@ -158,21 +169,24 @@ const RegisterForm = () => {
                 {errors.email}
               </div>
             )}
-
-            <label htmlFor="resume" className={cn('label', 'label--personal')}>
-              Resume
+            <div className={cn('label', 'label--personal')}>Resume</div>
+            <label
+              htmlFor="resume"
+              className={cn(
+                'input-container__input',
+                'input-container__input--file'
+              )}
+            >
+              Upload your resume{' '}
+              <Icon_Upload className={cn('input-container__icon')} />
             </label>
-
             <input
               id="resume"
               name="resume"
               type="file"
               placeholder="Upload your resume"
-              className={cn('input-container__input')}
-              // onChange={(event) => {
-              //   setFieldValue("file", event.currentTarget.files[0]);}}
+              accept=".pdf, .doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
             />
-
             <label>
               <div className={cn('checkbox-container')}>
                 <Field
@@ -189,7 +203,11 @@ const RegisterForm = () => {
               </div>
             </label>
 
-            <Button type={'submit'} className={cn('input-container__button')}>
+            <Button
+              disabled={''}
+              type={'submit'}
+              className={cn('input-container__button')}
+            >
               {'Register'}
             </Button>
           </div>

@@ -6,7 +6,15 @@ import styles from './Button.module.scss';
 
 const cn = classNames.bind(styles);
 
-function Button({ children, href, to, type = 'button', onClick, ariaLabel }) {
+function Button({
+  children,
+  href,
+  to,
+  type = 'button',
+  onClick,
+  ariaLabel,
+  disabled,
+}) {
   const outerLink = href?.includes('.');
   const innerLink = href?.includes('#');
 
@@ -52,6 +60,7 @@ function Button({ children, href, to, type = 'button', onClick, ariaLabel }) {
           className={cn('button')}
           onClick={onClick}
           aria-label={ariaLabel}
+          disabled={disabled}
         >
           {children}
         </button>
@@ -67,6 +76,7 @@ Button.propTypes = {
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   onClick: PropTypes.func,
   ariaLabel: PropTypes.string,
+  disabled: PropTypes.string,
 };
 
 export default Button;
