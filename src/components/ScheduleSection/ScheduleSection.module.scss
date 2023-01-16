@@ -1,5 +1,4 @@
 .schedule-section {
-  // border: 1px solid hsl(120, 73%, 75%); // TODO remove after testing
   position: relative;
 
   &__heading {
@@ -9,47 +8,31 @@
     text-align: center;
   }
 
-  // &__months-wrapper {
-  //   // border: 1px solid hsl(195, 53%, 79%); // TODO remove after testing
-  //   display: grid;
-  //   grid-template-columns: repeat(2, 1fr);
-  //   margin: var(--spacer-7xl) 0 toRem(46);
-  // }
-
   &__sub-heading {
-    // border: 1px solid hsl(0, 79%, 72%); // TODO remove after testing
-    // margin: 0; // when up in two columns
-    margin: var(--spacer-7xl) 0 toRem(46); // when in each column
+    margin: var(--spacer-5xl) 0 var(--spacer-4xl);
     text-align: center;
 
     @include heading-3;
     @include word-wrap;
-
-    @include tablet-portrait {
-      text-align: center;
-    }
   }
 
   &__lectures-wrapper {
     align-content: center;
-    column-gap: var(--spacer-5xl); // when in each column
+    column-gap: var(--spacer-5xl);
     display: flex;
     flex-wrap: wrap;
-    // gap: var(--spacer-5xl); // when up in two columns
     justify-content: center;
-    // border: 1px solid hsl(177, 70%, 41%); // TODO remove after testing
     row-gap: toRem(20);
   }
 
   .month {
     flex: 0 0 0;
-    min-width: toRem(230);
-    // border: 2px dashed hsl(0, 100%, 50%); // TODO remove after testing
+    min-width: toRem(220);
   }
 
   &__path {
     position: absolute;
-    right: 0;
+    right: toRem(-20);
     stroke: var(--primary-color);
     stroke-width: 2px;
     top: toRem(120);
@@ -65,7 +48,7 @@
   &__particles-top {
     left: 0;
     position: absolute;
-    top: toRem(-40);
+    top: toRem(-50);
     width: 63%;
     z-index: var(--z-particles);
 
@@ -75,7 +58,7 @@
   }
 
   &__particles-bottom {
-    bottom: 0;
+    bottom: toRem(-40);
     left: 10%;
     position: absolute;
     transform: translateY(100%);

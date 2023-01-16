@@ -1,3 +1,7 @@
+.steps-section-wrapper {
+  padding-top: toRem(230);
+}
+
 .admission-section-wrapper {
   padding: toRem(190) 0;
 
@@ -6,10 +10,14 @@
   }
 }
 
-.media-section-wrapper {
-  padding: toRem(190) 0 toRem(138);
+.schedule-section-wrapper {
+  padding: toRem(50) 0 toRem(300);
+
+  @include tablet-landscape {
+    padding: 0 0 toRem(150);
+  }
 }
 
-.steps-section-wrapper {
-  padding-top: toRem(230);
+.media-section-wrapper {
+  padding: toRem(190) 0 toRem(138);
 }

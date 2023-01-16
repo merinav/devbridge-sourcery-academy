@@ -17,13 +17,14 @@ function Testers() {
 
   return (
     <>
-      <ScheduleSection academy={ACADEMIES.testers} />
-
       <div className={cn('steps-section-wrapper')}>
         <StepsSection academy={ACADEMIES.testers} />
       </div>
       <div className={cn('admission-section-wrapper')}>
         <AdmissionSection academy={ACADEMIES.testers} />
+      </div>
+      <div className={cn('schedule-section-wrapper')}>
+        <ScheduleSection academy={ACADEMIES.testers} />
       </div>
       <div className={cn('testimonials-section-wrapper')}>
         <TestimonialsSection academy={ACADEMIES.testers} />
