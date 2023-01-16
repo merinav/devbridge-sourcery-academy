@@ -1,0 +1,46 @@
+.carousel {
+  display: flex;
+  height: 10rem;
+  width: 10rem;
+
+  &__nav {
+    cursor: pointer;
+    fill: var(--primary-color);
+    // position: relative;
+    z-index: var(--z-modal);
+  }
+
+  &__nav-prev {
+    height: 10rem;
+    margin-left: calc(var(--spacer-5xl) * -1);
+    margin-right: var(--spacer-l);
+    position: absolute;
+    transform: rotate(90deg) translateX(-5rem);
+    width: 10rem;
+
+    @include mobile-only {
+      margin-left: calc(var(--spacer-3xl) * -1);
+      margin-right: var(--spacer-s);
+    }
+  }
+
+  &__nav-next {
+    height: 10rem;
+    margin-left: var(--spacer-l);
+    margin-right: calc(var(--spacer-5xl) * -1);
+    position: absolute;
+    transform: rotate(-90deg);
+    width: 10rem;
+
+    @include mobile-only {
+      margin-left: var(--spacer-s);
+      margin-right: calc(var(--spacer-3xl) * -1);
+    }
+  }
+}
+
+.swiper-navigation-wrapper {
+  height: 10rem;
+  top: 0;
+  width: 10rem;
+}
