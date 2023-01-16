@@ -8,6 +8,7 @@ import TestimonialsSection from '~/components/TestimonialsSection';
 import MediaSection from '~/components/MediaSection';
 import ApplySection from '~/components/ApplySection';
 import ScheduleSection from '~/components/ScheduleSection/ScheduleSection';
+import AcademiesPromoSection from '~/components/AcademiesPromoSection';
 import styles from './FrontEnd.module';
 
 const cn = classNames.bind(styles);
@@ -17,6 +18,9 @@ function FrontEnd() {
 
   return (
     <>
+      <div className={cn('academies-promo-section-wrapper')}>
+        <AcademiesPromoSection academy={ACADEMIES.frontend} />
+      </div>
       <div className={cn('steps-section-wrapper')}>
         <StepsSection academy={ACADEMIES.frontend} />
       </div>
