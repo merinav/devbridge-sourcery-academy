@@ -1,0 +1,42 @@
+.promo-section {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacer-5xl) 0;
+
+  @include tablet-landscape {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacer-xxl) 0 0 0;
+    width: 40%;
+
+    @include tablet-landscape {
+      padding: 0;
+      width: 100%;
+    }
+  }
+
+  &__heading {
+    @include h1-h2;
+
+    margin: 0;
+    white-space: pre-line;
+    @include word-wrap;
+  }
+
+  &__paragraph {
+    @include paragraph;
+
+    margin-bottom: var(--spacer-4xl);
+    margin-top: var(--spacer-4xl);
+  }
+
+  &__image {
+    max-height: 500px;
+  }
+}
