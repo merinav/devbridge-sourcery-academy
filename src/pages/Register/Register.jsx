@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import useTheme from '/src/hooks/useTheme';
 import Image_Application_form from '~/assets/images/Image_Application_form.svg';
+import Background_particles from '~/assets/images/Background_particles_Application_form.svg?url';
 
 import Form from '../../components/Form';
 
@@ -14,7 +15,10 @@ const Register = () => {
 
   return (
     <>
-      <section className={cn('register-wrapper')}>
+      <section
+        className={cn('register-wrapper')}
+        style={{ backgroundImage: `url(${Background_particles})` }}
+      >
         <h1 className={cn('heading')}>Sourcery Academy Application</h1>
         <div className={cn('content-container')}>
           <div className={cn('content-container__register-container')}>
