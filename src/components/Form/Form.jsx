@@ -1,4 +1,4 @@
-import React, { Map } from 'react';
+import React from 'react';
 import { useFormik, Formik, Form, Field } from 'formik';
 //import PropTypes from 'prop-types';
 import classNames from 'classnames/bind.js';
@@ -22,7 +22,35 @@ const RegisterForm = () => {
   //   },
   // });
 
-  const data = new Map();
+  function validateFirstName(value) {
+    let error;
+    if (!value) {
+      error = 'Please enter your first name';
+    } else if (!/^[a-z ,.'-]+$/i.test(value)) {
+      error = 'Entry is not valid. Please try again.';
+    }
+    return error;
+  }
+
+  function validateLastName(value) {
+    let error;
+    if (!value) {
+      error = 'Please enter your last name';
+    } else if (!/^[a-z ,.'-]+$/i.test(value)) {
+      error = 'Entry is not valid. Please try again.';
+    }
+    return error;
+  }
+
+  function validateEmail(value) {
+    let error;
+    if (!value) {
+      error = 'Please enter your email';
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
+      error = 'Entry is not valid. Please try again.';
+    }
+    return error;
+  }
 
   return (
     <Formik
@@ -34,33 +62,47 @@ const RegisterForm = () => {
         resume: '',
         terms: '',
       }}
-      onSubmit={async (values) => {
-        await ((r) => setTimeout(r, 500));
-        alert(JSON.stringify(values, null, 2));
+      onSubmit={(values) => {
+        // same shape as initial values
+        console.log(values);
       }}
       //add handleSubmit instead of async
     >
-      <Form>
-        <h3 className={cn('form-section-header')}>Academy information</h3>
-        <div className={cn('form-container')}>
+      {({ errors, touched, isValidating }) => (
+        <Form className={cn('form-container')}>
+          <h3 className={cn('form-container__header')}>Academy information</h3>
           <div className={cn('filter-container')}>
             <label htmlFor="city" className={cn('label')}>
               Academy type
             </label>
-            <Filter data={['Developers', 'Testers', 'Front-End']} />
+            <div className={cn('filter-container__filter')}>
+              <Filter data={['Developers', 'Testers', 'Front-End']} />
+            </div>
           </div>
           <div className={cn('radio-container')}>
             <label htmlFor="city" className={cn('label')}>
               Academy city
             </label>
-            <div>
-              <Field type="radio" name="city" value="Kaunas" />
-              Kaunas
-              <Field type="radio" name="city" value="Vilnius" />
-              Vilnius
+            <div className={cn('radio-container__multiple-button-container')}>
+              <div className={cn('single-radio-button-container')}>
+                <div className={cn('single-radio-button-container__button')}>
+                  <Field type="radio" id="city" name="city" value="Kaunas" />
+                </div>
+                <div className={cn('single-radio-button-container__value')}>
+                  Kaunas
+                </div>
+              </div>
+              <div className={cn('single-radio-button-container')}>
+                <div className={cn('single-radio-button-container__button')}>
+                  <Field type="radio" id="city" name="city" value="Vilnius" />
+                </div>
+                <div className={cn('single-radio-button-container__value')}>
+                  Vilnius
+                </div>
+              </div>
             </div>
           </div>
-          <h3 className={cn('form-section-header')}>Personal information</h3>
+          <h3 className={cn('form-container__header')}>Personal information</h3>
           <div className={cn('input-container')}>
             <label
               htmlFor="firstName"
@@ -72,8 +114,14 @@ const RegisterForm = () => {
               id="firstName"
               name="firstName"
               placeholder="Enter your first name"
+              validate={validateFirstName}
               className={cn('input-container__input')}
             />
+            {errors.firstName && touched.firstName && (
+              <div className={cn('label', 'label--error-message')}>
+                {errors.firstName}
+              </div>
+            )}
 
             <label
               htmlFor="lastName"
@@ -85,8 +133,14 @@ const RegisterForm = () => {
               id="lastName"
               name="lastName"
               placeholder="Enter your last name"
+              validate={validateLastName}
               className={cn('input-container__input')}
             />
+            {errors.lastName && touched.lastName && (
+              <div className={cn('label', 'label--error-message')}>
+                {errors.lastName}
+              </div>
+            )}
 
             <label htmlFor="email" className={cn('label', 'label--personal')}>
               Email
@@ -97,19 +151,26 @@ const RegisterForm = () => {
               placeholder="Enter your email"
               type="email"
               className={cn('input-container__input')}
+              validate={validateEmail}
             />
+            {errors.email && touched.email && (
+              <div className={cn('label', 'label--error-message')}>
+                {errors.email}
+              </div>
+            )}
 
             <label htmlFor="resume" className={cn('label', 'label--personal')}>
               Resume
             </label>
 
-            <Field
+            <input
               id="resume"
               name="resume"
+              type="file"
               placeholder="Upload your resume"
               className={cn('input-container__input')}
-
-              //   type="email"
+              // onChange={(event) => {
+              //   setFieldValue("file", event.currentTarget.files[0]);}}
             />
 
             <label>
@@ -132,8 +193,8 @@ const RegisterForm = () => {
               {'Register'}
             </Button>
           </div>
-        </div>
-      </Form>
+        </Form>
+      )}
     </Formik>
   );
 };

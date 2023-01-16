@@ -12,48 +12,39 @@
 
 .content-container {
   display: flex;
+  gap: toRem(100);
   justify-content: space-between;
   width: 100%;
+
+  @include tablet-landscape {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
 
   &__register-container {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 45%;
+
+    @include tablet-landscape {
+      width: 100%;
+    }
   }
 
   &__image-container {
     display: flex;
     justify-content: flex-end;
     margin: 0;
-    width: 50%;
+    width: 55%;
+
+    @include tablet-landscape {
+      justify-content: center;
+      padding-top: var(--spacer-6xl);
+      width: 60%;
+    }
+    @include mobile-only {
+      display: none;
+    }
   }
-}
-
-.academy-info-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-
-  // &__sub-heading {
-  //   @include heading-3;
-  //   @include word-wrap;
-  // }
-
-  // &__academy-filter{
-
-  // }
-
-  // &__city{
-
-  // }
-}
-
-.personal-info-container {
-  &__sub-heading {
-    @include heading-3;
-    @include word-wrap;
-  }
-  // &__form{
-
-  // }
 }
