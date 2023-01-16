@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Map } from 'react';
 import { useFormik, Formik, Form, Field } from 'formik';
 //import PropTypes from 'prop-types';
 import classNames from 'classnames/bind.js';
@@ -22,13 +22,17 @@ const RegisterForm = () => {
   //   },
   // });
 
+  const data = new Map();
+
   return (
     <Formik
       initialValues={{
+        city: 'Kaunas',
         firstName: '',
         lastName: '',
         email: '',
         resume: '',
+        terms: '',
       }}
       onSubmit={async (values) => {
         await ((r) => setTimeout(r, 500));
@@ -112,8 +116,8 @@ const RegisterForm = () => {
               <div className={cn('checkbox-container')}>
                 <Field
                   type="checkbox"
-                  name="checked"
-                  value="Agreed"
+                  name="terms"
+                  value="agreed"
                   className={cn('checkbox-container__checkbox')}
                 />
                 <p className={cn('checkbox-container__text')}>
