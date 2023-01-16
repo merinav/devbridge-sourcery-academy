@@ -1,0 +1,25 @@
+.academies-promo-section {
+  position: relative;
+
+  &__path {
+    bottom: toRem(80);
+    left: toRem(60);
+    position: absolute;
+    stroke: var(--primary-color);
+    stroke-width: 2px;
+    width: toRem(320);
+    z-index: var(--z-paths);
+
+    @include big-desktop {
+      bottom: toRem(40);
+    }
+
+    @include desktop {
+      bottom: toRem(-60);
+    }
+
+    @include tablet-landscape {
+      display: none;
+    }
+  }
+}
