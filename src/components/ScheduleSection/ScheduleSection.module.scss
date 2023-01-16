@@ -1,5 +1,5 @@
 .schedule-section {
-  border: 1px solid hsl(120, 73%, 75%); // TODO remove after testing
+  // border: 1px solid hsl(120, 73%, 75%); // TODO remove after testing
   position: relative;
 
   &__heading {
@@ -9,16 +9,17 @@
     text-align: center;
   }
 
-  &__months-wrapper {
-    // border: 1px solid hsl(195, 53%, 79%); // TODO remove after testing
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin: var(--spacer-7xl) 0 toRem(46);
-  }
+  // &__months-wrapper {
+  //   // border: 1px solid hsl(195, 53%, 79%); // TODO remove after testing
+  //   display: grid;
+  //   grid-template-columns: repeat(2, 1fr);
+  //   margin: var(--spacer-7xl) 0 toRem(46);
+  // }
 
   &__sub-heading {
     // border: 1px solid hsl(0, 79%, 72%); // TODO remove after testing
-    margin: 0;
+    // margin: 0; // when up in two columns
+    margin: var(--spacer-7xl) 0 toRem(46); // when in each column
     text-align: center;
 
     @include heading-3;
@@ -31,26 +32,27 @@
 
   &__lectures-wrapper {
     align-content: center;
-    border: 1px solid hsl(177, 70%, 41%); // TODO remove after testing
+    column-gap: var(--spacer-5xl); // when in each column
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacer-5xl);
+    // gap: var(--spacer-5xl); // when up in two columns
     justify-content: center;
+    outline: 1px solid hsl(177, 70%, 41%); // TODO remove after testing
+    row-gap: toRem(20);
   }
 
   .month {
     flex: 0 0 0;
-    min-width: toRem(266);
-    outline: 2px dashed hsl(0, 100%, 50%); // TODO remove after testing
-    // width: 100%;
+    min-width: toRem(230);
+    // border: 2px dashed hsl(0, 100%, 50%); // TODO remove after testing
   }
 
   &__path {
     position: absolute;
-    right: 0;
+    right: toRem(-20);
     stroke: var(--primary-color);
     stroke-width: 2px;
-    top: 0;
+    top: toRem(120);
     transform: translateX(100%);
     width: toRem(40);
     z-index: var(--z-paths);
@@ -63,8 +65,8 @@
   &__particles-top {
     left: 0;
     position: absolute;
-    top: 0;
-    width: 60%;
+    top: toRem(-40);
+    width: 63%;
     z-index: var(--z-particles);
 
     @include tablet-landscape {
@@ -74,8 +76,9 @@
 
   &__particles-bottom {
     bottom: 0;
-    left: 0;
+    left: 10%;
     position: absolute;
+    transform: translateY(100%);
     width: 80%;
     z-index: var(--z-particles);
 
