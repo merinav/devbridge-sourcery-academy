@@ -7,16 +7,22 @@ import styles from './VideoCard.module.scss';
 
 const cn = classNames.bind(styles);
 
-const VideoCard = ({ imagePath }) => {
+const VideoCard = ({ imagePath, showPlayButton = true }) => {
   return (
     <section className={cn('video-card')}>
-      <figure className={cn('video-card__container')}>
-        <img src={imagePath} alt="" className={cn('placeholder')} />
-        <div className={cn('video-controls')}>
-          <button type="button" className={cn('play-button')}>
-            <Icon_play />
-          </button>
-        </div>
+      <figure
+        className={cn('video-card__container', {
+          'nav-list-overlay': showPlayButton,
+        })}
+      >
+        <img src={imagePath} alt="" className={cn('image')} />
+        {showPlayButton && (
+          <div className={cn('video-controls')}>
+            <button type="button" className={cn('play-button')}>
+              <Icon_play />
+            </button>
+          </div>
+        )}
       </figure>
       <PathVideo className={cn('video-card__path')} aria-hidden="true" />
     </section>
@@ -25,6 +31,7 @@ const VideoCard = ({ imagePath }) => {
 
 VideoCard.propTypes = {
   imagePath: PropTypes.string.isRequired,
+  showPlayButton: PropTypes.bool,
 };
 
 export default VideoCard;
