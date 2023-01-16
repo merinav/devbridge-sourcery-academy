@@ -27,31 +27,28 @@ const ScheduleSection = ({ academy }) => {
   }, [scheduleSectionsData]);
   console.log(data); // TODO remove after testing
 
-  const dataMap = data.reduce(
-    (acc, obj) => {
-      // Extract the year and month from the startDate property
-      const year = obj.schedule[0].startDate.getFullYear();
-      const month = obj.schedule[0].startDate.getMonth();
+  const dataMap = data.reduce((acc, obj) => {
+    // Extract the year and month from the startDate property
+    const year = obj.schedule[0].startDate.getFullYear();
+    const month = obj.schedule[0].startDate.getMonth();
 
-      // Check if the year key already exists in the Map
-      if (!acc.has(year)) {
-        // If not, create a new Map for the year
-        // acc.set(year, new Map());
-      }
-
-      // Check if the month key already exists in the year Map
-      if (!acc.get(year).has(month)) {
-        // If not, create a new Map for the month
-        acc.get(year).set(month, []);
-      }
-
-      // Push the object into the month Map
-      acc.get(year).get(month).push(obj);
-
-      return acc;
+    // Check if the year key already exists in the Map
+    if (!acc.has(year)) {
+      // If not, create a new Map for the year
+      acc.set(year, new Map());
     }
-    // new Map()
-  );
+
+    // Check if the month key already exists in the year Map
+    if (!acc.get(year).has(month)) {
+      // If not, create a new Map for the month
+      acc.get(year).set(month, []);
+    }
+
+    // Push the object into the month Map
+    acc.get(year).get(month).push(obj);
+
+    return acc;
+  }, new Map());
   console.log(dataMap); // TODO remove after testing
 
   const allMonthsNumbers = [].concat(

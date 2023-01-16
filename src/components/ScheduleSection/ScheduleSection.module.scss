@@ -37,7 +37,7 @@
     flex-wrap: wrap;
     // gap: var(--spacer-5xl); // when up in two columns
     justify-content: center;
-    outline: 1px solid hsl(177, 70%, 41%); // TODO remove after testing
+    // border: 1px solid hsl(177, 70%, 41%); // TODO remove after testing
     row-gap: toRem(20);
   }
 
@@ -49,7 +49,7 @@
 
   &__path {
     position: absolute;
-    right: toRem(-20);
+    right: 0;
     stroke: var(--primary-color);
     stroke-width: 2px;
     top: toRem(120);
