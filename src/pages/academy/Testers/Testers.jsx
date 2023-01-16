@@ -8,6 +8,7 @@ import TestimonialsSection from '~/components/TestimonialsSection';
 import MediaSection from '~/components/MediaSection';
 import ApplySection from '~/components/ApplySection';
 import ScheduleSection from '~/components/ScheduleSection/ScheduleSection';
+import AcademiesPromoSection from '~/components/AcademiesPromoSection';
 import styles from './Testers.module';
 
 const cn = classNames.bind(styles);
@@ -17,6 +18,9 @@ function Testers() {
 
   return (
     <>
+      <div className={cn('academies-promo-section-wrapper')}>
+        <AcademiesPromoSection academy={ACADEMIES.testers} />
+      </div>
       <div className={cn('steps-section-wrapper')}>
         <StepsSection academy={ACADEMIES.testers} />
       </div>
