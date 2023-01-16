@@ -4,9 +4,9 @@ import PromoSection from '~/components/PromoSection';
 import academiesPromoSectionData from '~/components/AcademiesPromoSection/academiesPromoData';
 import PropTypes from 'prop-types';
 import { ACADEMIES } from '~/constants/constants';
-import styles from './AcademiesPromoSection.module.scss';
 import VideoCard from '~/components/AcademiesPromoSection/VideoCard';
 import PathPromo from '~/assets/images/Path_Academy_1.svg';
+import styles from './AcademiesPromoSection.module.scss';
 
 const cn = classNames.bind(styles);
 

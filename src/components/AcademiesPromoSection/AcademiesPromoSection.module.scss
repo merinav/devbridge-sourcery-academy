@@ -2,8 +2,8 @@
   position: relative;
 
   &__path {
-    bottom: 8rem;
-    left: 6rem;
+    bottom: toRem(80);
+    left: toRem(60);
     position: absolute;
     stroke: var(--primary-color);
     stroke-width: 2px;
@@ -11,11 +11,11 @@
     z-index: var(--z-paths);
 
     @include big-desktop {
-      bottom: 4rem;
+      bottom: toRem(40);
     }
 
     @include desktop {
-      bottom: -6rem;
+      bottom: toRem(-60);
     }
 
     @include tablet-landscape {
