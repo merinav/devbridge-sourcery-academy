@@ -8,35 +8,44 @@
     fill: var(--primary-color);
     justify-content: center;
     padding: 0;
-    top: 44%;
+    top: calc(50% - 2.5rem);
+    transition: all 30ms ease;
     z-index: var(--z-modal);
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      scale: 0.8;
+    }
   }
 
   &__nav-prev {
     height: 5rem;
-    // margin-left: calc(var(--spacer-5xl) * -1);
-    // margin-right: var(--spacer-l);
+    left: -15%;
     position: absolute;
-    transform: rotate(90deg) translateY(toRem(50));
+    transform: rotate(90deg);
     width: 5rem;
 
     @include mobile-only {
-      margin-left: calc(var(--spacer-3xl) * -1);
-      margin-right: var(--spacer-s);
+      height: toRem(30);
+      left: -14%;
+      width: toRem(30);
     }
   }
 
   &__nav-next {
     height: 5rem;
-    // margin-left: var(--spacer-l);
-    // margin-right: calc(var(--spacer-5xl) * -1);
     position: absolute;
-    transform: rotate(-90deg) translateY(toRem(660));
+    right: -15%;
+    transform: rotate(-90deg);
     width: 5rem;
 
-    // @include mobile-only {
-    //   margin-left: var(--spacer-s);
-    //   margin-right: calc(var(--spacer-3xl) * -1);
-    // }
+    @include mobile-only {
+      height: toRem(30);
+      right: -14%;
+      width: toRem(30);
+    }
   }
 }
