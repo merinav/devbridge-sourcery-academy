@@ -43,6 +43,12 @@ const GalleryMedia = ({ data }) => {
             className={cn('media-container', `media-container-${index + 1}`)}
             key={item.src}
             onClick={() => openModalHandler(index)}
+            tabIndex={0}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter') {
+                openModalHandler(index);
+              }
+            }}
           >
             <img
               className={cn('media-item', `image-${index + 1}`)}
@@ -55,6 +61,12 @@ const GalleryMedia = ({ data }) => {
             className={cn('media-container', `media-container-${index + 1}`)}
             key={item.src}
             onClick={() => openModalHandler(index)}
+            tabIndex={0}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter') {
+                openModalHandler(index);
+              }
+            }}
           >
             <img
               className={cn('media-item', `video-${index + 1}`)}
