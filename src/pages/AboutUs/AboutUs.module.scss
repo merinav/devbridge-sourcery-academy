@@ -37,6 +37,11 @@
   }
 
   &__image {
-    max-height: 500px;
+    max-height: toRem(500);
+  }
+
+  &__emojis {
+    height: auto;
+    max-width: toRem(400);
   }
 }

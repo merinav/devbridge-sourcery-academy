@@ -31,6 +31,11 @@ function AboutUs() {
               My favorite / most used emojis during the academy were:
             </strong>
           </p>
+          <img
+            className={cn('promo-section__emojis')}
+            src={'/assets/images/Images_Aidas_Emojis.png'}
+            alt={''}
+          />
         </div>
         <VideoCard
           imagePath="/assets/images/Image_Aidas.jpg"
@@ -62,14 +67,15 @@ function AboutUs() {
               My favorite / most used emojis during the academy were:
             </strong>
           </p>
+          <img
+            className={cn('promo-section__emojis')}
+            src={'/assets/images/Images_Aiste_Emojis.png'}
+            alt={''}
+          />
         </div>
       </section>
 
       <section className={cn('promo-section')}>
-        <VideoCard
-          imagePath="/assets/images/Image_Albertas.jpg"
-          showPlayButton={false}
-        />
         <div className={cn('promo-section__text')}>
           <h2 className={cn('promo-section__heading')}>Albertas</h2>
           <p className={cn('promo-section__paragraph')}>
@@ -91,10 +97,23 @@ function AboutUs() {
               My favorite / most used emojis during the academy were:
             </strong>
           </p>
+          <img
+            className={cn('promo-section__emojis')}
+            src={'/assets/images/Images_Albertas_Emojis.png'}
+            alt={''}
+          />
         </div>
+        <VideoCard
+          imagePath="/assets/images/Images_Albertas.jpeg"
+          showPlayButton={false}
+        />
       </section>
 
       <section className={cn('promo-section')}>
+        <VideoCard
+          imagePath="/assets/images/Images_Meri.jpg"
+          showPlayButton={false}
+        />
         <div className={cn('promo-section__text')}>
           <h2 className={cn('promo-section__heading')}>Meri</h2>
 
@@ -114,11 +133,12 @@ function AboutUs() {
               My favorite / most used emojis during the academy were:
             </strong>
           </p>
+          <img
+            className={cn('promo-section__emojis')}
+            src={'/assets/images/Images_Meri_Emojis.png'}
+            alt={''}
+          />
         </div>
-        <VideoCard
-          imagePath="/assets/images/Image_Meri.jpg"
-          showPlayButton={false}
-        />
       </section>
     </>
   );
