@@ -24,9 +24,11 @@ function Developers() {
       <div className={cn('steps-section-wrapper')}>
         <StepsSection academy={ACADEMIES.developers} />
       </div>
-      <ScheduleSection academy={ACADEMIES.developers} />
       <div className={cn('admission-section-wrapper')}>
         <AdmissionSection academy={ACADEMIES.developers} />
+      </div>
+      <div className={cn('schedule-section-wrapper')}>
+        <ScheduleSection academy={ACADEMIES.developers} />
       </div>
       <div className={cn('testimonials-section-wrapper')}>
         <TestimonialsSection academy={ACADEMIES.developers} />
