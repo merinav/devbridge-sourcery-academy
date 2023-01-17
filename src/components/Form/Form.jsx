@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { useFormik, Formik, Form, Field } from 'formik';
-//import PropTypes from 'prop-types';
+import { Formik, Form, Field } from 'formik';
 import classNames from 'classnames/bind.js';
 import Filter from '/src/components/Filter';
 import Button from '/src/components/Button';
@@ -56,36 +55,6 @@ const RegisterForm = () => {
     return error;
   }
 
-  //const test = disabled={!formik.dirty}
-
-  // const disabled= {!(formik.isValid && formik.dirty)};
-  // disabled={!formik.isValid}
-
-  // useEffect(() => {
-  //   if (showOverlayNav) {
-  //     document.body.classList.add('no-scroll');
-  //   } else {
-  //     document.body.classList.remove('no-scroll');
-  //   }
-  // }, [showOverlayNav]);
-  // const [buttonActive, setButtonActive] = useState(false);
-  // console.log(buttonActive);
-
-  // if (!errors.firstName && !touched.firstName
-  //   && !error.lastName && !touched.lastName
-  //   && !error.email && !touched.email
-  //   && !value.terms) {
-  //     setButtonActive(true);
-  //     console.log(buttonActive);
-  // };
-
-  // const disabled = buttonActive ? '' : 'disabled';
-
-  // (!errors.firstName && !touched.firstName
-  //   && !error.lastName && !touched.lastName
-  //   && !error.email && !touched.email
-  //   && !value.terms)
-
   return (
     <Formik
       initialValues={{
@@ -107,9 +76,7 @@ const RegisterForm = () => {
             <label htmlFor="city" className={cn('label')}>
               Academy type
             </label>
-            <div className={cn('filter-container__filter')}>
-              <Filter data={['Developers', 'Testers', 'Front-End']} />
-            </div>
+            <Filter data={['Developers', 'Testers', 'Front-End']} />
           </div>
           <div className={cn('radio-container')}>
             <label htmlFor="city" className={cn('label')}>
@@ -190,12 +157,6 @@ const RegisterForm = () => {
                 {errors.email}
               </div>
             )}
-            {/* <div className={cn('label', 'label--personal')}>Resume</div> */}
-            {/* className={cn(
-                'input-container__input',
-                'input-container__input--file'
-              )} */}
-            {/* <Icon_Upload className={cn('input-container__icon')} /> */}
             <label htmlFor="resume" className={cn('label', 'label--personal')}>
               Resume
             </label>
@@ -232,7 +193,7 @@ const RegisterForm = () => {
           <div className={cn('form-container__button')}>
             <Button
               type={'submit'}
-              disabled={dirty && !isValid ? '' : 'disabled'}
+              disabled={dirty && isValid ? '' : 'disabled'}
             >
               {'Register'}
             </Button>

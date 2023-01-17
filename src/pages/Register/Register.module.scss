@@ -43,7 +43,6 @@
 
     @include tablet-landscape {
       justify-content: center;
-      padding-top: var(--spacer-6xl);
       width: 60%;
     }
     @include mobile-only {

@@ -29,10 +29,6 @@
   display: flex;
   flex-direction: column;
   padding: var(--spacer-3xl) 0 var(--spacer-7xl) 0;
-
-  &__filter {
-    padding-left: var(--spacer-s);
-  }
 }
 
 .radio-container {
