@@ -161,17 +161,6 @@ const RegisterForm = () => {
                 {errors.email}
               </div>
             )}
-            <label htmlFor="resume" className={cn('label', 'label--personal')}>
-              Resume
-            </label>
-            <Field
-              id="resume"
-              name="resume"
-              type="file"
-              placeholder="Upload your resume"
-              className={cn('input-container__input')}
-              accept=".pdf, .doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-            />
             <label>
               <div className={cn('checkbox-container')}>
                 <Field
