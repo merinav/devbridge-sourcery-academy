@@ -2,6 +2,7 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
+  margin-bottom: toRem(200);
   padding: var(--spacer-5xl) 0;
 
   @include tablet-landscape {
