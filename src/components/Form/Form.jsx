@@ -12,7 +12,11 @@ const RegisterForm = () => {
     let error;
     if (!value) {
       error = 'Please enter your first name';
-    } else if (!/^[a-z ,.'-]+$/i.test(value)) {
+    } else if (
+      !/^[A-Za-z chcsdzdzsdžgygħieljlynjnysztyzsßàáâãäåæçéêíîñóôõöøúüýāăąćċčďđēėęěġģħīįķĺļľłńņňőŕřśšťūůűųźżžșțαβγδεζηθικλμνξοπρσ/ςτυφχψωабвгдежзийклмнопрстуфхцчшщъьюя]+$/i.test(
+        value
+      )
+    ) {
       error = 'Entry is not valid. Please try again.';
     }
     return error;
@@ -22,7 +26,11 @@ const RegisterForm = () => {
     let error;
     if (!value) {
       error = 'Please enter your last name';
-    } else if (!/^[a-z ,.'-]+$/i.test(value)) {
+    } else if (
+      !/^[A-Za-z chcsdzdzsdžgygħieljlynjnysztyzsßàáâãäåæçéêíîñóôõöøúüýāăąćċčďđēėęěġģħīįķĺļľłńņňőŕřśšťūůűųźżžșțαβγδεζηθικλμνξοπρσ/ςτυφχψωабвгдежзийклмнопрстуфхцчшщъьюя]+$/i.test(
+        value
+      )
+    ) {
       error = 'Entry is not valid. Please try again.';
     }
     return error;
@@ -45,9 +53,6 @@ const RegisterForm = () => {
     }
     return error;
   }
-  /////
-  ///// add ROUTE TO REGISTER onClick!
-  //////
 
   return (
     <Formik
@@ -56,7 +61,6 @@ const RegisterForm = () => {
         firstName: '',
         lastName: '',
         email: '',
-        resume: '',
         terms: '',
       }}
       onSubmit={(values) => {
