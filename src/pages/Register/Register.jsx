@@ -3,9 +3,7 @@ import classNames from 'classnames/bind';
 import useTheme from '/src/hooks/useTheme';
 import Image_Application_form from '~/assets/images/Image_Application_form.svg';
 import Background_particles from '~/assets/images/Background_particles_Application_form.svg?url';
-
 import Form from '../../components/Form';
-
 import styles from './Register.module';
 
 const cn = classNames.bind(styles);
