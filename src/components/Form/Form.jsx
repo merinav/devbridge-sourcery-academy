@@ -169,22 +169,21 @@ const RegisterForm = () => {
                 {errors.email}
               </div>
             )}
-            <div className={cn('label', 'label--personal')}>Resume</div>
-            <label
-              htmlFor="resume"
-              className={cn(
+            {/* <div className={cn('label', 'label--personal')}>Resume</div> */}
+            {/* className={cn(
                 'input-container__input',
                 'input-container__input--file'
-              )}
-            >
-              Upload your resume{' '}
-              <Icon_Upload className={cn('input-container__icon')} />
+              )} */}
+            {/* <Icon_Upload className={cn('input-container__icon')} /> */}
+            <label htmlFor="resume" className={cn('label', 'label--personal')}>
+              Resume
             </label>
-            <input
+            <Field
               id="resume"
               name="resume"
               type="file"
               placeholder="Upload your resume"
+              className={cn('input-container__input')}
               accept=".pdf, .doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
             />
             <label>

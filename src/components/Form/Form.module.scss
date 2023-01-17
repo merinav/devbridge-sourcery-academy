@@ -54,7 +54,10 @@
   }
 
   &__button {
-    color: var(--primary-color);
+    /* stylelint-disable property-no-unknown */
+    accent-color: var(--primary-color);
+
+    /* stylelint-enable property-no-unknown */
     transform: scale(1.5);
   }
 }
@@ -67,17 +70,17 @@
     border: 1px solid var(--color-grey-300);
     border-radius: toRem(10);
     padding: toRem(13);
-
-    &--file {
-      color: var(--color-grey-200);
-      display: flex;
-      font-family: inherit;
-      font-size: var(--font-size-m);
-      justify-content: space-between;
-      line-height: var(--line-height-m);
-      margin: 0;
-    }
   }
+
+  // &--file {
+  //   color: var(--color-grey-200);
+  //   display: flex;
+  //   font-family: inherit;
+  //   font-size: var(--font-size-m);
+  //   justify-content: space-between;
+  //   line-height: var(--line-height-m);
+  //   margin: 0;
+  // }
 
   &__icon {
     align-self: center;
@@ -146,13 +149,13 @@
   padding-top: 0;
 }
 
-input[type='file'] {
-  display: none;
-}
-
-// .custom-file-upload {
-//   border: 1px solid #ccc;
-//   cursor: pointer;
-//   display: inline-block;
-//   padding: 6px 12px;
+// input[type='file'] {
+//   display: none;
 // }
+
+/* stylelint-disable  selector-pseudo-element-no-unknown */
+input[type='file']::file-selector-button {
+  background-color: var(--color-red-300);
+  color: var(--color-red-300);
+}
+/* stylelint-enable  selector-pseudo-element-no-unknown */
