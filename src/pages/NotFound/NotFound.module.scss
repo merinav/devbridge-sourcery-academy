@@ -1,4 +1,19 @@
-.not-found__heading {
-  color: var(--color-grey-400);
-  text-align: center;
+.not-found-wrapper {
+  align-items: center;
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacer-3xl);
+  width: fit-content;
+
+  .image {
+    height: auto;
+    width: 80%;
+  }
+
+  .heading {
+    color: var(--color-grey-400);
+    margin: 0;
+    text-align: center;
+  }
 }
