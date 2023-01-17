@@ -100,7 +100,7 @@ const RegisterForm = () => {
         console.log(values);
       }}
     >
-      {({ errors, touched, isValidating }) => (
+      {({ errors, touched, dirty, isValid }) => (
         <Form className={cn('form-container')}>
           <h3 className={cn('form-container__header')}>Academy information</h3>
           <div className={cn('filter-container')}>
@@ -230,7 +230,10 @@ const RegisterForm = () => {
             </label>
           </div>
           <div className={cn('form-container__button')}>
-            <Button disabled={''} type={'submit'}>
+            <Button
+              type={'submit'}
+              disabled={dirty && !isValid ? '' : 'disabled'}
+            >
               {'Register'}
             </Button>
           </div>
@@ -239,12 +242,5 @@ const RegisterForm = () => {
     </Formik>
   );
 };
-
-// Step.propTypes = {
-//   step: PropTypes.number.isRequired,
-//   text: PropTypes.string.isRequired,
-//   isInverted: PropTypes.bool,
-//   academy: PropTypes.oneOf(Object.values(ACADEMIES)).isRequired,
-// };
 
 export default RegisterForm;
