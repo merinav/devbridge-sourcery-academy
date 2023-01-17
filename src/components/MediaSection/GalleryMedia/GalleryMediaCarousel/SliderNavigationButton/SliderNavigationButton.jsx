@@ -11,7 +11,7 @@ const SliderNavigationButton = forwardRef(
     const directionIsPrevious = direction === 'previous';
 
     return (
-      <div
+      <button
         ref={ref}
         className={cn('carousel__nav', {
           'carousel__nav-prev': directionIsPrevious,
@@ -29,8 +29,9 @@ const SliderNavigationButton = forwardRef(
       >
         <SliderNavigationArrow
           alt={directionIsPrevious ? 'previous' : 'next'}
+          className={cn('carousel_nav-icon')}
         />
-      </div>
+      </button>
     );
   }
 );

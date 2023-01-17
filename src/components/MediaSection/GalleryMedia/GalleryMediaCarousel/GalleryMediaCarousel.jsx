@@ -15,79 +15,74 @@ const GalleryMediaCarousel = ({ mediaData, selectedMediaItem }) => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
-  const sliderNavigationHandler = () => {};
-
   return (
-    <div className={cn('swiper-wrapper')}>
-      <div className={cn('swiper-navigation-wrapper')}>
-        <SliderNavigationButton
-          direction={'previous'}
-          ref={prevRef}
-          sliderNavigationHandler={sliderNavigationHandler}
-        />
-        <SliderNavigationButton
-          direction={'next'}
-          ref={nextRef}
-          sliderNavigationHandler={sliderNavigationHandler}
-        />
+    <div className={cn('carousel')}>
+      <div className={cn('carousel__navigation-wrapper')}>
+        <SliderNavigationButton direction={'previous'} ref={prevRef} />
+        <SliderNavigationButton direction={'next'} ref={nextRef} />
       </div>
+      <div className={cn('carousel__swiper-wrapper')}>
+        <Swiper
+          grabCursor={true}
+          centeredSlides={true}
+          modules={[Navigation, Pagination, Keyboard]}
+          autoHeight={true}
+          loop={true}
+          initialSlide={selectedMediaItem}
+          navigation={{
+            prevEl: prevRef.current ? prevRef.current : null,
+            nextEl: nextRef.current ? nextRef.current : null,
+          }}
+          onBeforeInit={(swiper) => {
+            swiper.params.navigation.prevEl = prevRef.current;
+            swiper.params.navigation.nextEl = nextRef.current;
+          }}
+          keyboard={{ enabled: true }}
+          a11y={true}
+        >
+          {mediaData.slice(0, MEDIA_ITEMS_TO_SHOW + 1).map((mediaItem) => {
+            const isImage = mediaItem.type === 'image';
 
-      <Swiper
-        grabCursor={true}
-        centeredSlides={true}
-        modules={[Navigation, Pagination, Keyboard]}
-        autoHeight={true}
-        loop={true}
-        initialSlide={selectedMediaItem}
-        navigation={{
-          prevEl: prevRef.current ? prevRef.current : null,
-          nextEl: nextRef.current ? nextRef.current : null,
-        }}
-        keyboard={{ enabled: true }}
-        a11y={true}
-      >
-        {mediaData.slice(0, MEDIA_ITEMS_TO_SHOW + 1).map((mediaItem) => {
-          const isImage = mediaItem.type === 'image';
-
-          return isImage ? (
-            <SwiperSlide key={mediaItem.src}>
-              <figure className={cn('carousel-slide__inner-content')}>
-                <img
-                  src={mediaItem.src}
-                  alt={`Photo from ${mediaItem.academy} academy`}
-                  className={cn('inner-content__gallery-item')}
-                />
-              </figure>
-            </SwiperSlide>
-          ) : (
-            <SwiperSlide key={mediaItem.src}>
-              <figure className={cn('carousel-slide__inner-content')}>
-                <video
-                  className={cn('inner-content__gallery-item')}
-                  width="auto"
-                  height="218"
-                  poster={mediaItem.thumbnail}
-                  title={`Video thumbnail from ${mediaItem.academy} academy`}
-                >
-                  <source
+            return isImage ? (
+              <SwiperSlide key={mediaItem.src}>
+                <figure className={cn('carousel-slide__inner-content')}>
+                  <img
                     src={mediaItem.src}
-                    type={'video/' + mediaItem.src.split('.').pop()}
+                    alt={`Photo from ${mediaItem.academy} academy`}
+                    className={cn('inner-content__gallery-item')}
                   />
-                  <p>
-                    Your browser doesn&quot;t support HTML video. Here is a{' '}
-                    <a href={mediaItem.src}>link to the video</a> instead.
-                  </p>
-                </video>
-                <div className={cn('video-controls')}>
-                  <button type="button" className={cn('play-button')}>
-                    <Icon_play className={cn('play-button__icon')} />
-                  </button>
-                </div>
-              </figure>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
+                </figure>
+              </SwiperSlide>
+            ) : (
+              <SwiperSlide key={mediaItem.src}>
+                <figure className={cn('carousel-slide__inner-content')}>
+                  <video
+                    className={cn('inner-content__gallery-item')}
+                    width="auto"
+                    height="218"
+                    poster={mediaItem.thumbnail}
+                    title={`Video thumbnail from ${mediaItem.academy} academy`}
+                  >
+                    <source
+                      src={mediaItem.src}
+                      type={'video/' + mediaItem.src.split('.').pop()}
+                    />
+                    <p>
+                      Your browser doesn&quot;t support HTML video. Here is a{' '}
+                      <a href={mediaItem.src}>link to the video</a> instead.
+                    </p>
+                  </video>
+                  <div className={cn('video-controls')}>
+                    <button type="button" className={cn('play-button')}>
+                      <Icon_play className={cn('play-button__icon')} />
+                    </button>
+                  </div>
+                </figure>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
     </div>
   );
 };

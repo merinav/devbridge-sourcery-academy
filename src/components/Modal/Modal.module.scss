@@ -19,6 +19,8 @@
   }
 
   .modal-content__inner-content {
+    border-radius: var(--border-radius-s);
+    overflow: hidden;
     width: 100%;
   }
 }
@@ -26,7 +28,7 @@
 .gallery-container {
   background-color: var(--color-grey-400);
   height: fit-content;
-  overflow: hidden;
+  //overflow: hidden;
   padding: 0;
   width: clamp(40%, toRem(550), 90%);
 }
