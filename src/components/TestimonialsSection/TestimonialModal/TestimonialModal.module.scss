@@ -70,6 +70,14 @@
       stroke-width: toRem(2);
       width: toRem(22);
     }
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      scale: 0.8;
+    }
   }
 
   &__message {
@@ -99,5 +107,9 @@
     line-height: var(--line-height-m);
     margin: 0;
     text-align: left;
+
+    @include mobile-only {
+      text-align: center;
+    }
   }
 }
