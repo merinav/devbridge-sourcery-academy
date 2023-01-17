@@ -23,4 +23,8 @@
     bottom: -10%;
     height: 7%;
   }
+
+  @include mobile-only {
+    height: 12%;
+  }
 }
