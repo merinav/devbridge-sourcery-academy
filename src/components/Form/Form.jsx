@@ -54,6 +54,9 @@ const RegisterForm = () => {
     }
     return error;
   }
+  /////
+  ///// add ROUTE TO REGISTER onClick!
+  //////
 
   return (
     <Formik
@@ -191,10 +194,7 @@ const RegisterForm = () => {
             </label>
           </div>
           <div className={cn('form-container__button')}>
-            <Button
-              type={'submit'}
-              disabled={dirty && isValid ? '' : 'disabled'}
-            >
+            <Button type={'submit'} disabled={dirty && isValid ? false : true}>
               {'Register'}
             </Button>
           </div>

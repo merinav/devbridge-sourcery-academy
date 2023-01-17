@@ -76,7 +76,7 @@ Button.propTypes = {
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   onClick: PropTypes.func,
   ariaLabel: PropTypes.string,
-  disabled: PropTypes.string,
+  disabled: PropTypes.bool,
 };
 
 export default Button;
