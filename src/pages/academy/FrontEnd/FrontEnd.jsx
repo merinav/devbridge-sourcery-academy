@@ -24,9 +24,11 @@ function FrontEnd() {
       <div className={cn('steps-section-wrapper')}>
         <StepsSection academy={ACADEMIES.frontend} />
       </div>
-      <ScheduleSection academy={ACADEMIES.frontend} />
       <div className={cn('admission-section-wrapper')}>
         <AdmissionSection academy={ACADEMIES.frontend} />
+      </div>
+      <div className={cn('schedule-section-wrapper')}>
+        <ScheduleSection academy={ACADEMIES.frontend} />
       </div>
       <div className={cn('testimonials-section-wrapper')}>
         <TestimonialsSection academy={ACADEMIES.frontend} />
