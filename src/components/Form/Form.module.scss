@@ -86,11 +86,13 @@
     cursor: pointer;
     display: flex;
     margin-top: toRem(3);
+    transform: scale(1.7);
   }
 
   &__text {
     @include paragraph;
 
+    line-height: var(--line-height-l);
     margin: 0;
   }
 }

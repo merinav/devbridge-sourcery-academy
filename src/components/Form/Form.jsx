@@ -3,7 +3,6 @@ import { Formik, Form, Field } from 'formik';
 import classNames from 'classnames/bind.js';
 import Filter from '/src/components/Filter';
 import Button from '/src/components/Button';
-import Icon_Upload from '~/assets/icons/Icon_Application_form_upload.svg';
 import styles from './Form.module';
 
 const cn = classNames.bind(styles);
@@ -38,14 +37,6 @@ const RegisterForm = () => {
     }
     return error;
   }
-
-  // function validateResumeUpload(value) {
-  //   let error;
-  //   if (!value) {
-  //     error = 'Please confirm';
-  //   }
-  //   return error;
-  // }
 
   function validateTermsCheckbox(value) {
     let error;
