@@ -16,6 +16,7 @@ const GalleryMediaModal = ({ closeModalHandler, data, selectedMediaItem }) => {
             mediaData={data}
             className={cn('media-modal__carousel')}
             selectedMediaItem={selectedMediaItem}
+            closeModalHandler={closeModalHandler}
           />
         </div>
       </Modal>
