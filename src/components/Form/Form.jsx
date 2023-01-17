@@ -71,6 +71,7 @@ const RegisterForm = () => {
       onSubmit={(values) => {
         console.log(values);
       }}
+      validateOnBlur
     >
       {({ errors, touched, dirty, isValid }) => (
         <Form className={cn('form-container')}>
@@ -176,7 +177,6 @@ const RegisterForm = () => {
                 <Field
                   type="checkbox"
                   name="terms"
-                  value="agreed"
                   className={cn('checkbox-container__checkbox')}
                   validate={validateTermsCheckbox}
                 />
@@ -194,7 +194,7 @@ const RegisterForm = () => {
             </label>
           </div>
           <div className={cn('form-container__button')}>
-            <Button type={'submit'} disabled={dirty && isValid ? false : true}>
+            <Button type={'submit'} disabled={!(isValid && dirty)}>
               {'Register'}
             </Button>
           </div>
