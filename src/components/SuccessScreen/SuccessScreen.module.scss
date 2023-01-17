@@ -1,0 +1,31 @@
+.success-screen {
+  align-items: center;
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  gap: toRem(12);
+  width: fit-content;
+
+  &__icon {
+    height: toRem(104);
+    width: toRem(104);
+  }
+
+  &__heading {
+    color: var(--primary-color);
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-xl);
+    margin: toRem(28) 0 0;
+    text-align: center;
+  }
+
+  &__text {
+    color: var(--primary-color);
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-l);
+    margin: 0;
+    text-align: center;
+  }
+}
