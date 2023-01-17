@@ -16,7 +16,7 @@
     display: flex;
     justify-content: center;
     margin: var(--spacer-6xl) 0 0;
-    max-height: 600px;
+    max-height: toRem(600);
     overflow: hidden;
     position: relative;
 

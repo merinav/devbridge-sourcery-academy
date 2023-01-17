@@ -25,9 +25,10 @@
   &__heading {
     @include h1-h2;
 
+    @include word-wrap;
+
     margin: 0;
     white-space: pre-line;
-    @include word-wrap;
   }
 
   &__paragraph {

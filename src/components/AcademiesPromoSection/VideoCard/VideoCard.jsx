@@ -12,7 +12,7 @@ const VideoCard = ({ imagePath, showPlayButton = true }) => {
     <section className={cn('video-card')}>
       <figure
         className={cn('video-card__container', {
-          'nav-list-overlay': showPlayButton,
+          'video-card__container--overlay': showPlayButton,
         })}
       >
         <img src={imagePath} alt="" className={cn('image')} />
