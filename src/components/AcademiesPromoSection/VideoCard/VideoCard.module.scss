@@ -16,6 +16,7 @@
     display: flex;
     justify-content: center;
     margin: var(--spacer-6xl) 0 0;
+    max-height: toRem(600);
     overflow: hidden;
     position: relative;
 
@@ -25,19 +26,21 @@
       padding-bottom: 100%;
     }
 
-    &::before {
-      background: rgba(255, 255, 255, 0.4);
-      bottom: 0;
-      content: '';
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      transition: all 0.3s;
-    }
+    &--overlay {
+      &::before {
+        background: rgba(255, 255, 255, 0.4);
+        bottom: 0;
+        content: '';
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: all 0.3s;
+      }
 
-    &:hover::before {
-      background: rgba(255, 255, 255, 0);
+      &:hover::before {
+        background: rgba(255, 255, 255, 0);
+      }
     }
 
     @include tablet-portrait {
@@ -89,7 +92,7 @@
   }
 }
 
-.placeholder {
+.image {
   height: 100%;
   object-fit: cover;
   object-position: 50% 50%;
