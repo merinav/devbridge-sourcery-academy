@@ -1,26 +1,44 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { Navigation, Pagination, Keyboard } from 'swiper';
-import Icon_play from '/src/assets/icons/Icon_play.svg';
-import styles from './GalleryMediaCarousel.module.scss';
 import SliderNavigationButton from './SliderNavigationButton/SliderNavigationButton';
+import Icon_play from '/src/assets/icons/Icon_play.svg';
+import Icon_SliderClose from '~/assets/icons/Icon_close_modal_x.svg';
+import styles from './GalleryMediaCarousel.module.scss';
+import SliderPagination from './SliderPagination';
 
 const cn = classNames.bind(styles);
 
-const MEDIA_ITEMS_TO_SHOW = 30;
-
-const GalleryMediaCarousel = ({ mediaData, selectedMediaItem }) => {
+const GalleryMediaCarousel = ({
+  mediaData,
+  selectedMediaItem,
+  closeModalHandler,
+}) => {
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(1);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  const MEDIA_ITEMS_TO_SHOW = mediaData.length > 30 ? 30 : mediaData.length;
 
   return (
     <div className={cn('carousel')}>
       <div className={cn('carousel__navigation-wrapper')}>
         <SliderNavigationButton direction={'previous'} ref={prevRef} />
         <SliderNavigationButton direction={'next'} ref={nextRef} />
+        <button
+          className={cn('navigation-wrapper__close-button')}
+          onClick={closeModalHandler}
+          tabIndex="0"
+        >
+          <Icon_SliderClose className={cn('close-button__icon')} alt="close" />
+        </button>
+        <SliderPagination
+          itemsShown={MEDIA_ITEMS_TO_SHOW}
+          shownItemIndex={currentSlideIndex}
+        />
       </div>
+
       <div className={cn('carousel__swiper-wrapper')}>
         <Swiper
           grabCursor={true}
@@ -39,6 +57,7 @@ const GalleryMediaCarousel = ({ mediaData, selectedMediaItem }) => {
           }}
           keyboard={{ enabled: true }}
           a11y={true}
+          onSlideChange={(swiper) => setCurrentSlideIndex(swiper.realIndex + 1)}
         >
           {mediaData.slice(0, MEDIA_ITEMS_TO_SHOW + 1).map((mediaItem) => {
             const isImage = mediaItem.type === 'image';
@@ -90,5 +109,6 @@ const GalleryMediaCarousel = ({ mediaData, selectedMediaItem }) => {
 GalleryMediaCarousel.propTypes = {
   mediaData: PropTypes.array.isRequired,
   selectedMediaItem: PropTypes.number,
+  closeModalHandler: PropTypes.func.isRequired,
 };
 export default GalleryMediaCarousel;
