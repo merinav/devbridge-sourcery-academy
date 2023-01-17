@@ -19,6 +19,10 @@
       text-align: center;
     }
   }
+
+  &__button {
+    padding-top: var(--spacer-7xl);
+  }
 }
 
 .filter-container {
@@ -56,7 +60,6 @@
   &__button {
     /* stylelint-disable property-no-unknown */
     accent-color: var(--primary-color);
-
     /* stylelint-enable property-no-unknown */
     transform: scale(1.5);
   }
@@ -95,7 +98,7 @@
   display: flex;
   gap: var(--spacer-xl);
   justify-content: flex-start;
-  padding: var(--spacer-7xl) 0;
+  padding-top: var(--spacer-7xl);
 
   &__checkbox {
     align-self: flex-start;

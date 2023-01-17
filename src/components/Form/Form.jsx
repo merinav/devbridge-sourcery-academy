@@ -40,6 +40,27 @@ const RegisterForm = () => {
     return error;
   }
 
+  // function validateResumeUpload(value) {
+  //   let error;
+  //   if (!value) {
+  //     error = 'Please confirm';
+  //   }
+  //   return error;
+  // }
+
+  function validateTermsCheckbox(value) {
+    let error;
+    if (!value) {
+      error = 'Please confirm';
+    }
+    return error;
+  }
+
+  //const test = disabled={!formik.dirty}
+
+  // const disabled= {!(formik.isValid && formik.dirty)};
+  // disabled={!formik.isValid}
+
   // useEffect(() => {
   //   if (showOverlayNav) {
   //     document.body.classList.add('no-scroll');
@@ -193,6 +214,7 @@ const RegisterForm = () => {
                   name="terms"
                   value="agreed"
                   className={cn('checkbox-container__checkbox')}
+                  validate={validateTermsCheckbox}
                 />
                 <p className={cn('checkbox-container__text')}>
                   I have read, understand and accept the content of the Privacy
@@ -200,13 +222,15 @@ const RegisterForm = () => {
                   this application.
                 </p>
               </div>
+              {errors.terms && touched.terms && (
+                <div className={cn('label', 'label--error-message')}>
+                  {errors.terms}
+                </div>
+              )}
             </label>
-
-            <Button
-              disabled={''}
-              type={'submit'}
-              className={cn('input-container__button')}
-            >
+          </div>
+          <div className={cn('form-container__button')}>
+            <Button disabled={''} type={'submit'}>
               {'Register'}
             </Button>
           </div>
