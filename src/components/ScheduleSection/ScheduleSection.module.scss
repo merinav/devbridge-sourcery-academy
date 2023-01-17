@@ -9,11 +9,11 @@
   }
 
   &__sub-heading {
-    margin: var(--spacer-5xl) 0 var(--spacer-4xl);
-    text-align: center;
-
     @include heading-3;
     @include word-wrap;
+
+    margin: var(--spacer-5xl) 0 var(--spacer-4xl);
+    text-align: center;
   }
 
   &__lectures-wrapper {
@@ -26,8 +26,8 @@
   }
 
   .month {
-    flex: 0 0 0;
-    min-width: toRem(220);
+    flex: 1 1 toRem(220);
+    max-width: toRem(266);
   }
 
   &__path {
