@@ -1,8 +1,20 @@
+.steps-section-wrapper {
+  padding-top: toRem(230);
+}
+
 .admission-section-wrapper {
   padding: toRem(190) 0;
 
   @include mobile-only {
     padding: toRem(150) 0;
+  }
+}
+
+.schedule-section-wrapper {
+  padding: toRem(50) 0 toRem(300);
+
+  @include tablet-landscape {
+    padding: 0 0 toRem(150);
   }
 }
 

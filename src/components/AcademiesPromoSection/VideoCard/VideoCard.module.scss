@@ -1,0 +1,100 @@
+.video-card {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  width: 50%;
+
+  @include tablet-portrait {
+    justify-content: center;
+    margin: var(--spacer-6xl) 0 0;
+    width: 80%;
+  }
+
+  &__container {
+    align-items: center;
+    border-radius: 25%;
+    display: flex;
+    justify-content: center;
+    margin: var(--spacer-6xl) 0 0;
+    max-height: toRem(600);
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    &--overlay {
+      &::before {
+        background: rgba(255, 255, 255, 0.4);
+        bottom: 0;
+        content: '';
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: all 0.3s;
+      }
+
+      &:hover::before {
+        background: rgba(255, 255, 255, 0);
+      }
+    }
+
+    @include tablet-portrait {
+      margin-top: var(--spacer-m);
+    }
+  }
+
+  &__path {
+    bottom: -4rem;
+    left: -5rem;
+    position: absolute;
+    stroke: var(--primary-color);
+    stroke-width: 2px;
+    width: toRem(500);
+    z-index: var(--z-paths);
+
+    @include tablet-landscape {
+      display: none;
+    }
+  }
+}
+
+.video-controls {
+  align-items: center;
+  display: flex;
+  height: toRem(90);
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: toRem(90);
+}
+
+.play-button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  stroke: var(--primary-color);
+  stroke-width: 2px;
+  text-decoration: none;
+  transition: opacity 0.3s;
+  width: 100%;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.image {
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  width: 100%;
+}
