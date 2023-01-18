@@ -80,6 +80,10 @@
   padding-top: var(--spacer-7xl);
 
   &__checkbox {
+    /* stylelint-disable property-no-unknown */
+    accent-color: var(--button-color);
+    /* stylelint-enable property-no-unknown */
+
     align-self: flex-start;
     border: 2px solid var(--color-grey-300);
     border-radius: toRem(10);
