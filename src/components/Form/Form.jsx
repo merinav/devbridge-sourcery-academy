@@ -1,14 +1,19 @@
-import React from 'react';
-import { Formik, Form, Field } from 'formik';
+import React, { useState, useEffect } from 'react';
+import { Formik, Form, Field, FieldArray } from 'formik';
+// import { getDatabase, ref, set } from 'firebase/database';
+import useFetch from '~/hooks/useFetch';
 import classNames from 'classnames/bind.js';
 import Filter from '/src/components/Filter';
 import Button from '/src/components/Button';
+import SuccessScreen from '~/components/SuccessScreen';
 import { STRINGVALIDATORS } from '../../constants/constants';
 import styles from './Form.module';
 
 const cn = classNames.bind(styles);
 
 const RegisterForm = () => {
+  const { isLoading, error, sendRequest: sendFormRequest } = useFetch();
+
   function validateFirstName(value) {
     let error;
     if (!value) {
@@ -47,9 +52,22 @@ const RegisterForm = () => {
     return error;
   }
 
+  const submitFormHandler = async (values) => {
+    sendFormRequest({
+      url: `https://react-htpp-8c884-default-rtdb.europe-west1.firebasedatabase.app/academyRegistry/${values.academy}/applicants.json`,
+      method: 'POST',
+      body: { values },
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+  };
+
   return (
     <Formik
       initialValues={{
+        academy: 'developers',
+        id: 123,
         city: 'Kaunas',
         firstName: '',
         lastName: '',
@@ -57,7 +75,7 @@ const RegisterForm = () => {
         terms: '',
       }}
       onSubmit={(values) => {
-        console.log(values);
+        submitFormHandler(values);
       }}
       validateOnBlur
     >
