@@ -2,42 +2,43 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
-import { motion, useInView } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import Overlay from '../Overlay';
 import styles from './Modal.module.scss';
 
 const cn = classNames.bind(styles);
 
-const MODAL_ANIMATION_DROP_IN = {
-  hidden: {
-    y: '-20vh',
-    opacity: 0,
-  },
-  visible: {
-    y: '0',
-    opacity: 1,
-    transition: {
-      duration: 0.1,
-      type: 'spring',
-      damping: 20,
-      stiffness: 500,
-      delay: 0.05,
-    },
-  },
-  exit: {
-    y: '20vh',
-    opacity: 0,
-    transition: {
-      duration: 0.2,
-      type: 'spring',
-      damping: 50,
-      stiffness: 800,
-    },
-  },
-};
-
 const Modal = ({ children, closeModal, isGallery = false }) => {
   const modalRef = useRef(null);
+  const prefersReducedMotion = useReducedMotion();
+
+  const MODAL_ANIMATION_DROP_IN = {
+    hidden: {
+      y: prefersReducedMotion ? '0' : '-20vh',
+      opacity: 0,
+    },
+    visible: {
+      y: '0',
+      opacity: 1,
+      transition: {
+        duration: prefersReducedMotion ? 0 : 0.1,
+        type: prefersReducedMotion ? '' : 'spring',
+        damping: prefersReducedMotion ? 0 : 20,
+        stiffness: prefersReducedMotion ? 0 : 500,
+        delay: prefersReducedMotion ? 0 : 0.05,
+      },
+    },
+    exit: {
+      y: prefersReducedMotion ? '0' : '20vh',
+      opacity: 0,
+      transition: {
+        duration: prefersReducedMotion ? 0 : 0.2,
+        type: prefersReducedMotion ? '0' : 'spring',
+        damping: prefersReducedMotion ? 0 : 50,
+        stiffness: prefersReducedMotion ? 0 : 800,
+      },
+    },
+  };
 
   useEffect(() => {
     const keyListener = (e) => {
