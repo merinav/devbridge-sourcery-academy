@@ -26,11 +26,19 @@ const GalleryMedia = ({ data }) => {
 
   useEffect(() => {
     if (isModalOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.classList.add('no-scroll');
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.classList.remove('no-scroll');
     }
   }, [isModalOpen]);
+
+  // useEffect(() => {
+  //   if (isModalOpen) {
+  //     document.body.style.overflow = 'hidden';
+  //   } else {
+  //     document.body.style.overflow = 'unset';
+  //   }
+  // }, [isModalOpen]);
 
   return (
     <div
