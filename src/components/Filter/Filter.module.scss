@@ -3,12 +3,10 @@
   border: 2px solid var(--primary-color);
   border-radius: var(--border-radius-l);
   display: inline-flex;
-  flex-wrap: wrap;
   gap: var(--spacer-s);
   justify-content: center;
   padding: var(--spacer-s);
   transition: all 0.3s;
-  width: fit-content;
 
   :not(.button--active) {
     background: var(--color-white);
@@ -18,6 +16,12 @@
       background: var(--button-color);
       color: var(--color-white);
     }
+  }
+
+  @include tablet-portrait {
+    border-radius: var(--border-radius-s);
+    flex-direction: column;
+    width: 100%;
   }
 }
 
@@ -38,7 +42,7 @@
   padding: toRem(12.5) var(--spacer-xl);
   text-decoration: none;
   transition: background-color 0.3s;
-  width: fit-content;
+  width: 33%;
 
   &:active {
     background: var(--button-active-color);
@@ -59,5 +63,7 @@
 
   @include tablet-portrait {
     align-self: center;
+    min-width: toRem(200);
+    width: 100%;
   }
 }

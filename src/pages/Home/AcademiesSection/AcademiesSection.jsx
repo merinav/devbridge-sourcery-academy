@@ -1,18 +1,18 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import backgroundParticles from '~/assets/images/Background_particles_Academies.svg?url';
 import ArrowButton from '~/assets/icons/Icon_arrow_down_circle.svg';
 import styles from './AcademiesSection.module.scss';
+import BackgroundParticles from '~/assets/images/Background_particles_Academies.svg';
 
 const cn = classNames.bind(styles);
 
 const AcademiesSection = () => {
   return (
-    <section
-      className={cn('academies-section')}
-      style={{ backgroundImage: `url(${backgroundParticles})` }}
-      id="academies-section"
-    >
+    <section className={cn('academies-section')}>
+      <BackgroundParticles
+        className={cn('academies-section__particles')}
+        aria-hidden="true"
+      />
       <h2 className={cn('academies-section__heading')}>Academies</h2>
       <p className={cn('academies-section__paragraph')}>
         There are four disciplines available: for developers, testers, front-end

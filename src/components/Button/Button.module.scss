@@ -30,7 +30,21 @@
     outline-offset: 0;
   }
 
+  &:hover:not([disabled]) {
+    background: var(--button-hover-color);
+  }
+
+  &:active:not([disabled]) {
+    background: var(--button-active-color);
+  }
+
   @include tablet-landscape {
     align-self: center;
+  }
+
+  &[disabled] {
+    cursor: none;
+    filter: grayscale(0.3);
+    opacity: 0.5;
   }
 }
