@@ -3,9 +3,11 @@
   backdrop-filter: blur(5px);
   background-color: var(--primary-color);
   border-radius: var(--border-radius-s);
+  bottom: toRem(-80);
   color: var(--color-white);
   display: flex;
   font-weight: var(--font-weight-bold);
+  height: toRem(50);
   justify-content: center;
   left: 35%;
   opacity: 0.8;
@@ -13,18 +15,4 @@
   right: 35%;
   width: 30%;
   z-index: var(--z-modal);
-
-  @include big-desktop {
-    bottom: -15%;
-    height: 10%;
-  }
-
-  @include big-desktop-up {
-    bottom: -10%;
-    height: 7%;
-  }
-
-  @include mobile-only {
-    height: 12%;
-  }
 }
