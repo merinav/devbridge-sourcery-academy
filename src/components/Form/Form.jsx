@@ -3,6 +3,7 @@ import { Formik, Form, Field } from 'formik';
 import classNames from 'classnames/bind.js';
 import Filter from '/src/components/Filter';
 import Button from '/src/components/Button';
+import { STRINGVALIDATORS } from '../../constants/constants';
 import styles from './Form.module';
 
 const cn = classNames.bind(styles);
@@ -12,11 +13,7 @@ const RegisterForm = () => {
     let error;
     if (!value) {
       error = 'Please enter your first name';
-    } else if (
-      !/^[A-Za-z chcsdzdzsdžgygħieljlynjnysztyzsßàáâãäåæçéêíîñóôõöøúüýāăąćċčďđēėęěġģħīįķĺļľłńņňőŕřśšťūůűųźżžșțαβγδεζηθικλμνξοπρσ/ςτυφχψωабвгдежзийклмнопрстуфхцчшщъьюя]+$/i.test(
-        value
-      )
-    ) {
+    } else if (!STRINGVALIDATORS.nameValidator.test(value)) {
       error = 'Entry is not valid. Please try again.';
     }
     return error;
@@ -26,11 +23,7 @@ const RegisterForm = () => {
     let error;
     if (!value) {
       error = 'Please enter your last name';
-    } else if (
-      !/^[A-Za-z chcsdzdzsdžgygħieljlynjnysztyzsßàáâãäåæçéêíîñóôõöøúüýāăąćċčďđēėęěġģħīįķĺļľłńņňőŕřśšťūůűųźżžșțαβγδεζηθικλμνξοπρσ/ςτυφχψωабвгдежзийклмнопрстуфхцчшщъьюя]+$/i.test(
-        value
-      )
-    ) {
+    } else if (!STRINGVALIDATORS.nameValidator.test(value)) {
       error = 'Entry is not valid. Please try again.';
     }
     return error;
@@ -40,7 +33,7 @@ const RegisterForm = () => {
     let error;
     if (!value) {
       error = 'Please enter your email';
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
+    } else if (!STRINGVALIDATORS.emailValidator.test(value)) {
       error = 'Entry is not valid. Please try again.';
     }
     return error;
