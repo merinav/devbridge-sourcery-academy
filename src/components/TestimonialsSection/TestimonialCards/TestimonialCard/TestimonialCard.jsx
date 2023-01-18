@@ -10,10 +10,8 @@ import styles from './TestimonialCard.module.scss';
 const cn = classNames.bind(styles);
 
 const MAX_TESTIMONIALS_MESSAGE_LENGTH = 330;
-const message =
-  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque totam in magni harum deserunt ratione corporis laboriosam tempore quaerat vel distinctio error, at nulla. Totam iure vel asperiores dolorem dolores! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque totam in magni harum deserunt ratione corporis laboriosam tempore quaerat vel distinctio error, at nulla. Totam iure vel asperiores dolorem dolores! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque totam in magni harum deserunt ratione corporis laboriosam tempore quaerat vel distinctio error, at nulla. Totam iure vel asperiores dolorem dolores!';
 
-const TestimonialCard = ({ photo, name, academy, openModal }) => {
+const TestimonialCard = ({ photo, name, academy, openModal, message }) => {
   const shortenedMessage = truncate(message, {
     length: MAX_TESTIMONIALS_MESSAGE_LENGTH,
     separator: /,?\.* +/,
