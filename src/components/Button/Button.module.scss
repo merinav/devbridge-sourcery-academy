@@ -17,20 +17,26 @@
   transition: background-color 0.3s;
   width: fit-content;
 
-  &:hover {
-    background: var(--button-hover-color);
-  }
-
-  &:active {
-    background: var(--button-active-color);
-  }
-
   &:focus-visible {
     outline: toRem(4) dashed var(--button-focus-tab-color);
     outline-offset: 0;
   }
 
+  &:hover:not([disabled]) {
+    background: var(--button-hover-color);
+  }
+
+  &:active:not([disabled]) {
+    background: var(--button-active-color);
+  }
+
   @include tablet-landscape {
     align-self: center;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    filter: grayscale(0.3);
+    opacity: 0.3;
   }
 }
