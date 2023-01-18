@@ -1,43 +1,97 @@
-import React, { createRef, useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
+import ReactDOM from 'react-dom';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
+import { motion, useInView } from 'framer-motion';
+import Overlay from '../Overlay';
 import styles from './Modal.module.scss';
 
 const cn = classNames.bind(styles);
+
+const MODAL_ANIMATION_DROP_IN = {
+  hidden: {
+    y: '-20vh',
+    opacity: 0,
+  },
+  visible: {
+    y: '0',
+    opacity: 1,
+    transition: {
+      duration: 0.1,
+      type: 'spring',
+      damping: 20,
+      stiffness: 500,
+      delay: 0.05,
+    },
+  },
+  exit: {
+    y: '20vh',
+    opacity: 0,
+    transition: {
+      duration: 0.2,
+      type: 'spring',
+      damping: 50,
+      stiffness: 800,
+    },
+  },
+};
 
 const Modal = ({ children, closeModal }) => {
   const modalRef = useRef(null);
 
   useEffect(() => {
-    if (modalRef.current) {
-      modalRef.current.focus();
+    const keyListener = (e) => {
+      const listener = keyListenersMap.get(e.keyCode);
+      return listener && listener(e);
+    };
+    document.addEventListener('keydown', keyListener);
+    return () => document.removeEventListener('keydown', keyListener);
+  }, []);
+
+  const handleTabKey = (e) => {
+    const focusableModalElements = modalRef?.current?.querySelectorAll(
+      'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select'
+    );
+    console.log(focusableModalElements);
+    if (!focusableModalElements || !focusableModalElements?.length) {
+      console.log(focusableModalElements);
+      return;
     }
-  }, [modalRef.current]);
+    const firstElement = focusableModalElements[0];
+    const lastElement =
+      focusableModalElements[focusableModalElements.length - 1];
 
-  const handleKeyDown = useCallback(
-    (e) => {
-      if (e.key === 'Escape') {
-        closeModal();
-      }
-    },
-    [closeModal]
-  );
+    if (!e.shiftKey && document.activeElement !== firstElement) {
+      firstElement.focus();
+      return e.preventDefault();
+    }
 
-  return (
-    <div
-      ref={modalRef}
-      className={cn('modal')}
-      onClick={closeModal}
-      tabIndex="0"
-      onKeyDown={handleKeyDown}
-    >
-      <div
-        className={cn('modal__content')}
+    if (e.shiftKey && document.activeElement !== lastElement) {
+      lastElement.focus();
+      e.preventDefault();
+    }
+  };
+
+  // eslint-disable-next-line no-undef
+  const keyListenersMap = new Map([
+    [27, closeModal],
+    [9, handleTabKey],
+  ]);
+
+  return ReactDOM.createPortal(
+    <Overlay onClick={closeModal}>
+      <motion.div
+        variants={MODAL_ANIMATION_DROP_IN}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
         onClick={(e) => e.stopPropagation()}
+        className={cn('modal-content')}
       >
-        {children}
-      </div>
-    </div>
+        <div ref={modalRef}>{children}</div>
+      </motion.div>
+    </Overlay>,
+    document.getElementById('modal-portal')
   );
 };
 
