@@ -1,8 +1,9 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
-import { Navigation, Pagination, Keyboard } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Keyboard, EffectFade } from 'swiper';
+import { useReducedMotion } from 'framer-motion';
 import SliderNavigationButton from './SliderNavigationButton/SliderNavigationButton';
 import Icon_play from '/src/assets/icons/Icon_play.svg';
 import Icon_SliderClose from '~/assets/icons/Icon_close_modal_x.svg';
@@ -19,6 +20,7 @@ const GalleryMediaCarousel = ({
   const [currentSlideIndex, setCurrentSlideIndex] = useState(1);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  const prefersReducedMotion = useReducedMotion();
   const MEDIA_ITEMS_TO_SHOW = mediaData.length > 30 ? 30 : mediaData.length;
 
   return (
@@ -43,7 +45,7 @@ const GalleryMediaCarousel = ({
         <Swiper
           grabCursor={true}
           centeredSlides={true}
-          modules={[Navigation, Pagination, Keyboard]}
+          modules={[Navigation, Keyboard, EffectFade]}
           autoHeight={true}
           loop={true}
           initialSlide={selectedMediaItem}
@@ -58,6 +60,8 @@ const GalleryMediaCarousel = ({
           keyboard={{ enabled: true }}
           a11y={true}
           onSlideChange={(swiper) => setCurrentSlideIndex(swiper.realIndex + 1)}
+          speed={prefersReducedMotion ? 0 : 200}
+          // onSwiper={(swiper) => }
         >
           {mediaData.slice(0, MEDIA_ITEMS_TO_SHOW + 1).map((mediaItem) => {
             const isImage = mediaItem.type === 'image';

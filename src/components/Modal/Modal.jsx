@@ -52,9 +52,7 @@ const Modal = ({ children, closeModal, isGallery = false }) => {
     const focusableModalElements = modalRef?.current?.querySelectorAll(
       'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select'
     );
-    console.log(focusableModalElements);
     if (!focusableModalElements || !focusableModalElements?.length) {
-      console.log(focusableModalElements);
       return;
     }
     const firstElement = focusableModalElements[0];
@@ -77,8 +75,6 @@ const Modal = ({ children, closeModal, isGallery = false }) => {
     [27, closeModal],
     [9, handleTabKey],
   ]);
-
-  console.log(isGallery);
 
   return ReactDOM.createPortal(
     <Overlay onClick={closeModal}>
