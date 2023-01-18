@@ -7,6 +7,7 @@
   flex-direction: column;
   margin-top: toRem(410);
   padding: toRem(120);
+  position: relative;
   scroll-margin-top: toRem(96);
   text-align: center;
 
@@ -21,6 +22,14 @@
 
   @include mobile-only {
     margin-top: toRem(210);
+  }
+
+  &__particles {
+    bottom: toRem(8);
+    height: 100%;
+    max-width: 100%;
+    position: absolute;
+    z-index: var(--z-particles);
   }
 
   &__heading {
