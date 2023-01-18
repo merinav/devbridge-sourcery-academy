@@ -4,18 +4,17 @@ import PropTypes from 'prop-types';
 import { AnimatePresence } from 'framer-motion';
 import useTheme from '~/hooks/useTheme';
 import useBreakpointKey from '~/hooks/useBreakpointKey';
+import { useTestimonialsData } from '~/context/TestimonialsFetchContext.js';
 import BackgroundParticles from '~/assets/images/Background_particles_Testimonials.svg';
 import TestimonialsCarousel from '~/components/TestimonialsSection/TestimonialsCarousel';
 import TestimonialModal from '~/components/TestimonialsSection/TestimonialModal';
 import TestimonialCards from '~/components/TestimonialsSection/TestimonialCards';
 import styles from './TestimonialsSection.module.scss';
-import useFetch from '~/hooks/useFetch';
 import { ACADEMIES } from '~/constants/constants';
+import LoadingSpinner from '../LoadingSpinner';
 
 const cn = classNames.bind(styles);
 
-const TESTIMONIALS_ENDPOINT =
-  'https://raw.githubusercontent.com/aistegerd/testimonials-mock-data/main/testimonials.json';
 const MAX_NUMBER_OF_TESTIMONIALS_TO_DISPLAY = 10;
 const NUMBER_OF_TESTIMONIALS_TO_DISPLAY = {
   'mobile-only': 1,
@@ -28,8 +27,10 @@ const NUMBER_OF_TESTIMONIALS_TO_DISPLAY = {
 
 const TestimonialsSection = ({ academy }) => {
   useTheme();
+  const dataFetchContext = useTestimonialsData();
   const breakpointKey = useBreakpointKey();
-  const testimonialsData = useFetch(TESTIMONIALS_ENDPOINT);
+  const testimonialsData = dataFetchContext.testimonialData;
+  const isLoading = dataFetchContext.testimonialsAreLoading;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedTestimonial, setSelectedTestimonial] = useState(null);
   const [
@@ -92,19 +93,35 @@ const TestimonialsSection = ({ academy }) => {
   }
 
   return (
-    <section className={cn('testimonials-section')}>
-      <h2 className={cn('testimonials-section__heading')}>Testimonials</h2>
-      {firstXAcademyTestimonials.length > numberOfTestimonialsToDisplay ? (
-        <TestimonialsCarousel
-          testimonials={firstXAcademyTestimonials}
-          numberOfTestimonialsToDisplay={numberOfTestimonialsToDisplay}
-          handleOpenModal={handleOpenModal}
-        />
+    <>
+      {isLoading ? (
+        <LoadingSpinner />
       ) : (
-        <TestimonialCards
-          testimonials={firstXAcademyTestimonials}
-          handleOpenModal={handleOpenModal}
-        />
+        <section className={cn('testimonials-section')}>
+          <h2 className={cn('testimonials-section__heading')}>Testimonials</h2>
+          {firstXAcademyTestimonials.length > numberOfTestimonialsToDisplay ? (
+            <TestimonialsCarousel
+              testimonials={firstXAcademyTestimonials}
+              numberOfTestimonialsToDisplay={numberOfTestimonialsToDisplay}
+              handleOpenModal={handleOpenModal}
+            />
+          ) : (
+            <TestimonialCards
+              testimonials={firstXAcademyTestimonials}
+              handleOpenModal={handleOpenModal}
+            />
+          )}
+          {isModalOpen && selectedTestimonial && (
+            <TestimonialModal
+              photo={selectedTestimonial.photo}
+              message={selectedTestimonial.message}
+              name={selectedTestimonial.name}
+              academy={selectedTestimonial.academy}
+              closeModal={handleCloseModal}
+            />
+          )}
+          <BackgroundParticles aria-hidden="true" />
+        </section>
       )}
       <AnimatePresence initial="false" mode={'wait'}>
         {isModalOpen && selectedTestimonial && (
@@ -118,7 +135,7 @@ const TestimonialsSection = ({ academy }) => {
         )}
       </AnimatePresence>
       <BackgroundParticles aria-hidden="true" />
-    </section>
+    </>
   );
 };
 

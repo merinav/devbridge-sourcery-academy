@@ -1,29 +1,37 @@
-import { useState, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
-function useFetch(url) {
-  const [data, setData] = useState([]);
+const useFetch = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  useEffect(() => {
-    fetchData();
+  const sendRequest = useCallback(async (requestConfig, applyDataHandler) => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const response = await fetch(requestConfig.url, {
+        method: requestConfig.method ? requestConfig.method : 'GET',
+        headers: requestConfig.headers ? requestConfig.headers : {},
+        body: requestConfig.body ? JSON.stringify(requestConfig.body) : null,
+      });
+      // TODO: more complete error handling will be implemented with ticket SR22S-65
+      if (!response.ok) {
+        throw new Error('Request failed!');
+      }
+
+      const data = await response.json();
+      applyDataHandler(data);
+    } catch (err) {
+      setError(err.message || 'Something went wrong!');
+    }
+    setIsLoading(false);
   }, []);
 
-  const fetchData = async () => {
-    try {
-      const fetchResponse = await fetch(url);
-      const fetchData = await fetchResponse.json();
-      setData(fetchData);
-    } catch (error) {
-      // TODO: more complete error handling will be implemented with ticket SR22S-65
-      console.error(error);
-    }
+  return {
+    isLoading,
+    error,
+    sendRequest,
   };
-
-  return data;
-}
-
-useFetch.propTypes = {
-  url: PropTypes.string.isRequired,
 };
 
 export default useFetch;

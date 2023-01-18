@@ -12,6 +12,7 @@
     "not op_mini all"
   ],
   "dependencies": {
+    "firebase": "9.15.0",
     "framer-motion": "8.4.2",
     "formik": "2.2.9",
     "lodash": "4.17.20",
@@ -20,6 +21,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "6.4.3",
+    "uuid": "9.0.0",
     "swiper": "8.2.6"
   },
   "scripts": {

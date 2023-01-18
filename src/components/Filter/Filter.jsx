@@ -5,15 +5,17 @@ import styles from './Filter.module';
 
 const cn = classNames.bind(styles);
 
-const Filter = ({ data, onClick }) => {
+const Filter = ({ data, onClick, setAcademyChoice }) => {
   if (!data) {
     return null;
   }
   const [activeItem, setActiveItem] = useState(data[0]);
+  const academies = ['developers', 'testers', 'frontend'];
 
   const handleItemClick = (item) => {
     setActiveItem(item);
     onClick && onClick(item);
+    setAcademyChoice(academies[item]);
   };
 
   return (
@@ -35,6 +37,7 @@ const Filter = ({ data, onClick }) => {
 Filter.propTypes = {
   data: PropTypes.array,
   onClick: PropTypes.func,
+  setAcademyChoice: PropTypes.func,
 };
 
 export default Filter;

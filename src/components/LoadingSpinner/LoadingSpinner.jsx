@@ -10,7 +10,7 @@ const LoadingSpinner = ({ style }) => {
 };
 
 LoadingSpinner.propTypes = {
-  style: PropTypes.string,
+  style: PropTypes.object,
 };
 
 export default LoadingSpinner;

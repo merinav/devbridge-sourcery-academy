@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
-import useFetch from '/src/hooks/useFetch';
+import { useMediaData } from '../../context/MediaFetchContext';
 import ParticlesMedia from '/src/assets/images/Background_particles_Media.svg';
 import PathMedia from './PathMedia/PathMedia';
 import GalleryMedia from './GalleryMedia/GalleryMedia';
@@ -12,15 +12,9 @@ import styles from './MediaSection.module';
 const cn = classNames.bind(styles);
 
 const MediaSection = ({ academy }) => {
-  const fetchMediaUrl = 'https://sfe-2022-data.netlify.app/static/media.json';
-  const fetchMediaData = useFetch(fetchMediaUrl);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    if (fetchMediaData) {
-      setLoading(false);
-    }
-  }, [fetchMediaData]);
+  const mediaFetchContext = useMediaData();
+  const fetchMediaData = mediaFetchContext.mediaData;
+  const isLoading = mediaFetchContext.mediaIsLoading;
 
   const data = useMemo(() => {
     switch (academy) {
@@ -50,7 +44,7 @@ const MediaSection = ({ academy }) => {
             />
           </div>
 
-          {loading ? (
+          {isLoading ? (
             <LoadingSpinner style={{ margin: 'var(--spacer-3xl) auto 0' }} />
           ) : (
             <GalleryMedia data={data} />
