@@ -5,11 +5,8 @@
   padding: var(--spacer-5xl) 0;
 
   @include tablet-landscape {
-    padding: 0;
-  }
-
-  @include tablet-portrait {
     flex-direction: column;
+    padding: 0;
   }
 }
 
@@ -17,14 +14,10 @@
   display: flex;
   flex-direction: column;
   padding: var(--spacer-xxl) 0 0 0;
-  width: 36%;
+  width: 40%;
 
   @include tablet-landscape {
     padding: 0;
-    width: 55%;
-  }
-
-  @include tablet-portrait {
     width: 100%;
   }
 

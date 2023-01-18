@@ -10,7 +10,7 @@
     display: inline-block;
     margin: 0 0 toRem(66);
 
-    @include tablet-portrait {
+    @include tablet-landscape {
       align-self: initial;
     }
   }

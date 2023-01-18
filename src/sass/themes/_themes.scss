@@ -6,6 +6,7 @@
   --button-active-color: var(--color-light-purple-300);
   --button-focus-tab-color: var(--color-accent-orange-400);
   --button-focus-border-color: var(--color-light-purple-500);
+  --expandable-card-hover-color: var(--color-purple-350);
 }
 
 [data-theme='blue'] {
@@ -16,6 +17,7 @@
   --button-focus-tab-color: var(--color-accent-orange-400);
   --button-focus-border-color: var(--color-blue-300);
   --admission-image-location: var(--color-blue-150);
+  --expandable-card-hover-color: var(--color-blue-350);
 }
 
 [data-theme='green'] {
@@ -26,6 +28,7 @@
   --button-focus-tab-color: var(--color-accent-orange-400);
   --button-focus-border-color: var(--color-green-100);
   --admission-image-location: var(--color-accent-green-300);
+  --expandable-card-hover-color: var(--color-green-350);
 }
 
 [data-theme='red'] {
@@ -36,6 +39,7 @@
   --button-focus-tab-color: var(--color-accent-orange-400);
   --button-focus-border-color: var(--color-red-100);
   --admission-image-location: var(--color-red-200);
+  --expandable-card-hover-color: var(--color-red-350);
 }
 
 [data-theme='kids'] {
