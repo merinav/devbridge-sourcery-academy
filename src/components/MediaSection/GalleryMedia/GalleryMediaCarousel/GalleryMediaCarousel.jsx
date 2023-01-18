@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Keyboard, EffectFade } from 'swiper';
+import { Navigation, Keyboard } from 'swiper';
 import { useReducedMotion } from 'framer-motion';
 import SliderNavigationButton from './SliderNavigationButton/SliderNavigationButton';
 import Icon_play from '/src/assets/icons/Icon_play.svg';
@@ -45,7 +45,7 @@ const GalleryMediaCarousel = ({
         <Swiper
           grabCursor={true}
           centeredSlides={true}
-          modules={[Navigation, Keyboard, EffectFade]}
+          modules={[Navigation, Keyboard]}
           autoHeight={true}
           loop={true}
           initialSlide={selectedMediaItem}
@@ -61,7 +61,6 @@ const GalleryMediaCarousel = ({
           a11y={true}
           onSlideChange={(swiper) => setCurrentSlideIndex(swiper.realIndex + 1)}
           speed={prefersReducedMotion ? 0 : 200}
-          // onSwiper={(swiper) => }
         >
           {mediaData.slice(0, MEDIA_ITEMS_TO_SHOW + 1).map((mediaItem) => {
             const isImage = mediaItem.type === 'image';
