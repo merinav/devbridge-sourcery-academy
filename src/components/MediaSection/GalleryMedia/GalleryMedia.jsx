@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { AnimatePresence } from 'framer-motion';
@@ -23,6 +23,14 @@ const GalleryMedia = ({ data }) => {
     setIsModalOpen(false);
     setSelectedMediaItem(null);
   };
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isModalOpen]);
 
   return (
     <div
