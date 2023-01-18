@@ -12,6 +12,7 @@
     "not op_mini all"
   ],
   "dependencies": {
+    "firebase": "9.15.0",
     "formik": "2.2.9",
     "lodash": "4.17.20",
     "modern-normalize": "1.1.0",
