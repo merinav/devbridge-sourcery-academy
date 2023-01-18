@@ -3,12 +3,14 @@
   color: var(--primary-color);
   display: flex;
   flex-direction: column;
-  height: toRem(500);
-  max-height: toRem(500);
   overflow-y: auto;
   padding: toRem(35) toRem(30);
   text-align: center;
-  width: toRem(800);
+
+  @include mobile-only {
+    max-height: toRem(350);
+    padding: toRem(15) 0;
+  }
 
   .testimonial-modal__header {
     display: flex;
@@ -21,6 +23,12 @@
     align-items: center;
     display: flex;
     flex-direction: row;
+
+    @include mobile-only {
+      flex-wrap: wrap;
+      gap: toRem(10);
+      justify-content: center;
+    }
   }
 
   &__graduate-info {
@@ -28,6 +36,11 @@
     display: flex;
     flex-direction: column;
     margin-left: var(--spacer-l);
+
+    @include mobile-only {
+      align-items: center;
+      margin-left: unset;
+    }
   }
 
   &__photo {
@@ -39,15 +52,31 @@
   }
 
   &__close-button {
-    align-items: flex-end;
+    background: none;
+    border: 0;
     cursor: pointer;
-    fill: var(--primary-color);
     height: 22px;
-    stroke: var(--primary-color);
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: toRem(2);
+    padding: 0;
     width: toRem(22);
+
+    .close-button__icon {
+      cursor: pointer;
+      fill: var(--primary-color);
+      height: 22px;
+      stroke: var(--primary-color);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: toRem(2);
+      width: toRem(22);
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      scale: 0.8;
+    }
   }
 
   &__message {
@@ -57,6 +86,11 @@
     margin: var(--spacer-xxl) var(--spacer-l) 0;
     overflow: auto;
     text-align: left;
+
+    @include mobile-only {
+      margin: var(--spacer-m) var(--spacer-s) 0;
+      text-align: center;
+    }
   }
 
   &__graduate-name {
@@ -71,5 +105,10 @@
     font-weight: var(--font-weight-regular);
     line-height: var(--line-height-m);
     margin: 0;
+    text-align: left;
+
+    @include mobile-only {
+      text-align: center;
+    }
   }
 }

@@ -1,0 +1,83 @@
+.navigation-wrapper__close-button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  height: toRem(24);
+  padding: 0;
+  position: absolute;
+  right: toRem(-40);
+  top: toRem(-30);
+  transition: all 30ms ease;
+  width: toRem(24);
+  z-index: var(--z-modal);
+
+  .close-button__icon {
+    cursor: pointer;
+    fill: var(--color-white);
+    stroke: var(--primary-color);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: toRem(3);
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      scale: 0.8;
+    }
+  }
+
+  @include mobile-only {
+    height: toRem(18);
+    right: toRem(-20);
+    top: toRem(-25);
+    width: toRem(18);
+  }
+}
+
+.inner-content__gallery-item {
+  height: 100%;
+  max-height: 70vh;
+  width: 100%;
+}
+
+.carousel-slide__inner-content {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  position: relative;
+}
+
+.video-controls {
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+.play-button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  height: toRem(60);
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  transition: opacity 0.3s;
+  width: toRem(60);
+
+  .play-button__icon {
+    fill: var(--primary-color);
+    height: toRem(60);
+    stroke: var(--primary-color);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

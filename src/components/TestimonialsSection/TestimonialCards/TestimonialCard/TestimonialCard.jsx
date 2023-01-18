@@ -11,7 +11,7 @@ const cn = classNames.bind(styles);
 
 const MAX_TESTIMONIALS_MESSAGE_LENGTH = 330;
 
-const TestimonialCard = ({ photo, message, name, academy, openModal }) => {
+const TestimonialCard = ({ photo, name, academy, openModal, message }) => {
   const shortenedMessage = truncate(message, {
     length: MAX_TESTIMONIALS_MESSAGE_LENGTH,
     separator: /,?\.* +/,

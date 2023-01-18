@@ -63,6 +63,11 @@
     transform: scale(1.1);
   }
 
+  &:focus-visible {
+    outline: toRem(4) dashed var(--button-focus-tab-color);
+    outline-offset: toRem(3);
+  }
+
   @media (prefers-reduced-motion: reduce) {
     &:hover .media-item {
       transform: scale(1);

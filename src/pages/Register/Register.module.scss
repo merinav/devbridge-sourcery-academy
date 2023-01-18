@@ -6,11 +6,27 @@
   flex-direction: column;
   justify-content: flex-start;
   width: 100%;
-}
 
-.heading {
-  @include h1-h2;
-  @include word-wrap;
+  &__heading {
+    @include h1-h2;
+    @include word-wrap;
+  }
+
+  &__particles-top {
+    position: absolute;
+    right: toRem(100);
+    top: toRem(80);
+    width: 50%;
+    z-index: var(--z-particles);
+  }
+
+  &__particles-bottom {
+    left: toRem(130);
+    position: absolute;
+    top: toRem(1000);
+    width: 75%;
+    z-index: var(--z-particles);
+  }
 }
 
 .content-container {
@@ -38,7 +54,7 @@
   &__image-container {
     display: flex;
     justify-content: flex-end;
-    margin: 0;
+    margin: toRem(200) 0 0 0;
     width: 55%;
 
     @include tablet-landscape {

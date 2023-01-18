@@ -1,0 +1,13 @@
+.overlay {
+  align-items: center;
+  backdrop-filter: blur(5px);
+  background-color: var(--color-transparent-black);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: var(--z-modal);
+}
