@@ -10,11 +10,32 @@
   padding: 0 2rem;
   width: clamp(50%, toRem(600), 90%);
 
+  @include big-desktop-up {
+    width: clamp(40%, toRem(600), 90%);
+  }
+
   @include mobile-only {
     height: min(40%, toRem(450));
   }
 
-  @include big-desktop-up {
-    width: clamp(40%, toRem(600), 90%);
+  .modal-content__inner-content {
+    border-radius: var(--border-radius-s);
+    overflow: hidden;
+    width: 100%;
+  }
+}
+
+.gallery-container {
+  background-color: var(--color-grey-400);
+  height: fit-content;
+  padding: 0;
+  width: clamp(40%, toRem(550), 90%);
+
+  @include tablet-portrait {
+    width: clamp(50%, 45rem, 75%);
+  }
+
+  @include mobile-only {
+    width: clamp(50%, 45rem, 78%);
   }
 }

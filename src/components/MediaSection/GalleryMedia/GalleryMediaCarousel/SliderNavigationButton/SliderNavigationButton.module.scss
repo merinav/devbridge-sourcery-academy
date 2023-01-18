@@ -1,0 +1,51 @@
+.carousel {
+  &__nav {
+    align-items: center;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    fill: var(--primary-color);
+    justify-content: center;
+    padding: 0;
+    top: calc(50% - 2.5rem);
+    transition: all 30ms ease;
+    z-index: var(--z-modal);
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      scale: 0.8;
+    }
+  }
+
+  &__nav-prev {
+    height: 5rem;
+    left: -15%;
+    position: absolute;
+    transform: rotate(90deg);
+    width: 5rem;
+
+    @include mobile-only {
+      height: toRem(30);
+      left: -14%;
+      width: toRem(30);
+    }
+  }
+
+  &__nav-next {
+    height: 5rem;
+    position: absolute;
+    right: -15%;
+    transform: rotate(-90deg);
+    width: 5rem;
+
+    @include mobile-only {
+      height: toRem(30);
+      right: -14%;
+      width: toRem(30);
+    }
+  }
+}

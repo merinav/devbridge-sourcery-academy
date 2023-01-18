@@ -61,6 +61,10 @@
       animation-play-state: paused;
     }
 
+    &:active {
+      scale: 0.9;
+    }
+
     @keyframes upAndDown {
       0% {
         transform: translateY(0);

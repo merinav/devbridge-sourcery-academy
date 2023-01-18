@@ -1,13 +1,44 @@
-import React from 'react';
-import classNames from 'classnames/bind';
-import Icon_play from '/src/assets/icons/Icon_play.svg';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
+import { AnimatePresence } from 'framer-motion';
+import Icon_play from '/src/assets/icons/Icon_play.svg';
+import GalleryMediaModal from '~/components/MediaSection/GalleryMedia/GalleryMediaModal';
 import styles from './GalleryMedia.module';
 
 const cn = classNames.bind(styles);
 
 const GalleryMedia = ({ data }) => {
+  const [selectedMediaItem, setSelectedMediaItem] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const maxMediaItems = Math.min(data.length, 6);
+
+  const openModalHandler = (mediaItemIndex) => {
+    setSelectedMediaItem(mediaItemIndex);
+    setIsModalOpen(true);
+  };
+
+  const closeModalHandler = () => {
+    setIsModalOpen(false);
+    setSelectedMediaItem(null);
+  };
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+  }, [isModalOpen]);
+
+  // useEffect(() => {
+  //   if (isModalOpen) {
+  //     document.body.style.overflow = 'hidden';
+  //   } else {
+  //     document.body.style.overflow = 'unset';
+  //   }
+  // }, [isModalOpen]);
 
   return (
     <div
@@ -26,7 +57,14 @@ const GalleryMedia = ({ data }) => {
         item.type === 'image' ? (
           <figure
             className={cn('media-container', `media-container-${index + 1}`)}
-            key={index}
+            key={item.src}
+            onClick={() => openModalHandler(index)}
+            tabIndex={0}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter') {
+                openModalHandler(index);
+              }
+            }}
           >
             <img
               className={cn('media-item', `image-${index + 1}`)}
@@ -37,23 +75,20 @@ const GalleryMedia = ({ data }) => {
         ) : (
           <figure
             className={cn('media-container', `media-container-${index + 1}`)}
-            key={index}
+            key={item.src}
+            onClick={() => openModalHandler(index)}
+            tabIndex={0}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter') {
+                openModalHandler(index);
+              }
+            }}
           >
-            <video
+            <img
               className={cn('media-item', `video-${index + 1}`)}
-              width="auto"
-              height="218"
-              poster={item.thumbnail}
-            >
-              <source
-                src={item.src}
-                type={'video/' + item.src.split('.').pop()}
-              />
-              <p>
-                Your browser doesn&quot;t support HTML video. Here is a{' '}
-                <a href={item.src}>link to the video</a> instead.
-              </p>
-            </video>
+              src={item.thumbnail}
+              alt="Sourcery academy gallery video thumbnail"
+            />
             <div className={cn('video-controls')}>
               <button type="button" className={cn('play-button')}>
                 <Icon_play />
@@ -62,6 +97,15 @@ const GalleryMedia = ({ data }) => {
           </figure>
         )
       )}
+      <AnimatePresence initial="false" mode={'wait'}>
+        {isModalOpen && (
+          <GalleryMediaModal
+            data={data}
+            closeModalHandler={closeModalHandler}
+            selectedMediaItem={selectedMediaItem}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 };

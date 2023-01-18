@@ -1,5 +1,6 @@
 .overlay {
   align-items: center;
+  backdrop-filter: blur(5px);
   background-color: var(--color-transparent-black);
   display: flex;
   height: 100%;

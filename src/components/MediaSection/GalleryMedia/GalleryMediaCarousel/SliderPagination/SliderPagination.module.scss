@@ -1,0 +1,18 @@
+.slider-pagination {
+  align-items: center;
+  backdrop-filter: blur(5px);
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius-s);
+  bottom: toRem(-80);
+  color: var(--color-white);
+  display: flex;
+  font-weight: var(--font-weight-bold);
+  height: toRem(50);
+  justify-content: center;
+  left: 35%;
+  opacity: 0.8;
+  position: absolute;
+  right: 35%;
+  width: 30%;
+  z-index: var(--z-modal);
+}
